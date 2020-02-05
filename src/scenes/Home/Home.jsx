@@ -1,22 +1,16 @@
-import React from "react";
-
-import Hero from "../../components/HeroSection/Hero";
-import Header from "../../components/Header/Header";
-import styled from "styled-components";
-
-const Container = styled.div`
-  background-color: red;
-`;
+import React from 'react';
+import ListCards from './components/ListCards/ListCards';
+import Footer from '../../components/Footer/Footer';
+import Hero from '../../components/HeroSection/Hero'
 
 const Home = () => {
-  return <Hero />;
-};
-
-{
-  /* <Container>
-      <Header />
-      <Hero />
-    </Container> */
+    return (
+        <div className="bg-white">
+            <Hero />
+            <ListCards />
+            <Footer />
+        </div>
+    );
 }
 
 export default Home;
