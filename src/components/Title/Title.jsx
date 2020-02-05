@@ -2,8 +2,8 @@ import React from 'react';
 
 const Title = ({title, subTitle}) => {
     return (
-        <div className="text-center font-montserrat text-gray opacity-90 pb-4">
-            <h3 className="text-xl">{title}</h3>
+        <div className="text-center font-montserrat text-gray pb-4 w-60 mx-auto">
+            <h3 className="text-xl pb-2 font-semibold">{title}</h3>
             <p className="text-xs">{subTitle}</p>
         </div>
     );

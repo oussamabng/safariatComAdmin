@@ -5,7 +5,7 @@ import logo from './images/logoForWeb.png'
 
 const Header = () => {
     return (
-        <div className="fixed w-full flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
+        <div className="fixed z-10 w-full flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
         <div className="w-full lg:w-auto flex justify-between items-center">
             <Link to="/">
                 <img src={logo} alt=""/>
@@ -43,7 +43,7 @@ const Header = () => {
                 <input className="appearance-none bg-transparent h-1 py-2 px-3 text-gray-700 leading-tight" id="search" type="text" placeholder="Search"/>
         </div>
         <div className="hidden lg:flex items-center">
-            <button className="bg-yellow text-white font-bold py-1 px-5 rounded-full">login</button>
+            <button className="bg-yellow text-white font-bold py-1 px-5 rounded-full button-shadow">login</button>
         </div>
     </div>
     );

@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// font awessome Fonts
 import '@fortawesome/fontawesome-free/css/all.css';
+// Layout Components
 import Header from './components/Header/Header';
+
 // Scenes Components Importation
 import Home from './scenes/Home/Home.jsx';
 import Services from './scenes/Services/Services.jsx';
