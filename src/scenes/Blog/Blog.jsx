@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div>
+        <div class="text-center">
             Hello from Blog
         </div>
     );

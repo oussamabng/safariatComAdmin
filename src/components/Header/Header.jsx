@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import logo from './images/logoForWeb.png'
+
 const Header = () => {
     return (
-        <div className="w-full flex justify-between items-center lg:px-20 px-8 bg-white lg:py-4 py-2 border-b border-gray-400">
-        <div className="flex justify-between items-center">
+        <div className="fixed w-full flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
+        <div className="w-full lg:w-auto flex justify-between items-center">
             <Link to="/">
-                <img src="./images/logoForWeb.png" alt=""/>
+                <img src={logo} alt=""/>
             </Link>
             <label for="menu-toggle" className="lg:hidden block point-cursor">
                 <i className="fas fa-align-justify fa-2x"></i>
@@ -36,15 +38,17 @@ const Header = () => {
             </nav>
             
         </div>
-        <div className="flex justify-between items-center px-2 py-2 rounded-full bg-blue-100">
+        <div className="hidden lg:flex justify-between items-center px-2 py-2 rounded-full bg-blue-100">
                 <i className="fas fa-search border-r-2 px-2 text-gray-600"></i>
                 <input className="appearance-none bg-transparent h-1 py-2 px-3 text-gray-700 leading-tight" id="search" type="text" placeholder="Search"/>
         </div>
-        <div className="flex items-center">
+        <div className="hidden lg:flex items-center">
             <button className="bg-yellow text-white font-bold py-1 px-5 rounded-full">login</button>
         </div>
     </div>
     );
 }
+
+
 
 export default Header;

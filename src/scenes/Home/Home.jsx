@@ -1,9 +1,10 @@
 import React from 'react';
-
+import ListCards from './components/ListCards/ListCards'
 const Home = () => {
     return (
-        <div>
-            Hello from Home
+        <div className="bg-white">
+            <div className="h-60"></div>
+            <ListCards />
         </div>
     );
 }
