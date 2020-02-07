@@ -5,7 +5,7 @@ import logo from './images/logoForWeb.png'
 
 const Header = () => {
     return (
-        <div className="fixed z-10 w-full flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
+        <div className="fixed z-50 w-full flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
         <div className="w-full lg:w-auto flex justify-between items-center">
             <Link to="/">
                 <img src={logo} alt=""/>
