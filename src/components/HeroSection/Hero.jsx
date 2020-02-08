@@ -9,8 +9,8 @@ import PlaneImg from "./components/PlaneImg";
 
 const Hero = props => {
   return (
-    <Container>
-      <Carousel />
+    <Container> 
+      <Carousel  />
       <PlaneImg />
     </Container>
   );

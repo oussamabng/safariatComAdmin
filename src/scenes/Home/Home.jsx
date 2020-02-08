@@ -5,8 +5,8 @@ import Hero from '../../components/HeroSection/Hero'
 
 const Home = () => {
     return (
-        <div className="bg-white mx-16">
-            <Hero />
+        <div className="bg-white">
+            <Hero  />
             <ListCards />
             <Footer />
         </div>
