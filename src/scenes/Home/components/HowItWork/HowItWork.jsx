@@ -1,9 +1,13 @@
 import React from 'react';
 import TravelAgency from './components/TravelAgency/TravelAgency'
+import Travellers from './components/Travellers/Travellers';
 
 const HowItWork = () => {
     return (
-        <TravelAgency />
+        <div>
+            <TravelAgency />
+            <Travellers />
+        </div>
     );
 }
 
