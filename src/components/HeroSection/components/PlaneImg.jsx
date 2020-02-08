@@ -18,14 +18,28 @@ const img = ({ className, children }) => (
   );
   
   const Container = styled(img)`
-    flex-basis:36vw;  
-    height: 80vh;
-    flex-shrink:3;
-
+    
+  @media (min-width: 100px) {
+    // display:block;
+  max-width:38vw;  
+    margin:0 auto;
+  }
 
    
-    @media (max-width: 1030px) {
-      display:none;
+  @media (min-width: 768px) {
+      // display:block;
+    max-width:34vw;  
+      margin:0 auto;
     }
+
+    @media (min-width:1024px){
+      flex-basis:36vw;  
+      height: 80vh;
+      flex-shrink:3;
+    
+    }
+   
+    
+    
 
   `;

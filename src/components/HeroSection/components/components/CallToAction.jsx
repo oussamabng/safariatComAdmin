@@ -19,6 +19,19 @@ const JoinButton = styled(Button)`
   padding: 0.5rem 2.3rem;
   margin-left:1.3rem;
   margin-right: 2.5rem;
+
+
+  @media (max-width:750px){
+    font-size:11px;
+    margin-right:1rem;
+  }
+
+  @media (min-width:1020px){
+    margin-left:3.5rem;
+  }
+
+
+
 `;
 
 const LearnMoreButton = styled(Button)`
@@ -27,6 +40,10 @@ const LearnMoreButton = styled(Button)`
   border-radius: 20px;
   font-size: 17px;
   padding: 0.5rem 2.3rem;
+
+  @media (max-width:768px){
+    font-size:11px;
+  }
 `;
 
 const CallToAction = props => {

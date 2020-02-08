@@ -39,19 +39,19 @@ const Carousel = props => {
   };
 
   return (
-    <Container className="ml-20 relative">
+    <Container className="pl-4 md:pl-0 lg:ml-20 relative md:w-7/12 lg:w-12/12 mx-auto">
       
       
 
-      <div className=" w-1/12">
+      <div className="mb-16 w-1/12">
         <Dot scale={index === 0 ? 1.25 : .875}  />
         <Dot scale={index === 1 ? 1.25 : .875}  />
-        <Dot scale={index === 2 ? 1.25 : .875} className="-mb-8" />
+        <Dot scale={index === 2 ? 1.25 : .875} className="  md:-mb-8 lg:-mb-20" />
       </div>
 
-      <div className=" flex flex-col w-11/12  ">
+      <div className=" flex flex-col  cntBox ">
 
-        <a className="ml-40 self-start" onClick={next}>
+        <a className="arrow  self-start" onClick={next}>
           <TopArrow />
         </a>
 
@@ -69,7 +69,7 @@ const Carousel = props => {
           }
         })}
         
-        <a className="ml-40 self-start" onClick={prev}>
+        <a className=" arrow self-start" onClick={prev}>
           <DownArrow />
         </a>
 
@@ -94,18 +94,40 @@ const Container = styled.div`
   align-items center;
   flex-direction: row;
 
-  @media (max-width:1030px){
-    margin:0 auto;
-    flex-basis:80%;
+  .cntBox {
+    flex-basis: 90%;
 
+    @media (max-width:1024px){
+      width:70%;
+      margin:0 auto;
+    }
   }
 
-  
-  @media (max-width:850px){
-    margin:0 auto;
-   flex-basis:95%;
-
+  @media (min-width:768px){
+   
   }
 
+  @media (min-width:1024px){
+    margin:0 auto;
+    padding-left:2rem;
+  }
+
+  .arrow {
+
+    @media (min-width:100px){
+      margin-left:8rem;
+    }
+
+    @media (min-width:768px){
+      margin-left:10rem;
+    }
+
+    @media (min-width:1024px){
+      margin-left:12rem;
+    }
+
+    
+
+  }
 
 `;

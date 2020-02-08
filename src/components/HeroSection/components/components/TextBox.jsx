@@ -12,9 +12,9 @@ const TextBox = (props)=> {
     ) : null;
   };
   return( 
-    <Container  {...props} className="z-10 w-12/12 relative"  >
+    <Container  {...props} className="z-10 relative"  >
       
-        <div className="z-10 text-xs sm:text-s md:text-base">{props.text}</div>
+        <div className="z-10 text text-xs  md:text-base">{props.text}</div>
 
         <Person 
         index={ props.index}
@@ -34,6 +34,23 @@ const Container = styled.div`
   font-size: 1.1rem;
   color: #838383;
   width: ${props => props.index === 0 ? 27.875 : props.index === 1 ? 22.25 : 22.25 }rem;
+
+  
+  @media (max-width:768px){
+
+    width: ${props => props.index === 0 ? 16.25 : props.index === 1 ? 11 : 11 }rem;
+  }
+
+  
+
+  .text{
+    @media (max-width:768px){
+      font-size:12px;
+      word-spacing: 1px;
+
+      flex-basis:  ${props => props.index === 0 ? 15 : 11 }rem;
+    }
+  }
 `;
 
 export default TextBox;

@@ -20,6 +20,7 @@ export default Hero;
 
 
 const Container = styled.div`
+
   display: flex;
  
   justify-content: space-between;
@@ -27,5 +28,14 @@ const Container = styled.div`
   // background-color: #ffffff;
   margin: 0 auto;
   padding: 2rem 0;
+
+
+
+
+  @media (max-width: 1024px){
+    margin-right: 2rem;
+    flex-direction: column-reverse;
+    margin:0 auto;
+  }
   
 `;
