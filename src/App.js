@@ -17,7 +17,7 @@ import LearnMore from "./scenes/LearnMore/LearnMore.jsx";
 function App() {
   return (
     <Router>
-      <Header />
+      <Header className="w-full" />
       <div style={paddingTop}>
         <Switch>
           <Route component={Home} exact path="/" ></Route>

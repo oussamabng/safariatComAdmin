@@ -27,8 +27,5 @@ const Container = styled.div`
   // background-color: #ffffff;
   margin: 0 auto;
   padding: 2rem 0;
-
   
-
-
 `;

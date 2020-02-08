@@ -14,7 +14,7 @@ const TextBox = (props)=> {
   return( 
     <Container  {...props} className="z-10 w-12/12 relative"  >
       
-        <div className="z-10 ">{props.text}</div>
+        <div className="z-10 text-xs sm:text-s md:text-base">{props.text}</div>
 
         <Person 
         index={ props.index}

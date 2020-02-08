@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 
 import logo from './images/logoForWeb.png'
 
+
+
 const Header = () => {
     return (
-        <div className="fixed z-10 w-full flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
-        <div className="w-full lg:w-auto flex justify-between items-center">
+    <div className="w-screen fixed z-20  flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
+        <div className="w-screen lg:w-auto flex justify-between items-center">
             <Link to="/">
                 <img src={logo} alt=""/>
             </Link>
             <label for="menu-toggle" className="lg:hidden block point-cursor">
                 <i className="fas fa-align-justify fa-2x"></i>
             </label>
-            <input type="checkbox" id="menu-toggle" className="hidden" />
+            <input type="checkbox"  id="menu-toggle" className="hidden " />
         </div>
                    
         <div id="menu" className="hidden lg:flex lg:items-center ">
