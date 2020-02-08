@@ -96,10 +96,16 @@ const Container = styled.div`
 
   @media (max-width:1030px){
     margin:0 auto;
-    flex-basis:60%;
+    flex-basis:80%;
 
   }
 
+  
+  @media (max-width:850px){
+    margin:0 auto;
+   flex-basis:95%;
+
+  }
 
 
 `;
