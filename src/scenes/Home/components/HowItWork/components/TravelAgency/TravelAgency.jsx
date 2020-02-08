@@ -10,9 +10,9 @@ import office from "./images/office.png";
 import { paragraphs } from "./data";
 const TravelAgency = () => {
   return (
-    <Wrapper className="px-20 py- bg-white">
+    <Wrapper className="px-20 pb-12 bg-white">
       <Title title="how does it work?" subTitle="everything you need" />
-      <div className="flex justify-around">
+      <div className="flex justify-around pt-2">
         <div>
           <img src={office} alt="officeImage" className="officeImage" />
           <img src={fly} className="flyImage" alt="" />
