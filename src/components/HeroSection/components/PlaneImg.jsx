@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export default function PlaneImg() {
     return (
-        <Container />
+        <Container className="mr-20"/>
     )
 }
 
@@ -21,6 +21,7 @@ const img = ({ className, children }) => (
     flex-basis:36vw;  
     height: 80vh;
     flex-shrink:3;
+
 
    
     @media (max-width: 1030px) {

@@ -6,8 +6,8 @@ import HowItWork from './components/HowItWork/HowItWork';
 
 const Home = () => {
     return (
-        <div className="bg-white mx-16">
-            <Hero />
+        <div className="bg-white">
+            <Hero  />
             <ListCards />
             <HowItWork />
             <Footer />

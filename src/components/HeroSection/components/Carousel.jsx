@@ -39,7 +39,7 @@ const Carousel = props => {
   };
 
   return (
-    <Container className=" relative">
+    <Container className="ml-20 relative">
       
       
 

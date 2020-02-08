@@ -9,8 +9,8 @@ import CallToAction from "./components/components/CallToAction";
 
 const Hero = props => {
   return (
-    <Container>
-      <Carousel />
+    <Container> 
+      <Carousel  />
       <PlaneImg />
     </Container>
   );
