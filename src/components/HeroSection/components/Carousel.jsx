@@ -43,7 +43,7 @@ const Carousel = props => {
       
       
 
-      <div className="mb-16 w-1/12">
+      <div className="mb-4 sm:mb-16 lg:mb-10 w-1/12">
         <Dot scale={index === 0 ? 1.25 : .875}  />
         <Dot scale={index === 1 ? 1.25 : .875}  />
         <Dot scale={index === 2 ? 1.25 : .875} className="  md:-mb-8 lg:-mb-20" />
