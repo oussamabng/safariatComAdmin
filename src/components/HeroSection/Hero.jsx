@@ -1,7 +1,7 @@
 import React from "react";
 
 import Carousel from "./components/Carousel";
-import CallToAction from "./components/components/CallToAction";
+// import CallToAction from "./components/components/CallToAction";
 import styled from "styled-components";
 
 const Container = styled.div`

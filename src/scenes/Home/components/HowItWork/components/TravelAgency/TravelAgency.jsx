@@ -5,7 +5,7 @@ import Title from "../../../../../../components/Title/Title";
 import Paragraph from "../Paragraph/Paragraph";
 // Images
 import fly from "./images/fly.png";
-import office from "./images/office.jpg";
+import office from "./images/office.png";
 // data
 import { paragraphs } from "./data";
 const TravelAgency = () => {
@@ -36,15 +36,14 @@ const Wrapper = styled.div`
     position: absolute;
     z-index: 3;
     top: 75rem;
-    left: 14rem;
+    left: 12rem;
     width: 420px;
   }
   .officeImage {
     position: relative;
-    top: 3rem;
-    left: 8rem;
+    top: -2rem;
+    left: -2rem;
     z-index: 2;
-    width: 55rem;
     &:before {
         position: absolute;
         content: "";

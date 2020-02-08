@@ -11,8 +11,8 @@ import Services from "./scenes/Services/Services.jsx";
 import Blog from "./scenes/Blog/Blog.jsx";
 import Contact from "./scenes/Contact/Contact.jsx";
 import About from "./scenes/About/About.jsx";
-import SignUp from "./scenes/SignUp/SignUp.jsx";
-import LearnMore from "./scenes/LearnMore/LearnMore.jsx";
+/*import SignUp from "./scenes/SignUp/SignUp.jsx";
+import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
 
 function App() {
   return (
