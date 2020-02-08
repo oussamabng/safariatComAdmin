@@ -16,8 +16,9 @@ const JoinButton = styled(Button)`
   background-color: #067989;
   border-radius: 20px;
   font-size: 17px;
-  padding: 0.5rem 2.5rem;
-  margin-right: 2rem;
+  padding: 0.5rem 2.3rem;
+  margin-left:1.3rem;
+  margin-right: 2.5rem;
 `;
 
 const LearnMoreButton = styled(Button)`
@@ -25,15 +26,14 @@ const LearnMoreButton = styled(Button)`
   border: solid 2px #084c61;
   border-radius: 20px;
   font-size: 17px;
-  padding: 0.5rem 1rem;
-  margin-right: 4.5rem;
+  padding: 0.5rem 2.3rem;
 `;
 
 const CallToAction = props => {
   return (
-    <Container>
+    <Container className="self-start">
       <JoinButton>
-        <Link to="/signup">Join</Link>
+        <Link to="/signup">Join Us</Link>
       </JoinButton>
       <LearnMoreButton>
         <Link to="/learnmore">Learn More</Link>
