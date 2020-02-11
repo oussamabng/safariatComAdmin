@@ -1,56 +1,78 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from './images/logoForWeb.png'
+import logo from "./images/logoForWeb.png";
+import HumbergerMenu from "./components/HumbergerMenu";
+import NavMenu from "./components/NavMenu";
 
+import styled from "styled-components";
 
+import Slogan from "./components/Slogan";
 
 const Header = () => {
-    return (
-    <div className="w-screen fixed z-20  flex justify-between items-center lg:px-20 px-4 bg-white lg:py-4 py-2 border-b border-gray-400">
-        <div className="w-screen lg:w-auto flex justify-between items-center">
-            <Link to="/">
-                <img src={logo} alt=""/>
-            </Link>
-            <label for="menu-toggle" className="lg:hidden block point-cursor">
-                <i className="fas fa-align-justify fa-2x"></i>
-            </label>
-            <input type="checkbox"  id="menu-toggle" className="hidden " />
-        </div>
-                   
-        <div id="menu" className="hidden lg:flex lg:items-center ">
-            <nav>
-                <ul className="lg:flex items-center justify-between text-base font-bold text-gray-700 pt-4 lg:pt-0">
-                    <li>
-                        <Link to="/" className="lg:p-4 py-3 px-0 block">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/services" className="lg:p-4 py-3 px-0 block">Service</Link>
-                    </li>
-                    <li>
-                        <Link to="/blog" className="lg:p-4 py-3 px-0 block">Blog</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact" className="lg:p-4 py-3 px-0 block">Contact</Link>
-                    </li>
-                    <li>
-                        <Link to="/about" className="lg:p-4 py-3 px-0 block">About us</Link>
-                    </li>
-                </ul>
-            </nav>
-            
-        </div>
-        <div className="hidden lg:flex justify-between items-center px-2 py-2 rounded-full bg-blue-100">
-                <i className="fas fa-search border-r-2 px-2 text-gray-600"></i>
-                <input className="appearance-none bg-transparent h-1 py-2 px-3 text-gray-700 leading-tight" id="search" type="text" placeholder="Search"/>
-        </div>
-        <div className="hidden lg:flex items-center">
-            <button className="bg-yellow text-white font-bold py-1 px-5 rounded-full button-shadow">login</button>
-        </div>
-    </div>
+  return (
+    <Container>
+      <div className="logo">
+        <Link to="/">
+          <img src={logo} width="105" height="42" alt="" />
+        </Link>
+      </div>
+      <HumbergerMenu />
+
+      <NavMenu />
+      <Slogan />
+
+      {/* Search */}
+      <div className="search" id="hs">
+        <i className="fas fa-search border-r-2 px-2 text-gray-600"></i>
+        <input
+          className="appearance-none bg-transparent h-1 py-2 px-3 text-gray-700 leading-tight"
+          id="search"
+          type="text"
+          placeholder="Search"
+        />
+      </div>
+
+      {/* Login */}
+      <div className=" login hidden lg:flex items-center" id="hs2">
+        <button className="hidden bg-yellow text-white font-bold py-1 px-5 rounded-full button-shadow">
+          login
+        </button>
+      </div>
+    </Container>
   );
 };
 
-
-
 export default Header;
+
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem;
+
+  position: relative;
+
+  // Logo
+  .logo {
+    display: inline-block;
+    flex-basis: 84%;
+    display: flex;
+    justify-content: center;
+  }
+
+  // Login And Search
+  .login,
+  .search {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .login,
+    .search {
+      display: block;
+    }
+  }
+`;
