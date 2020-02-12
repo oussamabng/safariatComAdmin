@@ -19,26 +19,26 @@ const Header = () => {
       </div>
       <HumbergerMenu />
 
-      <NavMenu />
-      <Slogan />
-
       {/* Search */}
-      <div className="search" id="hs">
-        <i className="fas fa-search border-r-2 px-2 text-gray-600"></i>
-        <input
-          className="appearance-none bg-transparent h-1 py-2 px-3 text-gray-700 leading-tight"
-          id="search"
-          type="text"
-          placeholder="Search"
-        />
+      <div className="right">
+        <NavMenu />
+        <div className="right__r">
+          <div className="search" id="hs">
+            <i className="fas fa-search border-r-2 px-2 text-gray-600"></i>
+            <input
+              className="appearance-none bg-transparent text-gray-700 leading-tight"
+              id="search"
+              type="text"
+              placeholder="Search"
+            />
+          </div>
+
+          {/* Login */}
+          <button className="loginBtn">login</button>
+        </div>
       </div>
 
-      {/* Login */}
-      <div className=" login hidden lg:flex items-center" id="hs2">
-        <button className="hidden bg-yellow text-white font-bold py-1 px-5 rounded-full button-shadow">
-          login
-        </button>
-      </div>
+      <Slogan />
     </Container>
   );
 };
@@ -51,28 +51,54 @@ const Container = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin: 0 1rem;
+  // margin: 0 1rem;
 
   position: relative;
 
   // Logo
   .logo {
-    display: inline-block;
     flex-basis: 84%;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   // Login And Search
-  .login,
-  .search {
+  .right {
     display: none;
   }
 
-  @media (min-width: 768px) {
-    .login,
-    .search {
-      display: block;
+  @media (min-width: 1024px) {
+    justify-content: flex-start;
+
+    .logo {
+      flex-basis: auto;
+      margin-left: 5.1rem;
+      justify-content: flex-start;
+    }
+
+    .right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 3.94rem;
+      margin-left: 3.4rem;
+      flex-grow: 1;
+    }
+
+    .right__r {
+      display: flex;
+      align-items: center;
+    }
+
+    // Login Button
+    .loginBtn {
+      font-size: 0.75rem;
+      color: #fff;
+      padding: 0.7rem 1.1rem;
+      border: solid 1px #ffb808;
+      border-radius: 20px;
+      background-color: #ffb808;
     }
   }
 `;

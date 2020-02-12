@@ -13,7 +13,7 @@ const Container = styled.div`
   font-size: 0.56rem;
   color: #167a91;
   flex-basis: 100%;
-  padding-top: 0.5rem;
+
   h1 {
     overflow: hidden;
     text-align: center;
@@ -39,6 +39,14 @@ const Container = styled.div`
   h1:after {
     left: 0.5em;
     margin-right: -50%;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 0.65rem;
+  }
+
+  @media (min-width: 1366px) {
+    font-size: 0.875rem;
   }
 `;
 

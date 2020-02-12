@@ -89,9 +89,10 @@ const Container = styled(HumMenu)`
     width: 100%;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
+
   // --------------
   //  List and List ITems
   .list {
