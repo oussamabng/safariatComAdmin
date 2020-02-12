@@ -6,7 +6,7 @@ export default function NavMenu(props) {
   return (
     <Container>
       <ul className="list">
-        <li className="list__item">
+        <li className="first list__item">
           <Link to="/">Home</Link>
         </li>
         <li className="list__item">
@@ -18,7 +18,7 @@ export default function NavMenu(props) {
         <li className="list__item">
           <Link to="/contact">Contact</Link>
         </li>
-        <li className="list__item last">
+        <li className="list__item">
           <Link to="/about">About us</Link>
         </li>
       </ul>
@@ -28,6 +28,7 @@ export default function NavMenu(props) {
 
 const Container = styled.nav`
   display: none;
+  z-index: 1;
 
   @media (min-width: 1024px) {
     display: flex;
@@ -39,12 +40,22 @@ const Container = styled.nav`
     }
 
     .list__item {
-      padding: 0 1.25rem;
-      border-right: solid 1px #eee;
+      color: #5d5d5d;
+      font-weight: bold;
+      padding: 0 1rem;
+      border-left: solid 1px #eee;
+      font-size: 0.7rem;
     }
 
-    .last {
+    .first {
       border: none;
+    }
+  }
+
+  @media (min-width: 1366px) {
+    .list__item {
+      padding: 0 1.6em;
+      font-size: 0.94rem;
     }
   }
 `;

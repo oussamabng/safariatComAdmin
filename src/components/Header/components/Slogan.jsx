@@ -14,6 +14,8 @@ const Container = styled.div`
   color: #167a91;
   flex-basis: 100%;
 
+  padding-top: 0.875rem;
+
   h1 {
     overflow: hidden;
     text-align: center;

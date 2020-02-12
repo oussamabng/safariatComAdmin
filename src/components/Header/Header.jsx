@@ -14,7 +14,7 @@ const Header = () => {
     <Container>
       <div className="logo">
         <Link to="/">
-          <img src={logo} width="105" height="42" alt="" />
+          <img src={logo} className="logo__img" alt="" />
         </Link>
       </div>
       <HumbergerMenu />
@@ -22,7 +22,9 @@ const Header = () => {
       {/* Search */}
       <div className="right">
         <NavMenu />
+
         <div className="right__r">
+          {/* Search */}
           <div className="search" id="hs">
             <i className="fas fa-search border-r-2 px-2 text-gray-600"></i>
             <input
@@ -51,16 +53,22 @@ const Container = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  // margin: 0 1rem;
 
   position: relative;
 
+  padding-top: 0.875rem;
+
   // Logo
   .logo {
-    flex-basis: 84%;
+    flex-basis: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .logo__img {
+    width: 6.25rem;
+    height: 2.6rem;
   }
 
   // Login And Search
@@ -71,10 +79,16 @@ const Container = styled.div`
   @media (min-width: 1024px) {
     justify-content: flex-start;
 
+    //Logo
     .logo {
       flex-basis: auto;
       margin-left: 5.1rem;
       justify-content: flex-start;
+    }
+
+    .logo__img {
+      width: 8.75rem;
+      height: 3.75rem;
     }
 
     .right {
@@ -91,6 +105,16 @@ const Container = styled.div`
       align-items: center;
     }
 
+    // Search
+    .search {
+      margin-right: 3rem;
+      z-index: 1;
+      background-color: white;
+      padding: 0.7rem 1rem;
+      border: solid 1px white;
+      border-radius: 50px;
+    }
+
     // Login Button
     .loginBtn {
       font-size: 0.75rem;
@@ -99,6 +123,19 @@ const Container = styled.div`
       border: solid 1px #ffb808;
       border-radius: 20px;
       background-color: #ffb808;
+      z-index: 1;
+    }
+  }
+
+  @media (min-width: 1366px) {
+    .logo__img {
+      width: 11.5rem;
+      height: 5.1rem;
+    }
+
+    .loginBtn {
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
     }
   }
 `;

@@ -9,6 +9,7 @@ const Hero = props => {
   return (
     <Container>
       <Header />
+      <img className="rightCloud" src="cloudR.png" alt="right cloud" />
       {/* <Carousel /> */}
       {/* <PlaneImg /> */}
     </Container>
@@ -24,6 +25,15 @@ const Container = styled.div`
   max-width: 1366px;
   // background-color: #ffffff;
   margin: 0 auto;
+  position: relative;
+  .rightCloud {
+    position: fixed;
+    // bottom: 47%;
+    // left: 40%;
+    transform: translate(42%, -23%);
+    z-index: 0;
+    opacity: 0.31;
+  }
 
   // Experiment
   font-size: calc(10px + (19 - 10) * ((100vw - 360px) / (1920 - 360)));

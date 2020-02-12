@@ -42,10 +42,13 @@ const HumMenu = ({ className, children }) => (
 );
 
 const Container = styled(HumMenu)`
-  display: block;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 1;
+
   color: #ffb808;
 
-  flex-basis: 14%;
+  flex-basis: 20%;
 
   input {
     display: none;
@@ -89,6 +92,10 @@ const Container = styled(HumMenu)`
     width: 100%;
   }
 
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
   @media (min-width: 1024px) {
     display: none;
   }
@@ -97,7 +104,7 @@ const Container = styled(HumMenu)`
   //  List and List ITems
   .list {
     position: absolute;
-    top: 5rem;
+    top: 5.5rem;
     right: 0;
     left: 0;
     width: 100%;
