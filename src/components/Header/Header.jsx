@@ -28,7 +28,7 @@ const Header = () => {
           <div className="search" id="hs">
             <i className="fas fa-search border-r-2 px-2 text-gray-600"></i>
             <input
-              className="appearance-none bg-transparent text-gray-700 leading-tight"
+              className="input appearance-none bg-transparent text-gray-700 leading-tight"
               id="search"
               type="text"
               placeholder="Search"
@@ -95,8 +95,8 @@ const Container = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-right: 3.94rem;
-      margin-left: 3.4rem;
+      margin-right: 3.2rem;
+      margin-left: 3.5rem;
       flex-grow: 1;
     }
 
@@ -113,6 +113,10 @@ const Container = styled.div`
       padding: 0.7rem 1rem;
       border: solid 1px white;
       border-radius: 50px;
+    }
+
+    .input {
+      width: 10.25rem;
     }
 
     // Login Button

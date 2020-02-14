@@ -17,7 +17,7 @@ import LearnMore from "./scenes/LearnMore/LearnMore.jsx";
 function App() {
   return (
     <Router>
-      {/* <Header className="w-full" /> */}
+      <Header />
       <div>
         <Switch>
           <Route component={Home} exact path="/"></Route>
@@ -32,7 +32,3 @@ function App() {
 }
 
 export default App;
-
-const paddingTop = {
-  paddingTop: "5rem"
-};

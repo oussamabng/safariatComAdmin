@@ -1,31 +1,28 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
+const small = "images/Plane/planeMobile.png";
+const medium = "images/Plane/plane-1.png";
+const large = "images/Plane/plane-2.png";
 
+const clientWidth = document.querySelector("html").clientWidth;
 
-
-export default function PlaneImg() {
-    return (
-        <Container className="mr-20"/>
-    )
-}
-
-
-const img = ({ className, children }) => (
-    <img className={className} src="plane.png" alt="plane img">
-      {children}
-    </img>
+const PlaneImg = () => {
+  return (
+    <Container>
+      {clientWidth <= 1024 ? (
+        <img src={small} alt="plane image" />
+      ) : clientWidth < 1920 ? (
+        <img src={medium} alt="plane image" />
+      ) : (
+        <img src={large} alt="plane image" />
+      )}
+    </Container>
   );
-  
-  const Container = styled(img)`
-    flex-basis:36vw;  
-    height: 80vh;
-    flex-shrink:3;
+};
 
+export default PlaneImg;
 
-   
-    @media (max-width: 1030px) {
-      display:none;
-    }
-
-  `;
+const Container = styled.div`
+  padding-top: 2rem;
+`;

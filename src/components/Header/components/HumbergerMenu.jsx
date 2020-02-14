@@ -60,6 +60,7 @@ const Container = styled(HumMenu)`
     width: 3.1rem;
     text-align: right;
     color: #ffb808;
+    line-height: 0.7;
   }
 
   .hr {

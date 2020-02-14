@@ -8,10 +8,9 @@ import PlaneImg from "./components/PlaneImg";
 const Hero = props => {
   return (
     <Container>
-      <Header />
-      <img className="rightCloud" src="cloudR.png" alt="right cloud" />
-      {/* <Carousel /> */}
-      {/* <PlaneImg /> */}
+      {/* <img className="rightCloud" src="cloudR.png" alt="right cloud" /> */}
+      <PlaneImg />
+      <Carousel />
     </Container>
   );
 };
@@ -20,9 +19,12 @@ export default Hero;
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  justify-content: space-between;
   max-width: 1366px;
+
   // background-color: #ffffff;
   margin: 0 auto;
   position: relative;
