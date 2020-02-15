@@ -28,8 +28,9 @@ const Container = styled.div`
   // background-color: #ffffff;
   margin: 0 auto;
   position: relative;
+
   .rightCloud {
-    position: fixed;
+    position: absolute;
     // bottom: 47%;
     // left: 40%;
     transform: translate(42%, -23%);
@@ -37,6 +38,12 @@ const Container = styled.div`
     opacity: 0.31;
   }
 
-  // Experiment
-  font-size: calc(10px + (19 - 10) * ((100vw - 360px) / (1920 - 360)));
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+
+  @media (min-width: 1366px) {
+    max-width: 1920px;
+  }
 `;

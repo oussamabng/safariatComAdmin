@@ -30,11 +30,13 @@ const Carousel = props => {
 
   return (
     <Container>
-      <a className="arrow" onClick={next} href="#">
+      <a className="arrow" onClick={next}>
         <img className="TopArrow " src="TopArrow.svg" alt="top arrow" />
       </a>
 
-      <h3 className="title">{text[index].title}</h3>
+      <h3 className={`title ${index === 0 ? "" : "titleLeft"}`}>
+        {text[index].title}
+      </h3>
       <h5 className="subTitle"> {text[index].subTitle} </h5>
 
       <div className="carouselContent">
@@ -45,7 +47,7 @@ const Carousel = props => {
         </div>
         <p
           className={`text font-montserrat  ${
-            index === 0 ? "textFull" : "textHalf"
+            index === 0 ? "textFull" : index === 1 ? "textMen" : "textWomen"
           } `}
         >
           {text[index].text}
@@ -61,7 +63,7 @@ const Carousel = props => {
         </div>
       </div>
 
-      <a className="arrow" onClick={prev} href="#">
+      <a className="arrow" onClick={prev}>
         <img className="DownArrow " src="DownArrow.svg" alt="top arrow" />
       </a>
 
@@ -93,8 +95,27 @@ const Container = styled.div`
     justify-content: flex-start;
     align-item: center;
     position: relative;
-
     padding-left: 2.1rem;
+
+    max-width: 22.875rem;
+
+    @media (min-width: 768px) {
+      flex: 1 1 auto;
+
+      max-width: calc(380px + (500 - 380) * ((100vw - 768px) / (1024 - 768)));
+    }
+
+    @media (min-width: 1024px) {
+      flex: 1 1 auto;
+      max-width: calc(500px + (630 - 500) * ((100vw - 1024px) / (1336 - 1024)));
+      padding-left: 3.4rem;
+    }
+
+    @media (min-width: 1336px) {
+      flex: 1 1 auto;
+      max-width: calc(627px + (750 - 627) * ((100vw - 1366px) / (1920 - 1366)));
+      padding-left: 3.4rem;
+    }
   }
 
   //Carousel Content text
@@ -104,6 +125,16 @@ const Container = styled.div`
     color: #167a91;
     font-weight: bold;
     opacity: 0.75;
+
+    @media (min-width: 768px) {
+      font-size: calc(26px + (50 - 26) * ((100vw - 768px) / (1920 - 768)));
+    }
+  }
+
+  .titleLeft {
+    @media (min-width: 768px) {
+      width: 73%;
+    }
   }
 
   .subTitle {
@@ -111,24 +142,61 @@ const Container = styled.div`
     color: #ffb808;
     font-weight: bold;
     opacity: 0.72;
+
+    @media (min-width: 768px) {
+      font-size: calc(15px + (28 - 15) * ((100vw - 768px) / (1920 - 768)));
+    }
   }
 
   .text {
     font-weight: 400;
     font-size: 0.75rem;
-    flex-basis: 14.8rem;
+    // font-size: calc(0.75rem + (24 - 0.75) * ((100vw - 360px) / (1920 - 360)));
+
     z-index: 1;
     margin-left: 1.15rem;
     color: #838383;
     margin-top: 0.75rem;
+
+    @media (min-width: 1024px) {
+      font-size: calc(12px + (24 - 12) * ((100vw - 768px) / (1920 - 768)));
+    }
   }
 
   .textFull {
     flex-basis: 13rem;
+
+    @media (min-width: 768px) {
+      flex-basis: calc(208px + (768 - 208) * ((100vw - 768px) / (1920 - 768)));
+    }
   }
 
-  .textHalf {
+  .textWomen {
     flex-basis: 10rem;
+
+    @media (min-width: 768px) {
+      flex-basis: calc(166px + (270 - 166) * ((100vw - 768px) / (1024 - 768)));
+    }
+
+    @media (min-width: 1024px) {
+      flex-basis: calc(
+        270px + (500 - 270) * ((100vw - 1024px) / (1920 - 1024))
+      );
+    }
+  }
+
+  .textMen {
+    flex-basis: 10rem;
+
+    @media (min-width: 768px) {
+      flex-basis: calc(166px + (250 - 166) * ((100vw - 768px) / (1024 - 768)));
+    }
+
+    @media (min-width: 1024px) {
+      flex-basis: calc(
+        250px + (500 - 250) * ((100vw - 1024px) / (1920 - 1024))
+      );
+    }
   }
 
   // Carousel Content Images
@@ -138,18 +206,26 @@ const Container = styled.div`
   }
 
   .women {
-    flex-basis: 7.25rem;
-    height: 10.4rem;
-    top: 0;
+    // flex-basis: 4.25rem;
+    height: 7.5rem;
+    top: 50;
     z-index: 0;
     margin-right: 4rem;
+
+    @media (min-width: 768px) {
+      height: calc(120px + (220 - 120) * ((100vw - 768px) / (1920 - 768)));
+    }
   }
 
   .men {
-    flex-basis: 7.25rem;
-    height: 10.4rem;
-    transform: translateY(-25%);
+    // flex-basis: 7.25rem;
+    height: 9.4rem;
+    transform: translateY(-23%);
     z-index: 0;
+
+    @media (min-width: 768px) {
+      height: calc(150px + (315 - 150) * ((100vw - 768px) / (1920 - 768)));
+    }
   }
 
   // ---------------------------------------
@@ -167,9 +243,11 @@ const Container = styled.div`
   }
 
   // Styling Dot
+
   .dots {
     align-self: center;
   }
+
   .dot {
     display: block;
     height: 0.625rem;
