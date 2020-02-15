@@ -167,7 +167,7 @@ const Container = styled.div`
     flex-basis: 13rem;
 
     @media (min-width: 768px) {
-      flex-basis: calc(208px + (768 - 208) * ((100vw - 768px) / (1920 - 768)));
+      flex-basis: calc(208px + (720 - 208) * ((100vw - 768px) / (1920 - 768)));
     }
   }
 
