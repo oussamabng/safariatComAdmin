@@ -63,15 +63,24 @@ const Carousel = props => {
         </div>
       </div>
 
-      <a className="arrow" onClick={prev}>
+      <a className="arrow lastArrow" onClick={prev}>
         <img className="DownArrow " src="DownArrow.svg" alt="top arrow" />
       </a>
 
+      <div className="btnContainer">
+        <a href="#" className="link firstBtn">
+          <button className="link__btn">join us</button>
+        </a>
+        <a href="#" className="link lastBtn">
+          <button className="link__btn">learn more</button>
+        </a>
+      </div>
+
       {/* 
       arrow top **
-      title 
-      subtitle 
-      dots and text and images
+      title  ** 
+      subtitle ** 
+      dots and text and images ********
       arrow down **
       buttons 
       */}
@@ -167,7 +176,7 @@ const Container = styled.div`
     flex-basis: 13rem;
 
     @media (min-width: 768px) {
-      flex-basis: calc(208px + (720 - 208) * ((100vw - 768px) / (1920 - 768)));
+      flex-basis: calc(215px + (720 - 215) * ((100vw - 768px) / (1920 - 768)));
     }
   }
 
@@ -189,7 +198,7 @@ const Container = styled.div`
     flex-basis: 10rem;
 
     @media (min-width: 768px) {
-      flex-basis: calc(166px + (250 - 166) * ((100vw - 768px) / (1024 - 768)));
+      flex-basis: calc(175px + (250 - 175) * ((100vw - 768px) / (1024 - 768)));
     }
 
     @media (min-width: 1024px) {
@@ -236,10 +245,19 @@ const Container = styled.div`
     height: 2.25rem;
     cursor: pointer;
     z-index: 0;
+
+    @media (min-width: 1560px) {
+      width: 3.125rem;
+      height: 3.125rem;
+    }
   }
 
-  .DownArrow {
-    margin-top: 3.2rem;
+  .lastArrow {
+    margin-top: 0.6rem;
+
+    @media (min-width: 1024px) {
+      margin-top: 2.2rem;
+    }
   }
 
   // Styling Dot
@@ -260,5 +278,65 @@ const Container = styled.div`
   .bigDot {
     width: 0.84rem;
     height: 0.84rem;
+  }
+
+  // -------------------------------
+  // Styling Btns
+  .btnContainer {
+    // width: 100%;
+    // display: flex;
+    // justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .firstBtn {
+    position: relative;
+    right: 2rem;
+    font-size: 11px;
+    color: white;
+    background-color: #067989;
+    padding: 0.4rem 1.3rem;
+    border-radius: 50px;
+
+    @media (min-width: 768px) {
+      font-size: calc(11px + (26 - 11) * ((100vw - 768px) / (1920 - 768)));
+
+      padding-left: calc(20px + (50 - 20) * ((100vw - 768px) / (1920 - 768)));
+
+      padding-right: calc(20px + (50 - 20) * ((100vw - 768px) / (1920 - 768)));
+
+      padding-top: calc(6.2px + (23 - 6.2) * ((100vw - 768px) / (1920 - 768)));
+
+      padding-bottom: calc(
+        6.2px + (23 - 6.2) * ((100vw - 768px) / (1920 - 768))
+      );
+    }
+  }
+
+  .lastBtn {
+    position: relative;
+    left: 3rem;
+
+    font-size: 10px;
+    border: solid 1.5px #084c61;
+    border-radius: 50px;
+    padding: 0.35rem 0.8rem;
+    @media (min-width: 768px) {
+      font-size: calc(10px + (26 - 10) * ((100vw - 768px) / (1920 - 768)));
+
+      padding-left: calc(
+        12.8px + (28 - 12.8) * ((100vw - 768px) / (1920 - 768))
+      );
+
+      padding-right: calc(
+        12.8px + (28 - 12.8) * ((100vw - 768px) / (1920 - 768))
+      );
+
+      padding-top: calc(5.5px + (23 - 5.5) * ((100vw - 768px) / (1920 - 768)));
+
+      padding-bottom: calc(
+        5.5px + (23 - 5.5) * ((100vw - 768px) / (1920 - 768))
+      );
+    }
   }
 `;

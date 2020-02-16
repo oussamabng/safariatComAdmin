@@ -49,7 +49,6 @@ const Container = styled(HumMenu)`
   color: #ffb808;
 
   flex-basis: 20%;
-
   input {
     display: none;
   }
@@ -57,7 +56,7 @@ const Container = styled(HumMenu)`
   // Styling Humberger Lines
   .hum-menu {
     display: block;
-    width: 3.1rem;
+    width: 2.75rem;
     text-align: right;
     color: #ffb808;
     line-height: 0.7;
@@ -72,15 +71,15 @@ const Container = styled(HumMenu)`
   }
 
   .hr1 {
-    width: 3.1rem;
+    width: 2.65rem;
   }
 
   .hr2 {
-    width: 2.9rem;
+    width: 2.75rem;
   }
 
   .hr3 {
-    width: 2.7rem;
+    width: 2.55rem;
   }
 
   // Toggling Menu State

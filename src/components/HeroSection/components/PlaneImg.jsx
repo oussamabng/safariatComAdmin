@@ -24,7 +24,12 @@ const PlaneImg = () => {
 export default PlaneImg;
 
 const Container = styled.div`
+  z-index: 1;
   padding-top: 2rem;
+  max-width: 270px;
+  .imgSmall {
+    width: 240px;
+  }
 
   @media (min-width: 768px) and (max-width: 1023px) {
     max-width: 300px;

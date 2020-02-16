@@ -8,7 +8,7 @@ import PlaneImg from "./components/PlaneImg";
 const Hero = props => {
   return (
     <Container>
-      {/* <img className="rightCloud" src="cloudR.png" alt="right cloud" /> */}
+      {/* <img className="leftCloud" src="leftCloud.png" alt="cloud" /> */}
       <PlaneImg />
       <Carousel />
     </Container>
@@ -22,21 +22,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  overflow: hidden;
   max-width: 1366px;
 
   // background-color: #ffffff;
   margin: 0 auto;
-  position: relative;
-
-  .rightCloud {
-    position: absolute;
-    // bottom: 47%;
-    // left: 40%;
-    transform: translate(42%, -23%);
-    z-index: 0;
-    opacity: 0.31;
-  }
+  // position: relative;
 
   @media (min-width: 768px) {
     flex-direction: row-reverse;

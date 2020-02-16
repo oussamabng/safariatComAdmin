@@ -61,6 +61,7 @@ const Container = styled.div`
   // Logo
   .logo {
     flex-basis: 80%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +70,10 @@ const Container = styled.div`
   .logo__img {
     width: 6.25rem;
     height: 2.6rem;
+
+    @media (max-width: 1023px) {
+      margin-left: 20vw;
+    }
   }
 
   // Login And Search
