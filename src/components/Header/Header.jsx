@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "./images/logoForWeb.png";
+// import logo from "./images/logoForWeb.png";
 import HumbergerMenu from "./components/HumbergerMenu";
 import NavMenu from "./components/NavMenu";
 
@@ -9,12 +9,21 @@ import styled from "styled-components";
 
 import Slogan from "./components/Slogan";
 
+const clientWidth = document.querySelector("html").clientWidth;
+
+const smallLogo = "images/logoForWeb.png";
+const bigLogo = "images/logoForWeb-1x.png";
+
 const Header = () => {
   return (
     <Container>
       <div className="logo">
         <Link to="/">
-          <img src={logo} className="logo__img" alt="" />
+          {clientWidth < 768 ? (
+            <img src={smallLogo} className="logo__img" alt="" />
+          ) : (
+            <img src={bigLogo} className="logo__img" alt="" />
+          )}
         </Link>
       </div>
       <HumbergerMenu />
@@ -56,7 +65,7 @@ const Container = styled.div`
 
   position: relative;
 
-  padding-top: 0.875rem;
+  // padding-top: 0.875rem;
 
   // Logo
   .logo {
@@ -144,7 +153,7 @@ const Container = styled.div`
 
     .loginBtn {
       font-size: 1rem;
-      padding: 1rem 1.5rem;
+      padding: 0.55rem 2.6rem;
     }
   }
 `;
