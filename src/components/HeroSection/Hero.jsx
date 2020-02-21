@@ -1,20 +1,12 @@
 import React from "react";
 
-import Header from "../Header/Header";
 import Carousel from "./components/Carousel";
 import styled from "styled-components";
 import PlaneImg from "./components/PlaneImg";
-<<<<<<< HEAD
-=======
-import CallToAction from "./components/components/CallToAction";
-
-
->>>>>>> 081bdd097f9322abf32ee9394b6c48bce142a882
 
 const Hero = props => {
   return (
     <Container>
-      {/* <img className="leftCloud" src="leftCloud.png" alt="cloud" /> */}
       <PlaneImg />
       <Carousel />
     </Container>
