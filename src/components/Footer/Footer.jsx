@@ -3,7 +3,7 @@ import Title from '../Title/Title'
 import footerImg from './images/footer_img.png'
 const Footer = () => {
   return (
-    <div class="bg-white pt-8 text-center h-40 font-montserrat text-gray lh-17">
+    <div className="bg-white pt-8 text-center h-40 font-montserrat text-gray lh-17">
       <button className="bg-yellow text-white text-xl font-bold font-normal py-3 mt-4 mb-8 px-12 rounded-full button-shadow">
         join us
       </button>
