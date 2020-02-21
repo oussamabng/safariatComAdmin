@@ -1,5 +1,4 @@
 .main_header_admin{
-    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -11,6 +10,7 @@
     box-shadow: 0 8px 10px -8px #999;
     left: 0;
     right: 0;
+    margin-left:80px;
 }
 .profile_admin{
     display: flex;
