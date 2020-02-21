@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <Container className="bg-white">
       <Hero />
-      {/* <ListCards />
-      <Footer /> */}
+      <ListCards />
+      <Footer />
     </Container>
   );
 };
