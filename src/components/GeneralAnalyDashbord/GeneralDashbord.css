@@ -1,0 +1,83 @@
+.iconCard{
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size: unset;
+    height:74px;
+    width:74px;
+    border-radius: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconCard.tache{
+    background-image: url("./images/tache.svg");
+    background-color: #167A91;
+}
+.iconCard.timer{
+    background-image: url("./images/timer.svg");
+    background-color: #FF9100;
+}
+.iconCard.v{
+    background-image: url("./images/v.svg");
+    background-color: #FFB500;
+}
+.iconCard.mail{
+    background-image: url("./images/mail.svg");
+    background-color: #084C61;
+}
+.mainCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 216px;
+    border-radius: 23px;
+    background-color: #ECECEC;
+    padding: 10px 5px;
+}
+.cardInformations{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+
+}
+.cardInformations span{
+    font-size: 11px;
+    color: #6A6A6A;
+    white-space: nowrap;
+}
+.cardInformations p{
+    font-size: 38px;
+    color: black;
+    font-weight: 500;
+}
+.mainGeneralDashbord{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 80px;
+    padding: 25px 0;
+}
+.generalCards{
+    margin: 0 35px;
+    padding: 15px;
+}
+.GeneralDash{
+  margin: 0 25px;
+}
+.GeneralDash h1{
+    font-size: 34px;
+    color: black;
+}
+.mainCardsGeneral{
+    background-color: white;
+    box-shadow:  2px 2px 5px 2px #999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    border-radius: 20px;
+}

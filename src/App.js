@@ -14,9 +14,11 @@ import About from "./scenes/About/About.jsx";
 import Admin from "./scenes/AdminDashbord/Admin";
 /*import SignUp from "./scenes/SignUp/SignUp.jsx";
 import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
+import GeneralDashbord from "./components/GeneralAnalyDashbord/GeneralDashbord.jsx";
 
 function App() {
   return (
+
     <Router>
         <Switch>
           <Route component={Home} exact path="/" ></Route>
@@ -25,6 +27,7 @@ function App() {
           <Route component={Contact} path="/contact" ></Route>
           <Route component={About} path="/about" ></Route>
           <Route component={Admin} path="/admin"></Route>
+          <Route component={GeneralDashbord} path="/card"></Route>
         </Switch>
     </Router>
 

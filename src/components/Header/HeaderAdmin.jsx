@@ -1,5 +1,4 @@
 import React,{Component} from "react";
-import {} from "react-bootstrap";
 import "./HeaderAdmin.css";
 import Notification from "./images/notifications.svg";
 import Ouss from "./images/ouss.jpg";
@@ -7,12 +6,17 @@ import Ouss from "./images/ouss.jpg";
 class HeaderAdmin extends Component{
     constructor(props){
         super(props);
-        this.state={}
+        this.state={
+            clicked :false
+        }
+    }
+    if (clicked){
+
     }
     render(){
         return(
         <>
-        <div className="main_header_admin">
+        <div className={"main_header_admin"}>
             <nav className="navbar navbar-static-top navbar_header_admin">
                 <div className="profile_admin">
                     <div className="search_admin input-group">
