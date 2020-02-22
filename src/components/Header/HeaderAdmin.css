@@ -49,6 +49,7 @@
 .flexCol p{
     font-size: 20;
     color: black;
+    white-space: nowrap;
 }
 .flexCol p{
     font-size: 10px;
