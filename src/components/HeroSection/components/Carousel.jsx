@@ -29,40 +29,6 @@ const Carousel = props => {
   };
 
   return (
-<<<<<<< HEAD
-    <Container className="pl-4 md:pl-0 lg:ml-20 relative md:w-7/12 lg:w-12/12 mx-auto">
-      
-      
-
-      <div className="mb-4 sm:mb-16 lg:mb-10 w-1/12">
-        <Dot scale={index === 0 ? 1.25 : .875}  />
-        <Dot scale={index === 1 ? 1.25 : .875}  />
-        <Dot scale={index === 2 ? 1.25 : .875} className="  md:-mb-8 lg:-mb-20" />
-      </div>
-
-      <div className=" flex flex-col  cntBox ">
-
-        <a className="arrow  self-start" onClick={next}>
-          <TopArrow />
-        </a>
-
-        {text.map((el, i) => {
-          if (index === i) {
-            return (
-              <BoxContainer 
-              key={`box-${i}`} 
-              title={el.title}
-              subTitle={el.subTitle}
-              text={el.text}
-              index={index} />
-              
-            );
-          }
-        })}
-        
-        <a className=" arrow self-start" onClick={prev}>
-          <DownArrow />
-=======
     <Container>
       <a className="arrow" onClick={next}>
         <img className="TopArrow " src="TopArrow.svg" alt="top arrow" />
@@ -107,7 +73,6 @@ const Carousel = props => {
         </a>
         <a href="#" className="link lastBtn">
           <button className="link__btn">learn more</button>
->>>>>>> 54889d2f5fd443ece58c758ecba7457df998a2cc
         </a>
       </div>
 
@@ -222,42 +187,6 @@ const Container = styled.div`
       flex-basis: calc(166px + (270 - 166) * ((100vw - 768px) / (1024 - 768)));
     }
 
-<<<<<<< HEAD
-  .cntBox {
-    flex-basis: 90%;
-
-    @media (max-width:1024px){
-      width:70%;
-      margin:0 auto;
-    }
-  }
-
-  @media (min-width:768px){
-   
-  }
-
-  @media (min-width:1024px){
-    margin:0 auto;
-    padding-left:2rem;
-  }
-
-  .arrow {
-
-    @media (min-width:100px){
-      margin-left:8rem;
-    }
-
-    @media (min-width:768px){
-      margin-left:10rem;
-    }
-
-    @media (min-width:1024px){
-      margin-left:12rem;
-    }
-
-    
-
-=======
     @media (min-width: 1024px) {
       flex-basis: calc(
         270px + (500 - 270) * ((100vw - 1024px) / (1920 - 1024))
@@ -344,7 +273,6 @@ const Container = styled.div`
     background-color: #ffb808;
     border-radius: 50%;
     margin-top: 0.875rem;
->>>>>>> 54889d2f5fd443ece58c758ecba7457df998a2cc
   }
 
   .bigDot {

@@ -16,7 +16,6 @@ const Hero = props => {
 export default Hero;
 
 const Container = styled.div`
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,19 +25,6 @@ const Container = styled.div`
 
   // background-color: #ffffff;
   margin: 0 auto;
-<<<<<<< HEAD
-  padding: 2rem 0;
-
-
-
-
-  @media (max-width: 1024px){
-    margin-right: 2rem;
-    flex-direction: column-reverse;
-    margin:0 auto;
-  }
-  
-=======
   // position: relative;
 
   @media (min-width: 768px) {
@@ -49,5 +35,4 @@ const Container = styled.div`
   @media (min-width: 1366px) {
     max-width: 1920px;
   }
->>>>>>> 54889d2f5fd443ece58c758ecba7457df998a2cc
 `;

@@ -19,35 +19,6 @@ const PlaneImg = () => {
       )}
     </Container>
   );
-<<<<<<< HEAD
-  
-  const Container = styled(img)`
-    
-  @media (min-width: 100px) {
-    // display:block;
-  max-width:38vw;  
-    margin:0 auto;
-  }
-
-   
-  @media (min-width: 768px) {
-      // display:block;
-    max-width:34vw;  
-      margin:0 auto;
-    }
-
-    @media (min-width:1024px){
-      flex-basis:36vw;  
-      height: 80vh;
-      flex-shrink:3;
-    
-    }
-   
-    
-    
-
-  `;
-=======
 };
 
 export default PlaneImg;
@@ -73,4 +44,3 @@ const Container = styled.div`
     max-width: 820px;
   }
 `;
->>>>>>> 54889d2f5fd443ece58c758ecba7457df998a2cc
