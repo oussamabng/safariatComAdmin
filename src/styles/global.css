@@ -1,26 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 /* Background colors styles */
 .bg-gray {
   background: #f5f5f5;
 }
 
 .bg-yellow {
-  background: #ffb808
+  background: #ffb808;
 }
-/* Text colors styles */ 
+/* Text colors styles */
 .text-gray {
   color: #5f5f5f;
 }
+.text-blackgray {
+  color: #545454
+}
 /* height and width styles */
 .w-60 {
-  width: 600px
+  width: 600px;
 }
 
 .h-60 {
-    height: 500px;
+  height: 500px;
 }
 /* margin and padding styles */
 .mr-145 {
-  margin-right: 14.5rem
+  margin-right: 14.5rem;
 }
 
 .mr-19 {
@@ -37,7 +48,7 @@
 }
 /* font styles */
 .font-comfortaa {
-  font-family: Comfortaa
+  font-family: Comfortaa;
 }
 
 .font-montserrat {
