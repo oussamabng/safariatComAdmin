@@ -14,7 +14,7 @@ const clientWidth = document.querySelector("html").clientWidth;
 const smallLogo = "images/logoForWeb.png";
 const bigLogo = "images/logoForWeb-1x.png";
 
-const Header = () => {
+const HomeHeader = () => {
   return (
     <Container>
       <div className="logo">
@@ -54,7 +54,7 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;
 
 const Container = styled.div`
   width: 100%;

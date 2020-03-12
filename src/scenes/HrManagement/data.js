@@ -1,0 +1,64 @@
+const employees = [
+  {
+    id: 1,
+    name: "mustapha name",
+    role: "role role",
+    personalInfo: {
+      birthDate: "17/06/1997",
+      status: "single",
+      phone: "0549555555"
+    },
+    department: "Hr",
+    hireDate: "01/01/2020",
+    employeeDocument: {
+      link: "#"
+    }
+  },
+  {
+    id: 1,
+    name: "kada name",
+    role: "role role",
+    personalInfo: {
+      birthDate: "17/06/1997",
+      status: "single",
+      phone: "0549555555"
+    },
+    department: "Hr",
+    hireDate: "01/01/2020",
+    employeeDocument: {
+      link: "#"
+    }
+  },
+  {
+    id: 1,
+    name: "name daho",
+    role: "role role",
+    personalInfo: {
+      birthDate: "17/06/1997",
+      status: "single",
+      phone: "0549555555"
+    },
+    department: "marketing",
+    hireDate: "01/01/2020",
+    employeeDocument: {
+      link: "#"
+    }
+  },
+  {
+    id: 1,
+    name: "name abdo",
+    role: "role role",
+    personalInfo: {
+      birthDate: "17/06/1997",
+      status: "single",
+      phone: "0549555555"
+    },
+    department: "sales",
+    hireDate: "01/01/2020",
+    employeeDocument: {
+      link: "#"
+    }
+  }
+];
+
+export default employees;
