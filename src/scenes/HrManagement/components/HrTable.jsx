@@ -83,8 +83,11 @@ export default function HrTable(props) {
 }
 
 const Container = styled.div`
+  border-radius: 10px;
+  width: 100%;
   .table {
     width: 100%;
+    margin-top: 0.75rem;
   }
 
   .thead {

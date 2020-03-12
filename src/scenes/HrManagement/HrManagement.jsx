@@ -31,10 +31,6 @@ export default class HrManagement extends Component {
     });
   }
 
-  addEmployeeHandler() {
-    console.log("add Employee");
-  }
-
   toggleViewHandler = (e, value) => {
     switch (value) {
       case "employeesView":
@@ -55,6 +51,14 @@ export default class HrManagement extends Component {
         break;
     }
   };
+
+  addEmployeeHandler() {
+    console.log("add Employee");
+  }
+
+  addTasksHandler() {
+    console.log("add Tasks");
+  }
 
   // Employees functions
   changeSearchedName(name) {
@@ -164,7 +168,7 @@ export default class HrManagement extends Component {
             this.changeSearchedDepartment(department)
           }
           addHandler={this.addEmployeeHandler}
-          add="add Employee"
+          add="+Add Employee"
           search="search employees"
           view="employees"
           selectOptions={this.state.departmentsOptions}
@@ -173,7 +177,7 @@ export default class HrManagement extends Component {
     } else if (isTasksView) {
       return (
         <TableActions
-          // searchedTask={task => this.changeSearchedName(task)}
+          addHandler={this.addTasksHandler}
           add="add Task"
           search="search tasks"
           view="tasks"
@@ -214,18 +218,20 @@ export default class HrManagement extends Component {
             <div className="hrManagement__top">
               <h3 className="hrManagement__top__title">HR HrManagement</h3>
               <hr className="hrManagement__top__hr"></hr>
-              <button
-                className="hrManagement__top__button employeesViewBTN"
-                onClick={e => this.toggleViewHandler(e, "employeesView")}
-              >
-                Employees Management
-              </button>
-              <button
-                className="hrManagement__top__button tasksViewBTN"
-                onClick={e => this.toggleViewHandler(e, "tasksView")}
-              >
-                Tasks Management
-              </button>
+              <div className="hrManagement__top__buttons">
+                <button
+                  className="hrManagement__top__button employeesViewBTN"
+                  onClick={e => this.toggleViewHandler(e, "employeesView")}
+                >
+                  Employees Management
+                </button>
+                <button
+                  className="hrManagement__top__button tasksViewBTN"
+                  onClick={e => this.toggleViewHandler(e, "tasksView")}
+                >
+                  Tasks Management
+                </button>
+              </div>
             </div>
             <div className="hrManagement__content">
               {this.renderTableActions()}
@@ -245,28 +251,28 @@ const Container = styled.div`
   }
   .hrManagement {
     width: 87%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 1rem 1.6rem;
+    // padding: 1rem 1.6rem;
     margin: 0 auto;
   }
 
   .hrManagement__top {
+    margin-top: 2rem;
+    padding: 0 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .hrManagement__top__title {
-    // margin-right: 100px;
     vertical-align: middle;
-    display: inline-block;
+    font-size: 1.2rem;
+    color: #171717;
   }
 
   .hrManagement__top__hr {
     background: #000;
     border: 0;
     color: #000;
-    display: inline-block;
-    vertical-align: middle;
-
     height: 1px;
     width: 50%;
   }
@@ -274,15 +280,24 @@ const Container = styled.div`
   .hrManagement__top__button {
     display: inline-block;
     vertical-align: middle;
+    padding: 0.65rem;
+    border-radius: 30px;
   }
 
   .employeesViewBTN {
     color: white;
     background-color: #ffcc4e;
+    margin-right: 0.5rem;
   }
 
   .tasksViewBTN {
     color: #4d4d4d;
     background-color: white;
+  }
+
+  .hrManagement__content {
+    background-color: #ffffff;
+    padding: 1rem 1.6rem;
+    margin-top: 2rem;
   }
 `;

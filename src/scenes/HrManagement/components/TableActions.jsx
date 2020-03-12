@@ -5,7 +5,7 @@ export default function TableActions(props) {
   const renderSearch = () => {
     return props.view === "employees" ? (
       <label className="searchLabel" for="search">
-        search
+        <i className="fas fa-search "></i>
         <input
           className="search"
           onChange={e => props.searchedName(e.target.value)}
@@ -45,7 +45,17 @@ export default function TableActions(props) {
     );
   };
 
-  const renderAddButton = () => {};
+  const renderAddButton = () => {
+    return props.view === "employees" ? (
+      <button className="addEmployee addBtn" onClick={e => props.addHandler()}>
+        {props.add}
+      </button>
+    ) : (
+      <button className="addTasks addBtn" onClick={e => props.addHandler()}>
+        {props.add}
+      </button>
+    );
+  };
 
   return (
     <Container>
@@ -54,9 +64,10 @@ export default function TableActions(props) {
         {renderSelect()}
       </div>
       <div className="right">
-        <button className="addEmployee" onClick={e => props.addHandler()}>
-          {props.add}
-        </button>
+        {renderAddButton()}
+        <a href="#" className="infoLink">
+          i
+        </a>
       </div>
     </Container>
   );
@@ -95,6 +106,24 @@ const Container = styled.div`
   }
   .select,
   .searchLabel {
-    border-radius: 5px;
+    border-radius: 15px;
+  }
+
+  .addBtn {
+    background-color: #084c61;
+    color: #fff;
+    padding: 1rem 4rem;
+    border-radius: 15px;
+    margin-right: 1.5rem;
+  }
+
+  .infoLink {
+    font-size: 1rem;
+    color: #b3b8bd;
+    border: solid 1px #b3b8bd;
+    border-radius: 100%;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
   }
 `;
