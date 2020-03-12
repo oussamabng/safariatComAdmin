@@ -7,8 +7,9 @@ import Img2 from "./images/pic2.png";
 import { ReactComponent as ArrowUp } from './images/up-arrow(1).svg';
 import { ReactComponent as ArrowDown } from './images/down-arrow(1).svg';
 import StarRatingComponent from 'react-star-rating-component';
-
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
  export class GeneralDashbord extends Component{
     constructor(props){
@@ -20,6 +21,13 @@ import StarRatingComponent from 'react-star-rating-component';
     
     render(){
         const { rating } = this.state;
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3
+          };
         return(
             <>
             <div style={{
@@ -42,7 +50,7 @@ import StarRatingComponent from 'react-star-rating-component';
                     }} href="#">Users interactions</a>
                 </div>
             </section>
-            
+            <div className="separateSections">
             <section className="topProducts">
                 <div className="ContainerSect">
                 <div className="TitleP">
@@ -51,7 +59,7 @@ import StarRatingComponent from 'react-star-rating-component';
                     </div>
                 </div>
             <div className="tableProduct">
-                <Table responsive bordered hover>
+                <Table className="myTableProduct" responsive bordered hover>
                     <thead>
                         <tr className="firstTr">
                             <th style={{
@@ -241,10 +249,42 @@ import StarRatingComponent from 'react-star-rating-component';
             </div>
                 </div>
             </section>
+            <section className="topTours">
+            <div className="ContainerSectD">
+                <div className="TitleP">
+                    <div className="GeneralDash">
+                        <p>Top products</p>
+                    </div>
+                </div>
+                </div>
+                <div>
+        <h2> Single Item</h2>
+        <Slider {...settings}>
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>2</h3>
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+          <div>
+            <h3>4</h3>
+          </div>
+          <div>
+            <h3>5</h3>
+          </div>
+          <div>
+            <h3>6</h3>
+          </div>
+        </Slider>
+      </div>
+            </section>
+            </div>
             <section className="GeneralGraphX">
                 <GeneralGraph />
             </section>
-            
             </div>
             </>
             
