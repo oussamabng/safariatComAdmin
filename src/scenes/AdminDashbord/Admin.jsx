@@ -11,6 +11,7 @@ class Admin extends Component{
     render(){
         return(
         <>
+        
         <HeaderAdmin/>
         <AsideAdmin/>
         <GeneralDashbord/>

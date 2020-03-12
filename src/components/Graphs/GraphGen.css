@@ -1,0 +1,45 @@
+
+.rowGraph{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+    margin: 0 5%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.apexcharts-toolbar{
+    display: none!important;
+}
+.apexcharts-xaxis{
+    display: none!important;
+}
+.apexcharts-title-text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #414141;
+    line-height: 1.19;
+}
+.apexcharts-title-text{
+    font-family: "Montserrat";
+
+    font-size: 18px;
+  
+    font-weight: normal;
+  
+    font-stretch: normal;
+  
+    font-style: normal;
+  
+    line-height: 1.19;
+  
+    letter-spacing: normal;
+  
+    text-align: left;
+  
+    color: #414141;
+}

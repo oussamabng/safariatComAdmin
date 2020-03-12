@@ -1,58 +1,4 @@
-.iconCard{
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size: unset;
-    height:74px;
-    width:74px;
-    border-radius: 17px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.iconCard.tache{
-    background-image: url("./images/tache.svg");
-    background-color: #167A91;
-}
-.iconCard.timer{
-    background-image: url("./images/timer.svg");
-    background-color: #FF9100;
-}
-.iconCard.v{
-    background-image: url("./images/v.svg");
-    background-color: #FFB500;
-}
-.iconCard.mail{
-    background-image: url("./images/mail.svg");
-    background-color: #084C61;
-}
-.mainCard{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    max-width: 216px;
-    border-radius: 23px;
-    background-color: #ECECEC;
-    padding: 10px 5px;
-}
-.cardInformations{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 15px;
-
-}
-.cardInformations span{
-    font-size: 11px;
-    color: #6A6A6A;
-    white-space: nowrap;
-}
-.cardInformations p{
-    font-size: 38px;
-    color: black;
-    font-weight: 500;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 .mainGeneralDashbord{
     display: flex;
     flex-direction: row;
@@ -60,66 +6,194 @@
     align-items: center;
     margin-left: 80px;
     padding: 25px 0;
-}
-.generalCards{
-    margin: 0 35px;
-    padding: 15px;
+    padding-bottom: 10px;
+
 }
 .GeneralDash{
   margin: 0 50px;
-}
-.GeneralDash h1{
-    font-size: 34px;
-    color: black;
-}
-.mainCardsGeneral{
-    background-color: white;
-    box-shadow:  2px 2px 5px 2px #999;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:center;
-    border-radius: 20px;
-}
-.progressCirclesAdmin{
-    margin-left: 80px;
-    padding: 10px 20px;
-}
-.progressCirclesAdmin{
-    float: right;
-}
-.circlesProgress{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    background-color: white;
-    border-radius: 20px;
-    max-width: 700px;
-    box-shadow:  2px 2px 5px 2px #999;
-    padding: 10px 0px;
 
 }
-.ant-progress-inner{
-    position: relative;
+.GeneralDash h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: left;
+    color: #171717;
 }
-.ant-progress-inner span{
-    position: absolute;
-    top: 30%;
-    left: 32%;
+.GeneralButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.progressWithTitle{
-    position: relative;
-    margin: 0 50px;
+.GeneralButtons a{
+        margin: 0 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: normal;
+        border-radius: 18px;
+        box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+        font-family: 'Montserrat', sans-serif;
 }
-.progressWithTitle p{
-    position: absolute;
-    top: 45%;
-    left: 35%;
-    font-size: 10px;
+.GeneralGraphX{
+    max-width: 40%;
+    margin: 0 80px;
+
 }
-.titleCircleProg h1{
+.topProducts{
+    margin-left: 80px;
+    max-width: 50%;
+}
+
+.topProducts > .TitleP > .GeneralDash p{
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
     text-align: center;
-    padding-top: 10px;
+    color: #000;
+}
+.TitleP{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.tableProduct{
+    margin: 0 5rem;
+    height: 350px;      
+    overflow: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+}
+.tableProduct::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.table .specialTh{
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-bottom: none;
+    font-family: " Helvetica, Arial, sans-serif";
+    font-size: 14px;  
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: center;
+    color: #171717;
+
+
+}
+.table .specialTh{
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-top: none;
+}
+
+.table th{
+    padding: .75rem 4rem;
+    background-color: #f5f5f5;
+    font-family: " Helvetica, Arial, sans-serif";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #171717;
     white-space: nowrap;
+}
+.table td{
+    padding: 0rem .75rem;
+}
+
+.nameAdmin p{
+    white-space: nowrap;
+    font-family: " Helvetica, Arial, sans-serif";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+    color: #171717;
+}
+.productInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ContainerSect{
+    width: 80%;
+    margin: 0 5%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+}
+.arrowProductUp{
+    width: 16px;
+    height: 16px;
+}
+.arrowProduct p{
+    margin-right: 0 2px;
+}
+.arrowProduct{
+    margin: 0 5px;
+}
+.TitleP .GeneralDash p{
+    font-family: " Helvetica, Arial, sans-serif";
+
+    font-size: 18px;
+  
+    font-weight: normal;
+  
+    font-stretch: normal;
+  
+    font-style: normal;
+  
+    line-height: 1.14;
+  
+    letter-spacing: normal;
+  
+    text-align: left;
+  
+    color: #414141;
+    margin-top: 15px;
+}
+.GeneralGraphX{
+    margin-left: 80px;
+    max-width: 50%;
+    padding: 15px 0;
+    padding-bottom: 10px;
+}
+.productInfo p{
+    font-family: " Helvetica, Arial, sans-serif";
+
+    font-size: 14px;
+  
+    font-weight: normal;
+  
+    font-stretch: normal;
+  
+    font-style: normal;
+  
+    line-height: 1.19;
+  
+    letter-spacing: normal;
+  
+    text-align: left;
+  
+    color: #171717;
 }

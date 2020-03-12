@@ -1,112 +1,251 @@
 import React, { Component } from 'react';
-import { Progress } from 'antd';
+import { Table } from 'react-bootstrap';
+import GeneralGraph from "../../components/Graphs/GraphGen.jsx";
 import "./GeneralDashbord.css";
-class GeneralDashbord extends Component{
+import Img from "./images/NoPath - Copie (16)@3x.png";
+import Img2 from "./images/pic2.png";
+import { ReactComponent as ArrowUp } from './images/up-arrow(1).svg';
+import { ReactComponent as ArrowDown } from './images/down-arrow(1).svg';
+import StarRatingComponent from 'react-star-rating-component';
+
+
+
+ export class GeneralDashbord extends Component{
     constructor(props){
         super(props);
         this.state={
-            percent:0,
-            percentEM:0,
-            percentS:70,
-            percentE :18
+            rating: 4
         }
-    }
-    componentDidMount = ()=>{
-        const interv = setInterval(()=>{
-            if (this.state.percent === this.state.percentS){
-                clearInterval(interv);
-            }else{
-                this.setState({
-                    percent : this.state.percent+1
-                });
-            }
-        },10)
-        const intervE = setInterval(()=>{
-            if (this.state.percentEM === this.state.percentE){
-                clearInterval(intervE);
-            }else{
-                this.setState({
-                    percentEM : this.state.percentEM+1
-                });
-            }
-        },10)
     }
     
     render(){
-   
+        const { rating } = this.state;
         return(
             <>
+            <div style={{
+                backgroundColor:"#f6f6f6"
+            }}>
             <section className="mainGeneralDashbord">
                 <div className="GeneralDash">
                     <h1>
-                    General analytic dashboard
+                    Analytics and Statistics 
                     </h1>
                 </div>
-                <div className="mainCardsGeneral">
-                <div className="generalCards">
-                <div className="mainCard">
-                <div className="iconCard tache"></div>
-                <div className="cardInformations">
-                    <span>total tours</span>
-                    <p>251</p>
+                <div className="GeneralButtons GeneralDash">
+                    <a style={{
+                        backgroundColor:"#ffb808",
+                        color:"#ffffff"
+                    }} href="#">Tours bookings & Products</a>
+                    <a style={{
+                        backgroundColor:"#ffffff",
+                        color:"#747474"
+                    }} href="#">Users interactions</a>
                 </div>
-            </div>
-                </div>
-                <div className="generalCards">
-                <div className="mainCard">
-                <div className="iconCard timer"></div>
-                <div className="cardInformations">
-                    <span>pending orders</span>
-                    <p>7</p>
-                </div>
-            </div>
-                </div>
-                <div className="generalCards">
-                <div className="mainCard">
-                <div className="iconCard v"></div>
-                <div className="cardInformations">
-                    <span>todays's visitors</span>
-                    <p>42</p>
-                </div>
-            </div>
-                </div>
-                <div className="generalCards">
-                <div className="mainCard">
-                <div className="iconCard mail"></div>
-                <div className="cardInformations">
-                    <span>pending messages</span>
-                    <p>21</p>
-                </div>
-            </div>
-                </div>
-                </div> 
             </section>
-            <section className="progressCirclesAdmin">
-            <div className="circlesProgress">
-                <div className="progressWithTitle">
-                <Progress type="circle" strokeColor="#55E63A" percent={this.state.percent} width={120} strokeWidth="9"/>
-                <p>weekly</p>
-                <div className="titleCircleProg">
-                <h1>Satisfied Travellers</h1>
+            
+            <section className="topProducts">
+                <div className="ContainerSect">
+                <div className="TitleP">
+                    <div className="GeneralDash">
+                        <p>Top products</p>
+                    </div>
                 </div>
-                </div>
-                <div className="progressWithTitle">
-                <Progress type="circle" strokeColor="#E67F3A" percent={this.state.percentEM} width={120} strokeWidth="9"/>
-                <p>weekly</p>
-                <div className="titleCircleProg">
-                <h1>Satisfied Employeers</h1>
-                </div>
-                </div> 
-                <div className="progressWithTitle">
-                <Progress type="circle" strokeColor="#F8E91F" percent={this.state.percent} width={120} strokeWidth="9"/>
-                <p>weekly</p>
-                <div className="titleCircleProg">
-                <h1>Search Traffic</h1>
-                </div>
-                </div> 
+            <div className="tableProduct">
+                <Table responsive bordered hover>
+                    <thead>
+                        <tr className="firstTr">
+                            <th style={{
+                                borderRadius:"10px 0 0 10px"
+                            }} >Product Name</th>
+                            <th className="specialTh">Price</th>
+                            <th style={{
+                                borderRadius: "0 10px 10px 0"
+                            }}>Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div className="nameAdmin productInfo">
+                                    <img src={Img} alt="img"/>
+                                    <p>first medical kit</p>
+                                </div>
+                            </td>
+                            <td className="specialTh">89$ ~ 149$</td>
+                            <td>
+                                <div className="nameAdmin productInfo">
+                                   <div className="arrowProduct productInfo">
+                                   <p>255</p>
+                                    <ArrowUp fill="#2edc5d" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <p>0</p>
+                                    <ArrowDown fill="#f53636" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <StarRatingComponent 
+                                   name="rate1" 
+                                   starCount={5}
+                                   value={rating}/>                                   </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <div className="nameAdmin productInfo">
+                                    <img src={Img2} alt="img"/>
+                                    <p>Renting Diving tools</p>
+                                </div>
+                            </td>
+                            <td className="specialTh">89$ ~ 149$</td>
+                            <td>
+                            <div className="nameAdmin productInfo">
+                                   <div className="arrowProduct productInfo">
+                                   <p>255</p>
+                                    <ArrowUp fill="#2edc5d" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <p>0</p>
+                                    <ArrowDown fill="#f53636" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <StarRatingComponent 
+                                   name="rate1" 
+                                   starCount={5}
+                                   value={rating}/>                                   </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr className="lastTr">
+                            <td> <div className="nameAdmin productInfo">
+                                    <img src={Img2} alt="img"/>
+                                    <p>Renting Diving tools</p>
+                                </div></td>
+                            <td className="specialTh">89$ ~ 149$</td>
+                            <td>
+                            <div className="nameAdmin productInfo">
+                                   <div className="arrowProduct productInfo">
+                                   <p>255</p>
+                                    <ArrowUp fill="#2edc5d" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <p>0</p>
+                                    <ArrowDown fill="#f53636" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <StarRatingComponent 
+                                   name="rate1" 
+                                   starCount={5}
+                                   value={rating}/>                                   </div>
+                                </div>
+                            </td>
+                            </tr>
+                            <tr className="lastTr">
+                            <td> <div className="nameAdmin productInfo">
+                                    <img src={Img2} alt="img"/>
+                                    <p>Renting Diving tools</p>
+                                </div></td>
+                            <td className="specialTh">89$ ~ 149$</td>
+                            <td>
+                            <div className="nameAdmin productInfo">
+                                   <div className="arrowProduct productInfo">
+                                   <p>255</p>
+                                    <ArrowUp fill="#2edc5d" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <p>0</p>
+                                    <ArrowDown fill="#f53636" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <StarRatingComponent 
+                                   name="rate1" 
+                                   starCount={5}
+                                   value={rating}/>                                   </div>
+                                </div>
+                            </td>
+                            </tr>
+                            <tr className="lastTr">
+                            <td> <div className="nameAdmin productInfo">
+                                    <img src={Img2} alt="img"/>
+                                    <p>Renting Diving tools</p>
+                                </div></td>
+                            <td className="specialTh">89$ ~ 149$</td>
+                            <td>
+                            <div className="nameAdmin productInfo">
+                                   <div className="arrowProduct productInfo">
+                                   <p>255</p>
+                                    <ArrowUp fill="#2edc5d" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <p>0</p>
+                                    <ArrowDown fill="#f53636" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <StarRatingComponent 
+                                   name="rate1" 
+                                   starCount={5}
+                                   value={rating}/>                                   </div>
+                                </div>
+                            </td>
+                            </tr>
+                            <tr className="lastTr">
+                            <td> <div className="nameAdmin productInfo">
+                                    <img src={Img2} alt="img"/>
+                                    <p>Renting Diving tools</p>
+                                </div></td>
+                            <td className="specialTh">89$ ~ 149$</td>
+                            <td>
+                            <div className="nameAdmin productInfo">
+                                   <div className="arrowProduct productInfo">
+                                   <p>255</p>
+                                    <ArrowUp fill="#2edc5d" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <p>0</p>
+                                    <ArrowDown fill="#f53636" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <StarRatingComponent 
+                                   name="rate1" 
+                                   starCount={5}
+                                   value={rating}/>                                   </div>
+                                </div>
+                            </td>
+                            </tr>
+                            <tr className="lastTr">
+                            <td> <div className="nameAdmin productInfo">
+                                    <img src={Img2} alt="img"/>
+                                    <p>Renting Diving tools</p>
+                                </div></td>
+                            <td className="specialTh">89$ ~ 149$</td>
+                            <td>
+                            <div className="nameAdmin productInfo">
+                                   <div className="arrowProduct productInfo">
+                                   <p>255</p>
+                                    <ArrowUp fill="#2edc5d" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <p>0</p>
+                                    <ArrowDown fill="#f53636" className="arrowProductUp" />
+                                   </div>
+                                   <div className="arrowProduct productInfo">
+                                   <StarRatingComponent 
+                                   name="rate1" 
+                                   starCount={5}
+                                   value={rating}/>                                   </div>
+                                </div>
+                            </td>
+                            </tr>
+                    </tbody>
+                </Table>               
             </div>
+                </div>
             </section>
-          
+            <section className="GeneralGraphX">
+                <GeneralGraph />
+            </section>
+            
+            </div>
             </>
             
         )
