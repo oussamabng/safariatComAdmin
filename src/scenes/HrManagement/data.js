@@ -1,4 +1,4 @@
-const employees = [
+export const employees = [
   {
     id: 1,
     name: "mustapha name",
@@ -61,4 +61,47 @@ const employees = [
   }
 ];
 
-export default employees;
+export const tasks = [
+  {
+    status: "in progress",
+    task: "sales , publicity",
+    Responsible: "Employee Name",
+    creationDate: "25/05/2019",
+    deliverDate: "27/05/2019"
+  },
+  {
+    status: "in progress",
+    task: "sales , publicity",
+    Responsible: "Employee Name",
+    creationDate: "25/05/2019",
+    deliverDate: "27/05/2019"
+  },
+  {
+    status: "in progress",
+    task: "sales , publicity",
+    Responsible: "Employee Name",
+    creationDate: "25/05/2019",
+    deliverDate: "27/05/2019"
+  },
+  {
+    status: "in progress",
+    task: "sales , publicity",
+    Responsible: "Employee Name",
+    creationDate: "25/05/2019",
+    deliverDate: "27/05/2019"
+  },
+  {
+    status: "in progress",
+    task: "sales , publicity",
+    Responsible: "Employee Name",
+    creationDate: "25/05/2019",
+    deliverDate: "27/05/2019"
+  },
+  {
+    status: "in progress",
+    task: "sales , publicity",
+    Responsible: "Employee Name",
+    creationDate: "25/05/2019",
+    deliverDate: "27/05/2019"
+  }
+];

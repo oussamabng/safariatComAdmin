@@ -2,34 +2,56 @@ import React from "react";
 import styled from "styled-components";
 
 export default function TableActions(props) {
+  const renderSearch = () => {
+    return props.view === "employees" ? (
+      <label className="searchLabel" for="search">
+        search
+        <input
+          className="search"
+          onChange={e => props.searchedName(e.target.value)}
+          type="search"
+          name="search"
+          id="search"
+          placeholder={props.search}
+        />
+      </label>
+    ) : (
+      <label className="searchLabel" for="search">
+        search
+        <input
+          className="search"
+          onChange={e => props.searchedTask(e.target.value)}
+          type="search"
+          name="search"
+          id="search"
+          placeholder={props.search}
+        />
+      </label>
+    );
+  };
+
+  const renderSelect = () => {
+    return (
+      <select
+        onChange={e => props.searchedDepartment(e.target.value)}
+        className="select"
+        defaultValue="all"
+        name="departments"
+      >
+        {props.selectOptions.map(el => (
+          <option value={el}>{el}</option>
+        ))}
+      </select>
+    );
+  };
+
+  const renderAddButton = () => {};
+
   return (
     <Container>
       <div className="left">
-        <label className="searchLabel" for="search">
-          search
-          <input
-            className="search"
-            // onChange={e => props.searchHandler(e.target.value, undefined)}
-            onChange={e => props.changeName(e.target.value)}
-            type="search"
-            name="search"
-            id="search"
-            placeholder={props.search}
-          />
-        </label>
-
-        <select
-          // onChange={e => props.departementFilter(undefined,e.target.value)}
-          onChange={e => props.changeDepartment(e.target.value)}
-          className="select"
-          defaultValue="all"
-          name="departments"
-        >
-          <option value="all">all employees</option>
-          <option value="hr">hr</option>
-          <option value="sales">sales</option>
-          <option value="marketing">marketing</option>
-        </select>
+        {renderSearch()}
+        {renderSelect()}
       </div>
       <div className="right">
         <button className="addEmployee" onClick={e => props.addHandler()}>
