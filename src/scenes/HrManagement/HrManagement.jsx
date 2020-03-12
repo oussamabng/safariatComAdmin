@@ -26,13 +26,35 @@ export default class HrManagement extends Component {
 
   componentDidMount() {
     this.setState({
-      initialEmployees: employees
+      initialEmployees: employees,
+      initialTasks: tasks
     });
   }
 
   addEmployeeHandler() {
     console.log("add Employee");
   }
+
+  toggleViewHandler = (e, value) => {
+    switch (value) {
+      case "employeesView":
+        this.setState({
+          isEmployeesView: true,
+          isTasksView: false
+        });
+        break;
+      case "tasksView":
+        this.setState({
+          isEmployeesView: false,
+          isTasksView: true
+        });
+
+        break;
+      default:
+        console.log("view Toggle Error");
+        break;
+    }
+  };
 
   // Employees functions
   changeSearchedName(name) {
@@ -161,7 +183,7 @@ export default class HrManagement extends Component {
     }
   }
 
-  render() {
+  renderTable() {
     const filteredEmployees = this.state.filteredEmployees
       ? this.state.filteredEmployees
       : this.state.initialEmployees;
@@ -169,6 +191,18 @@ export default class HrManagement extends Component {
     const filteredTasks = this.state.filteredTasks
       ? this.state.filteredTasks
       : this.state.initialTasks;
+    const view = this.state.isEmployeesView ? "employees" : "tasks";
+
+    if (filteredEmployees && view === "employees") {
+      return <HrTable employees={filteredEmployees} />;
+    } else if (filteredTasks && view === "tasks") {
+      return <HrTable tasks={filteredTasks} />;
+    } else {
+      return null;
+    }
+  }
+
+  render() {
     return (
       <Container>
         <nav>navbar</nav>
@@ -177,15 +211,26 @@ export default class HrManagement extends Component {
           <div className="sidebar">sidebar</div>
 
           <main className="hrManagement">
-            {this.renderTableActions()}
-            {/* {this.renderTable()} */}
-
-            {filteredEmployees ? (
-              <HrTable
-                employees={filteredEmployees}
-                // searchedEmployee={this.state.searchedEmployee}
-              />
-            ) : null}
+            <div className="hrManagement__top">
+              <h3 className="hrManagement__top__title">HR HrManagement</h3>
+              <hr className="hrManagement__top__hr"></hr>
+              <button
+                className="hrManagement__top__button employeesViewBTN"
+                onClick={e => this.toggleViewHandler(e, "employeesView")}
+              >
+                Employees Management
+              </button>
+              <button
+                className="hrManagement__top__button tasksViewBTN"
+                onClick={e => this.toggleViewHandler(e, "tasksView")}
+              >
+                Tasks Management
+              </button>
+            </div>
+            <div className="hrManagement__content">
+              {this.renderTableActions()}
+              {this.renderTable()}
+            </div>
           </main>
         </div>
       </Container>
@@ -194,16 +239,50 @@ export default class HrManagement extends Component {
 }
 
 const Container = styled.div`
-  background-color: #eee;
+  .main {
+    display: flex;
+    background-color: #f6f6f6;
+  }
   .hrManagement {
     width: 87%;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 1rem 1.6rem;
     margin: 0 auto;
   }
 
-  .main {
-    display: flex;
+  .hrManagement__top {
+  }
+
+  .hrManagement__top__title {
+    // margin-right: 100px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .hrManagement__top__hr {
+    background: #000;
+    border: 0;
+    color: #000;
+    display: inline-block;
+    vertical-align: middle;
+
+    height: 1px;
+    width: 50%;
+  }
+
+  .hrManagement__top__button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .employeesViewBTN {
+    color: white;
+    background-color: #ffcc4e;
+  }
+
+  .tasksViewBTN {
+    color: #4d4d4d;
+    background-color: white;
   }
 `;

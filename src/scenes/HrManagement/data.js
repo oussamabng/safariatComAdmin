@@ -70,36 +70,36 @@ export const tasks = [
     deliverDate: "27/05/2019"
   },
   {
-    status: "in progress",
-    task: "sales , publicity",
+    status: "completed",
+    task: "search for tour guide",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
     deliverDate: "27/05/2019"
   },
   {
     status: "in progress",
-    task: "sales , publicity",
+    task: "prepare tour #1444 papers",
+    Responsible: "Employee Name",
+    creationDate: "25/05/2019",
+    deliverDate: "27/05/2019"
+  },
+  {
+    status: "completed",
+    task: "database",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
     deliverDate: "27/05/2019"
   },
   {
     status: "in progress",
-    task: "sales , publicity",
+    task: "program for tour #44",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
     deliverDate: "27/05/2019"
   },
   {
     status: "in progress",
-    task: "sales , publicity",
-    Responsible: "Employee Name",
-    creationDate: "25/05/2019",
-    deliverDate: "27/05/2019"
-  },
-  {
-    status: "in progress",
-    task: "sales , publicity",
+    task: "manage PRoducts",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
     deliverDate: "27/05/2019"
