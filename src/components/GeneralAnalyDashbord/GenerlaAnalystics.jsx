@@ -20,6 +20,9 @@ class GenerlaAnalystics extends Component {
       rating: 4
     };
   }
+  componentWillMount() {
+    return <div>loader</div>;
+  }
   render() {
     const { rating } = this.state;
     const settings = {

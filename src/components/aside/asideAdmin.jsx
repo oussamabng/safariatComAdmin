@@ -23,7 +23,7 @@ class AsideAdmin extends Component {
             <div className="sidebarAdmin">
               <ul>
                 <li className="active">
-                  <a href="#">
+                  <a href="/admin">
                     <img src={Report} alt="Report" />
                   </a>
                 </li>

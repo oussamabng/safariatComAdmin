@@ -52,13 +52,19 @@
   border-radius: 18px;
   box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
 }
+.GeneralButtons a:first-child:hover {
+  background-color: #ffb908c2 !important;
+}
+.GeneralButtons a:last-child:hover {
+  background-color: rgba(255, 255, 255, 0.685) !important;
+}
 .my-col {
-  padding: 0 45px;
+  padding: 0 25px;
 }
 .product-details {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 .card-header {
   background-color: white;
@@ -183,12 +189,12 @@
   top: -32px !important;
   right: 0 !important;
   float: right !important;
-  left: 51% !important;
+  left: 56% !important;
 }
 .slick-next {
   position: absolute !important;
   top: -32px !important;
-  left: 55% !important;
+  left: 60% !important;
 }
 .GeneralGraphX {
   margin-left: 80px;
