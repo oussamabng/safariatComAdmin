@@ -64,7 +64,9 @@
   display: flex;
   flex-direction: column;
 }
-
+.flexCol span {
+  font-size: 14px;
+}
 .flexCol h3 {
   font-size: 10px;
   color: #717171;
@@ -108,6 +110,7 @@
 .form-control.inputSearch {
   color: #555555;
   border: none !important;
+  padding: 0 10px;
 }
 
 .form-control.inputSearch:focus {
