@@ -43,7 +43,7 @@ class GenerlaAnalystics extends Component {
                     backgroundColor: "#ffb808",
                     color: "#ffffff"
                   }}
-                  href="#"
+                  href="/admin/tours"
                 >
                   Tours bookings & Products
                 </a>
@@ -52,7 +52,7 @@ class GenerlaAnalystics extends Component {
                     backgroundColor: "#ffffff",
                     color: "#747474"
                   }}
-                  href="#"
+                  href="/admin/users"
                 >
                   Users interactions
                 </a>

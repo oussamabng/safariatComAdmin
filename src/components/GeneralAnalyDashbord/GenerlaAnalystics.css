@@ -21,7 +21,7 @@
   margin: -30px -30px 30px;
   margin-bottom: 0 !important;
   position: relative;
-  padding-top: 15px;
+  padding-top: 15px !important;
 }
 .page-title-wrapper {
   position: relative;
