@@ -5,35 +5,28 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
   {
     id: 2,
-    tour: "tour of europe",
+    tour: "tour of africa",
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
   {
     id: 3,
-    tour: "tour of europe",
+    tour: "tour of usa",
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
@@ -43,10 +36,8 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
@@ -56,10 +47,8 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
@@ -69,10 +58,8 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
@@ -82,10 +69,8 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
@@ -95,10 +80,8 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
@@ -108,10 +91,8 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   },
 
@@ -121,10 +102,8 @@ export const tours = [
     type: "Culture ,Tourism International",
     destination: "europe",
     date: "17/06/2020",
-    price: {
-      min: 680,
-      max: 720
-    },
+    price: "680-700",
+
     description: "Af deel pomp soms tijd veel ad, Enorloopig uitgegeven en."
   }
 ];
@@ -134,7 +113,7 @@ export const toursDetails = [
     id: 1,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -166,7 +145,8 @@ export const toursDetails = [
     id: 2,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -199,7 +179,8 @@ export const toursDetails = [
     id: 3,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -232,7 +213,8 @@ export const toursDetails = [
     id: 4,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -265,7 +247,8 @@ export const toursDetails = [
     id: 5,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -298,7 +281,8 @@ export const toursDetails = [
     id: 6,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -331,7 +315,8 @@ export const toursDetails = [
     id: 7,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -364,7 +349,8 @@ export const toursDetails = [
     id: 8,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -397,7 +383,8 @@ export const toursDetails = [
     id: 9,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -430,7 +417,8 @@ export const toursDetails = [
     id: 10,
     activityLevel: "hard",
     numberOfGroup: 6,
-    numberOfMembers: { min: 30, max: 50 },
+    numberOfMembers: "30-50",
+
     longDescription:
       "Af deel pomp soms tijdveel ad, Enorloopig uitgegeven en dzaar int,srefere dis noledge how saritis nit ma bez sd oliun...",
     includes: [
@@ -459,3 +447,5 @@ export const toursDetails = [
         bit more Equipment.`
   }
 ];
+
+export const products = [];

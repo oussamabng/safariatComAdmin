@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { tours, toursDetails } from "./data";
 import styled from "styled-components";
+import Modal from "./components/Modal";
 
 import TRTable from "./components/TRTable";
 
@@ -10,15 +11,23 @@ export default class ToursAndProducts extends Component {
     isToursView: true,
     isProductsView: false,
 
-    isTourShown: false,
-    isProductShown: false,
+    isTourDetailsShown: false,
+    isProductDetailsShown: false,
 
     tours: null,
+    toursDetails: null,
+    tourDetails: null,
+
     products: null
   };
 
   componentDidMount() {
-    this.setState({ tours, products: tours });
+    this.setState({ tours, toursDetails, products: tours });
+
+    //remove ShowTourModal() After Tests ;
+    // this.setState({ tours, toursDetails }, () => {
+    //   this.showTourModal();
+    // });
   }
 
   toggleViewHandler = (e, value) => {
@@ -42,6 +51,25 @@ export default class ToursAndProducts extends Component {
     }
   };
 
+  showTourModal = tourId => {
+    const tours = this.state.tours;
+    const toursDetails = this.state.toursDetails;
+
+    let tour = tours.find(el => Number(el.id) === Number(tourId));
+    let details = toursDetails.find(el => Number(el.id) === Number(tourId));
+
+    tour = JSON.parse(JSON.stringify(tour));
+    details = JSON.parse(JSON.stringify(details));
+
+    const tourDetails = { ...tour, ...details };
+    console.log("tourDetials : ", tourDetails);
+    this.setState({ tourDetails, isTourDetailsShown: true });
+  };
+
+  hideTourModal = () => {
+    this.setState({ tourDetails: null, isTourDetailsShown: false });
+  };
+
   renderTable() {
     const view = this.state.isToursView ? "tours" : "products";
 
@@ -52,13 +80,42 @@ export default class ToursAndProducts extends Component {
       this.state.products && view === "products" ? this.state.products : null;
 
     if (tours) {
-      return <TRTable tours={tours}>products DAta</TRTable>;
+      return (
+        <TRTable
+          showTourDetails={details => this.showTourModal(details)}
+          tours={tours}
+        >
+          products DAta
+        </TRTable>
+      );
     } else if (products) {
       return <TRTable products={products}>products DAta</TRTable>;
     } else {
       return null;
     }
   }
+
+  renderModal = () => {
+    const tourDetails = this.state.tourDetails && this.state.tourDetails;
+    const productDetails =
+      this.state.productDetails && this.state.productDetails;
+
+    const isTourDetailsShown = this.state.isTourDetailsShown;
+    const isProductDetailsShown = this.state.isProductDetailsShown;
+
+    if (isTourDetailsShown) {
+      return (
+        <Modal
+          closeModal={this.hideTourModal}
+          tourDetails={tourDetails}
+        ></Modal>
+      );
+    } else if (isProductDetailsShown) {
+      return <Modal productDetials={productDetails}></Modal>;
+    } else {
+      return null;
+    }
+  };
 
   render() {
     return (
@@ -74,7 +131,7 @@ export default class ToursAndProducts extends Component {
               <hr className="toursAndProducts__top__hr"></hr>
               <div className="toursAndProducts__top__buttons">
                 <button
-                  className="toursAndProducts__top__button toursviewBTN"
+                  className="toursAndProducts__top__button toursViewBTN"
                   onClick={e => this.toggleViewHandler(e, "toursView")}
                 >
                   Tours Management
@@ -89,6 +146,7 @@ export default class ToursAndProducts extends Component {
             </div>
             <div className="toursAndProducts__content">
               {this.renderTable()}
+              {this.renderModal()}
             </div>
           </main>
         </div>
@@ -138,13 +196,13 @@ const Container = styled.div`
     border-radius: 4px;
   }
 
-  .toursviewBTN {
+  .toursViewBTN {
     color: white;
     background-color: #ffcc4e;
     margin-right: 0.5rem;
   }
 
-  .productsviewBTN {
+  .productsViewBTN {
     color: #4d4d4d;
     background-color: white;
   }
@@ -153,5 +211,6 @@ const Container = styled.div`
     background-color: #ffffff;
     padding: 1rem 1.6rem;
     margin-top: 2rem;
+    border-radius: 4px;
   }
 `;
