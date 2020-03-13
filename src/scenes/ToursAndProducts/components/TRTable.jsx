@@ -55,9 +55,6 @@ const Container = styled.div`
   }
 
   .tbody {
-    display: inline-block;
-    overflow: auto;
-    height: 100px;
   }
 
   .tr {
