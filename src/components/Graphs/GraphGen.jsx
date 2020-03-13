@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
 import Chart from "react-apexcharts";
 import "./GraphGen.css";
+import { ReactComponent as Info } from '../GeneralAnalyDashbord/images/information.svg';
+
 export default class GraphGen extends React.Component {
     constructor(props) {
       super(props);
@@ -39,12 +40,6 @@ export default class GraphGen extends React.Component {
             width: 0.5,
             colors: ['transparent']
           },
-          title:{
-            text:"Bookings & Ordering",
-            align :"left",
-            offsetX :20,
-            offsetY:10
-          },
           yaxis:  {
           
             axisTicks: {
@@ -81,7 +76,21 @@ export default class GraphGen extends React.Component {
  
     render() {
       return (
-        <div className="GeneralGraph">
+        <div className="mb-3 card">
+        <div className="card-header-tab card-header">
+            <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
+                Top tours
+            </div>
+            <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
+          
+                <div className="btn-group dropdown">
+                    <button className="btn-icon btn-icon-only btn btn-link">
+                   <Info fill="#b3b8bd" className="info-btn"/>
+                    </button>
+                    {/* here the dropdown div... */}
+                </div>
+            </div>
+        </div>
         <div className="rowGraph">
           <div className="mixed-chart">
             <Chart

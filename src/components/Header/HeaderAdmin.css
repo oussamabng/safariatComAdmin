@@ -1,27 +1,42 @@
 .main_header_admin{
-    position: relative;
+    position: fixed;
     z-index: 1030;
+    background-color: white;
+    width: 100%;
     -webkit-box-shadow: 0 8px 10px -8px #999;
     -moz-box-shadow: 0 8px 10px -8px #999;
     box-shadow: 0 8px 10px -8px #999;
     left: 0;
     right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    transition: all .2s;
+    
 }
 .navbar_header_admin{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    align-content: center;
+    flex: 1;
+    padding: 0 5rem;
+    height: 60px;
 }
 .profileAd{
     display: flex;
     flex-direction: row;
 }
 .partLeft{
-    margin: 0 10%;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    margin-left: auto;
+}
+.partRight{
+    align-items: center;
+    display: flex;
+    margin-left: auto;
 }
 
 .profile_admin a{
@@ -82,17 +97,27 @@ color: #fdb607;
 }
 .search_admin{
     background-color: #f1f1f1;
-    padding: 8px 16px;
+    padding: 2px 6px;
     border-radius: 26px;
 }
 .search_admin input{
     background-color: rgba(0, 0, 0, 0);
-    padding-left: 15px;
     font-size: 17px;
 }
 .fontSearch.fa{
     color: #000;
 }
-.inputSearch{
+.form-control.inputSearch{
     color: #555555;
+    border: none!important;
+}
+
+.form-control.inputSearch:focus{
+    border: none!important;
+    background-color: #f1f1f1!important;
+    box-shadow: none!important;
+}
+.form-control.inputSearch:active{
+    border: none!important;
+    background-color: #f1f1f1!important;
 }

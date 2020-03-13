@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 // Layout Components
 import Header from './components/Header/Header';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 // Scenes Components Importation
 import Home from "./scenes/Home/Home.jsx";
 import Services from "./scenes/Services/Services.jsx";
@@ -14,8 +14,6 @@ import About from "./scenes/About/About.jsx";
 import Admin from "./scenes/AdminDashbord/Admin";
 /*import SignUp from "./scenes/SignUp/SignUp.jsx";
 import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
-import GeneralDashbord from "./components/GeneralAnalyDashbord/GeneralDashbord.jsx";
-
 function App() {
   return (
 
@@ -27,7 +25,7 @@ function App() {
           <Route component={Contact} path="/contact" ></Route>
           <Route component={About} path="/about" ></Route>
           <Route component={Admin} path="/admin"></Route>
-          <Route component={GeneralDashbord} path="/card"></Route>
+
         </Switch>
     </Router>
 
