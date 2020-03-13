@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Background colors styles */
+.bg-gray {
+  background: #f5f5f5;
+}
+
+.bg-yellow {
+  background: #ffb808;
+}
+/* Text colors styles */
+.text-gray {
+  color: #5f5f5f;
+}
+.text-blackgray {
+  color: #545454;
+}
+/* height and width styles */
+.w-60 {
+  width: 600px;
+}
+
+.h-60 {
+  height: 500px;
+}
+/* margin and padding styles */
+.mr-145 {
+  margin-right: 14.5rem;
+}
+
+.mr-19 {
+  margin-right: 19rem;
+}
+
+.mx-24 {
+  margin-left: 9rem;
+  margin-right: 9rem;
+}
+/* Effects styles (shadows & opacity) */
+.button-shadow {
+  box-shadow: 0.3px 1.5px 3px 0 rgba(0, 0, 0, 0.22);
+}
+/* font styles */
+.font-comfortaa {
+  font-family: Comfortaa;
+}
+
+.font-montserrat {
+  font-family: Montserrat;
+}
+
+.lh-17 {
+  line-height: 1.17;
+  height: 10.5px;
+}
