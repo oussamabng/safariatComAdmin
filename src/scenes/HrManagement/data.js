@@ -64,44 +64,54 @@ export const employees = [
 export const tasks = [
   {
     status: "in progress",
+    role: "role role",
     task: "sales , publicity",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
-    deliverDate: "27/05/2019"
+    deliveryDate: "27/05/2019"
   },
   {
     status: "completed",
+    role: "role role",
+
     task: "search for tour guide",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
-    deliverDate: "27/05/2019"
+    deliveryDate: "27/05/2019"
   },
   {
     status: "in progress",
+    role: "role role",
+
     task: "prepare tour #1444 papers",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
-    deliverDate: "27/05/2019"
+    deliveryDate: "27/05/2019"
   },
   {
+    role: "role role",
     status: "completed",
     task: "database",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
-    deliverDate: "27/05/2019"
+    deliveryDate: "27/05/2019"
   },
   {
     status: "in progress",
+    role: "role role",
+
     task: "program for tour #44",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
-    deliverDate: "27/05/2019"
+    deliveryDate: "27/05/2019"
   },
   {
     status: "in progress",
+    role: "role role",
+
     task: "manage PRoducts",
     Responsible: "Employee Name",
     creationDate: "25/05/2019",
-    deliverDate: "27/05/2019"
+    deliveryDate: "27/05/2019"
   }
 ];

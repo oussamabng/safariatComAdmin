@@ -21,7 +21,7 @@ export default class HrManagement extends Component {
     isTasksView: false,
 
     departmentsOptions: ["all", "hr", "sales", "marketing"],
-    tasksTypes: []
+    tasksTypes: ["type1", "type2"]
   };
 
   componentDidMount() {
@@ -257,7 +257,7 @@ const Container = styled.div`
 
   .hrManagement__top {
     margin-top: 2rem;
-    padding: 0 1.6rem;
+    // padding: 0 1.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -274,14 +274,14 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 50%;
+    width: 54%;
   }
 
   .hrManagement__top__button {
     display: inline-block;
     vertical-align: middle;
     padding: 0.65rem;
-    border-radius: 30px;
+    border-radius: 4px;
   }
 
   .employeesViewBTN {

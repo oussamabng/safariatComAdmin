@@ -17,7 +17,7 @@ export default function TableActions(props) {
       </label>
     ) : (
       <label className="searchLabel" for="search">
-        search
+        <i className="fas fa-search "></i>
         <input
           className="search"
           onChange={e => props.searchedTask(e.target.value)}
@@ -31,12 +31,23 @@ export default function TableActions(props) {
   };
 
   const renderSelect = () => {
-    return (
+    return props.view === "employees" ? (
       <select
         onChange={e => props.searchedDepartment(e.target.value)}
         className="select"
         defaultValue="all"
         name="departments"
+      >
+        {props.selectOptions.map(el => (
+          <option value={el}>{el}</option>
+        ))}
+      </select>
+    ) : (
+      <select
+        // onChange={e => props.searchedDepartment(e.target.value)}
+        className="select"
+        defaultValue="type1"
+        name="types"
       >
         {props.selectOptions.map(el => (
           <option value={el}>{el}</option>
@@ -106,14 +117,14 @@ const Container = styled.div`
   }
   .select,
   .searchLabel {
-    border-radius: 15px;
+    border-radius: 4px;
   }
 
   .addBtn {
     background-color: #084c61;
     color: #fff;
     padding: 1rem 4rem;
-    border-radius: 15px;
+    border-radius: 4px;
     margin-right: 1.5rem;
   }
 
