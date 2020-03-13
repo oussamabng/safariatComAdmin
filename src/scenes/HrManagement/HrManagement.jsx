@@ -188,18 +188,21 @@ export default class HrManagement extends Component {
   }
 
   renderTable() {
-    const filteredEmployees = this.state.filteredEmployees
-      ? this.state.filteredEmployees
-      : this.state.initialEmployees;
-
-    const filteredTasks = this.state.filteredTasks
-      ? this.state.filteredTasks
-      : this.state.initialTasks;
     const view = this.state.isEmployeesView ? "employees" : "tasks";
 
-    if (filteredEmployees && view === "employees") {
+    const filteredEmployees =
+      this.state.filteredEmployees && view === "employees"
+        ? this.state.filteredEmployees
+        : this.state.initialEmployees;
+
+    const filteredTasks =
+      this.state.filteredTasks && view === "tasks"
+        ? this.state.filteredTasks
+        : this.state.initialTasks;
+
+    if (filteredEmployees) {
       return <HrTable employees={filteredEmployees} />;
-    } else if (filteredTasks && view === "tasks") {
+    } else if (filteredTasks) {
       return <HrTable tasks={filteredTasks} />;
     } else {
       return null;
