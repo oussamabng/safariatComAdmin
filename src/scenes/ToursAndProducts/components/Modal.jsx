@@ -4,6 +4,9 @@ import styled from "styled-components";
 import BigImg from "../images/01.png";
 import SmallImg from "../images/02.png";
 
+import productBig from "../images/productBig.png";
+import product from "../images/product.png";
+
 export default function Modal(props) {
   document.body.style.overflow = "hidden";
   const renderTourDetails = tourDetails => {
@@ -117,7 +120,56 @@ export default function Modal(props) {
   };
 
   const renderProductsDetails = productDetails => {
-    return <div>PRoducts Details</div>;
+    return (
+      <div className="modal-main">
+        <header className="header">
+          <a onClick={props.closeModal} href="">
+            <i className=" header__back fas fa-long-arrow-alt-left"></i>
+          </a>
+          <h4 className="header__title">Product Preview</h4>
+        </header>
+        <div className="top">
+          {/*  */}
+          <div className="details__text">
+            <div className="details__buttons">
+              <button className="edit">edit</button>
+              <button className="delete">delete</button>
+            </div>
+            <div className="details__info">
+              <div className="details__info__row">
+                <p className="details__info__col ">product</p>
+                <p className="details__info__col subText">
+                  {productDetails.product}
+                </p>
+              </div>
+              <div className="details__info__row">
+                <p className="details__info__col">Type</p>
+                <p className="details__info__col subText">
+                  {productDetails.type}
+                </p>
+              </div>
+
+              <div className="details__info__row">
+                <p className="details__info__col">Price</p>
+                <p className="details__info__col subText">
+                  {productDetails.price}
+                </p>
+              </div>
+              <div className="details__info__row">
+                <p className="details__info__col">description</p>
+                <p className="details__info__col subText">
+                  {productDetails.description}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="details__images">
+            <img src={productBig} alt="" className="mainImage" />
+          </div>
+        </div>
+      </div>
+    );
   };
 
   return props.tourDetails ? (

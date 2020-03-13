@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { tours, toursDetails } from "./data";
+import { tours, toursDetails, products } from "./data";
 import styled from "styled-components";
 import Modal from "./components/Modal";
 
@@ -18,11 +18,12 @@ export default class ToursAndProducts extends Component {
     toursDetails: null,
     tourDetails: null,
 
-    products: null
+    products: null,
+    productDetails: null
   };
 
   componentDidMount() {
-    this.setState({ tours, toursDetails, products: tours });
+    this.setState({ tours, toursDetails, products });
 
     //remove ShowTourModal() After Tests ;
     // this.setState({ tours, toursDetails }, () => {
@@ -66,8 +67,20 @@ export default class ToursAndProducts extends Component {
     this.setState({ tourDetails, isTourDetailsShown: true });
   };
 
+  showProductModal = productId => {
+    const products = this.state.products;
+    const productDetails = products.find(
+      el => Number(el.id) === Number(productId)
+    );
+    this.setState({ isProductDetailsShown: true, productDetails });
+  };
+
   hideTourModal = () => {
     this.setState({ tourDetails: null, isTourDetailsShown: false });
+  };
+
+  hideProductModal = () => {
+    this.setState({ productDetails: null, isProductDetailsShown: false });
   };
 
   renderTable() {
@@ -89,7 +102,14 @@ export default class ToursAndProducts extends Component {
         </TRTable>
       );
     } else if (products) {
-      return <TRTable products={products}>products DAta</TRTable>;
+      return (
+        <TRTable
+          showProductDetails={details => this.showProductModal(details)}
+          products={products}
+        >
+          products DAta
+        </TRTable>
+      );
     } else {
       return null;
     }
@@ -111,7 +131,12 @@ export default class ToursAndProducts extends Component {
         ></Modal>
       );
     } else if (isProductDetailsShown) {
-      return <Modal productDetials={productDetails}></Modal>;
+      return (
+        <Modal
+          closeModal={this.hideProductModal}
+          productDetails={productDetails}
+        ></Modal>
+      );
     } else {
       return null;
     }

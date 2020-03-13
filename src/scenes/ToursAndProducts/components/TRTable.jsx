@@ -6,6 +6,12 @@ export default function TRTable(props) {
     e.preventDefault();
     props.showTourDetails(e.currentTarget.dataset.id);
   };
+
+  const previewProduct = e => {
+    e.preventDefault();
+    props.showProductDetails(e.currentTarget.dataset.id);
+  };
+
   const toursTable = tours => {
     return (
       <table className="table font-montserrat">
@@ -50,7 +56,44 @@ export default function TRTable(props) {
   };
 
   const productsTable = products => {
-    return <div>products data</div>;
+    return (
+      <table className="table font-montserrat">
+        <thead className="thead">
+          <tr className="tr">
+            <th className="th tour">product</th>
+            <th className="th type">type</th>
+            <th className="th destination">type of service</th>
+            <th className="th price">price</th>
+            <th className="th description">description</th>
+          </tr>
+        </thead>
+        <tbody className="tbody">
+          {products.map((el, index) => {
+            return (
+              <tr key={`row-${index}`} className="tr">
+                <td className="td ">{el.product}</td>
+                <td className="td ">{el.type}</td>
+                <td className="td ">{el.typeOfService}</td>
+                <td className="td ">{el.price}</td>
+                <td className="td">
+                  {el.description}
+                  <div classsName="td__preview">
+                    <a
+                      data-id={el.id}
+                      onClick={previewProduct}
+                      className="td__preview__link"
+                      href="#"
+                    >
+                      Preview
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    );
   };
   return props.tours ? (
     <Container>{toursTable(props.tours)} </Container>
