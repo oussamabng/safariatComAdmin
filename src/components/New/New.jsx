@@ -10,6 +10,38 @@ class New extends Component {
     this.state = {};
   }
   render() {
+    var data = [
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      }
+    ];
     const { name, time, type } = this.props;
     return (
       <div className=" card new-card">
@@ -33,190 +65,31 @@ class New extends Component {
           </div>
         </div>
         <div className="rowNews">
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
+          {data.map(newItem => (
+            <div className="bard-body p-0">
+              <div className="p-3 product-details">
+                <div className="notification-new">
+                  <div className="notification-part-left">
+                    <div className="widget-content">
+                      <img className="imgStyle" src={Img} alt="img" />
+                      <div className="all-details-new">
+                        <div className="fullname-new">
+                          <h1>{newItem["name"]}</h1>
+                          <p>has added a new {newItem["type"]}</p>
+                        </div>
+                        <div className="date-new">
+                          <p>{newItem["time"]}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
-                      </div>
-                    </div>
+                  <div className="notification-part-right">
+                    <img src={Img} alt="img" />
                   </div>
                 </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
               </div>
             </div>
-          </div>
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bard-body p-0">
-            <div className="p-3 product-details">
-              <div className="notification-new">
-                <div className="notification-part-left">
-                  <div className="widget-content">
-                    <img className="imgStyle" src={Img} alt="img" />
-                    <div className="all-details-new">
-                      <div className="fullname-new">
-                        <h1>{name}</h1>
-                        <p>has added a new {type}</p>
-                      </div>
-                      <div className="date-new">
-                        <p>{time}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="notification-part-right">
-                  <img src={Img} alt="img" />
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     );

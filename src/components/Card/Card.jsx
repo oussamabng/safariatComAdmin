@@ -5,13 +5,10 @@ import "./Card.css";
 class MyCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      rating: 4
-    };
+    this.state = {};
   }
   render() {
-    const { rating } = this.state;
-    const { Img, Title, Rate } = this.props;
+    const { Img, Title, Rate, views } = this.props;
     return (
       <div className="img" style={{ width: "16rem", height: "18rem" }}>
         <img className="rounded-lg" variant="top" src={Img} />
@@ -21,15 +18,11 @@ class MyCard extends Component {
             <div className="productInfo">
               <div className="productInfo card-slider">
                 <h1>
-                  Rate <p>( based on {Rate} reviews)</p>
+                  Rate <p>( based on {views} reviews)</p>
                 </h1>
               </div>
               <div className="  my-staring">
-                <StarRatingComponent
-                  name="rate1"
-                  starCount={5}
-                  value={rating}
-                />
+                <StarRatingComponent name="rate1" starCount={5} value={Rate} />
               </div>
             </div>
           </div>

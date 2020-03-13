@@ -32,6 +32,82 @@ class GenerlaAnalystics extends Component {
       slidesToShow: 3,
       slidesToScroll: 1
     };
+    var sliderData = [
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      }
+    ];
+    var data = [
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      }
+    ];
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
@@ -93,222 +169,44 @@ class GenerlaAnalystics extends Component {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <div className="widget-content">
-                                <img src={Img} alt="img" width="40" />
-                                <p>first medical kit</p>
-                              </div>
-                            </td>
-                            <td>
-                              <p>89$ ~ 149$</p>
-                            </td>
-                            <td>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
+                          {data.map(product => (
+                            <tr>
+                              <td>
+                                <div className="widget-content">
+                                  <img src={Img} alt="img" width="40" />
+                                  <p>{product["productName"]}</p>
                                 </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
+                              </td>
+                              <td>
+                                <p>{product["price"]}</p>
+                              </td>
+                              <td>
+                                <div className="productInfo">
+                                  <div className="arrowProduct productInfo">
+                                    <h1>{product["NumberUp"]}</h1>
+                                    <ArrowUp
+                                      fill="#2edc5d"
+                                      className="arrowProductUp"
+                                    />
+                                  </div>
+                                  <div className="arrowProduct productInfo">
+                                    <h1>{product["NumberDown"]}</h1>
+                                    <ArrowDown
+                                      fill="#f53636"
+                                      className="arrowProductUp"
+                                    />
+                                  </div>
+                                  <div className="arrowProduct productInfo my-staring">
+                                    <StarRatingComponent
+                                      name="rate1"
+                                      starCount={5}
+                                      value={product["Rate"]}
+                                    />
+                                  </div>
                                 </div>
-                                <div className="arrowProduct productInfo my-staring">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="widget-content">
-                                <img src={Img} alt="img" width="40" />
-                                <p>first medical kit</p>
-                              </div>
-                            </td>
-                            <td>
-                              <p>89$ ~ 149$</p>
-                            </td>
-                            <td>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo my-staring">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="widget-content">
-                                <img src={Img} alt="img" width="40" />
-                                <p>first medical kit</p>
-                              </div>
-                            </td>
-                            <td>
-                              <p>89$ ~ 149$</p>
-                            </td>
-                            <td>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo my-staring">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="widget-content">
-                                <img src={Img} alt="img" width="40" />
-                                <p>first medical kit</p>
-                              </div>
-                            </td>
-                            <td>
-                              <p>89$ ~ 149$</p>
-                            </td>
-                            <td>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo my-staring">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="widget-content">
-                                <img src={Img} alt="img" width="40" />
-                                <p>first medical kit</p>
-                              </div>
-                            </td>
-                            <td>
-                              <p>89$ ~ 149$</p>
-                            </td>
-                            <td>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo my-staring">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="widget-content">
-                                <img src={Img} alt="img" width="40" />
-                                <p>first medical kit</p>
-                              </div>
-                            </td>
-                            <td>
-                              <p>89$ ~ 149$</p>
-                            </td>
-                            <td>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo my-staring">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
+                              </td>
+                            </tr>
+                          ))}
                         </tbody>
                       </table>
                     </div>
@@ -349,24 +247,16 @@ class GenerlaAnalystics extends Component {
                   <div className="p-3 product-details">
                     <div>
                       <Slider {...settings}>
-                        <div className="bg-white">
-                          <MyCard Title="Dubai" Img={Dubai} Rate={504} />
-                        </div>
-                        <div className="bg-white">
-                          <MyCard Title="Sahara" Img={Dubai} Rate={94} />
-                        </div>
-                        <div className="bg-white">
-                          <MyCard Title="Tunisia" Img={Dubai} Rate={278} />
-                        </div>
-                        <div className="bg-white">
-                          <MyCard Title="Dubai" Img={Dubai} Rate={504} />
-                        </div>
-                        <div className="bg-white">
-                          <MyCard Title="Dubai" Img={Dubai} Rate={504} />
-                        </div>
-                        <div className="bg-white">
-                          <MyCard Title="Dubai" Img={Dubai} Rate={504} />
-                        </div>
+                        {sliderData.map(element => (
+                          <div className="bg-white">
+                            <MyCard
+                              Title={element["name"]}
+                              views={element["views"]}
+                              Img={Dubai}
+                              Rate={element["rate"]}
+                            />
+                          </div>
+                        ))}
                       </Slider>
                     </div>
                   </div>
