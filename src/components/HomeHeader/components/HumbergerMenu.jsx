@@ -45,7 +45,9 @@ const Container = styled(HumMenu)`
   display: flex;
   justify-content: flex-start;
   z-index: 1;
+
   color: #ffb808;
+
   flex-basis: 20%;
   input {
     display: none;
@@ -65,16 +67,21 @@ const Container = styled(HumMenu)`
     border: none;
     border-raduis: 50%;
   }
+
   .hr1 {
     width: 2.65rem;
   }
+
   .hr2 {
     width: 2.75rem;
   }
+
   .hr3 {
     width: 2.55rem;
   }
+
   // Toggling Menu State
+
   .list {
     display: none;
   }
@@ -82,12 +89,15 @@ const Container = styled(HumMenu)`
     display: block;
     width: 100%;
   }
+
   @media (min-width: 768px) {
     justify-content: center;
   }
+
   @media (min-width: 1024px) {
     display: none;
   }
+
   // --------------
   //  List and List ITems
   .list {

@@ -20,5 +20,7 @@ const Container = styled(Img)`
   transform:translate(58%,25%);
 
   z-index: 0;
+
+
   
 `;

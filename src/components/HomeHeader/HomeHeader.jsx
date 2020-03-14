@@ -62,18 +62,24 @@ const Container = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+
   position: relative;
+
   // padding-top: 0.875rem;
+
   // Logo
   .logo {
     flex-basis: 80%;
+
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .logo__img {
     width: 6.25rem;
     height: 2.6rem;
+
     @media (max-width: 1023px) {
       margin-left: 20vw;
     }
@@ -82,8 +88,10 @@ const Container = styled.div`
   .right {
     display: none;
   }
+
   @media (min-width: 1024px) {
     justify-content: flex-start;
+
     //Logo
     .logo {
       flex-basis: auto;
@@ -115,9 +123,11 @@ const Container = styled.div`
       border: solid 1px white;
       border-radius: 50px;
     }
+
     .input {
       width: 10.25rem;
     }
+
     // Login Button
     .loginBtn {
       font-size: 0.75rem;
