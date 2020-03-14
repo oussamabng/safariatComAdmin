@@ -8,7 +8,6 @@ import productBig from "../images/productBig.png";
 import product from "../images/product.png";
 
 export default function Modal(props) {
-  document.body.style.overflow = "hidden";
   const renderTourDetails = tourDetails => {
     return (
       <div className="modal-main">
@@ -78,7 +77,7 @@ export default function Modal(props) {
           </div>
 
           <div className="details__images">
-            <img src={BigImg} alt="" className="mainImage" />
+            <img src={BigImg} alt="" className="tourMainImage" />
             <div className="details__images__small">
               <img className="smallImage" src={SmallImg} alt="" />
               <img className="smallImage" src={SmallImg} alt="" />
@@ -90,13 +89,18 @@ export default function Modal(props) {
         <div className="bottom">
           <div className="bottom__package">
             <div className="bottom__package__includes">
-              <p className="bottom__package__includes__title">Includes</p>
+              <p className="bottom__package__includes__title">
+                {" "}
+                <i class="far fa-check-circle checked"></i> Includes
+              </p>
               {tourDetails.includes.map((el, index) => {
                 return <p className="bottom__package__includes__text">{el}</p>;
               })}
             </div>
             <div className="bottom__package__excludes">
-              <p className="bottom__package__excludes__title">Excludes</p>
+              <p className="bottom__package__excludes__title">
+                <i class="far fa-times-circle unchecked"></i> Excludes
+              </p>
               {tourDetails.excludes.map((el, index) => {
                 return <p className="bottom__package__excludes__text">{el}</p>;
               })}
@@ -165,7 +169,7 @@ export default function Modal(props) {
           </div>
 
           <div className="details__images">
-            <img src={productBig} alt="" className="mainImage" />
+            <img src={productBig} alt="" className="productImage" />
           </div>
         </div>
       </div>
@@ -203,6 +207,7 @@ const Container = styled.div`
     transform: translate(-50%, -50%);
     height:80vh;
     overflow:auto;
+    margin-top:2rem;
   }
 
   /// main styling
@@ -227,6 +232,7 @@ const Container = styled.div`
     color: white;
     padding: 0 1rem;
     background-color: #2c2c2c;
+    
   }
 
   .header__tittle {
@@ -301,7 +307,7 @@ const Container = styled.div`
    
   }
 
-  .mainImage{
+  .tourMainImage{
     max-width:24.5rem;
   }
 
@@ -314,6 +320,10 @@ const Container = styled.div`
 
   .smallImage{
     max-width:5.7rem;
+  }
+
+  .productImage{
+    max-width:18.5rem;
   }
 
   
@@ -333,7 +343,7 @@ const Container = styled.div`
   }
 
   .bottom__package__includes {
-    flex-basis:28rem;
+    flex-basis:27rem;
   }
 
   .bottom__package__includes__title {
@@ -341,11 +351,11 @@ const Container = styled.div`
   }
 
   .bottom__package__includes__text {
-    margin-left:1rem;
+    margin-left:2rem;
   }
 
 .bottom__package__excludes {
-    flex-basis:28rem;
+    flex-basis:27rem;
 
 }
 
@@ -354,7 +364,7 @@ const Container = styled.div`
 }
 
 .bottom__package__excludes__text {
-    margin-left:1rem;
+    margin-left:2rem;
     
 }
 
@@ -362,8 +372,9 @@ const Container = styled.div`
 
 
 .bottom__extra {
-    margin-top:1.5rem;
+    padding:1.5rem 0;
     background-color:#F6F6F6;
+    margin-top:1.5rem;
 
 }
 
@@ -400,5 +411,16 @@ const Container = styled.div`
     padding: 0 4rem;
     margin-top:1rem;
 }
+
+  .checked{
+    color:green;
+    margin-right:.5rem;
+  }
+
+  .unchecked {
+    color:red;
+    margin-right:.5rem;
+
+  }
 
 `;

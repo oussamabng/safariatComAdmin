@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import HrTable from "./components/HrTable";
 import styled from "styled-components";
-
 import { employees, tasks } from "./data";
+import AsideAdmin from "../../components/aside/asideAdmin";
+import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
+import HrTable from "./components/HrTable";
 import TableActions from "./components/TableActions";
 
 export default class HrManagement extends Component {
@@ -212,10 +213,12 @@ export default class HrManagement extends Component {
   render() {
     return (
       <Container>
-        <nav>navbar</nav>
-
+        {/* <nav></nav> */}
+        <HeaderAdmin />
         <div className="main">
-          <div className="sidebar">sidebar</div>
+          <div className="sidebar">
+            <AsideAdmin />
+          </div>
 
           <main className="hrManagement">
             <div className="hrManagement__top">
@@ -251,11 +254,14 @@ const Container = styled.div`
   .main {
     display: flex;
     background-color: #f6f6f6;
+
+    padding-bottom: 5rem;
   }
   .hrManagement {
-    width: 87%;
+    width: 90%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
+    padding-left: 80px;
   }
 
   .hrManagement__top {
@@ -277,7 +283,7 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 50%;
+    width: 47%;
   }
 
   .hrManagement__top__button {
