@@ -192,18 +192,19 @@ const Container = styled.div`
   }
 
   .toursAndProducts {
-    width: 90%;
+    width: 100%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
-    padding-left: 80px;
+    padding: 0 40px 0 120px;
   }
 
   .toursAndProducts__top {
     margin-top: 2rem;
     // padding: 0 1.6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .toursAndProducts__top__title {
@@ -217,7 +218,9 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 40%;
+    flex-shrink: 1.5;
+    flex-grow: 2;
+    flex-basis: auto;
   }
 
   .toursAndProducts__top__button {

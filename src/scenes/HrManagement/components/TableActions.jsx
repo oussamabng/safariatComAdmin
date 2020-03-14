@@ -89,6 +89,7 @@ const Container = styled.div`
   align-items: center;
 
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .search {
     min-width: 14.4rem;

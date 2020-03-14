@@ -188,11 +188,12 @@ const Container = styled.div`
     color: #757575;
     padding: 1rem 1.8rem;
     background-color: #f5f5f5;
-    fonts-size: 0.93rem;
+    font-size: 0.9rem;
     font-weight: normal;
     border-right: solid 0.5px #707070;
     // width: 20%;
     vertical-align: middle;
+    text-align: center;
   }
 
   .th__title {
@@ -200,8 +201,34 @@ const Container = styled.div`
   }
 
   .arrows {
-    vertical-align: middle;
+    vertical-align: bottom;
     float: right;
+    // margin-left: 2rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .td {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .th {
+      padding: 0.25rem 0.45rem;
+    }
+
+    .th__title {
+      display: block;
+    }
+
+    .arrows {
+      margin-top: 0.4rem;
+      float: none;
+    }
+
+    .td {
+      font-size: 0.6rem;
+    }
   }
 
   .clearfix::after {

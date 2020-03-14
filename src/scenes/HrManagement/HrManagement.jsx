@@ -107,8 +107,8 @@ export default class HrManagement extends Component {
 
     this.setState({ filteredEmployees });
   }
-  // Tasks functions
 
+  // Tasks functions
   changeSearchedTasks(task) {
     this.setState(
       { searchedTask: task },
@@ -191,19 +191,18 @@ export default class HrManagement extends Component {
   renderTable() {
     const view = this.state.isEmployeesView ? "employees" : "tasks";
 
-    const filteredEmployees =
-      this.state.filteredEmployees && view === "employees"
-        ? this.state.filteredEmployees
-        : this.state.initialEmployees;
+    const filteredEmployees = this.state.filteredEmployees
+      ? this.state.filteredEmployees
+      : this.state.initialEmployees;
 
-    const filteredTasks =
-      this.state.filteredTasks && view === "tasks"
-        ? this.state.filteredTasks
-        : this.state.initialTasks;
+    const filteredTasks = this.state.filteredTasks
+      ? this.state.filteredTasks
+      : this.state.initialTasks;
 
-    if (filteredEmployees) {
+    if (filteredEmployees && view === "employees") {
       return <HrTable employees={filteredEmployees} />;
-    } else if (filteredTasks) {
+    } else if (filteredTasks && view === "tasks") {
+      console.log("work");
       return <HrTable tasks={filteredTasks} />;
     } else {
       return null;
@@ -258,18 +257,19 @@ const Container = styled.div`
     padding-bottom: 5rem;
   }
   .hrManagement {
-    width: 90%;
+    width: 100%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
-    padding-left: 80px;
+    padding: 0 40px 0 120px;
   }
 
   .hrManagement__top {
     margin-top: 2rem;
     // padding: 0 1.6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .hrManagement__top__title {
@@ -283,7 +283,9 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 47%;
+    flex-shrink: 1.5;
+    flex-grow: 2;
+    flex-basis: auto;
   }
 
   .hrManagement__top__button {

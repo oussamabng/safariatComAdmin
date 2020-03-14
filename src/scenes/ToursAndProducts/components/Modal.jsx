@@ -197,6 +197,7 @@ const Container = styled.div`
 
 
   .modal-main {
+    margin:0 auto;
       background-color:white;
     position: fixed;
     background: white;
@@ -208,6 +209,7 @@ const Container = styled.div`
     height:80vh;
     overflow:auto;
     margin-top:2rem;
+    
   }
 
   /// main styling
@@ -241,14 +243,14 @@ const Container = styled.div`
   // Top -----------------------------------------------------------------------------
   .top {
       display:flex;
-      justify:content:center;
+      justify-content:center;
       align-items:center;
-      
+      margin:0 2rem;
   }
   // text -------------
   .details__text {
       flex-basis:30rem;
-      
+      margin-right:2rem;
   }
 
   .details__buttons{
@@ -277,7 +279,6 @@ const Container = styled.div`
   .details__info{
     background-color:#F6F6F6;
     margin-top:15px;
-    margin-left:5rem;
   }
 
   .details__info__row {
