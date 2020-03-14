@@ -16,17 +16,15 @@ import Admin from "./scenes/AdminDashbord/Admin";
 import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
 function App() {
   return (
-
     <Router>
-        <Switch>
-          <Route component={Home} exact path="/" ></Route>
-          <Route component={Services} path="/services" ></Route>
-          <Route component={Blog} path="/blog" ></Route>
-          <Route component={Contact} path="/contact" ></Route>
-          <Route component={About} path="/about" ></Route>
-          <Route component={Admin} path="/admin"></Route>
-
-        </Switch>
+      <Switch>
+        <Route component={Home} exact path="/"></Route>
+        <Route component={Services} path="/services"></Route>
+        <Route component={Blog} path="/blog"></Route>
+        <Route component={Contact} path="/contact"></Route>
+        <Route component={About} path="/about"></Route>
+        <Route component={Admin} path="/admin"></Route>
+      </Switch>
     </Router>
   );
 }
