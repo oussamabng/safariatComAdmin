@@ -1,13 +1,4 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useParams,
-  useRouteMatch
-} from "react-router-dom";
 
 import HeaderAdmin from "../../components/Header/HeaderAdmin";
 import AsideAdmin from "../../components/aside/asideAdmin.jsx";
@@ -24,10 +15,7 @@ class Admin extends Component {
       <>
         <HeaderAdmin />
         <AsideAdmin />
-        <Router>
-          <Route component={UserInteraction} path="/admin/users"></Route>
-          <Route component={GenerlaAnalystics} path="/admin/tours"></Route>
-        </Router>{" "}
+        {this.props.content}
       </>
     );
   }

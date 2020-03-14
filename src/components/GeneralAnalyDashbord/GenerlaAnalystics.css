@@ -53,7 +53,7 @@
   box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
 }
 .my-col {
-  padding: 0 45px;
+  padding: 0 15px;
 }
 .product-details {
   padding-top: 0 !important;
@@ -117,9 +117,7 @@
 .my-staring {
   padding-top: 5px;
 }
-.my-col2 {
-  min-height: 400px;
-}
+
 .actions-icon-btn {
   display: flex;
   flex-direction: row;
@@ -167,7 +165,7 @@
 
 .slick-prev:before {
   content: "<" !important;
-  font-size: 24px !important;
+  font-size: 28px !important;
   font-weight: 800 !important;
   color: #707070 !important;
 }
@@ -175,21 +173,10 @@
 .slick-next:before {
   content: ">" !important;
   color: #707070 !important;
-  font-size: 24px !important;
+  font-size: 28px !important;
   font-weight: 800 !important;
 }
-.slick-prev {
-  position: absolute !important;
-  top: -32px !important;
-  right: 0 !important;
-  float: right !important;
-  left: 51% !important;
-}
-.slick-next {
-  position: absolute !important;
-  top: -32px !important;
-  left: 55% !important;
-}
+
 .GeneralGraphX {
   margin-left: 80px;
   max-width: 50%;
@@ -299,4 +286,15 @@
 }
 .ss {
   height: 100% !important;
+}
+.arrows {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+.slick-prev {
+  display: none !important;
+}
+.slick-next {
+  display: none !important;
 }

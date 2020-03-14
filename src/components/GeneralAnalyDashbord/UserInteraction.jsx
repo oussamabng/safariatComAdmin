@@ -5,7 +5,24 @@ import { ReactComponent as Mail } from "./images/envelope.svg";
 import { ReactComponent as Dots } from "./images//ellipsis.svg";
 import Chart from "react-apexcharts";
 import Dubai from "./images/dubai.jpg";
+var ChartGeo = require("react-google-charts").Chart;
 
+var dataGeo = [
+  ["Country", "Popularity"],
+  ["Germany", 200],
+  ["United States", 300],
+  ["Brazil", 400],
+  ["Canada", 500],
+  ["France", 600],
+  ["RU", 700]
+];
+var optionsGeo = {
+  sizeAxis: { minValue: 0, maxValue: 100 },
+  pointSize: 50,
+  legend: "none",
+  colorAxis: { colors: ["#ffcc4e"] },
+  datalessRegionColor: "#084C61"
+};
 class UserInteraction extends Component {
   constructor(props) {
     super(props);
@@ -354,8 +371,36 @@ class UserInteraction extends Component {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-2/5  p-4 text-center">
-            <p>Map Chart here</p>
+          <div className="w-full md:w-2/5 bg-red-500   text-center">
+            <div className="card">
+              <div className="card-header-tab card-header">
+                <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
+                  Top Regions
+                </div>
+                <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
+                  <div className="btn-group dropdown flex justify-center items-center">
+                    <button className="btn-icon btn-icon-only btn btn-link">
+                      <Info fill="#b3b8bd" className="info-btn" />
+                    </button>
+                    {/* here the dropdown div... */}
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center p-10 pt-0 items-center bg-white">
+                <ChartGeo
+                  className="chart-geo"
+                  width={"100%"}
+                  height={"400px"}
+                  chartType="GeoChart"
+                  data={dataGeo}
+                  options={optionsGeo}
+                  // Note: you will need to get a mapsApiKey for your project.
+                  // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+                  mapsApiKey="AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
+                  rootProps={{ "data-testid": "1" }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

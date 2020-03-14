@@ -1,21 +1,20 @@
-.productInfo .card-slider h1 {
+.set-fonts h1 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   font-size: 14px;
+  white-space: nowrap;
 }
-.productInfo .card-slider p {
+.set-fonts p {
   color: #707070;
   font-size: 11px;
-  margin-left: 5px;
+  white-space: nowrap;
 }
-.productInfo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .my-staring {
-  padding-top: 5px;
+  white-space: nowrap;
+}
+.set-back {
+  background-color: #f9f9f9;
 }
