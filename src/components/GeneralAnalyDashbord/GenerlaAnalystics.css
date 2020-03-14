@@ -188,7 +188,6 @@
 }
 
 .tableProduct {
-  margin: 0 2rem;
   height: 350px;
   overflow: scroll;
   overflow-x: hidden;
@@ -291,10 +290,4 @@
   cursor: pointer;
   width: 24px;
   height: 24px;
-}
-.slick-prev {
-  display: none !important;
-}
-.slick-next {
-  display: none !important;
 }

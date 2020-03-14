@@ -87,7 +87,7 @@ class GenerlaAnalystics extends Component {
                   <div className="p-0 card-body">
                     <div className="p-3 product-details">
                       {/* hna tabda */}
-                      <div className="tableProduct">
+                      <div className="tableProduct flex justify-center ">
                         <table
                           className="table-fixed table"
                           bordered
@@ -95,9 +95,9 @@ class GenerlaAnalystics extends Component {
                         >
                           <thead>
                             <tr>
-                              <th className="w-1/4 px-4 py-2">Product name</th>
-                              <th className="w-1/4 px-4 py-2">Price</th>
-                              <th className="w-1/6 px-4 py-2">Rate</th>
+                              <th className="w-2/5 px-4 py-2">Product name</th>
+                              <th className="w-1/5 px-4 py-2">Price</th>
+                              <th className="w-3/5 px-4 py-2">Rate</th>
                             </tr>
                           </thead>
                           <tbody>
