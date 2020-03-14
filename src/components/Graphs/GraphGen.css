@@ -3,9 +3,13 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  position: relative;
 }
 .apexcharts-toolbar {
   display: none !important;
+}
+
+.GenChart {
 }
 .apexcharts-xaxis {
   display: none !important;

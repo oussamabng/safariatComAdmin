@@ -33,17 +33,33 @@ class GenerlaAnalystics extends Component {
       speed: 500,
       slidesToShow: 3,
       arrows: false,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 1000,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     };
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
-          <div className="app-page-title">
-            <div className="page-title-wrapper">
+          <div className="app-page-title ">
+            <div className="flex lg:items-center md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
               <div className="GeneralDash">
                 <h1>Analytics and Statistics</h1>
               </div>
-              <div className="GeneralButtons GeneralDash">
+              <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
                 <a
                   style={{
                     backgroundColor: "#ffb808",
@@ -87,247 +103,375 @@ class GenerlaAnalystics extends Component {
                   <div className="p-0 card-body">
                     <div className="p-3 product-details">
                       {/* hna tabda */}
-                      <div className="tableProduct flex justify-center ">
-                        <table
-                          className="table-fixed table"
-                          bordered
-                          responsive
-                        >
-                          <thead>
-                            <tr>
-                              <th className="w-2/5 px-4 py-2">Product name</th>
-                              <th className="w-1/5 px-4 py-2">Price</th>
-                              <th className="w-3/5 px-4 py-2">Rate</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div className="widget-content">
-                                  <img src={Img} alt="img" width="40" />
-                                  <p className="text-center">
-                                    first medical kit
-                                  </p>
+                      <table className="border-collapse w-full">
+                        <thead>
+                          <tr>
+                            <th
+                              style={{ backgroundColor: "#f5f5f5" }}
+                              className="p-3 w:2/5  text-black-600 hidden lg:table-cell"
+                            >
+                              Product name
+                            </th>
+                            <th
+                              style={{ backgroundColor: "#f5f5f5" }}
+                              className="p-3 w:1/5    text-black-600 hidden lg:table-cell"
+                            >
+                              Price
+                            </th>
+                            <th
+                              style={{ backgroundColor: "#f5f5f5" }}
+                              className="p-3 w:2/5    text-black-600 hidden lg:table-cell"
+                            >
+                              Rate
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="table-tbody">
+                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Product name
+                              </span>
+                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <img src={Img} alt="img" width="40" />
+                                <p className="text-center px-2">
+                                  first medical kit
+                                </p>
+                              </div>
+                            </td>
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Price
+                              </span>
+                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                                89$ ~ 149$
+                              </p>
+                            </td>
+                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Rate
+                              </span>
+                              <div className="productInfo">
+                                <div className="arrowProduct productInfo">
+                                  <h1>255</h1>
+                                  <ArrowUp
+                                    fill="#2edc5d"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                              <td>
-                                <p className="text-center">89$ ~ 149$</p>
-                              </td>
-                              <td>
-                                <div className="productInfo">
-                                  <div className="arrowProduct productInfo">
-                                    <h1>255</h1>
-                                    <ArrowUp
-                                      fill="#2edc5d"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo">
-                                    <h1>0</h1>
-                                    <ArrowDown
-                                      fill="#f53636"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo my-staring">
-                                    <StarRatingComponent
-                                      name="rate1"
-                                      starCount={5}
-                                      value={rating}
-                                    />
-                                  </div>
+                                <div className="arrowProduct productInfo">
+                                  <h1>0</h1>
+                                  <ArrowDown
+                                    fill="#f53636"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="widget-content">
-                                  <img src={Img} alt="img" width="40" />
-                                  <p className="text-center">
-                                    first medical kit
-                                  </p>
+                                <div className="arrowProduct productInfo">
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating}
+                                  />
                                 </div>
-                              </td>
-                              <td>
-                                <p className="text-center">89$ ~ 149$</p>
-                              </td>
-                              <td>
-                                <div className="productInfo">
-                                  <div className="arrowProduct productInfo">
-                                    <h1>255</h1>
-                                    <ArrowUp
-                                      fill="#2edc5d"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo">
-                                    <h1>0</h1>
-                                    <ArrowDown
-                                      fill="#f53636"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo my-staring">
-                                    <StarRatingComponent
-                                      name="rate1"
-                                      starCount={5}
-                                      value={rating}
-                                    />
-                                  </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Product name
+                              </span>
+                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <img src={Img} alt="img" width="40" />
+                                <p className="text-center px-2">
+                                  first medical kit
+                                </p>
+                              </div>
+                            </td>
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Price
+                              </span>
+                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                                89$ ~ 149$
+                              </p>
+                            </td>
+                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Rate
+                              </span>
+                              <div className="productInfo">
+                                <div className="arrowProduct productInfo">
+                                  <h1>255</h1>
+                                  <ArrowUp
+                                    fill="#2edc5d"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="widget-content">
-                                  <img src={Img} alt="img" width="40" />
-                                  <p className="text-center">
-                                    first medical kit
-                                  </p>
+                                <div className="arrowProduct productInfo">
+                                  <h1>0</h1>
+                                  <ArrowDown
+                                    fill="#f53636"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                              <td>
-                                <p className="text-center">89$ ~ 149$</p>
-                              </td>
-                              <td>
-                                <div className="productInfo">
-                                  <div className="arrowProduct productInfo">
-                                    <h1>255</h1>
-                                    <ArrowUp
-                                      fill="#2edc5d"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo">
-                                    <h1>0</h1>
-                                    <ArrowDown
-                                      fill="#f53636"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo my-staring">
-                                    <StarRatingComponent
-                                      name="rate1"
-                                      starCount={5}
-                                      value={rating}
-                                    />
-                                  </div>
+                                <div className="arrowProduct productInfo">
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating}
+                                  />
                                 </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="widget-content">
-                                  <img src={Img} alt="img" width="40" />
-                                  <p className="text-center">
-                                    first medical kit
-                                  </p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Product name
+                              </span>
+                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <img src={Img} alt="img" width="40" />
+                                <p className="text-center px-2">
+                                  first medical kit
+                                </p>
+                              </div>
+                            </td>
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Price
+                              </span>
+                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                                89$ ~ 149$
+                              </p>
+                            </td>
+                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Rate
+                              </span>
+                              <div className="productInfo">
+                                <div className="arrowProduct productInfo">
+                                  <h1>255</h1>
+                                  <ArrowUp
+                                    fill="#2edc5d"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                              <td>
-                                <p className="text-center">89$ ~ 149$</p>
-                              </td>
-                              <td>
-                                <div className="productInfo">
-                                  <div className="arrowProduct productInfo">
-                                    <h1>255</h1>
-                                    <ArrowUp
-                                      fill="#2edc5d"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo">
-                                    <h1>0</h1>
-                                    <ArrowDown
-                                      fill="#f53636"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo my-staring">
-                                    <StarRatingComponent
-                                      name="rate1"
-                                      starCount={5}
-                                      value={rating}
-                                    />
-                                  </div>
+                                <div className="arrowProduct productInfo">
+                                  <h1>0</h1>
+                                  <ArrowDown
+                                    fill="#f53636"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="widget-content">
-                                  <img src={Img} alt="img" width="40" />
-                                  <p>first medical kit</p>
+                                <div className="arrowProduct productInfo">
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating}
+                                  />
                                 </div>
-                              </td>
-                              <td>
-                                <p>89$ ~ 149$</p>
-                              </td>
-                              <td>
-                                <div className="productInfo">
-                                  <div className="arrowProduct productInfo">
-                                    <h1>255</h1>
-                                    <ArrowUp
-                                      fill="#2edc5d"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo">
-                                    <h1>0</h1>
-                                    <ArrowDown
-                                      fill="#f53636"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo my-staring">
-                                    <StarRatingComponent
-                                      name="rate1"
-                                      starCount={5}
-                                      value={rating}
-                                    />
-                                  </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Product name
+                              </span>
+                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <img src={Img} alt="img" width="40" />
+                                <p className="text-center px-2">
+                                  first medical kit
+                                </p>
+                              </div>
+                            </td>
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Price
+                              </span>
+                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                                89$ ~ 149$
+                              </p>
+                            </td>
+                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Rate
+                              </span>
+                              <div className="productInfo">
+                                <div className="arrowProduct productInfo">
+                                  <h1>255</h1>
+                                  <ArrowUp
+                                    fill="#2edc5d"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="widget-content">
-                                  <img src={Img} alt="img" width="40" />
-                                  <p>first medical kit</p>
+                                <div className="arrowProduct productInfo">
+                                  <h1>0</h1>
+                                  <ArrowDown
+                                    fill="#f53636"
+                                    className="arrowProductUp"
+                                  />
                                 </div>
-                              </td>
-                              <td>
-                                <p>89$ ~ 149$</p>
-                              </td>
-                              <td>
-                                <div className="productInfo">
-                                  <div className="arrowProduct productInfo">
-                                    <h1>255</h1>
-                                    <ArrowUp
-                                      fill="#2edc5d"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo">
-                                    <h1>0</h1>
-                                    <ArrowDown
-                                      fill="#f53636"
-                                      className="arrowProductUp"
-                                    />
-                                  </div>
-                                  <div className="arrowProduct productInfo my-staring">
-                                    <StarRatingComponent
-                                      name="rate1"
-                                      starCount={5}
-                                      value={rating}
-                                    />
-                                  </div>
+                                <div className="arrowProduct productInfo">
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating}
+                                  />
                                 </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Product name
+                              </span>
+                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <img src={Img} alt="img" width="40" />
+                                <p className="text-center px-2">
+                                  first medical kit
+                                </p>
+                              </div>
+                            </td>
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Price
+                              </span>
+                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                                89$ ~ 149$
+                              </p>
+                            </td>
+                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Rate
+                              </span>
+                              <div className="productInfo">
+                                <div className="arrowProduct productInfo">
+                                  <h1>255</h1>
+                                  <ArrowUp
+                                    fill="#2edc5d"
+                                    className="arrowProductUp"
+                                  />
+                                </div>
+                                <div className="arrowProduct productInfo">
+                                  <h1>0</h1>
+                                  <ArrowDown
+                                    fill="#f53636"
+                                    className="arrowProductUp"
+                                  />
+                                </div>
+                                <div className="arrowProduct productInfo">
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating}
+                                  />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Product name
+                              </span>
+                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <img src={Img} alt="img" width="40" />
+                                <p className="text-center px-2">
+                                  first medical kit
+                                </p>
+                              </div>
+                            </td>
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Price
+                              </span>
+                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                                89$ ~ 149$
+                              </p>
+                            </td>
+                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Rate
+                              </span>
+                              <div className="productInfo">
+                                <div className="arrowProduct productInfo">
+                                  <h1>255</h1>
+                                  <ArrowUp
+                                    fill="#2edc5d"
+                                    className="arrowProductUp"
+                                  />
+                                </div>
+                                <div className="arrowProduct productInfo">
+                                  <h1>0</h1>
+                                  <ArrowDown
+                                    fill="#f53636"
+                                    className="arrowProductUp"
+                                  />
+                                </div>
+                                <div className="arrowProduct productInfo">
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating}
+                                  />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Product name
+                              </span>
+                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <img src={Img} alt="img" width="40" />
+                                <p className="text-center px-2">
+                                  first medical kit
+                                </p>
+                              </div>
+                            </td>
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Price
+                              </span>
+                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                                89$ ~ 149$
+                              </p>
+                            </td>
+                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                Rate
+                              </span>
+                              <div className="productInfo">
+                                <div className="arrowProduct productInfo">
+                                  <h1>255</h1>
+                                  <ArrowUp
+                                    fill="#2edc5d"
+                                    className="arrowProductUp"
+                                  />
+                                </div>
+                                <div className="arrowProduct productInfo">
+                                  <h1>0</h1>
+                                  <ArrowDown
+                                    fill="#f53636"
+                                    className="arrowProductUp"
+                                  />
+                                </div>
+                                <div className="arrowProduct productInfo">
+                                  <StarRatingComponent
+                                    name="rate1"
+                                    starCount={5}
+                                    value={rating}
+                                  />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -345,7 +489,7 @@ class GenerlaAnalystics extends Component {
             <div className="flex">
               <div className="w-full my-col my-col2 flex flex-col justify-start">
                 <div className="mb-3 card">
-                  <div className="card-header-tab card-header">
+                  <div className="card-header-tab card-header sm:px-5">
                     <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
                       Top tours
                     </div>
@@ -362,7 +506,58 @@ class GenerlaAnalystics extends Component {
                           alert("mzl madrt fonctionallité");
                         }}
                       />
-                      <div className="btn-group-lg btn-group" role="groupe">
+                      <div className="p-10  lg:hidden sm:px-5">
+                        <div className="dropdown inline-block  relative">
+                          <button className="bg-gray-300 text-gray-700 font-semibold py-1 px-2 rounded inline-flex items-center">
+                            <span className="mr-1 text-xs">Dropdown</span>
+                            <svg
+                              className="fill-current h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                            >
+                              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                            </svg>
+                          </button>
+                          <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
+                            <li className="">
+                              <a
+                                className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
+                                href="#"
+                              >
+                                Hour
+                              </a>
+                            </li>
+                            <li className="">
+                              <a
+                                className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
+                                href="#"
+                              >
+                                Week
+                              </a>
+                            </li>
+                            <li className="">
+                              <a
+                                className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
+                                href="#"
+                              >
+                                Day
+                              </a>
+                            </li>
+                            <li className="">
+                              <a
+                                className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
+                                href="#"
+                              >
+                                Month
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div
+                        className="btn-group-lg btn-group lg:flex md:hidden sm:hidden"
+                        role="groupe"
+                      >
                         <button className="btn btn-alternate btn-pill1">
                           Hour
                         </button>
@@ -383,7 +578,7 @@ class GenerlaAnalystics extends Component {
                     </div>
                   </div>
                   <div className="p-0 card-body">
-                    <div className="p-5 product-details">
+                    <div className="p-5 pt-0 pb-0 bg-white">
                       <div>
                         <Slider slick={this} {...settings}>
                           <div className=" ">
