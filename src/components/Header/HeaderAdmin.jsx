@@ -43,15 +43,15 @@ class HeaderAdmin extends Component {
                 </div>
               </div>
             </div>
-            <div className="ml-auto flex flex-row">
+            <div className="ml-auto flex flex-row justify-center items-center">
               <a href="#" className="nameAdmin">
                 <img src={Ouss} alt="usernamePhoto" />
-                <div className="flexCol">
+                <div className="flexCol flex flex-col justify-center items-start">
                   <span>@username</span>
                   <h3>-CEO of travel agency</h3>
                 </div>
               </a>
-              <a href="#" className="notification_admin">
+              <a href="#" className="notification_admin mx-6">
                 <img src={Notification} alt="notification" />
               </a>
             </div>
