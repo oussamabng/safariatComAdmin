@@ -268,7 +268,7 @@ const Container = styled.div`
 
   .hrManagement__top__title {
     vertical-align: middle;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
     color: #171717;
   }
 
@@ -277,7 +277,7 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 54%;
+    width: 50%;
   }
 
   .hrManagement__top__button {

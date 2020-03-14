@@ -152,7 +152,9 @@ export default class ToursAndProducts extends Component {
 
           <main className="toursAndProducts">
             <div className="toursAndProducts__top">
-              <h3 className="toursAndProducts__top__title">HR HrManagement</h3>
+              <h3 className="toursAndProducts__top__title">
+                Tours And Products Management
+              </h3>
               <hr className="toursAndProducts__top__hr"></hr>
               <div className="toursAndProducts__top__buttons">
                 <button
@@ -202,7 +204,7 @@ const Container = styled.div`
 
   .toursAndProducts__top__title {
     vertical-align: middle;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #171717;
   }
 
@@ -211,7 +213,7 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 54%;
+    width: 40%;
   }
 
   .toursAndProducts__top__button {
