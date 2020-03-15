@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./New.css";
 import { ReactComponent as Info } from "../GeneralAnalyDashbord/images/information.svg";
 import Img from "../GeneralAnalyDashbord/images/dubai.jpg";
+import { ReactComponent as Restart } from "./images/update-arrow.svg";
 
 class New extends Component {
   constructor(props) {
@@ -9,6 +10,38 @@ class New extends Component {
     this.state = {};
   }
   render() {
+    var data = [
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      },
+      {
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
+      }
+    ];
     const { name, time, type } = this.props;
     return (
       <div className=" card new-card">
@@ -17,7 +50,13 @@ class New extends Component {
             News
           </div>
           <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
-            <div className="btn-group dropdown flex justify-center items-center">
+            <div className="btn-group dropdown flex justify-center items-center mx-3">
+              <a href="#" className="btn-icon btn-icon-only btn btn-link">
+                <Restart fill="#b3b8bd" className="info-btn" />
+              </a>
+              {/* here the dropdown div... */}
+            </div>
+            <div className="btn-group dropdown flex justify-center items-center mx-3">
               <button className="btn-icon btn-icon-only btn btn-link">
                 <Info fill="#b3b8bd" className="info-btn" />
               </button>

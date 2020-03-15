@@ -24,7 +24,6 @@ class GenerlaAnalystics extends Component {
       rating: 4
     };
   }
-
   render() {
     const { rating } = this.state;
     const settings = {
@@ -51,6 +50,82 @@ class GenerlaAnalystics extends Component {
         }
       ]
     };
+    var sliderData = [
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      },
+      {
+        name: "Dubai",
+        rate: 4,
+        views: 504
+      }
+    ];
+    var data = [
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      },
+      {
+        productName: "first medical kit",
+        price: "89$ - 149$",
+        Rate: 4,
+        NumberUp: 255,
+        NumberDown: 0
+      }
+    ];
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">

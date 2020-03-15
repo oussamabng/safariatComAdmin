@@ -21,4 +21,12 @@ const Container = styled(Arrow)`
     cursor: pointer;
     margin-bottom: 2.2rem;
     margin-top:4.7rem;
+
+    @media (max-width:768px){
+      max-width: 1.75rem;
+    max-height: 1.75rem;
+    margin-top:.6rem;
+    margin-bottom: 1.2rem;
+
+    }
   `;

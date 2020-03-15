@@ -5,13 +5,10 @@ import "./Card.css";
 class MyCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      rating: 4
-    };
+    this.state = {};
   }
   render() {
-    const { rating } = this.state;
-    const { Img, Title, Rate } = this.props;
+    const { Img, Title, Rate, views } = this.props;
     return (
       <div style={{ width: "90%", height: "80%" }}>
         <div class="max-w-sm rounded overflow-hidden set-back">

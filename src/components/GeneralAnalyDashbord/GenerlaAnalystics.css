@@ -43,13 +43,19 @@
   border-radius: 18px;
   box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
 }
+.GeneralButtons a:first-child:hover {
+  background-color: #ffb908c2 !important;
+}
+.GeneralButtons a:last-child:hover {
+  background-color: rgba(255, 255, 255, 0.685) !important;
+}
 .my-col {
   padding: 0 15px;
 }
 .product-details {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 .card-header {
   background-color: white;
@@ -167,7 +173,6 @@
   font-size: 28px !important;
   font-weight: 800 !important;
 }
-
 .GeneralGraphX {
   margin-left: 80px;
   max-width: 50%;

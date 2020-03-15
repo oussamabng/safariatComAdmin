@@ -15,4 +15,10 @@ const Container = styled.span`
   display: block;
   margin-right:2.6rem;
   margin-top : 1.5rem;
+  
+
+  @media (max-width:768px){
+    width: ${props => props.scale / 2}rem;
+    height: ${props => props.scale / 2}rem;
+  }
 `;
