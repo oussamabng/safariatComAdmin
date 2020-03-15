@@ -89,6 +89,7 @@ const Container = styled.div`
   align-items: center;
 
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .search {
     min-width: 14.4rem;
@@ -120,15 +121,21 @@ const Container = styled.div`
     border-radius: 4px;
   }
 
+  .right {
+    vertical-align: middle;
+  }
+
   .addBtn {
     background-color: #084c61;
     color: #fff;
     padding: 1rem 4rem;
     border-radius: 4px;
     margin-right: 1.5rem;
+    vertical-align: middle;
   }
 
   .infoLink {
+    // position: absolute;
     font-size: 1rem;
     color: #b3b8bd;
     border: solid 1px #b3b8bd;
@@ -136,5 +143,24 @@ const Container = styled.div`
     vertical-align: middle;
     cursor: pointer;
     padding: 0.2rem 0.5rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .addBtn {
+      padding: 0.7rem 2rem;
+    }
+
+    .select {
+      padding: 0.7rem 1.2rem;
+    }
+
+    .searchLabel,
+    .search {
+      padding: 0.7rem 0.4rem;
+    }
+
+    .infoLink {
+      padding: 0.2rem 0.3rem;
+    }
   }
 `;

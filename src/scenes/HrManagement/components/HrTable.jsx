@@ -182,13 +182,14 @@ const Container = styled.div`
   .thead {
     text-align: left;
     color: ##757575;
+    vertical-align: middle;
   }
 
   .th {
     color: #757575;
     padding: 1rem 1.8rem;
     background-color: #f5f5f5;
-    fonts-size: 0.93rem;
+    font-size: 0.9rem;
     font-weight: normal;
     border-right: solid 0.5px #707070;
     // width: 20%;
@@ -200,8 +201,34 @@ const Container = styled.div`
   }
 
   .arrows {
-    vertical-align: middle;
+    vertical-align: bottom;
     float: right;
+    // margin-left: 2rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .td {
+      font-size: 0.8rem;
+    }
+
+    .th {
+      padding: 0.5rem 0.9rem;
+      vertical-align: middle;
+    }
+    .arrows {
+      font-size: 10px;
+      margin-top: 1.15px;
+    }
+
+    .th__title {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .td {
+      font-size: 0.6rem;
+    }
   }
 
   .clearfix::after {

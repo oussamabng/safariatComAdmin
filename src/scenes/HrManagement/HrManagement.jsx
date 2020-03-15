@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import HrTable from "./components/HrTable";
 import styled from "styled-components";
-
 import { employees, tasks } from "./data";
+import AsideAdmin from "../../components/aside/asideAdmin";
+import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
+import HrTable from "./components/HrTable";
 import TableActions from "./components/TableActions";
 
 export default class HrManagement extends Component {
@@ -106,8 +107,8 @@ export default class HrManagement extends Component {
 
     this.setState({ filteredEmployees });
   }
-  // Tasks functions
 
+  // Tasks functions
   changeSearchedTasks(task) {
     this.setState(
       { searchedTask: task },
@@ -190,19 +191,18 @@ export default class HrManagement extends Component {
   renderTable() {
     const view = this.state.isEmployeesView ? "employees" : "tasks";
 
-    const filteredEmployees =
-      this.state.filteredEmployees && view === "employees"
-        ? this.state.filteredEmployees
-        : this.state.initialEmployees;
+    const filteredEmployees = this.state.filteredEmployees
+      ? this.state.filteredEmployees
+      : this.state.initialEmployees;
 
-    const filteredTasks =
-      this.state.filteredTasks && view === "tasks"
-        ? this.state.filteredTasks
-        : this.state.initialTasks;
+    const filteredTasks = this.state.filteredTasks
+      ? this.state.filteredTasks
+      : this.state.initialTasks;
 
-    if (filteredEmployees) {
+    if (filteredEmployees && view === "employees") {
       return <HrTable employees={filteredEmployees} />;
-    } else if (filteredTasks) {
+    } else if (filteredTasks && view === "tasks") {
+      console.log("work");
       return <HrTable tasks={filteredTasks} />;
     } else {
       return null;
@@ -212,10 +212,12 @@ export default class HrManagement extends Component {
   render() {
     return (
       <Container>
-        <nav>navbar</nav>
-
+        {/* <nav></nav> */}
+        <HeaderAdmin />
         <div className="main">
-          <div className="sidebar">sidebar</div>
+          <div className="sidebar">
+            <AsideAdmin />
+          </div>
 
           <main className="hrManagement">
             <div className="hrManagement__top">
@@ -251,19 +253,23 @@ const Container = styled.div`
   .main {
     display: flex;
     background-color: #f6f6f6;
+
+    padding-bottom: 5rem;
   }
   .hrManagement {
-    width: 87%;
+    width: 100%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
+    padding: 0 40px 0 120px;
   }
 
   .hrManagement__top {
     margin-top: 2rem;
     // padding: 0 1.6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .hrManagement__top__title {
@@ -277,7 +283,9 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 50%;
+    flex-shrink: 1.5;
+    flex-grow: 2;
+    flex-basis: auto;
   }
 
   .hrManagement__top__button {
