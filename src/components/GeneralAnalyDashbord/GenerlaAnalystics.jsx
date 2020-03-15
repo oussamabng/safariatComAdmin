@@ -19,13 +19,20 @@ import New from "../New/New.jsx";
 class GenerlaAnalystics extends Component {
   constructor(props) {
     super(props);
-
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
     this.state = {
-      rating: 4
+      rating: 4,
     };
   }
+  next() {
+    this.slider.slickNext();
+  }
+  previous() {
+    this.slider.slickPrev();
+  }
   render() {
-    const { rating } = this.state;
+    var { rating } = this.state;
     const settings = {
       dots: true,
       infinite: true,
@@ -230,6 +237,7 @@ class GenerlaAnalystics extends Component {
                                 <div className="arrowProduct productInfo">
                                   <h1>255</h1>
                                   <ArrowUp
+
                                     fill="#2edc5d"
                                     className="arrowProductUp"
                                   />
@@ -570,16 +578,14 @@ class GenerlaAnalystics extends Component {
                     </div>
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                       <ArrowLeft
+                        onClick={this.previous}
                         className="arrows px-1"
-                        onClick={() => {
-                          alert("mzl madrt fonctionallité");
-                        }}
+
                       />
                       <ArrowRight
                         className="arrows px-1"
-                        onClick={() => {
-                          alert("mzl madrt fonctionallité");
-                        }}
+                        onClick={this.next}
+
                       />
                       <div className="p-10  lg:hidden sm:px-5">
                         <div className="dropdown inline-block  relative">
@@ -655,7 +661,7 @@ class GenerlaAnalystics extends Component {
                   <div className="p-0 card-body">
                     <div className="p-5 pt-0 pb-0 bg-white">
                       <div>
-                        <Slider slick={this} {...settings}>
+                        <Slider ref={c => (this.slider = c)} {...settings}>
                           <div className=" ">
                             <MyCard Title="Dubai" Img={Dubai} Rate={504} />
                           </div>

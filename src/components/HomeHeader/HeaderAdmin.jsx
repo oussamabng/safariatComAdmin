@@ -11,7 +11,7 @@ class HeaderAdmin extends Component {
       clicked: false
     };
   }
-  if(clicked) {}
+  if(clicked) { }
   render() {
     return (
       <>
