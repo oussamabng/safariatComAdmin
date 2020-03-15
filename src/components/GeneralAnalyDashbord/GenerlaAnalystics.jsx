@@ -509,7 +509,7 @@ class GenerlaAnalystics extends Component {
                       <div className="p-10  lg:hidden sm:px-5">
                         <div className="dropdown inline-block  relative">
                           <button className="bg-gray-300 text-gray-700 font-semibold py-1 px-2 rounded inline-flex items-center">
-                            <span className="mr-1 text-xs">Dropdown</span>
+                            <span className="mr-1 text-xs">Time</span>
                             <svg
                               className="fill-current h-4 w-4"
                               xmlns="http://www.w3.org/2000/svg"

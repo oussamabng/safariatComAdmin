@@ -17,7 +17,7 @@
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
-  height: 335px;
+  height: 450px;
 }
 .set-top-tour {
   background-image: url("./images/dubai.jpg");
@@ -47,4 +47,30 @@
   letter-spacing: normal;
   text-align: left;
   color: #2d2d2d;
+}
+.spanProgress {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #179ef7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+.spanProgress:after,
+.animate > span > span {
+  animation: move 2s linear infinite;
 }
