@@ -21,13 +21,9 @@
   margin: -30px -30px 30px;
   margin-bottom: 0 !important;
   position: relative;
-  padding-top: 15px;
+  padding-top: 15px !important;
 }
-.page-title-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+
 .GeneralDash {
   font-size: 26px;
   font-weight: normal;
@@ -38,13 +34,8 @@
   align-content: center;
   align-items: center;
 }
-.GeneralButtons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-}
-.GeneralButtons a {
+
+.GeneralDash a {
   margin: 0 10px;
   padding: 10px 12px;
   font-size: 14px;
@@ -59,7 +50,7 @@
   background-color: rgba(255, 255, 255, 0.685) !important;
 }
 .my-col {
-  padding: 0 25px;
+  padding: 0 15px;
 }
 .product-details {
   padding-top: 0 !important;
@@ -93,10 +84,10 @@
 .widget-content {
   display: flex;
   flex: 1;
-  position: relative;
   padding: 0 !important;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .widget-content img {
   border-radius: 50% !important;
@@ -110,7 +101,7 @@
 .productInfo {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 .arrowProduct h1 {
@@ -123,9 +114,7 @@
 .my-staring {
   padding-top: 5px;
 }
-.my-col2 {
-  min-height: 400px;
-}
+
 .actions-icon-btn {
   display: flex;
   flex-direction: row;
@@ -173,7 +162,7 @@
 
 .slick-prev:before {
   content: "<" !important;
-  font-size: 24px !important;
+  font-size: 28px !important;
   font-weight: 800 !important;
   color: #707070 !important;
 }
@@ -181,20 +170,8 @@
 .slick-next:before {
   content: ">" !important;
   color: #707070 !important;
-  font-size: 24px !important;
+  font-size: 28px !important;
   font-weight: 800 !important;
-}
-.slick-prev {
-  position: absolute !important;
-  top: -32px !important;
-  right: 0 !important;
-  float: right !important;
-  left: 56% !important;
-}
-.slick-next {
-  position: absolute !important;
-  top: -32px !important;
-  left: 60% !important;
 }
 .GeneralGraphX {
   margin-left: 80px;
@@ -206,14 +183,15 @@
   margin: 0 !important;
 }
 
-.tableProduct {
-  margin: 0 2rem;
+.product-details {
   height: 350px;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
 }
+
 .tableProduct::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
@@ -305,4 +283,13 @@
 }
 .ss {
   height: 100% !important;
+}
+.arrows {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+  z-index: 1000;
 }

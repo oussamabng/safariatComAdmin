@@ -1,17 +1,11 @@
 .new-card {
-  max-height: 410px;
+  max-height: 500px;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
 }
-.notification-new {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.4rem;
-}
+
 .notification-part-left {
   display: flex;
   flex-direction: row;
@@ -22,6 +16,7 @@
   width: 60px;
   height: 60px;
 }
+
 .fullname-new {
   display: flex;
   flex-direction: row;
@@ -32,9 +27,10 @@
   display: flex;
   flex-direction: column;
 }
+.full-p,
 .fullname-new p {
   margin-left: 15px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -45,8 +41,9 @@
   overflow: hidden;
   color: #757575;
 }
+
 .date-new p {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -58,7 +55,7 @@
   overflow: hidden;
 }
 .fullname-new h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -72,9 +69,11 @@
 .notification-part-right {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 .notification-part-right img {
-  width: 40%;
+  width: 100%;
+  height: 150px;
 }
 .card-header-tab .card-header {
   margin: 15px 0;

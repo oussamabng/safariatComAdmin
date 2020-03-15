@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import HeaderAdmin from "../../components/Header/HeaderAdmin";
+
 import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
 import AsideAdmin from "../../components/aside/asideAdmin.jsx";
 import "./admin.css";
-import GenerlaAnalystics from "../../components/GeneralAnalyDashbord/GenerlaAnalystics.jsx";
 class Admin extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +13,7 @@ class Admin extends Component {
       <>
         <HeaderAdmin />
         <AsideAdmin />
-        <GenerlaAnalystics />
+        {this.props.content}
       </>
     );
   }

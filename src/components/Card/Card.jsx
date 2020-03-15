@@ -10,19 +10,20 @@ class MyCard extends Component {
   render() {
     const { Img, Title, Rate, views } = this.props;
     return (
-      <div className="img" style={{ width: "16rem", height: "18rem" }}>
-        <img className="rounded-lg" variant="top" src={Img} />
-        <div className="card-body pt-1 pl-1">
-          <div className="card-title mb-0">{Title}</div>
-          <div className="card-title">
-            <div className="productInfo">
-              <div className="productInfo card-slider">
-                <h1>
-                  Rate <p>( based on {views} reviews)</p>
-                </h1>
-              </div>
-              <div className="  my-staring">
-                <StarRatingComponent name="rate1" starCount={5} value={Rate} />
+      <div style={{ width: "90%", height: "80%" }}>
+        <div class="max-w-sm rounded overflow-hidden set-back">
+          <img
+            class="w-full rounded-lg"
+            src={Img}
+            alt="Sunset in the mountains"
+          />
+          <div class="px-1 py-4 flex flex-col">
+            <div class="font-bold text-xl mb-2">{Title}</div>
+            <div className="flex md:flex-col md:items-start md:px-2 flex-row justify-between items-center set-fonts">
+              <h1 class="text-base">Rate</h1>
+              <p>( based on {Rate} reviews)</p>
+              <div className="my-staring">
+                <StarRatingComponent name="rate1" starCount={5} value={views} />
               </div>
             </div>
           </div>

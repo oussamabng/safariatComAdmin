@@ -1,0 +1,76 @@
+.shaker .active {
+  background-color: #a0a0a0ef;
+}
+.imgStyle.sec {
+  width: 40px !important;
+  height: 40px !important;
+}
+.set-background-color {
+  background-color: #f3f3f3;
+}
+.set-background-color-v2 {
+  background-color: #ffffff;
+  opacity: 0.55;
+}
+.scroll-div {
+  overflow: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  height: 450px;
+}
+.set-top-tour {
+  background-image: url("./images/dubai.jpg");
+  height: 160px;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: left;
+}
+.set-top-tour h1 {
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2d2d2d;
+}
+.set-top-tour p {
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2d2d2d;
+}
+.spanProgress {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #179ef7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+.spanProgress:after,
+.animate > span > span {
+  animation: move 2s linear infinite;
+}
