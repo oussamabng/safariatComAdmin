@@ -93,12 +93,12 @@
   font-family: "Segoe UI";
   color: #707070;
 }
-.search_admin {
+.search_admin-v {
   background-color: #f1f1f1;
   padding: 10px 17px;
   border-radius: 26px;
 }
-.search_admin input {
+.search_admin-v input {
   background-color: rgba(0, 0, 0, 0);
   font-size: 17px;
 }
@@ -120,8 +120,64 @@
   border: none !important;
   background-color: #f1f1f1 !important;
 }
-@media (max-width: 1280px) {
-  .search_admin {
-    display: none !important;
+
+@media (max-width: 1300px) {
+  p {
+    font-size: 14px !important;
+  }
+  span {
+    font-size: 14px !important;
+  }
+  h1 {
+    font-size: 20px !important;
+  }
+  h3 {
+    font-size: 12px !important;
+  }
+  a {
+    font-size: 16px !important;
+  }
+  .search_admin-v {
+    padding: 6px 8px;
+    font-size: 16px;
+  }
+  .search_admin-v input {
+    font-size: 16px;
+  }
+  .buttons_nav a {
+    margin: 0 25px;
+  }
+}
+@media (max-width: 1130px) {
+  .search_admin-v {
+    font-size: 14px !important;
+  }
+  .search_admin-v input {
+    font-size: 14px;
+  }
+  .buttons_nav a {
+    margin: 0 15px;
+  }
+  .middlePart {
+    margin: 0 25px !important;
+  }
+}
+
+@media (max-width: 1172px){
+  .responsive-rate{
+    display: flex!important;
+    font-size: 14px!important;
+  }
+  .responsive-rate h1{
+    font-size: 14px!important;
+  }
+  .responsive-rate p{
+    font-size: 13px!important;
+  }
+}
+
+@media (max-width:1050px){
+  .arrowProduct{
+    margin: 0 2px!important;
   }
 }

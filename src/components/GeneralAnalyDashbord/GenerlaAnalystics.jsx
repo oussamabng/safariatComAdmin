@@ -207,7 +207,7 @@ class GenerlaAnalystics extends Component {
                               <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                 Product name
                               </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                              <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
                                 <img src={Img} alt="img" width="40" />
                                 <p className="text-center px-2">
                                   first medical kit
@@ -218,15 +218,15 @@ class GenerlaAnalystics extends Component {
                               <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                 Price
                               </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
+                              <p className="responsive-rate lg:text-center whitespace-no-wrap sm:text-right">
                                 89$ ~ 149$
                               </p>
                             </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                               <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                 Rate
                               </span>
-                              <div className="productInfo">
+                              <div className="productInfo responsive-rate">
                                 <div className="arrowProduct productInfo">
                                   <h1>255</h1>
                                   <ArrowUp

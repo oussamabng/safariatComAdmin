@@ -18,7 +18,7 @@ class MyCard extends Component {
             alt="Sunset in the mountains"
           />
           <div class="px-1 py-4 flex flex-col">
-            <div class="font-bold text-xl mb-2">{Title}</div>
+            <div class="font-bold text-lg md:px-2 mb-2">{Title}</div>
             <div className="flex md:flex-col md:items-start md:px-2 flex-row justify-between items-center set-fonts">
               <h1 class="text-base">Rate</h1>
               <p>( based on {Rate} reviews)</p>

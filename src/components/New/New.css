@@ -43,7 +43,7 @@
 }
 
 .date-new p {
-  font-size: 12px;
+  font-size: 12px!important;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

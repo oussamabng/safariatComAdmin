@@ -95,7 +95,7 @@ class UserInteraction extends Component {
       }
     };
   }
-  componentDidMount = () => {};
+  componentDidMount = () => { };
   handleActive = element => {
     const arr = document.getElementsByClassName(
       "btn btn-alternate bg-white  border-none"
@@ -277,7 +277,7 @@ class UserInteraction extends Component {
                     <div className="p-2 flex flex-row justify-between items-center">
                       <div className="w-3/5 rounded set-top-tour mx-1">
                         <div className="flex flex-col p-2 justify-start set-background-color-v2">
-                          <h1>Tunis, Tunisia</h1>
+                          <h1 className="font-size-res">Tunis, Tunisia</h1>
                           <p>
                             Af deel pomp soms tijd veel ad. En voorloopig
                             uitgegeven en nu ad verkochten beschikken.
@@ -286,7 +286,7 @@ class UserInteraction extends Component {
                       </div>
                       <div className="w-3/5  rounded set-top-tour  mx-1">
                         <div className="flex flex-col p-2 justify-start set-background-color-v2">
-                          <h1>Tunis, Tunisia</h1>
+                          <h1 className="font-size-res">Tunis, Tunisia</h1>
                           <p>
                             Af deel pomp soms tijd veel ad. En voorloopig
                             uitgegeven en nu ad verkochten beschikken.
@@ -299,7 +299,7 @@ class UserInteraction extends Component {
                 <div className="p-2 flex flex-row justify-between items-center">
                   <div className="w-3/5 rounded set-top-tour mx-1">
                     <div className="flex flex-col p-2 justify-start set-background-color-v2">
-                      <h1>Tunis, Tunisia</h1>
+                      <h1 className="font-size-res">Tunis, Tunisia</h1>
                       <p>
                         Af deel pomp soms tijd veel ad. En voorloopig uitgegeven
                         en nu ad verkochten beschikken.
@@ -308,7 +308,7 @@ class UserInteraction extends Component {
                   </div>
                   <div className="w-3/5  rounded set-top-tour  mx-1">
                     <div className="flex flex-col p-2 justify-start set-background-color-v2">
-                      <h1>Tunis, Tunisia</h1>
+                      <h1 className="font-size-res">Tunis, Tunisia</h1>
                       <p>
                         Af deel pomp soms tijd veel ad. En voorloopig uitgegeven
                         en nu ad verkochten beschikken.
@@ -339,14 +339,17 @@ class UserInteraction extends Component {
                           <img className="imgStyle sec" src={Dubai} alt="img" />
                         </div>
                         <div className="date-new flex flex-col justify-start ">
-                          <h1 className="text-sm">kevin meklien</h1>
+                          <h1 className="font-size-res">kevin meklien</h1>
                           <p>Influencer user</p>
                         </div>
                       </div>
                       <div className="flex flex-row justify-start items-center">
-                        <Mail className="px-2 w-10 h-10" fill="#707070" />
-                        <Dots className="px-2 w-10 h-10" fill="#707070" />
-                      </div>
+                        <a href="#">
+                          <Mail className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
+                        </a>
+                        <a href="#">
+                          <Dots className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
+                        </a> </div>
                     </div>
                     <div className="set-background-color flex flex-row flex-row justify-between items-center p-3">
                       <div className="flex flex-row justify-start items-center">
@@ -354,35 +357,16 @@ class UserInteraction extends Component {
                           <img className="imgStyle sec" src={Dubai} alt="img" />
                         </div>
                         <div className="date-new flex flex-col justify-start ">
-                          <h1 className="text-sm">kevin meklien</h1>
+                          <h1 className="font-size-res">kevin meklien</h1>
                           <p>Influencer user</p>
                         </div>
                       </div>
                       <div className="flex flex-row justify-start items-center">
                         <a href="#">
-                          <Mail className="px-2 w-10 h-10" fill="#707070" />
+                          <Mail className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
                         </a>
                         <a href="#">
-                          <Dots className="px-2 w-10 h-10" fill="#707070" />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="set-background-color flex flex-row flex-row justify-between items-center p-3">
-                      <div className="flex flex-row justify-start items-center">
-                        <div className="widget-content px-1">
-                          <img className="imgStyle sec" src={Dubai} alt="img" />
-                        </div>
-                        <div className="date-new flex flex-col justify-start ">
-                          <h1 className="text-sm">kevin meklien</h1>
-                          <p>Influencer user</p>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-start items-center">
-                        <a href="#">
-                          <Mail className="px-2 w-10 h-10" fill="#707070" />
-                        </a>
-                        <a href="#">
-                          <Dots className="px-2 w-10 h-10" fill="#707070" />
+                          <Dots className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
                         </a>
                       </div>
                     </div>
@@ -392,18 +376,17 @@ class UserInteraction extends Component {
                           <img className="imgStyle sec" src={Dubai} alt="img" />
                         </div>
                         <div className="date-new flex flex-col justify-start ">
-                          <h1 className="text-sm">kevin meklien</h1>
+                          <h1 className="font-size-res">kevin meklien</h1>
                           <p>Influencer user</p>
                         </div>
                       </div>
                       <div className="flex flex-row justify-start items-center">
                         <a href="#">
-                          <Mail className="px-2 w-10 h-10" fill="#707070" />
+                          <Mail className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
                         </a>
                         <a href="#">
-                          <Dots className="px-2 w-10 h-10" fill="#707070" />
-                        </a>
-                      </div>
+                          <Dots className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
+                        </a> </div>
                     </div>
                     <div className="set-background-color flex flex-row flex-row justify-between items-center p-3">
                       <div className="flex flex-row justify-start items-center">
@@ -411,18 +394,17 @@ class UserInteraction extends Component {
                           <img className="imgStyle sec" src={Dubai} alt="img" />
                         </div>
                         <div className="date-new flex flex-col justify-start ">
-                          <h1 className="text-sm">kevin meklien</h1>
+                          <h1 className="font-size-res">kevin meklien</h1>
                           <p>Influencer user</p>
                         </div>
                       </div>
                       <div className="flex flex-row justify-start items-center">
                         <a href="#">
-                          <Mail className="px-2 w-10 h-10" fill="#707070" />
+                          <Mail className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
                         </a>
                         <a href="#">
-                          <Dots className="px-2 w-10 h-10" fill="#707070" />
-                        </a>
-                      </div>
+                          <Dots className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
+                        </a> </div>
                     </div>
                     <div className="set-background-color flex flex-row flex-row justify-between items-center p-3">
                       <div className="flex flex-row justify-start items-center">
@@ -430,18 +412,35 @@ class UserInteraction extends Component {
                           <img className="imgStyle sec" src={Dubai} alt="img" />
                         </div>
                         <div className="date-new flex flex-col justify-start ">
-                          <h1 className="text-sm">kevin meklien</h1>
+                          <h1 className="font-size-res">kevin meklien</h1>
                           <p>Influencer user</p>
                         </div>
                       </div>
                       <div className="flex flex-row justify-start items-center">
                         <a href="#">
-                          <Mail className="px-2 w-10 h-10" fill="#707070" />
+                          <Mail className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
                         </a>
                         <a href="#">
-                          <Dots className="px-2 w-10 h-10" fill="#707070" />
-                        </a>
+                          <Dots className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
+                        </a> </div>
+                    </div>
+                    <div className="set-background-color flex flex-row flex-row justify-between items-center p-3">
+                      <div className="flex flex-row justify-start items-center">
+                        <div className="widget-content px-1">
+                          <img className="imgStyle sec" src={Dubai} alt="img" />
+                        </div>
+                        <div className="date-new flex flex-col justify-start ">
+                          <h1 className="font-size-res">kevin meklien</h1>
+                          <p>Influencer user</p>
+                        </div>
                       </div>
+                      <div className="flex flex-row justify-start items-center">
+                        <a href="#">
+                          <Mail className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
+                        </a>
+                        <a href="#">
+                          <Dots className="px-2 w-10 h-10 responsive-icons" fill="#707070" />
+                        </a> </div>
                     </div>
                   </div>
                 </div>

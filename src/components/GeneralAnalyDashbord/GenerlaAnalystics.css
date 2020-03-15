@@ -105,7 +105,7 @@
   align-items: center;
 }
 .arrowProduct h1 {
-  font-size: 1rem;
+  font-size: 1rem!important;
   line-height: 1.5;
   font-weight: normal;
   color: #212529;
@@ -281,9 +281,7 @@
   width: 16px;
   height: 16px;
 }
-.ss {
-  height: 100% !important;
-}
+
 .arrows {
   cursor: pointer;
   width: 24px;
@@ -293,3 +291,4 @@
   display: block;
   z-index: 1000;
 }
+

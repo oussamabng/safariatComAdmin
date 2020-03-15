@@ -64,10 +64,7 @@ class New extends Component {
             </div>
           </div>
         </div>
-        <div
-          style={{ backgroundColor: "#f5f5f5" }}
-          className="rowNews bg-white py-2"
-        >
+        <div className="rowNews bg-white py-2">
           <div className="bard-body px-4">
             <div className="pt-0 pb-0 bg-white p-3">
               <div className="xl:flex lg:hidden sm:hidden xs:hidden xl:flex-row xl:justify-between xl:items-center xl:p-0 ">
@@ -126,10 +123,7 @@ class New extends Component {
             </div>
           </div>
         </div>
-        <div
-          style={{ backgroundColor: "#f5f5f5" }}
-          className="rowNews bg-white py-2"
-        >
+        <div className="rowNews bg-white py-2">
           <div className="bard-body px-4">
             <div className="pt-0 pb-0 bg-white p-3">
               <div className="xl:flex lg:hidden sm:hidden xs:hidden xl:flex-row xl:justify-between xl:items-center xl:p-0 ">
