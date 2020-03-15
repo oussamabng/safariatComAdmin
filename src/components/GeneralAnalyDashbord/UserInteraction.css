@@ -30,7 +30,8 @@
   text-align: left;
 }
 .set-top-tour h1 {
-  font-size: 14px;
+  margin: 5px 0;
+  font-size: 14px!important;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -40,7 +41,7 @@
   color: #2d2d2d;
 }
 .set-top-tour p {
-  font-size: 11px;
+  font-size: 11px!important;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
