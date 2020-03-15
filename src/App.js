@@ -17,6 +17,8 @@ import About from "./scenes/About/About.jsx";
 import Admin from "./scenes/AdminDashbord/Admin";
 import HrManagement from "./scenes/HrManagement/HrManagement";
 import ToursAndProducts from "./scenes/ToursAndProducts/ToursAndProducts";
+import GenerlaAnalystics from "./components/GeneralAnalyDashbord/GenerlaAnalystics";
+import UserInteraction from "./components/GeneralAnalyDashbord/UserInteraction";
 /*import SignUp from "./scenes/SignUp/SignUp.jsx";
 import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
 function App() {

@@ -23,11 +23,7 @@ class MyCard extends Component {
               <h1 class="text-base">Rate</h1>
               <p>( based on {Rate} reviews)</p>
               <div className="my-staring">
-                <StarRatingComponent
-                  name="rate1"
-                  starCount={5}
-                  value={rating}
-                />
+                <StarRatingComponent name="rate1" starCount={5} value={views} />
               </div>
             </div>
           </div>

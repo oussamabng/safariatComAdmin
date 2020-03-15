@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./HeaderAdmin.css";
 import Notification from "./images/notifications.svg";
 import Ouss from "./images/ouss.jpg";
+import Logo from "./images/logo.png";
 
 class HeaderAdmin extends Component {
   constructor(props) {
@@ -15,7 +16,10 @@ class HeaderAdmin extends Component {
     return (
       <>
         <div className="main_header_admin">
-          <nav className="navbar navbar-static-top navbar_header_admin">
+          <nav className="navbar_header_admin ">
+            <div className="logo-navbar">
+              <img src={Logo} alt="logo" />
+            </div>
             <div className="partLeft">
               <div className="search_admin input-group">
                 <span className="input-group-btn">
@@ -39,19 +43,17 @@ class HeaderAdmin extends Component {
                 </div>
               </div>
             </div>
-            <div className="partRight">
-              <div className="profileAd">
-                <a href="#" className="nameAdmin">
-                  <img src={Ouss} alt="usernamePhoto" />
-                  <div className="flexCol">
-                    <span>@username</span>
-                    <h3>-CEO of travel agency</h3>
-                  </div>
-                </a>
-                <a href="#" className="notification_admin">
-                  <img src={Notification} alt="notification" />
-                </a>
-              </div>
+            <div className="ml-auto flex flex-row justify-center items-center">
+              <a href="#" className="nameAdmin">
+                <img src={Ouss} alt="usernamePhoto" />
+                <div className="flexCol flex flex-col justify-center items-start">
+                  <span>@username</span>
+                  <h3>-CEO of travel agency</h3>
+                </div>
+              </a>
+              <a href="#" className="notification_admin mx-6">
+                <img src={Notification} alt="notification" />
+              </a>
             </div>
           </nav>
         </div>
