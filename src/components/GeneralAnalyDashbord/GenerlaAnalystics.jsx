@@ -311,7 +311,7 @@ class GenerlaAnalystics extends Component {
                                 <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                   Price
     </span>
-                                <p className="responsive-rate lg:text-center whitespace-no-wrap sm:text-right">
+                                <p className="responsive-rate lg:text-center whitespace-no-wrap xl:text-center xl:float-none sm:text-right sm:float-right">
                                   {product["price"]}
                                 </p>
                               </td>
