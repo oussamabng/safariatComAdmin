@@ -1,5 +1,5 @@
 .new-card {
-  max-height: 500px;
+  max-height: 480px;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */

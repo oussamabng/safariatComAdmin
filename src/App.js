@@ -1,4 +1,5 @@
 import React from "react";
+import "hint.css";
 import {
   BrowserRouter as Router,
   Switch,
