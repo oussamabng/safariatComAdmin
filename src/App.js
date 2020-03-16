@@ -22,10 +22,12 @@ import GenerlaAnalystics from "./components/GeneralAnalyDashbord/GenerlaAnalysti
 import UserInteraction from "./components/GeneralAnalyDashbord/UserInteraction";
 /*import SignUp from "./scenes/SignUp/SignUp.jsx";
 import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
+import NotificationsBox from "./components/NotificationsBox/NotificationsBox.jsx";
 function App() {
   return (
     <Router>
       <Switch>
+        <Route component={NotificationsBox} path="/test"></Route>
         <Route component={Home} exact path="/"></Route>
         <Route component={Services} path="/services"></Route>
         <Route component={Blog} path="/blog"></Route>

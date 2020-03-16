@@ -3,15 +3,19 @@ import "./HeaderAdmin.css";
 import Notification from "./images/notifications.svg";
 import Ouss from "./images/ouss.jpg";
 import Logo from "./images/logo.png";
-
+import NotificationBox from "../NotificationsBox/NotificationsBox.jsx";
 class HeaderAdmin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false
+      show: false
     };
   }
-  if(clicked) { }
+  showNotifications() {
+    this.setState({
+      show: !this.state.show
+    });
+  }
   render() {
     return (
       <>
@@ -51,9 +55,26 @@ class HeaderAdmin extends Component {
                   <h3>-CEO of travel agency</h3>
                 </div>
               </a>
-              <a href="#" className="notification_admin mx-6">
-                <img src={Notification} alt="notification" />
-              </a>
+              <div className="flex flex-col relative items-end">
+                <p
+                  href="#"
+                  className="notification_admin mx-4"
+                  onClick={() => {
+                    this.showNotifications();
+                  }}
+                >
+                  <img src={Notification} alt="notification" />
+                </p>
+                <div
+                  className={
+                    this.state.show
+                      ? "notification-box mx-6"
+                      : "notification-box hidden mx-6"
+                  }
+                >
+                  <NotificationBox />
+                </div>
+              </div>
             </div>
           </nav>
         </div>

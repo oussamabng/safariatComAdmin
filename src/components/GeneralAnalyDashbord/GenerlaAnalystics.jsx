@@ -15,6 +15,7 @@ import StarRatingComponent from "react-star-rating-component";
 import MyCard from "../Card/Card.jsx";
 import New from "../New/New.jsx";
 import { Link } from "react-router-dom";
+
 class GenerlaAnalystics extends Component {
   constructor(props) {
     super(props);
@@ -87,7 +88,7 @@ class GenerlaAnalystics extends Component {
         },
         tooltip: {
           y: {
-            formatter: function (val) {
+            formatter: function(val) {
               return "" + val + " thousands";
             }
           }
@@ -101,39 +102,37 @@ class GenerlaAnalystics extends Component {
             toggleDataSeries: true
           }
         }
-
-
       },
       items: [
         {
-          name: 'Hour',
+          name: "Hour",
           key: 0,
-          scrollChor: '#',
+          scrollChor: "#"
         },
         {
-          name: 'Day',
+          name: "Day",
           key: 1,
 
-          scrollChor: '#',
+          scrollChor: "#"
         },
         {
-          name: 'Week',
+          name: "Week",
           key: 2,
-          scrollChor: '#about',
+          scrollChor: "#about"
         },
         {
-          name: 'Month',
+          name: "Month",
           key: 3,
-          scrollChor: '#contact',
-        },
+          scrollChor: "#contact"
+        }
       ],
-      activeLink: 'Month'
+      activeLink: "Month"
     };
   }
-  setActive = (link) => {
+  setActive = link => {
     //request funtion to filter
     this.setState({ activeLink: link }); //for active class
-  }
+  };
   next() {
     this.slider.slickNext();
   }
@@ -214,7 +213,31 @@ class GenerlaAnalystics extends Component {
         down: 0,
         img: Img
       },
-    ]
+      {
+        productName: "first medical kit",
+        price: "98$-149$",
+        rate: 4,
+        up: 255,
+        down: 0,
+        img: Img
+      },
+      {
+        productName: "first medical kit",
+        price: "98$-149$",
+        rate: 4,
+        up: 255,
+        down: 0,
+        img: Img
+      },
+      {
+        productName: "first medical kit",
+        price: "98$-149$",
+        rate: 4,
+        up: 255,
+        down: 0,
+        img: Img
+      }
+    ];
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
@@ -222,7 +245,6 @@ class GenerlaAnalystics extends Component {
             <div className="flex lg:items-center md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
               <div className="GeneralDash">
                 <h1>Analytics and Statistics</h1>
-
               </div>
               <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
                 <Link
@@ -258,7 +280,10 @@ class GenerlaAnalystics extends Component {
                     </div>
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                       <div className=" btn-group dropdown rekative flex justify-center items-center">
-                        <span className="hint--bottom text-center  hint--medium" aria-label="this is a hint">
+                        <span
+                          className="hint--bottom text-center  hint--medium"
+                          aria-label="this is a hint"
+                        >
                           <button className="btn-icon btn-icon-only btn btn-link">
                             <Info fill="#b3b8bd" className="info-btn" />
                           </button>
@@ -294,14 +319,18 @@ class GenerlaAnalystics extends Component {
                           </tr>
                         </thead>
                         <tbody className="table-tbody">
-                          {top_product_data.map((product) => (
+                          {top_product_data.map(product => (
                             <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
                               <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
                                 <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                   Product name
-    </span>
+                                </span>
                                 <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                  <img src={product["img"]} alt="img" width="40" />
+                                  <img
+                                    src={product["img"]}
+                                    alt="img"
+                                    width="40"
+                                  />
                                   <p className="text-center px-2">
                                     {product["productName"]}
                                   </p>
@@ -310,7 +339,7 @@ class GenerlaAnalystics extends Component {
                               <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                                 <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                   Price
-    </span>
+                                </span>
                                 <p className="responsive-rate lg:text-center whitespace-no-wrap xl:text-center xl:float-none sm:text-right sm:float-right">
                                   {product["price"]}
                                 </p>
@@ -318,12 +347,11 @@ class GenerlaAnalystics extends Component {
                               <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                                 <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                   Rate
-    </span>
+                                </span>
                                 <div className="productInfo responsive-rate">
                                   <div className="arrowProduct productInfo">
                                     <h1>{product["up"]}</h1>
                                     <ArrowUp
-
                                       fill="#2edc5d"
                                       className="arrowProductUp"
                                     />
@@ -345,7 +373,6 @@ class GenerlaAnalystics extends Component {
                                 </div>
                               </td>
                             </tr>
-
                           ))}
                         </tbody>
                       </table>
@@ -357,7 +384,10 @@ class GenerlaAnalystics extends Component {
             <div className="flex">
               <div className="w-full">
                 <div className="my-col">
-                  <GeneralGraph options={this.state.options} series={this.state.series} />
+                  <GeneralGraph
+                    options={this.state.options}
+                    series={this.state.series}
+                  />
                 </div>
               </div>
             </div>
@@ -374,13 +404,8 @@ class GenerlaAnalystics extends Component {
                       <ArrowLeft
                         onClick={this.previous}
                         className="arrows px-1"
-
                       />
-                      <ArrowRight
-                        className="arrows px-1"
-                        onClick={this.next}
-
-                      />
+                      <ArrowRight className="arrows px-1" onClick={this.next} />
                       <div className="p-10  lg:hidden sm:px-5">
                         <div className="dropdown inline-block  relative">
                           <button className="bg-gray-300 text-gray-700 font-semibold py-1 px-2 rounded inline-flex items-center">
@@ -394,8 +419,7 @@ class GenerlaAnalystics extends Component {
                             </svg>
                           </button>
                           <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
-                            <li className=""
-                            >
+                            <li className="">
                               <a
                                 className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
                                 href="#"
@@ -405,7 +429,6 @@ class GenerlaAnalystics extends Component {
                             </li>
                             <li className="">
                               <a
-
                                 className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
                                 href="#"
                               >
@@ -414,7 +437,6 @@ class GenerlaAnalystics extends Component {
                             </li>
                             <li className="">
                               <a
-
                                 className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
                                 href="#"
                               >
@@ -436,25 +458,33 @@ class GenerlaAnalystics extends Component {
                         className="btn-group-lg  btn-group lg:flex md:hidden sm:hidden"
                         role="groupe"
                       >
-                        {this.state.items.map((elem) => {
+                        {this.state.items.map(elem => {
                           let isActive = this.state.activeLink === elem.name;
-                          let navClass = isActive ? 'activeButt btn btn-alternate border-none cursor-pointer' : 'btn btn-alternate border-none cursor-pointer'
+                          let navClass = isActive
+                            ? "activeButt btn btn-alternate border-none cursor-pointer"
+                            : "btn btn-alternate border-none cursor-pointer";
                           return (
-                            <p name={elem["name"]}
+                            <p
+                              name={elem["name"]}
                               className={navClass}
                               scrollChor={elem["scrollChor"]}
                               key={elem["key"]}
-                              onClick={(props) => this.setActive(props.currentTarget.attributes[0].nodeValue)}>
-
-                              {elem['name']}
+                              onClick={props =>
+                                this.setActive(
+                                  props.currentTarget.attributes[0].nodeValue
+                                )
+                              }
+                            >
+                              {elem["name"]}
                             </p>
-                          )
+                          );
                         })}
-
-
                       </div>
                       <div className="btn-group dropdown flex justify-center items-center">
-                        <span className="hint--left text-center  hint--medium" aria-label="this is a hint">
+                        <span
+                          className="hint--left text-center  hint--medium"
+                          aria-label="this is a hint"
+                        >
                           <button className="btn-icon btn-icon-only btn btn-link">
                             <Info fill="#b3b8bd" className="info-btn" />
                           </button>
@@ -495,9 +525,7 @@ class GenerlaAnalystics extends Component {
             <div className="flex">
               <div className="w-full">
                 <div className="my-col">
-                  <New
-                    data={data_news}
-                  />
+                  <New data={data_news} />
                 </div>
               </div>
             </div>
