@@ -245,7 +245,7 @@ export default function Modal(props) {
           </select>
 
           <input
-            className="form__label__input"
+            className="form__label__input jobTitle"
             id="jobTitle"
             type="text"
             placeholder="job title"

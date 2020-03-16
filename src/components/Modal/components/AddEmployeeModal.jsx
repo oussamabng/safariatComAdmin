@@ -11,13 +11,14 @@ const Container = styled.div`
     background-color: white;
     position: fixed;
     background: white;
-    width: 90%;
+    width: 90vw;
     margin-left: 40px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 80vh;
+    height: 85vh;
     margin-top: 2rem;
+    overflow-y: auto;
   }
 
   .header {
@@ -40,8 +41,9 @@ const Container = styled.div`
 
   // form -------------------------------------------------
   .form {
+    overflow-y: auto;
     padding-top: 1rem;
-    height: 100%;
+    height: 90%;
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -49,9 +51,6 @@ const Container = styled.div`
     align-items: space-between;
     flex-direction: column;
     margin: 0 auto;
-  }
-
-  @media only screen and (min-width: 1250px) {
   }
 
   .form__label__input {
@@ -143,7 +142,33 @@ const Container = styled.div`
     color: #fff;
   }
 
-  .status {
-    margin-bottom: 4rem;
+  @media only screen and (min-height: 600px) {
+    .status {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media only screen and (min-height: 620px) {
+    .status {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media only screen and (min-height: 660px) {
+    .status {
+      margin-bottom: 5rem;
+    }
+  }
+
+  @media only screen and (min-height: 700px) {
+    .status {
+      margin-bottom: 8rem;
+    }
+  }
+
+  @media only screen and (min-height: 770px) {
+    .form {
+      height: 564px;
+    }
   }
 `;

@@ -76,7 +76,6 @@ const Container = styled.div`
   .text {
     flex-basis: 150px;
   }
-
   .add {
     width: 21%;
     margin-left: 10.5%;
