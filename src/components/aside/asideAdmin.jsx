@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./asideAdmin.css";
-import AsideSvg from "./images/AsideSvg.png";
 import Report from "./images/report.svg";
 import Business from "./images/business-and-finance.svg";
 import Crm from "./images/crm.svg";
@@ -47,7 +46,7 @@ class AsideAdmin extends Component {
           scrollChor: "/admin/finance"
         }
       ],
-      activeLink: "Report"
+      activeLink: this.props.active
     };
   }
   setActive = link => this.setState({ activeLink: link });

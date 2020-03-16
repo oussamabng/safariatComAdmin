@@ -36,15 +36,19 @@ function App() {
         <Route component={ToursAndProducts} path="/products"></Route>
         <Route
           path="/admin/tours"
-          render={props => <Admin content={<GenerlaAnalystics />} />}
+          render={props => (
+            <Admin active="Report" content={<GenerlaAnalystics />} />
+          )}
         />
         <Route
           path="/admin/finance"
-          render={props => <Admin content={<Finance />} />}
+          render={props => <Admin active="Compass" content={<Finance />} />}
         />
         <Route
           path="/admin/users"
-          render={props => <Admin content={<UserInteraction />} />}
+          render={props => (
+            <Admin active="Report" content={<UserInteraction />} />
+          )}
         />
         <Redirect from="/admin" to="/admin/tours" />
       </Switch>

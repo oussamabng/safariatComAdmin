@@ -10,12 +10,19 @@ class Admin extends Component {
   }
 
   render() {
-
     return (
       <>
-        <HeaderAdmin />
-        <AsideAdmin />
-        {this.props.content}
+        <HeaderAdmin show={this.state.show} />
+        <AsideAdmin active={this.props.active} />
+        <div
+          onClick={() => {
+            document.getElementsByClassName(
+              "notification-box mx-6"
+            )[0].style.display = "none";
+          }}
+        >
+          {this.props.content}
+        </div>
       </>
     );
   }
