@@ -7,7 +7,7 @@ export default class FinanceCard extends Component {
     this.state = {};
   }
   render() {
-    const { type, date, taux, number } = this.props;
+    const { type, time, taux, number } = this.props.data;
     return (
       <div className="p-4 shadow-lg bg-white md-col2 mx-4 my-0 rounded-lg flex justify-between flex-row items-center">
         <div className="w-4/5 flex flex-col justify-between items-start">
@@ -28,7 +28,7 @@ export default class FinanceCard extends Component {
               {taux > 0 ? `+${taux}` : taux}%
             </span>
             <span className="text-sm ml-4 whitespace-no-wrap md-text">
-              Since last {date}
+              Since last {time}
             </span>
           </div>
         </div>

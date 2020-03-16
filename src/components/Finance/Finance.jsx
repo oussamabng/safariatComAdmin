@@ -79,6 +79,58 @@ export default class Finance extends Component {
           color: "#6D213C",
           price: 122.9
         }
+      ],
+      dataTable: [
+        {
+          name: "martin dekly",
+          paying_day: "20/03/2020",
+          status: "not yet",
+          salary: "2500",
+          departement: "HR"
+        },
+        {
+          name: "alisia ester",
+          paying_day: "20/03/2020",
+          status: "paid out",
+          salary: "2500",
+          departement: "CRM"
+        },
+        {
+          name: "martin dekly",
+          paying_day: "20/03/2020",
+          status: "not yet",
+          salary: "2500",
+          departement: "HR"
+        },
+        {
+          name: "martin dekly",
+          paying_day: "20/03/2020",
+          status: "not yet",
+          salary: "2500",
+          departement: "HR"
+        }
+      ],
+      dataProductCard: {
+        type: "product",
+        number: 54,
+        taux: -1.48,
+        time: "month"
+      },
+      dataTourCard: {
+        type: "tour",
+        number: 54,
+        taux: 3.48,
+        time: "month"
+      },
+      dataTasks: [
+        {
+          name: "travel agency task 1",
+          date: "14/14/2020"
+        },
+        {
+          name: "travel agency task 1",
+          date: "14/14/2020"
+        }
       ]
     };
   }
@@ -87,6 +139,7 @@ export default class Finance extends Component {
     this.setState({ activeLink: link }); //for active class
   };
   render() {
+    const secondColumnStart = Math.floor(this.state.dataTasks.length / 2);
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
@@ -196,7 +249,7 @@ export default class Finance extends Component {
                       </p>
                     </div>
                   </div>
-                  <FinanceTable />
+                  <FinanceTable data={this.state.dataTable} />
                 </div>
                 {/* tableau */}
               </div>
@@ -206,22 +259,12 @@ export default class Finance extends Component {
             <div className="flex ">
               <div className="w-1/2">
                 <div className="w-full h-full card-hover cursor-pointer">
-                  <FinanceCard
-                    type="Product"
-                    number={54}
-                    taux={-1.48}
-                    date="month"
-                  />
+                  <FinanceCard data={this.state.dataProductCard} />
                 </div>
               </div>
               <div className="w-1/2">
                 <div className="w-full h-full card-hover cursor-pointer">
-                  <FinanceCard
-                    type="Tour"
-                    number={54}
-                    taux={+3.48}
-                    date="month"
-                  />
+                  <FinanceCard data={this.state.dataTourCard} />
                 </div>
               </div>
             </div>
@@ -278,14 +321,20 @@ export default class Finance extends Component {
                       <div className="my-4 text-md font-size-lg">
                         Travel agency need
                       </div>
-                      <div className="flex flex-row justify-between items-center w-full">
+                      <div className="flex flex-row justify-between items-start w-full">
                         <div className="w-1/2">
-                          <Task />
-                          <Task />
+                          {this.state.dataTasks
+                            .slice(secondColumnStart)
+                            .map(item => (
+                              <Task name={item.name} date={Element.date} />
+                            ))}
                         </div>
                         <div className="w-1/2">
-                          <Task />
-                          <Task />
+                          {this.state.dataTasks
+                            .slice(0, secondColumnStart)
+                            .map(item => (
+                              <Task name={item.name} date={Element.date} />
+                            ))}
                         </div>
                       </div>
                     </div>

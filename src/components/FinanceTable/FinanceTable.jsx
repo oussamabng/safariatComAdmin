@@ -12,7 +12,7 @@ export default class FinanceTable extends Component {
     return (
       <div id="example_wrapper" className="dataTables_wrapper dt-bootstrap4">
         <div className="flex">
-          <div className="w-full px-2">
+          <div className="w-full px-2 scroll-div">
             <table
               style={{ width: "100%" }}
               id="example"
@@ -75,126 +75,51 @@ export default class FinanceTable extends Component {
                 </tr>
               </thead>
               <tbody>
-                <tr role="row" className="odd">
-                  <td tabindex="0" className="sorting_1">
-                    <div className="justify-center items-center flex">
-                      <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                        <img src={Img} alt="img" width="40" />
-                        <p className="text-center px-2">martin dekly</p>
+                {this.props.data.map(element => (
+                  <tr role="row" className="odd">
+                    <td tabindex="0" className="sorting_1">
+                      <div className="justify-center items-center flex">
+                        <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                          <img src={Img} alt="img" width="40" />
+                          <p className="text-center px-2">{element["name"]}</p>
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td className="text-center">
-                    <span>20/03/2020</span>
-                  </td>
-                  <td className="text-center">
-                    <div className="flex justify-center items-center">
-                      <div className="flex justfiy-center flex-row text-center items-center">
-                        <div
-                          className=" w-2 h-2 flex  rounded-full"
-                          style={{
-                            backgroundColor: "#F53C56"
-                          }}
-                        ></div>
-                        <span className="ml-2">not yet</span>
+                    </td>
+                    <td className="text-center">
+                      <span>{element["paying_day"]}</span>
+                    </td>
+                    <td className="text-center">
+                      <div className="flex justify-center items-center">
+                        <div className="flex justfiy-center flex-row text-center items-center">
+                          <div
+                            className=" w-2 h-2 flex  rounded-full"
+                            style={{
+                              backgroundColor:
+                                element["status"][0] === "n"
+                                  ? "rgb(245, 60, 86)"
+                                  : "#2DCE98"
+                            }}
+                          ></div>
+                          <span className="ml-2">{element["status"]}</span>
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td className="text-center">
-                    <span>$2500</span>
-                  </td>
-                  <td className="text-center">
-                    <span>HR</span>
-                  </td>
-                  <td className="text-center ">
-                    <div className="flex justify-center items-center">
-                      <Dots
-                        className="px-2 w-10 h-10 responsive-icons rot"
-                        fill="#707070"
-                      />
-                    </div>
-                  </td>
-                </tr>
-                <tr role="row" className="odd">
-                  <td tabindex="0" className="sorting_1">
-                    <div className="justify-center items-center flex">
-                      <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                        <img src={Img} alt="img" width="40" />
-                        <p className="text-center px-2">martin dekly</p>
+                    </td>
+                    <td className="text-center">
+                      <span>${element["salary"]}</span>
+                    </td>
+                    <td className="text-center">
+                      <span>{element["departement"]}</span>
+                    </td>
+                    <td className="text-center ">
+                      <div className="flex justify-center items-center">
+                        <Dots
+                          className="px-2 w-10 h-10 responsive-icons rot"
+                          fill="#707070"
+                        />
                       </div>
-                    </div>
-                  </td>
-                  <td className="text-center">
-                    <span>20/03/2020</span>
-                  </td>
-                  <td className="text-center">
-                    <div className="flex justify-center items-center">
-                      <div className="flex justfiy-center flex-row text-center items-center">
-                        <div
-                          className=" w-2 h-2 flex  rounded-full"
-                          style={{
-                            backgroundColor: "#F53C56"
-                          }}
-                        ></div>
-                        <span className="ml-2">not yet</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="text-center">
-                    <span>$2500</span>
-                  </td>
-                  <td className="text-center">
-                    <span>HR</span>
-                  </td>
-                  <td className="text-center ">
-                    <div className="flex justify-center items-center">
-                      <Dots
-                        className="px-2 w-10 h-10 responsive-icons rot"
-                        fill="#707070"
-                      />
-                    </div>
-                  </td>
-                </tr>
-                <tr role="row" className="odd">
-                  <td tabindex="0" className="sorting_1">
-                    <div className="justify-center items-center flex">
-                      <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                        <img src={Img} alt="img" width="40" />
-                        <p className="text-center px-2">martin dekly</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="text-center">
-                    <span>20/03/2020</span>
-                  </td>
-                  <td className="text-center">
-                    <div className="flex justify-center items-center">
-                      <div className="flex justfiy-center flex-row text-center items-center">
-                        <div
-                          className=" w-2 h-2 flex  rounded-full"
-                          style={{
-                            backgroundColor: "#F53C56"
-                          }}
-                        ></div>
-                        <span className="ml-2">not yet</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="text-center">
-                    <span>$2500</span>
-                  </td>
-                  <td className="text-center">
-                    <span>HR</span>
-                  </td>
-                  <td className="text-center ">
-                    <div className="flex justify-center items-center">
-                      <Dots
-                        className="px-2 w-10 h-10 responsive-icons rot"
-                        fill="#707070"
-                      />
-                    </div>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

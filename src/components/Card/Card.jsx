@@ -20,7 +20,7 @@ class MyCard extends Component {
           <div class="px-1 py-4 flex flex-col">
             <div class="font-bold text-lg md:px-2 mb-2">{Title}</div>
             <div className="flex md:flex-col md:items-start md:px-2 flex-row justify-between items-center set-fonts">
-              <h1 class="text-base">Rate</h1>
+              <h1 class="text-base">{Rate}</h1>
               <p>( based on {Rate} reviews)</p>
               <div className="my-staring">
                 <StarRatingComponent name="rate1" starCount={5} value={views} />

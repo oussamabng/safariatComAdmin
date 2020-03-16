@@ -16,10 +16,10 @@ export default class Task extends Component {
               for="todo"
               data-content="travel agency need 1"
             >
-              travel agency need 1
+              {this.props.name}
             </label>
           </div>
-          <span className="ml-10 text-sm text-deco">14/14/1200</span>
+          <span className="ml-10 text-sm text-deco">{this.props.date}</span>
         </div>
       </div>
     );
