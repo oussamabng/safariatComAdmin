@@ -52,11 +52,7 @@
 .my-col {
   padding: 0 15px;
 }
-.product-details {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  background-color: rgb(255, 255, 255);
-}
+
 .card-header {
   background-color: white;
 }
@@ -105,7 +101,7 @@
   align-items: center;
 }
 .arrowProduct h1 {
-  font-size: 1rem;
+  font-size: 1rem!important;
   line-height: 1.5;
   font-weight: normal;
   color: #212529;
@@ -160,31 +156,13 @@
   display: none !important;
 }
 
-.slick-prev:before {
-  content: "<" !important;
-  font-size: 28px !important;
-  font-weight: 800 !important;
-  color: #707070 !important;
-}
 
-.slick-next:before {
-  content: ">" !important;
-  color: #707070 !important;
-  font-size: 28px !important;
-  font-weight: 800 !important;
-}
-.GeneralGraphX {
-  margin-left: 80px;
-  max-width: 50%;
-  padding: 15px 0;
-  padding-bottom: 10px;
-}
-.body-tabs .row {
-  margin: 0 !important;
-}
 
 .product-details {
-  height: 350px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: rgb(255, 255, 255);
+  max-height: 350px;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -281,9 +259,7 @@
   width: 16px;
   height: 16px;
 }
-.ss {
-  height: 100% !important;
-}
+
 .arrows {
   cursor: pointer;
   width: 24px;
@@ -292,4 +268,7 @@
 .dropdown:hover .dropdown-menu {
   display: block;
   z-index: 1000;
+}
+.activeButt {
+  background-color: #a0a0a0ef!important;
 }

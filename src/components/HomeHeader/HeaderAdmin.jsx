@@ -11,7 +11,7 @@ class HeaderAdmin extends Component {
       clicked: false
     };
   }
-  if(clicked) {}
+  if(clicked) { }
   render() {
     return (
       <>
@@ -21,7 +21,7 @@ class HeaderAdmin extends Component {
               <img src={Logo} alt="logo" />
             </div>
             <div className="partLeft">
-              <div className="search_admin input-group">
+              <div className="search_admin-v input-group">
                 <span className="input-group-btn">
                   <button className="btn btn-flat" type="submit" name="search">
                     <i className="fontSearch fa fa-search "></i>

@@ -13,10 +13,10 @@ const geoUrl =
 const markers = [
   {
     markerOffset: -30,
-    name: "France",
-    coordinates: [-58.3816, -34.6037]
+    name: "Algeria",
+    coordinates: [2.3816, 30.6037]
   },
-  { markerOffset: 15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
+  { markerOffset: 15, name: "La Paz", coordinates: [-55.1193, -16.4897] },
   { markerOffset: 15, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
   { markerOffset: 15, name: "Santiago", coordinates: [-70.6693, -33.4489] },
   { markerOffset: 15, name: "Bogota", coordinates: [-74.0721, 4.711] },

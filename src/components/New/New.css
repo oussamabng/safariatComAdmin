@@ -1,5 +1,5 @@
 .new-card {
-  max-height: 500px;
+  max-height: 480px;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -43,7 +43,7 @@
 }
 
 .date-new p {
-  font-size: 12px;
+  font-size: 12px!important;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

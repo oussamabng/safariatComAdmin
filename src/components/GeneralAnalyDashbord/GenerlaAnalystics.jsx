@@ -6,7 +6,6 @@ import Dubai from "./images/dubai.jpg";
 import { ReactComponent as ArrowUp } from "./images/up-arrow(1).svg";
 import { ReactComponent as ArrowLeft } from "./images/left-arrow.svg";
 import { ReactComponent as ArrowRight } from "./images/right-arrow.svg";
-
 import { ReactComponent as ArrowDown } from "./images/down-arrow(1).svg";
 import { ReactComponent as Info } from "./images/information.svg";
 import Slider from "react-slick";
@@ -15,17 +14,133 @@ import "slick-carousel/slick/slick-theme.css";
 import StarRatingComponent from "react-star-rating-component";
 import MyCard from "../Card/Card.jsx";
 import New from "../New/New.jsx";
-
+import { Link } from "react-router-dom";
 class GenerlaAnalystics extends Component {
   constructor(props) {
     super(props);
-
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
     this.state = {
-      rating: 4
+      series: [
+        {
+          name: "Day",
+          data: [80, 65, 60, 44, 77, 58, 63, 60, 15]
+        },
+        {
+          name: "Week",
+          data: [60, 55, 38, 15, 61, 58, 63, 44, 55]
+        },
+        {
+          name: "Month",
+          data: [44, 40, 25, 80, 38, 58, 63, 78, 63]
+        }
+      ],
+      options: {
+        responsive: [
+          {
+            breakpoint: 1300,
+            options: {
+              chart: {
+                width: 450
+              }
+            }
+          },
+          {
+            breakpoint: 1100,
+            options: {
+              chart: {
+                width: 350
+              }
+            }
+          }
+        ],
+        colors: ["#109bf8", "#ffb808", "#084c61"],
+        chart: {
+          type: "bar",
+          height: 350
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "35%",
+            endingShape: "rounded"
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          show: true,
+          width: 0.5,
+          colors: ["transparent"]
+        },
+        yaxis: {
+          axisTicks: {
+            show: true
+          },
+          axisBorder: {
+            show: false
+          }
+        },
+        fill: {
+          opacity: 1
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return "" + val + " thousands";
+            }
+          }
+        },
+        legend: {
+          show: true,
+          position: "top",
+          horizontalAlign: "right",
+          showForSingleSeries: true,
+          onItemClick: {
+            toggleDataSeries: true
+          }
+        }
+
+
+      },
+      items: [
+        {
+          name: 'Hour',
+          key: 0,
+          scrollChor: '#',
+        },
+        {
+          name: 'Day',
+          key: 1,
+
+          scrollChor: '#',
+        },
+        {
+          name: 'Week',
+          key: 2,
+          scrollChor: '#about',
+        },
+        {
+          name: 'Month',
+          key: 3,
+          scrollChor: '#contact',
+        },
+      ],
+      activeLink: 'Month'
     };
   }
+  setActive = (link) => {
+    //request funtion to filter
+    this.setState({ activeLink: link }); //for active class
+  }
+  next() {
+    this.slider.slickNext();
+  }
+  previous() {
+    this.slider.slickPrev();
+  }
   render() {
-    const { rating } = this.state;
     const settings = {
       dots: true,
       infinite: true,
@@ -50,82 +165,56 @@ class GenerlaAnalystics extends Component {
         }
       ]
     };
-    var sliderData = [
+    var data_news = [
       {
-        name: "Dubai",
-        rate: 4,
-        views: 504
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
       },
       {
-        name: "Dubai",
-        rate: 4,
-        views: 504
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
       },
       {
-        name: "Dubai",
-        rate: 4,
-        views: 504
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
       },
       {
-        name: "Dubai",
-        rate: 4,
-        views: 504
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
       },
       {
-        name: "Dubai",
-        rate: 4,
-        views: 504
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
       },
       {
-        name: "Dubai",
-        rate: 4,
-        views: 504
+        name: "Kevin Makelien",
+        time: "Today at 22:45",
+        type: "story"
       }
     ];
-    var data = [
+    var top_product_data = [
       {
         productName: "first medical kit",
-        price: "89$ - 149$",
-        Rate: 4,
-        NumberUp: 255,
-        NumberDown: 0
+        price: "98$-149$",
+        rate: 4,
+        up: 255,
+        down: 0,
+        img: Img
       },
       {
         productName: "first medical kit",
-        price: "89$ - 149$",
-        Rate: 4,
-        NumberUp: 255,
-        NumberDown: 0
+        price: "98$-149$",
+        rate: 4,
+        up: 255,
+        down: 0,
+        img: Img
       },
-      {
-        productName: "first medical kit",
-        price: "89$ - 149$",
-        Rate: 4,
-        NumberUp: 255,
-        NumberDown: 0
-      },
-      {
-        productName: "first medical kit",
-        price: "89$ - 149$",
-        Rate: 4,
-        NumberUp: 255,
-        NumberDown: 0
-      },
-      {
-        productName: "first medical kit",
-        price: "89$ - 149$",
-        Rate: 4,
-        NumberUp: 255,
-        NumberDown: 0
-      },
-      {
-        productName: "first medical kit",
-        price: "89$ - 149$",
-        Rate: 4,
-        NumberUp: 255,
-        NumberDown: 0
-      }
-    ];
+    ]
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
@@ -133,26 +222,27 @@ class GenerlaAnalystics extends Component {
             <div className="flex lg:items-center md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
               <div className="GeneralDash">
                 <h1>Analytics and Statistics</h1>
+
               </div>
               <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
-                <a
+                <Link
                   style={{
                     backgroundColor: "#ffb808",
                     color: "#ffffff"
                   }}
-                  href="/admin/tours"
+                  to="/admin/tours"
                 >
                   Tours bookings & Products
-                </a>
-                <a
+                </Link>
+                <Link
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#747474"
                   }}
-                  href="/admin/users"
+                  to="/admin/users"
                 >
                   Users interactions
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -167,10 +257,12 @@ class GenerlaAnalystics extends Component {
                       Top products
                     </div>
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
-                      <div className="btn-group dropdown flex justify-center items-center">
-                        <button className="btn-icon btn-icon-only btn btn-link">
-                          <Info fill="#b3b8bd" className="info-btn" />
-                        </button>
+                      <div className=" btn-group dropdown rekative flex justify-center items-center">
+                        <span className="hint--bottom text-center  hint--medium" aria-label="this is a hint">
+                          <button className="btn-icon btn-icon-only btn btn-link">
+                            <Info fill="#b3b8bd" className="info-btn" />
+                          </button>
+                        </span>
                         {/* here the dropdown div... */}
                       </div>
                     </div>
@@ -202,349 +294,59 @@ class GenerlaAnalystics extends Component {
                           </tr>
                         </thead>
                         <tbody className="table-tbody">
-                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Product name
-                              </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                <img src={Img} alt="img" width="40" />
-                                <p className="text-center px-2">
-                                  first medical kit
+                          {top_product_data.map((product) => (
+                            <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                              <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                                <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                  Product name
+    </span>
+                                <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                  <img src={product["img"]} alt="img" width="40" />
+                                  <p className="text-center px-2">
+                                    {product["productName"]}
+                                  </p>
+                                </div>
+                              </td>
+                              <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                                <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                  Price
+    </span>
+                                <p className="responsive-rate lg:text-center whitespace-no-wrap xl:text-center xl:float-none sm:text-right sm:float-right">
+                                  {product["price"]}
                                 </p>
-                              </div>
-                            </td>
-                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Price
-                              </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
-                                89$ ~ 149$
-                              </p>
-                            </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Rate
-                              </span>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
+                              </td>
+                              <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                                <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                                  Rate
+    </span>
+                                <div className="productInfo responsive-rate">
+                                  <div className="arrowProduct productInfo">
+                                    <h1>{product["up"]}</h1>
+                                    <ArrowUp
+
+                                      fill="#2edc5d"
+                                      className="arrowProductUp"
+                                    />
+                                  </div>
+                                  <div className="arrowProduct productInfo">
+                                    <h1>{product["down"]}</h1>
+                                    <ArrowDown
+                                      fill="#f53636"
+                                      className="arrowProductUp"
+                                    />
+                                  </div>
+                                  <div className="arrowProduct productInfo">
+                                    <StarRatingComponent
+                                      name="rate1"
+                                      starCount={5}
+                                      value={product["rate"]}
+                                    />
+                                  </div>
                                 </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Product name
-                              </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                <img src={Img} alt="img" width="40" />
-                                <p className="text-center px-2">
-                                  first medical kit
-                                </p>
-                              </div>
-                            </td>
-                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Price
-                              </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
-                                89$ ~ 149$
-                              </p>
-                            </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Rate
-                              </span>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Product name
-                              </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                <img src={Img} alt="img" width="40" />
-                                <p className="text-center px-2">
-                                  first medical kit
-                                </p>
-                              </div>
-                            </td>
-                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Price
-                              </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
-                                89$ ~ 149$
-                              </p>
-                            </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Rate
-                              </span>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Product name
-                              </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                <img src={Img} alt="img" width="40" />
-                                <p className="text-center px-2">
-                                  first medical kit
-                                </p>
-                              </div>
-                            </td>
-                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Price
-                              </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
-                                89$ ~ 149$
-                              </p>
-                            </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Rate
-                              </span>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Product name
-                              </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                <img src={Img} alt="img" width="40" />
-                                <p className="text-center px-2">
-                                  first medical kit
-                                </p>
-                              </div>
-                            </td>
-                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Price
-                              </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
-                                89$ ~ 149$
-                              </p>
-                            </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Rate
-                              </span>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Product name
-                              </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                <img src={Img} alt="img" width="40" />
-                                <p className="text-center px-2">
-                                  first medical kit
-                                </p>
-                              </div>
-                            </td>
-                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Price
-                              </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
-                                89$ ~ 149$
-                              </p>
-                            </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Rate
-                              </span>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr className="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                            <td className="w-full sm:flex sm:flex-row sm:justify-end sm:items-center lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Product name
-                              </span>
-                              <div className="flex p-0 flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
-                                <img src={Img} alt="img" width="40" />
-                                <p className="text-center px-2">
-                                  first medical kit
-                                </p>
-                              </div>
-                            </td>
-                            <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Price
-                              </span>
-                              <p className="lg:text-center whitespace-no-wrap sm:text-right">
-                                89$ ~ 149$
-                              </p>
-                            </td>
-                            <td className="w-full lg:w-auto flex justify-center sm:justify-end p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                              <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                                Rate
-                              </span>
-                              <div className="productInfo">
-                                <div className="arrowProduct productInfo">
-                                  <h1>255</h1>
-                                  <ArrowUp
-                                    fill="#2edc5d"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <h1>0</h1>
-                                  <ArrowDown
-                                    fill="#f53636"
-                                    className="arrowProductUp"
-                                  />
-                                </div>
-                                <div className="arrowProduct productInfo">
-                                  <StarRatingComponent
-                                    name="rate1"
-                                    starCount={5}
-                                    value={rating}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
+                              </td>
+                            </tr>
+
+                          ))}
                         </tbody>
                       </table>
                     </div>
@@ -555,7 +357,7 @@ class GenerlaAnalystics extends Component {
             <div className="flex">
               <div className="w-full">
                 <div className="my-col">
-                  <GeneralGraph />
+                  <GeneralGraph options={this.state.options} series={this.state.series} />
                 </div>
               </div>
             </div>
@@ -570,16 +372,14 @@ class GenerlaAnalystics extends Component {
                     </div>
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                       <ArrowLeft
+                        onClick={this.previous}
                         className="arrows px-1"
-                        onClick={() => {
-                          alert("mzl madrt fonctionallité");
-                        }}
+
                       />
                       <ArrowRight
                         className="arrows px-1"
-                        onClick={() => {
-                          alert("mzl madrt fonctionallité");
-                        }}
+                        onClick={this.next}
+
                       />
                       <div className="p-10  lg:hidden sm:px-5">
                         <div className="dropdown inline-block  relative">
@@ -594,7 +394,8 @@ class GenerlaAnalystics extends Component {
                             </svg>
                           </button>
                           <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
-                            <li className="">
+                            <li className=""
+                            >
                               <a
                                 className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
                                 href="#"
@@ -604,6 +405,7 @@ class GenerlaAnalystics extends Component {
                             </li>
                             <li className="">
                               <a
+
                                 className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
                                 href="#"
                               >
@@ -612,6 +414,7 @@ class GenerlaAnalystics extends Component {
                             </li>
                             <li className="">
                               <a
+
                                 className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap text-xs"
                                 href="#"
                               >
@@ -630,24 +433,32 @@ class GenerlaAnalystics extends Component {
                         </div>
                       </div>
                       <div
-                        className="btn-group-lg btn-group lg:flex md:hidden sm:hidden"
+                        className="btn-group-lg  btn-group lg:flex md:hidden sm:hidden"
                         role="groupe"
                       >
-                        <button className="btn btn-alternate btn-pill1">
-                          Hour
-                        </button>
-                        <button className="btn btn-alternate active">
-                          Day
-                        </button>
-                        <button className="btn btn-alternate">Week</button>
-                        <button className="btn btn-alternate btn-pill2">
-                          Month
-                        </button>
+                        {this.state.items.map((elem) => {
+                          let isActive = this.state.activeLink === elem.name;
+                          let navClass = isActive ? 'activeButt btn btn-alternate border-none cursor-pointer' : 'btn btn-alternate border-none cursor-pointer'
+                          return (
+                            <p name={elem["name"]}
+                              className={navClass}
+                              scrollChor={elem["scrollChor"]}
+                              key={elem["key"]}
+                              onClick={(props) => this.setActive(props.currentTarget.attributes[0].nodeValue)}>
+
+                              {elem['name']}
+                            </p>
+                          )
+                        })}
+
+
                       </div>
                       <div className="btn-group dropdown flex justify-center items-center">
-                        <button className="btn-icon btn-icon-only btn btn-link">
-                          <Info fill="#b3b8bd" className="info-btn" />
-                        </button>
+                        <span className="hint--left text-center  hint--medium" aria-label="this is a hint">
+                          <button className="btn-icon btn-icon-only btn btn-link">
+                            <Info fill="#b3b8bd" className="info-btn" />
+                          </button>
+                        </span>
                         {/* here the dropdown div... */}
                       </div>
                     </div>
@@ -655,7 +466,7 @@ class GenerlaAnalystics extends Component {
                   <div className="p-0 card-body">
                     <div className="p-5 pt-0 pb-0 bg-white">
                       <div>
-                        <Slider slick={this} {...settings}>
+                        <Slider ref={c => (this.slider = c)} {...settings}>
                           <div className=" ">
                             <MyCard Title="Dubai" Img={Dubai} Rate={504} />
                           </div>
@@ -685,9 +496,7 @@ class GenerlaAnalystics extends Component {
               <div className="w-full">
                 <div className="my-col">
                   <New
-                    name="Kevin maklien"
-                    time="Today at 22:45"
-                    type="story"
+                    data={data_news}
                   />
                 </div>
               </div>

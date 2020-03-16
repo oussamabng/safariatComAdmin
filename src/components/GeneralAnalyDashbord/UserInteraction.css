@@ -7,6 +7,7 @@
 }
 .set-background-color {
   background-color: #f3f3f3;
+
 }
 .set-background-color-v2 {
   background-color: #ffffff;
@@ -17,7 +18,7 @@
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
-  height: 450px;
+  max-height: 450px;
 }
 .set-top-tour {
   background-image: url("./images/dubai.jpg");
@@ -29,7 +30,8 @@
   text-align: left;
 }
 .set-top-tour h1 {
-  font-size: 14px;
+  margin: 5px 0;
+  font-size: 14px!important;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -39,7 +41,7 @@
   color: #2d2d2d;
 }
 .set-top-tour p {
-  font-size: 11px;
+  font-size: 11px!important;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -60,17 +62,28 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  transition: 4s width;
 }
 
-@keyframes move {
-  0% {
-    background-position: 0 0;
+
+@media (max-width:1470px){
+  .widget-content > .imgStyle{
+    width: 2rem!important;
+    height: 2rem!important;
+    padding: 0!important;
   }
-  100% {
-    background-position: 50px 50px;
+  .responsive-icons{
+    width: 1rem!important;
+      height: 1rem!important;
+      padding: 0!important;
+      margin: 0 5px!important;
   }
 }
-.spanProgress:after,
-.animate > span > span {
-  animation: move 2s linear infinite;
+.font-size-res{
+  font-size: 1rem!important;
+}
+@media (max-width:1316px){
+  .font-size-res{
+    font-size: .8rem!important;
+  }
 }
