@@ -6,7 +6,7 @@ import personImg from "../images/person.png";
 export default function HrTable(props) {
   const employeesTable = employees => {
     return (
-      <table class="table font-montserrat">
+      <table className="table font-montserrat">
         <thead className="thead">
           <tr className="tr">
             <th className="th first__th">
@@ -82,8 +82,8 @@ export default function HrTable(props) {
                     <span className="td__link__text">PDF_CV.pdf</span>
                   </a>
                   <span className="td__link__icons clearfix">
-                    <i class="fas fa-envelope-square"></i>
-                    <i class="far fa-minus-square"></i>
+                    <i className="fas fa-envelope-square"></i>
+                    <i className="far fa-minus-square"></i>
                   </span>
                 </td>
               </tr>
@@ -136,7 +136,7 @@ export default function HrTable(props) {
                     <span className="td__text__subtitle block">{el.role}</span>
                   </span>
                   <span className="td__link__icons center__icon clearfix">
-                    <i class="fas fa-envelope-square"></i>
+                    <i className="fas fa-envelope-square"></i>
                   </span>
                 </td>
                 <td className="td">{el.creationDate}</td>
@@ -145,7 +145,7 @@ export default function HrTable(props) {
                     <span className="td__text__title">{el.deliveryDate}</span>
                   </span>
                   <span className="td__link__icons clearfix">
-                    <i class="fas fa-minus-square"></i>
+                    <i className="fas fa-minus-square"></i>
                   </span>
                 </td>
               </tr>

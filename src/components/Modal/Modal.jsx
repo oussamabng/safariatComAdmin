@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ProductsModal from "./components/ProductsModal";
+import AddEmployeeModal from "./components/AddEmployeeModal";
+import AddTaskModal from "./components/AddTaskModal";
 
-import BigImg from "../images/01.png";
-import SmallImg from "../images/02.png";
+import BigImg from "./images/01.png";
+import SmallImg from "./images/02.png";
 
-import productBig from "../images/productBig.png";
-import product from "../images/product.png";
+import productBig from "./images/productBig.png";
+import product from "./images/product.png";
 
 export default function Modal(props) {
+  const [fileName, setFileName] = useState("cv");
+  const uploadCv = e => {
+    console.log("upload : ");
+  };
+
+  const getFileName = function(e) {
+    setFileName(e.currentTarget.files[0].name);
+  };
+
   const renderTourDetails = tourDetails => {
     return (
       <div className="modal-main">
@@ -176,15 +188,206 @@ export default function Modal(props) {
     );
   };
 
-  return props.tourDetails ? (
-    <Container>
-      <div className="modal">{renderTourDetails(props.tourDetails)}</div>
-    </Container>
-  ) : (
-    <Container>
-      <div className="modal">{renderProductsDetails(props.productDetails)}</div>
-    </Container>
-  );
+  const renderAddEmployee = () => {
+    return (
+      <div className="modal-main">
+        <header className="header">
+          <a onClick={props.closeModal} href="">
+            <i className=" header__back fas fa-long-arrow-alt-left"></i>
+          </a>
+          <h4 className="header__title">Add Employee</h4>
+        </header>
+        <form className="form">
+          <input
+            className="form__label__input"
+            id="fullName"
+            type="text"
+            placeholder="full name"
+          />
+          <input
+            className="form__label__input"
+            id="birthDay"
+            type="text"
+            placeholder="birth day"
+          />
+          <input
+            className="form__label__input"
+            id="phoneNumber"
+            type="text"
+            placeholder="phone number"
+          />
+          <input
+            className="form__label__input"
+            id="address"
+            type="text"
+            placeholder="address"
+          />
+          <input
+            className="form__label__input"
+            id="email"
+            type="email"
+            placeholder="email"
+          />
+          <input
+            className="form__label__input"
+            id="nationalIdCard"
+            type="text"
+            placeholder="National Id Card"
+          />
+
+          <select className="form__select status" defaultValue="single">
+            <option className="form__select__option" value="single">
+              single
+            </option>
+            <option className="form__select__option" value="married">
+              married
+            </option>
+          </select>
+
+          <input
+            className="form__label__input"
+            id="jobTitle"
+            type="text"
+            placeholder="job title"
+          />
+
+          <div className="departmentAndCv ">
+            <select
+              name="department"
+              id="department"
+              className="department__input"
+            >
+              <option value="department1">department1</option>
+              <option value="department1">department1</option>
+              <option value="department1">department1</option>
+            </select>
+
+            {/* <input
+              className="department__input"
+              id="department"
+              type="text"
+              placeholder="department"
+            /> */}
+            <div className="fileContainer">
+              <input
+                className="selectedFile"
+                id="Cv"
+                type="file"
+                onChange={getFileName}
+                placeholder="cv"
+              />
+              <input type="text" className="inputFile" placeholder={fileName} />
+              <span onClick={uploadCv} className="upload">
+                upload
+              </span>
+            </div>
+          </div>
+
+          <input
+            className="form__label__input"
+            id="hireDate"
+            type="text"
+            placeholder="hire Date"
+          />
+          <input
+            className="form__label__input"
+            id="employeeId"
+            type="text"
+            placeholder="Employee Id"
+          />
+          <input
+            className="form__label__input"
+            id="salary"
+            type="text"
+            placeholder="Salary"
+          />
+
+          <input
+            type="submit"
+            value="add employee"
+            className="add add__employee"
+          />
+        </form>
+      </div>
+    );
+  };
+
+  const renderAddTask = () => {
+    return (
+      <div className="modal-main">
+        <header className="header">
+          <a onClick={props.closeModal} href="">
+            <i className=" header__back fas fa-long-arrow-alt-left"></i>
+          </a>
+          <h4 className="header__title">Add Task</h4>
+        </header>
+        <form className="form">
+          <input
+            className="form__label__input"
+            id="fullName"
+            type="text"
+            placeholder="Task Name"
+          />
+
+          <select className="form__select" defaultValue="type1">
+            <option className="form__select__option" value="type1">
+              type1
+            </option>
+            <option className="form__select__option" value="type2">
+              type2
+            </option>
+          </select>
+
+          <select className="form__select" defaultValue="single">
+            <option className="form__select__option" value="name1">
+              name 1
+            </option>
+            <option className="form__select__option" value="name2">
+              name 2
+            </option>
+          </select>
+
+          <input
+            className="form__label__input"
+            id="deliveryDate"
+            type="text"
+            placeholder="delivery date"
+          />
+
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Description.."
+            className="form__label__input text"
+          ></textarea>
+
+          <input type="submit" value="add task" className="add add__task" />
+        </form>
+      </div>
+    );
+  };
+
+  const renderOneModal = () => {
+    if (props.modal === "tour") {
+      return (
+        <ProductsModal className="modal">
+          {renderTourDetails(props.tourDetails)}
+        </ProductsModal>
+      );
+    } else if (props.modal === "product") {
+      return (
+        <ProductsModal className="modal">
+          {renderProductsDetails(props.productDetails)}
+        </ProductsModal>
+      );
+    } else if (props.modal === "addEmployee") {
+      return <AddEmployeeModal>{renderAddEmployee()}</AddEmployeeModal>;
+    } else if (props.modal === "addTask") {
+      return <AddTaskModal>{renderAddTask()}</AddTaskModal>;
+    }
+  };
+
+  return <Container> {renderOneModal()} </Container>;
 }
 
 const Container = styled.div`
@@ -194,234 +397,4 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-
-
-  .modal-main {
-    margin:0 auto;
-      background-color:white;
-    position: fixed;
-    background: white;
-    width: 80%;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height:80vh;
-    overflow:auto;
-    margin-top:2rem;
-    
-  }
-
-  /// main styling
-  .main {
-    display: flex;
-    flex-direction: column;
-    background-color:white;
-  }
-
-  // header
-
-  .header {
-    display: flex;
-    max-width: 50%;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header__back {
-    cursour: pointer;
-    font-size: 2rem;
-    color: white;
-    padding: 0 1rem;
-    background-color: #2c2c2c;
-    
-  }
-
-  .header__tittle {
-  }
-
-  // Top -----------------------------------------------------------------------------
-  .top {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      margin:0 2rem;
-  }
-  // text -------------
-  .details__text {
-      flex-basis:30rem;
-      margin-right:2rem;
-  }
-
-  .details__buttons{
-      width:100%;
-      text-align:center;
-  }
-
-
-  .edit {
-      color:#fff;
-      background-color:#FFCC4E
-  }
-
-  .delete { 
-      margin-left:1rem;
-      background-color:#7B7B7B;
-      color:#fff;
-  }
-
-  .edit , .delete {
-      padding:.5rem 1rem; 
-      border: solid 1px #707070;
-      border-radius:4px;
-  }
-
-  .details__info{
-    background-color:#F6F6F6;
-    margin-top:15px;
-  }
-
-  .details__info__row {
-    width:100%;
-
-  }
-  .details__info__col {
-    display:inline-block;
-    width:50%;
-    padding:.5rem 1rem;
-    text-align:left;
-    vertical-align:top;
-  }
-
-  .subText {
-      color:#3E3E3E
-  }
-
-  // images -----------
-
-  .details__images {
-      align-self:flex-end;
-      flex-basis:50%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-   
-  }
-
-  .tourMainImage{
-    max-width:24.5rem;
-  }
-
-  .details__images__small{
-      display:flex; 
-      justify-content:center;
-      align-items;center;
-      margin-top:1rem;
-  }
-
-  .smallImage{
-    max-width:5.7rem;
-  }
-
-  .productImage{
-    max-width:18.5rem;
-  }
-
-  
-  // Bottom -----------------------------------------------------------------------------
-
-  .bottom {
-      margin: 5rem ;
-      display:flex;
-      flex-direction:column;
-      
-  }
-
-  
-  .bottom__package{
-    display:flex;
-    justify-content:space-between;
-  }
-
-  .bottom__package__includes {
-    flex-basis:27rem;
-  }
-
-  .bottom__package__includes__title {
-
-  }
-
-  .bottom__package__includes__text {
-    margin-left:2rem;
-  }
-
-.bottom__package__excludes {
-    flex-basis:27rem;
-
-}
-
-.bottom__package__excludes__title {
-
-}
-
-.bottom__package__excludes__text {
-    margin-left:2rem;
-    
-}
-
-
-
-
-.bottom__extra {
-    padding:1.5rem 0;
-    background-color:#F6F6F6;
-    margin-top:1.5rem;
-
-}
-
-.bottom__itinerary {
-    text-align:center
-}
-
-.bottom__itinerary {
-    margin-top:1rem;
-
-}
-
-
-.bottom__itinerary__text {
-    text-align:justify;
-    margin: 0 8rem;
-    
-    margin-top:1rem;
-}
-
-.bottom__accomedation{
-    
-    text-align:center;
-}
-
-.bottom__accomedation__title{
-    margin:0 auto;
-    margin-top:2rem;
-
-}
-
-.bottom__accomedation__text{
-    text-align:left;
-    padding: 0 4rem;
-    margin-top:1rem;
-}
-
-  .checked{
-    color:green;
-    margin-right:.5rem;
-  }
-
-  .unchecked {
-    color:red;
-    margin-right:.5rem;
-
-  }
-
 `;
