@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import HrTable from "./components/HrTable";
 import styled from "styled-components";
-
 import { employees, tasks } from "./data";
+import AsideAdmin from "../../components/aside/asideAdmin";
+import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
+import HrTable from "./components/HrTable";
 import TableActions from "./components/TableActions";
+
+import Modal from "../../components/Modal/Modal";
 
 export default class HrManagement extends Component {
   state = {
@@ -19,6 +22,9 @@ export default class HrManagement extends Component {
 
     isEmployeesView: true,
     isTasksView: false,
+
+    isAddEmployee: false,
+    isAddTask: false,
 
     departmentsOptions: ["all", "hr", "sales", "marketing"],
     tasksTypes: ["type1", "type2"]
@@ -52,15 +58,7 @@ export default class HrManagement extends Component {
     }
   };
 
-  addEmployeeHandler() {
-    console.log("add Employee");
-  }
-
-  addTasksHandler() {
-    console.log("add Tasks");
-  }
-
-  // Employees functions
+  // Employees functions -----------------------------
   changeSearchedName(name) {
     this.setState(
       { searchedName: name },
@@ -106,8 +104,21 @@ export default class HrManagement extends Component {
 
     this.setState({ filteredEmployees });
   }
-  // Tasks functions
 
+  // add employee
+  addEmployeeHandler() {
+    console.log("add Employee");
+  }
+
+  hideAddEmployeeModal = () => {
+    this.setState({ isAddEmployee: false });
+  };
+
+  showAddEmployeeModal = () => {
+    this.setState({ isAddEmployee: true });
+  };
+
+  // Tasks functions -----------------------------
   changeSearchedTasks(task) {
     this.setState(
       { searchedTask: task },
@@ -154,7 +165,21 @@ export default class HrManagement extends Component {
     this.setState({ filteredTasks });
   }
 
-  // Render Functions
+  // add task
+
+  addTasksHandler() {
+    console.log("add Tasks");
+  }
+
+  hideAddTaskModal = () => {
+    this.setState({ isAddTask: false });
+  };
+
+  showAddTaskModal = () => {
+    this.setState({ isAddTask: true });
+  };
+
+  // Render Functions -----------------------
 
   renderTableActions() {
     const isEmployeesView = this.state.isEmployeesView;
@@ -167,17 +192,19 @@ export default class HrManagement extends Component {
           searchedDepartment={department =>
             this.changeSearchedDepartment(department)
           }
-          addHandler={this.addEmployeeHandler}
+          // addHandler={this.addEmployeeHandler}
           add="+Add Employee"
           search="search employees"
           view="employees"
           selectOptions={this.state.departmentsOptions}
+          addEmployee={this.showAddEmployeeModal}
         />
       );
     } else if (isTasksView) {
       return (
         <TableActions
-          addHandler={this.addTasksHandler}
+          // addHandler={this.addTasksHandler}
+          addTask={this.showAddTaskModal}
           add="add Task"
           search="search tasks"
           view="tasks"
@@ -190,32 +217,58 @@ export default class HrManagement extends Component {
   renderTable() {
     const view = this.state.isEmployeesView ? "employees" : "tasks";
 
-    const filteredEmployees =
-      this.state.filteredEmployees && view === "employees"
-        ? this.state.filteredEmployees
-        : this.state.initialEmployees;
+    const filteredEmployees = this.state.filteredEmployees
+      ? this.state.filteredEmployees
+      : this.state.initialEmployees;
 
-    const filteredTasks =
-      this.state.filteredTasks && view === "tasks"
-        ? this.state.filteredTasks
-        : this.state.initialTasks;
+    const filteredTasks = this.state.filteredTasks
+      ? this.state.filteredTasks
+      : this.state.initialTasks;
 
-    if (filteredEmployees) {
+    if (filteredEmployees && view === "employees") {
       return <HrTable employees={filteredEmployees} />;
-    } else if (filteredTasks) {
+    } else if (filteredTasks && view === "tasks") {
+      console.log("work");
       return <HrTable tasks={filteredTasks} />;
     } else {
       return null;
     }
   }
 
+  renderModal = () => {
+    const isAddEmployee = this.state.isAddEmployee;
+    const isAddTask = this.state.isAddTask;
+
+    if (isAddEmployee) {
+      return (
+        <Modal
+          closeModal={this.hideAddEmployee}
+          // tourDetails={tourDetails}
+          modal="addEmployee"
+        ></Modal>
+      );
+    } else if (isAddTask) {
+      return (
+        <Modal
+          closeModal={this.hideTaskModal}
+          // productDetails={productDetails}
+          modal="addTask"
+        ></Modal>
+      );
+    } else {
+      return null;
+    }
+  };
+
   render() {
     return (
       <Container>
-        <nav>navbar</nav>
-
+        {/* <nav></nav> */}
+        <HeaderAdmin />
         <div className="main">
-          <div className="sidebar">sidebar</div>
+          <div className="sidebar">
+            <AsideAdmin />
+          </div>
 
           <main className="hrManagement">
             <div className="hrManagement__top">
@@ -239,6 +292,7 @@ export default class HrManagement extends Component {
             <div className="hrManagement__content">
               {this.renderTableActions()}
               {this.renderTable()}
+              {this.renderModal()}
             </div>
           </main>
         </div>
@@ -251,19 +305,23 @@ const Container = styled.div`
   .main {
     display: flex;
     background-color: #f6f6f6;
+
+    padding-bottom: 5rem;
   }
   .hrManagement {
-    width: 87%;
+    width: 100%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
+    padding: 0 40px 0 120px;
   }
 
   .hrManagement__top {
     margin-top: 2rem;
     // padding: 0 1.6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .hrManagement__top__title {
@@ -277,7 +335,9 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 50%;
+    flex-shrink: 1.5;
+    flex-grow: 2;
+    flex-basis: auto;
   }
 
   .hrManagement__top__button {

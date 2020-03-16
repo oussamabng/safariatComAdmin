@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function TableActions(props) {
   const renderSearch = () => {
     return props.view === "employees" ? (
-      <label className="searchLabel" for="search">
+      <label className="searchLabel" htmlFor="search">
         <i className="fas fa-search "></i>
         <input
           className="search"
@@ -38,8 +38,10 @@ export default function TableActions(props) {
         defaultValue="all"
         name="departments"
       >
-        {props.selectOptions.map(el => (
-          <option value={el}>{el}</option>
+        {props.selectOptions.map((el, index) => (
+          <option key={`option-${index}`} value={el}>
+            {el}
+          </option>
         ))}
       </select>
     ) : (
@@ -58,11 +60,15 @@ export default function TableActions(props) {
 
   const renderAddButton = () => {
     return props.view === "employees" ? (
-      <button className="addEmployee addBtn" onClick={e => props.addHandler()}>
+      <button
+        onClick={props.addEmployee}
+        className="addEmployee addBtn"
+        // onClick={e => props.addHandler()}
+      >
         {props.add}
       </button>
     ) : (
-      <button className="addTasks addBtn" onClick={e => props.addHandler()}>
+      <button className="addTasks addBtn" onClick={props.addTask}>
         {props.add}
       </button>
     );
@@ -89,6 +95,7 @@ const Container = styled.div`
   align-items: center;
 
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .search {
     min-width: 14.4rem;
@@ -120,15 +127,21 @@ const Container = styled.div`
     border-radius: 4px;
   }
 
+  .right {
+    vertical-align: middle;
+  }
+
   .addBtn {
     background-color: #084c61;
     color: #fff;
     padding: 1rem 4rem;
     border-radius: 4px;
     margin-right: 1.5rem;
+    vertical-align: middle;
   }
 
   .infoLink {
+    // position: absolute;
     font-size: 1rem;
     color: #b3b8bd;
     border: solid 1px #b3b8bd;
@@ -136,5 +149,24 @@ const Container = styled.div`
     vertical-align: middle;
     cursor: pointer;
     padding: 0.2rem 0.5rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .addBtn {
+      padding: 0.7rem 2rem;
+    }
+
+    .select {
+      padding: 0.7rem 1.2rem;
+    }
+
+    .searchLabel,
+    .search {
+      padding: 0.7rem 0.4rem;
+    }
+
+    .infoLink {
+      padding: 0.2rem 0.3rem;
+    }
   }
 `;

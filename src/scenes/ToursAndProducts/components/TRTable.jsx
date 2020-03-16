@@ -36,7 +36,7 @@ export default function TRTable(props) {
                 <td className="td ">{el.price}</td>
                 <td className="td">
                   {el.description}
-                  <div classsName="td__preview">
+                  <div className="td__preview">
                     <a
                       data-id={el.id}
                       onClick={previewTour}
@@ -77,7 +77,7 @@ export default function TRTable(props) {
                 <td className="td ">{el.price}</td>
                 <td className="td">
                   {el.description}
-                  <div classsName="td__preview">
+                  <div className="td__preview">
                     <a
                       data-id={el.id}
                       onClick={previewProduct}

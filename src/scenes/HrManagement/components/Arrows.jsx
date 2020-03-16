@@ -4,8 +4,8 @@ import styled from "styled-components";
 export default function Arrows() {
   return (
     <Container className="arrows">
-      <i class="fas fa-chevron-up"></i>
-      <i class="fas fa-chevron-down"></i>
+      <i className="fas fa-chevron-up"></i>
+      <i className="fas fa-chevron-down"></i>
     </Container>
   );
 }

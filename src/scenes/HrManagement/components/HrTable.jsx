@@ -6,7 +6,7 @@ import personImg from "../images/person.png";
 export default function HrTable(props) {
   const employeesTable = employees => {
     return (
-      <table class="table font-montserrat">
+      <table className="table font-montserrat">
         <thead className="thead">
           <tr className="tr">
             <th className="th first__th">
@@ -82,8 +82,8 @@ export default function HrTable(props) {
                     <span className="td__link__text">PDF_CV.pdf</span>
                   </a>
                   <span className="td__link__icons clearfix">
-                    <i class="fas fa-envelope-square"></i>
-                    <i class="far fa-minus-square"></i>
+                    <i className="fas fa-envelope-square"></i>
+                    <i className="far fa-minus-square"></i>
                   </span>
                 </td>
               </tr>
@@ -136,7 +136,7 @@ export default function HrTable(props) {
                     <span className="td__text__subtitle block">{el.role}</span>
                   </span>
                   <span className="td__link__icons center__icon clearfix">
-                    <i class="fas fa-envelope-square"></i>
+                    <i className="fas fa-envelope-square"></i>
                   </span>
                 </td>
                 <td className="td">{el.creationDate}</td>
@@ -145,7 +145,7 @@ export default function HrTable(props) {
                     <span className="td__text__title">{el.deliveryDate}</span>
                   </span>
                   <span className="td__link__icons clearfix">
-                    <i class="fas fa-minus-square"></i>
+                    <i className="fas fa-minus-square"></i>
                   </span>
                 </td>
               </tr>
@@ -182,13 +182,14 @@ const Container = styled.div`
   .thead {
     text-align: left;
     color: ##757575;
+    vertical-align: middle;
   }
 
   .th {
     color: #757575;
     padding: 1rem 1.8rem;
     background-color: #f5f5f5;
-    fonts-size: 0.93rem;
+    font-size: 0.9rem;
     font-weight: normal;
     border-right: solid 0.5px #707070;
     // width: 20%;
@@ -200,8 +201,34 @@ const Container = styled.div`
   }
 
   .arrows {
-    vertical-align: middle;
+    vertical-align: bottom;
     float: right;
+    // margin-left: 2rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .td {
+      font-size: 0.8rem;
+    }
+
+    .th {
+      padding: 0.5rem 0.9rem;
+      vertical-align: middle;
+    }
+    .arrows {
+      font-size: 10px;
+      margin-top: 1.15px;
+    }
+
+    .th__title {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .td {
+      font-size: 0.6rem;
+    }
   }
 
   .clearfix::after {

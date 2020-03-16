@@ -2,9 +2,11 @@ import React, { Component } from "react";
 
 import { tours, toursDetails, products } from "./data";
 import styled from "styled-components";
-import Modal from "./components/Modal";
+import Modal from "../../components/Modal/Modal";
 
 import TRTable from "./components/TRTable";
+import AsideAdmin from "../../components/aside/asideAdmin";
+import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
 
 export default class ToursAndProducts extends Component {
   state = {
@@ -128,6 +130,7 @@ export default class ToursAndProducts extends Component {
         <Modal
           closeModal={this.hideTourModal}
           tourDetails={tourDetails}
+          modal="tour"
         ></Modal>
       );
     } else if (isProductDetailsShown) {
@@ -135,6 +138,7 @@ export default class ToursAndProducts extends Component {
         <Modal
           closeModal={this.hideProductModal}
           productDetails={productDetails}
+          modal="product"
         ></Modal>
       );
     } else {
@@ -145,10 +149,11 @@ export default class ToursAndProducts extends Component {
   render() {
     return (
       <Container>
-        <nav>navbar</nav>
+        <HeaderAdmin />
 
         <div className="main">
-          <div className="sidebar">sidebar</div>
+          {/* <div className="sidebar"><AsideAdmin /></div> */}
+          <AsideAdmin className="sidebar" />
 
           <main className="toursAndProducts">
             <div className="toursAndProducts__top">
@@ -189,17 +194,19 @@ const Container = styled.div`
   }
 
   .toursAndProducts {
-    width: 87%;
+    width: 100%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
+    padding: 0 40px 0 120px;
   }
 
   .toursAndProducts__top {
     margin-top: 2rem;
     // padding: 0 1.6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .toursAndProducts__top__title {
@@ -213,7 +220,9 @@ const Container = styled.div`
     border: 0;
     color: #000;
     height: 1px;
-    width: 40%;
+    flex-shrink: 1.5;
+    flex-grow: 2;
+    flex-basis: auto;
   }
 
   .toursAndProducts__top__button {
