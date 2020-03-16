@@ -24,7 +24,7 @@ export default class HrManagement extends Component {
     isTasksView: false,
 
     isAddEmployee: false,
-    isAddTask: true,
+    isAddTask: false,
 
     departmentsOptions: ["all", "hr", "sales", "marketing"],
     tasksTypes: ["type1", "type2"]
