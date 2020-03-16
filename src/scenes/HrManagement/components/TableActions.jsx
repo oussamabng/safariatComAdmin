@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function TableActions(props) {
   const renderSearch = () => {
     return props.view === "employees" ? (
-      <label className="searchLabel" for="search">
+      <label className="searchLabel" htmlFor="search">
         <i className="fas fa-search "></i>
         <input
           className="search"
@@ -38,8 +38,10 @@ export default function TableActions(props) {
         defaultValue="all"
         name="departments"
       >
-        {props.selectOptions.map(el => (
-          <option value={el}>{el}</option>
+        {props.selectOptions.map((el, index) => (
+          <option key={`option-${index}`} value={el}>
+            {el}
+          </option>
         ))}
       </select>
     ) : (
@@ -58,11 +60,15 @@ export default function TableActions(props) {
 
   const renderAddButton = () => {
     return props.view === "employees" ? (
-      <button className="addEmployee addBtn" onClick={e => props.addHandler()}>
+      <button
+        onClick={props.addEmployee}
+        className="addEmployee addBtn"
+        // onClick={e => props.addHandler()}
+      >
         {props.add}
       </button>
     ) : (
-      <button className="addTasks addBtn" onClick={e => props.addHandler()}>
+      <button className="addTasks addBtn" onClick={props.addTask}>
         {props.add}
       </button>
     );

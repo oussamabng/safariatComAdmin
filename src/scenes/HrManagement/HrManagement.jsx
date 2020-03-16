@@ -6,6 +6,8 @@ import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
 import HrTable from "./components/HrTable";
 import TableActions from "./components/TableActions";
 
+import Modal from "../../components/Modal/Modal";
+
 export default class HrManagement extends Component {
   state = {
     initialEmployees: null,
@@ -20,6 +22,9 @@ export default class HrManagement extends Component {
 
     isEmployeesView: true,
     isTasksView: false,
+
+    isAddEmployee: false,
+    isAddTask: false,
 
     departmentsOptions: ["all", "hr", "sales", "marketing"],
     tasksTypes: ["type1", "type2"]
@@ -53,15 +58,7 @@ export default class HrManagement extends Component {
     }
   };
 
-  addEmployeeHandler() {
-    console.log("add Employee");
-  }
-
-  addTasksHandler() {
-    console.log("add Tasks");
-  }
-
-  // Employees functions
+  // Employees functions -----------------------------
   changeSearchedName(name) {
     this.setState(
       { searchedName: name },
@@ -108,7 +105,20 @@ export default class HrManagement extends Component {
     this.setState({ filteredEmployees });
   }
 
-  // Tasks functions
+  // add employee
+  addEmployeeHandler() {
+    console.log("add Employee");
+  }
+
+  hideAddEmployeeModal = () => {
+    this.setState({ isAddEmployee: false });
+  };
+
+  showAddEmployeeModal = () => {
+    this.setState({ isAddEmployee: true });
+  };
+
+  // Tasks functions -----------------------------
   changeSearchedTasks(task) {
     this.setState(
       { searchedTask: task },
@@ -155,7 +165,21 @@ export default class HrManagement extends Component {
     this.setState({ filteredTasks });
   }
 
-  // Render Functions
+  // add task
+
+  addTasksHandler() {
+    console.log("add Tasks");
+  }
+
+  hideAddTaskModal = () => {
+    this.setState({ isAddTask: false });
+  };
+
+  showAddTaskModal = () => {
+    this.setState({ isAddTask: true });
+  };
+
+  // Render Functions -----------------------
 
   renderTableActions() {
     const isEmployeesView = this.state.isEmployeesView;
@@ -168,17 +192,19 @@ export default class HrManagement extends Component {
           searchedDepartment={department =>
             this.changeSearchedDepartment(department)
           }
-          addHandler={this.addEmployeeHandler}
+          // addHandler={this.addEmployeeHandler}
           add="+Add Employee"
           search="search employees"
           view="employees"
           selectOptions={this.state.departmentsOptions}
+          addEmployee={this.showAddEmployeeModal}
         />
       );
     } else if (isTasksView) {
       return (
         <TableActions
-          addHandler={this.addTasksHandler}
+          // addHandler={this.addTasksHandler}
+          addTask={this.showAddTaskModal}
           add="add Task"
           search="search tasks"
           view="tasks"
@@ -208,6 +234,31 @@ export default class HrManagement extends Component {
       return null;
     }
   }
+
+  renderModal = () => {
+    const isAddEmployee = this.state.isAddEmployee;
+    const isAddTask = this.state.isAddTask;
+
+    if (isAddEmployee) {
+      return (
+        <Modal
+          closeModal={this.hideAddEmployee}
+          // tourDetails={tourDetails}
+          modal="addEmployee"
+        ></Modal>
+      );
+    } else if (isAddTask) {
+      return (
+        <Modal
+          closeModal={this.hideTaskModal}
+          // productDetails={productDetails}
+          modal="addTask"
+        ></Modal>
+      );
+    } else {
+      return null;
+    }
+  };
 
   render() {
     return (
@@ -241,6 +292,7 @@ export default class HrManagement extends Component {
             <div className="hrManagement__content">
               {this.renderTableActions()}
               {this.renderTable()}
+              {this.renderModal()}
             </div>
           </main>
         </div>

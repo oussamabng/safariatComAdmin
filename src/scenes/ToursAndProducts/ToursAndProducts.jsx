@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { tours, toursDetails, products } from "./data";
 import styled from "styled-components";
-import Modal from "./components/Modal";
+import Modal from "../../components/Modal/Modal";
 
 import TRTable from "./components/TRTable";
 import AsideAdmin from "../../components/aside/asideAdmin";
@@ -130,6 +130,7 @@ export default class ToursAndProducts extends Component {
         <Modal
           closeModal={this.hideTourModal}
           tourDetails={tourDetails}
+          modal="tour"
         ></Modal>
       );
     } else if (isProductDetailsShown) {
@@ -137,6 +138,7 @@ export default class ToursAndProducts extends Component {
         <Modal
           closeModal={this.hideProductModal}
           productDetails={productDetails}
+          modal="product"
         ></Modal>
       );
     } else {
