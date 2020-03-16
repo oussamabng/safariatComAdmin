@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import "./FinanceDonut.css";
 export default class FinanceDonut extends Component {
   constructor(props) {
     super(props);
@@ -94,10 +93,10 @@ export default class FinanceDonut extends Component {
             }
           },
           {
-            breakpoint: 1230,
+            breakpoint: 1250,
             options: {
               chart: {
-                width: 200
+                width: 350
               }
             }
           }

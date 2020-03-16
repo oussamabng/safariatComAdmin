@@ -1,8 +1,0 @@
-.apexcharts-text.apexcharts-pie-label {
-  display: none !important;
-}
-@media (max-width: 1230px) {
-  .chart-donut .apexcharts-text.apexcharts-datalabel-label {
-    font-size: 18px !important;
-  }
-}

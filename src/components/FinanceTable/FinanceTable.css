@@ -1,0 +1,187 @@
+table.dataTable {
+  clear: both;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+  max-width: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+.table-bordered {
+  border: 1px solid #e9ecef;
+}
+table.dataTable {
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+table.dataTable thead > tr > th.sorting_asc,
+table.dataTable thead > tr > th.sorting_desc,
+table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+  padding: 15px 30px;
+}
+table.dataTable thead > tr > th.sorting_asc,
+table.dataTable thead > tr > th.sorting_desc,
+table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+  padding: 15px 30px;
+}
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+  position: relative;
+}
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #e9ecef;
+}
+.table th,
+.table td {
+  padding: 0.5rem 0;
+  vertical-align: top;
+  border-top: 1px solid #e9ecef;
+}
+
+.table-striped tbody tr:nth-of-type(2n + 1) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+table.table-bordered.dataTable tbody th,
+table.table-bordered.dataTable tbody td {
+  border-bottom-width: 0;
+}
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+  border-left-width: 0;
+}
+.table th,
+.table td {
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.col-md-5 {
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+}
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: 0.85em;
+  white-space: nowrap;
+}
+.col-md-7 {
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin: 2px 0;
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  white-space: nowrap;
+}
+.pagination {
+  list-style: none;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  white-space: nowrap;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+  white-space: nowrap;
+  text-align: right;
+}
+.pagination li a:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.page-item.disabled .page-link,
+.pagination .disabled.page-number .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+.page-item:first-child .page-link,
+.pagination .page-number:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.page-link:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.pagination li.disabled a {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+.pagination li:first-child a {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.pagination li a {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+.page-item.active .page-link,
+.pagination .active.page-number .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #3f6ad8;
+  border-color: #007bff;
+}
+.pagination li.active a {
+  z-index: 1;
+  color: #fff;
+  background-color: #3f6ad8;
+  border-color: #007bff;
+}
+.responsive-icons.rot {
+  transform: rotate(90deg);
+  cursor: pointer;
+}

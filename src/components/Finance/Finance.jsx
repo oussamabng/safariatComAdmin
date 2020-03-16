@@ -7,6 +7,10 @@ import FinanceBarChart from "../Graphs/FinanceBarGraph.jsx";
 import FinanceCard from "../FinanceCard/FinanceCard.jsx";
 import FinanceDonut from "../Graphs/FinanceDonut.jsx";
 import Task from "../Task/Task.jsx";
+import FinanceTable from "../FinanceTable/FinanceTable";
+import { ReactComponent as ArrowLeft } from "../GeneralAnalyDashbord/images/left-arrow.svg";
+import { ReactComponent as ArrowRight } from "../GeneralAnalyDashbord/images/right-arrow.svg";
+
 export default class Finance extends Component {
   constructor(props) {
     super(props);
@@ -78,11 +82,15 @@ export default class Finance extends Component {
       ]
     };
   }
+  setActive = link => {
+    //request funtion to filter
+    this.setState({ activeLink: link }); //for active class
+  };
   render() {
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
-          <div className="app-page-title ">
+          <div className="app-page-title finance-page">
             <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
               <div className="GeneralDash">
                 <h1>Finance</h1>
@@ -102,8 +110,8 @@ export default class Finance extends Component {
             </div>
           </div>
         </section>
-        <div className="flex">
-          <div className="w-3/5 px-2">
+        <div className="flex finance-row">
+          <div className="w-3/5 finance-part1 px-2">
             <div className="flex">
               <div className="w-3/5 my-col ">
                 <div className="mb-3 card bg-white h-full flex flex-col justify-start  ">
@@ -173,17 +181,31 @@ export default class Finance extends Component {
             </div>
             <div className="flex">
               <div className="w-full">
-                <div className="w-full h-full bg-white">
-                  <p>tableau</p>
+                <div className="w-full h-full px-2 my-4 bg-white">
+                  <div className="card-header-tab flex flex-row justify-between items-center p-4 sm:px-5">
+                    <div className="card-header-title  font-size-lg text-capitalize font-weight-normal">
+                      Employee payment status
+                    </div>
+                    <div className="flex ml-auto justify-between items-center">
+                      <div className="flex mr-6">
+                        <ArrowLeft className="arrows px-1" />
+                        <ArrowRight className="arrows px-1" />
+                      </div>
+                      <p className="btn ml-auto px-6  py-3 shadow-md btn-alternate border-none cursor-pointer">
+                        Update
+                      </p>
+                    </div>
+                  </div>
+                  <FinanceTable />
                 </div>
                 {/* tableau */}
               </div>
             </div>
           </div>
-          <div className="w-2/5 px-2">
-            <div className="flex">
+          <div className="w-2/5  finance-part1 px-2">
+            <div className="flex ">
               <div className="w-1/2">
-                <div className="w-full h-full">
+                <div className="w-full h-full card-hover cursor-pointer">
                   <FinanceCard
                     type="Product"
                     number={54}
@@ -193,7 +215,7 @@ export default class Finance extends Component {
                 </div>
               </div>
               <div className="w-1/2">
-                <div className="w-full h-full">
+                <div className="w-full h-full card-hover cursor-pointer">
                   <FinanceCard
                     type="Tour"
                     number={54}
@@ -210,9 +232,11 @@ export default class Finance extends Component {
                     <div className="card-header-title  font-size-lg text-capitalize font-weight-normal">
                       Budget manager
                     </div>
-                    <p className="btn ml-auto py-3 shadow-md btn-alternate border-none cursor-pointer">
-                      Change plan
-                    </p>
+                    <div className="flex ml-auto justify-between items-center">
+                      <p className="btn ml-auto py-3 shadow-md btn-alternate border-none cursor-pointer">
+                        Change plan
+                      </p>
+                    </div>
                   </div>
                   <div className="px-5 flex justify-between flex-col">
                     <div className="flex justify-between items-center w-full">

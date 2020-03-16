@@ -51,6 +51,14 @@ export default class FinanceLineGraph extends Component {
                 width: 350
               }
             }
+          },
+          {
+            breakpoint: 1250,
+            options: {
+              chart: {
+                width: 500
+              }
+            }
           }
         ],
         dataLabels: {

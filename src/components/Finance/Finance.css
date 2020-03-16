@@ -50,3 +50,34 @@
   background-color: white !important;
   color: #ffb808 !important;
 }
+@media (max-width: 1250px) {
+  .finance-row {
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .finance-part1 {
+    width: 100% !important;
+    margin: 2rem 0;
+  }
+
+  .chart-donut {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .app-page-title.finance-page {
+    padding-bottom: 0 !important;
+  }
+}
+.apexcharts-text.apexcharts-pie-label {
+  display: none !important;
+}
+.card-hover {
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+.card-hover:hover {
+  transform: scale(1.1);
+}
