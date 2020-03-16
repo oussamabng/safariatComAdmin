@@ -16,7 +16,7 @@ const Container = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 84vh;
+    height: 80vh;
     margin-top: 2rem;
   }
 
@@ -41,7 +41,7 @@ const Container = styled.div`
   // form -------------------------------------------------
   .form {
     padding-top: 1rem;
-    height: 90vh;
+    height: 80%;
     width: 84%;
     display: flex;
     flex-wrap: wrap;
