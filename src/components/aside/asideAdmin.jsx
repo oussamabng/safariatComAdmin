@@ -14,54 +14,65 @@ class AsideAdmin extends Component {
     this.state = {
       navItems: [
         {
-          name: 'Report',
+          name: "Report",
           key: 0,
           icon: Report,
-          scrollChor: '/admin/tours',
+          scrollChor: "/admin/tours"
         },
         {
-          name: 'Business',
+          name: "Business",
           key: 1,
           icon: Business,
-          scrollChor: '/hr',
+          scrollChor: "/hr"
         },
         {
-          name: 'Crm',
+          name: "Crm",
           key: 2,
           icon: Crm,
 
-          scrollChor: '#about',
+          scrollChor: "#about"
         },
         {
-          name: 'Plus',
+          name: "Plus",
           key: 3,
           icon: Plus,
 
-          scrollChor: '#contact',
-        }, {
+          scrollChor: "#contact"
+        },
+        {
           name: "Compass",
           key: 4,
           icon: Compass,
 
-          scrollChor: "#compass"
+          scrollChor: "/admin/finance"
         }
       ],
-      activeLink: 'Report'
+      activeLink: "Report"
     };
-  };
-  setActive = (link) => this.setState({ activeLink: link });
+  }
+  setActive = link => this.setState({ activeLink: link });
   render() {
-
     return (
       <>
         <aside className="mainAsideAdmin flex justify-end items-center flex-col">
           <div className="mainAsideSection my-10">
             <ul className="flex justify-end items-center flex-col pt-20">
-              {this.state.navItems.map((elm) => {
+              {this.state.navItems.map(elm => {
                 let isActive = this.state.activeLink === elm.name;
-                let navClass = isActive ? 'active-sidebar my-5 w-full py-1' : 'my-5 w-full py-1'
+                let navClass = isActive
+                  ? "active-sidebar my-5 w-full py-1"
+                  : "my-5 w-full py-1";
                 return (
-                  <li onClick={(props) => this.setActive(props.currentTarget.attributes[0].nodeValue)} name={elm.name} key={elm.key} className={navClass}>
+                  <li
+                    onClick={props =>
+                      this.setActive(
+                        props.currentTarget.attributes[0].nodeValue
+                      )
+                    }
+                    name={elm.name}
+                    key={elm.key}
+                    className={navClass}
+                  >
                     <Link to={elm.scrollChor}>
                       <img
                         className="ml-auto mr-auto logout-btn"
@@ -70,7 +81,7 @@ class AsideAdmin extends Component {
                       />
                     </Link>
                   </li>
-                )
+                );
               })}
             </ul>
           </div>

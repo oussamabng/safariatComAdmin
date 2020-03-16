@@ -1,0 +1,28 @@
+.apexcharts-xaxis {
+  display: block !important;
+}
+.line-chart .apexcharts-tooltip.apexcharts-theme-light {
+  background-color: #707070 !important;
+  color: white !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  font-weight: bold;
+}
+.line-chart .apexcharts-tooltip-title {
+  background-color: #707070 !important;
+  color: white !important;
+  margin: 0 10px;
+  border: 0 !important;
+  padding: 0 !important;
+  padding-top: 2px !important;
+  font-weight: bold;
+}
+.line-chart .apexcharts-tooltip-marker {
+  display: none !important;
+}
+.line-chart .apexcharts-tooltip-series-group {
+  padding: 0 10px !important;
+  padding-bottom: 2px !important;
+}

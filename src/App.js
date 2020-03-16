@@ -20,14 +20,13 @@ import HrManagement from "./scenes/HrManagement/HrManagement";
 import ToursAndProducts from "./scenes/ToursAndProducts/ToursAndProducts";
 import GenerlaAnalystics from "./components/GeneralAnalyDashbord/GenerlaAnalystics";
 import UserInteraction from "./components/GeneralAnalyDashbord/UserInteraction";
+import Finance from "./components/Finance/Finance.jsx";
 /*import SignUp from "./scenes/SignUp/SignUp.jsx";
 import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
-import NotificationsBox from "./components/NotificationsBox/NotificationsBox.jsx";
 function App() {
   return (
     <Router>
       <Switch>
-        <Route component={NotificationsBox} path="/test"></Route>
         <Route component={Home} exact path="/"></Route>
         <Route component={Services} path="/services"></Route>
         <Route component={Blog} path="/blog"></Route>
@@ -38,6 +37,10 @@ function App() {
         <Route
           path="/admin/tours"
           render={props => <Admin content={<GenerlaAnalystics />} />}
+        />
+        <Route
+          path="/admin/finance"
+          render={props => <Admin content={<Finance />} />}
         />
         <Route
           path="/admin/users"
