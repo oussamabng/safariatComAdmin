@@ -41,8 +41,8 @@ const Container = styled.div`
   // form -------------------------------------------------
   .form {
     padding-top: 1rem;
-    height: 80%;
-    width: 84%;
+    height: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
