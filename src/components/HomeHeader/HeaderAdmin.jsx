@@ -8,7 +8,8 @@ class HeaderAdmin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      show: false,
+      navL: false
     };
   }
   showNotifications() {
@@ -16,13 +17,24 @@ class HeaderAdmin extends Component {
       show: !this.state.show
     });
   }
+  handleLogo() {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        navL: !prevState.navL
+      };
+    });
+    this.props.clickToggle();
+  }
   render() {
     return (
       <>
         <div className="main_header_admin">
           <nav className="navbar_header_admin">
             <div className="flex items-center nav-h">
-              <div className="logo-navbar">
+              <div
+                className={!this.state.navL ? "logo-navbar" : "logo-navbar-res"}
+              >
                 <img src={Logo} alt="logo" />
               </div>
               <a
@@ -30,6 +42,9 @@ class HeaderAdmin extends Component {
                 className="sidebar-toggle"
                 data-toggle="push-menu"
                 role="button"
+                onClick={() => {
+                  this.handleLogo();
+                }}
               >
                 <span className="sr-only">Toggle navigation</span>
               </a>

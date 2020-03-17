@@ -6,15 +6,30 @@ import "./admin.css";
 class Admin extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      toggle: true
+    };
   }
-
+  handleToggleClick() {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        toggle: !prevState.toggle
+      };
+    });
+  }
   render() {
     return (
       <>
-        <HeaderAdmin show={this.state.show} />
-        <AsideAdmin active={this.props.active} />
+        <HeaderAdmin
+          clickToggle={() => {
+            this.handleToggleClick();
+          }}
+          show={this.state.show}
+        />
+        <AsideAdmin toggle={this.state.toggle} active={this.props.active} />
         <div
+          className={this.state.toggle ? "padleft" : "padleft-sm"}
           onClick={() => {
             document.getElementsByClassName(
               "notification-box mx-6"

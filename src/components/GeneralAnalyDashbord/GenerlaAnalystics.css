@@ -5,7 +5,6 @@
 }
 .app-main__outer {
   z-index: 9;
-  padding-left: 80px;
   flex: 1;
   flex-direction: column;
   display: flex;

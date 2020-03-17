@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./asideAdmin.css";
-import Report from "./images/report.svg";
-import Business from "./images/business-and-finance.svg";
-import Crm from "./images/crm.svg";
-import Plus from "./images/plus.svg";
-import Compass from "./images/compass.svg";
-import { ReactComponent as Logout } from "./images/logout(1).svg";
+import Report from "./images/report.png";
+import Business from "./images/business-and-finance.png";
+import Crm from "./images/crm.png";
+import Plus from "./images/plus.png";
+import Logout from "./images/logout.png";
+import Compass from "./images/compass.png";
+
 import { Link } from "react-router-dom";
 class AsideAdmin extends Component {
   constructor(props) {
@@ -14,80 +15,156 @@ class AsideAdmin extends Component {
       navItems: [
         {
           name: "Report",
+          options: [
+            {
+              name: ["Tours booking & products", "Users interactions"],
+              visible: false
+            }
+          ],
           key: 0,
           icon: Report,
-          scrollChor: "/admin/tours"
+          scrollchor: "/admin/tours"
         },
         {
           name: "Business",
+          options: [
+            {
+              name: ["Employees managements ", "Tasks managements"],
+              visible: false
+            }
+          ],
           key: 1,
           icon: Business,
-          scrollChor: "/hr"
+          scrollchor: "/hr"
         },
         {
           name: "Crm",
           key: 2,
           icon: Crm,
+          options: [
+            {
+              name: ["Crm managements "],
+              visible: false
+            }
+          ],
 
-          scrollChor: "#about"
+          scrollchor: "#about"
         },
         {
           name: "Plus",
+          options: [
+            {
+              name: ["Tours managements ", "Products managements"],
+              visible: false
+            }
+          ],
           key: 3,
           icon: Plus,
 
-          scrollChor: "#contact"
+          scrollchor: "#contact"
         },
         {
           name: "Compass",
+          options: [
+            {
+              name: ["Finance management"],
+              visible: false
+            }
+          ],
           key: 4,
           icon: Compass,
 
-          scrollChor: "/admin/finance"
+          scrollchor: "/admin/finance"
         }
       ],
       activeLink: this.props.active
     };
   }
-  setActive = link => this.setState({ activeLink: link });
+  setActive = link => console.log(link);
   render() {
     return (
       <>
-        <aside className="mainAsideAdmin flex justify-end items-center flex-col">
-          <div className="mainAsideSection my-10">
-            <ul className="flex justify-end items-center flex-col pt-20">
-              {this.state.navItems.map(elm => {
-                let isActive = this.state.activeLink === elm.name;
-                let navClass = isActive
-                  ? "active-sidebar my-5 w-full py-1"
-                  : "my-5 w-full py-1";
-                return (
+        <aside
+          className={
+            this.props.toggle
+              ? "mainAsideAdmin push-menu flex justify-end items-center flex-col"
+              : "mainAsideAdminResized push-menu flex justify-end items-center flex-col"
+          }
+        >
+          <div className="mainAsideSection">
+            {this.state.navItems.map(elm => {
+              let isActive = this.state.activeLink === elm.name;
+              let navClass = isActive
+                ? "w-full pad-logout"
+                : this.props.toggle
+                ? "w-full pad-logout"
+                : "w-full pad-logout";
+              return (
+                <ul
+                  key={elm.key}
+                  className="flex  justify-end sidebar-menu items-center flex-col"
+                >
                   <li
                     onClick={props =>
-                      this.setActive(
-                        props.currentTarget.attributes[0].nodeValue
-                      )
+                      this.setActive(props.currentTarget.attributes)
                     }
                     name={elm.name}
-                    key={elm.key}
                     className={navClass}
                   >
-                    <Link to={elm.scrollChor}>
-                      <img
-                        className="ml-auto mr-auto logout-btn"
-                        src={elm.icon}
-                        alt="Report"
-                      />
-                    </Link>
+                    <div
+                      className={
+                        this.props.toggle
+                          ? isActive
+                            ? "flex justify-center items-center active-sidebar"
+                            : "flex justify-center items-center"
+                          : "flex justify-center items-center "
+                      }
+                    >
+                      <Link
+                        className="flex justify-center items-center  pad-a"
+                        to={elm.scrollchor}
+                      >
+                        <img
+                          className="logout-btn"
+                          src={elm.icon}
+                          alt="Report"
+                        />
+                        <span
+                          className={
+                            this.props.toggle ? "text-white ml-2" : "hidden"
+                          }
+                        >
+                          {elm["name"]}
+                        </span>
+                      </Link>
+                      <span className={this.props.toggle ? "flex" : "hidden"}>
+                        <i className="fa fa-angle-left pull-right"></i>
+                      </span>
+                    </div>
+                    {elm.options.map(opt => (
+                      <ul
+                        key={elm["key"].toString()}
+                        className={opt.visible ? "treeview-menu" : "hidden"}
+                      >
+                        <li>
+                          <Link to="#">
+                            <i className="fa fa-circle-o"></i>
+                            {opt.name}
+                          </Link>
+                        </li>
+                      </ul>
+                    ))}
                   </li>
-                );
-              })}
-            </ul>
+                </ul>
+              );
+            })}
           </div>
-          <div className="my-5 px-5 py-2">
-            <a href="#">
-              <Logout className="w-8 ml-auto mr-auto" fill="white" />
-            </a>
+
+          <div className="flex justify-center pad-logout w-full items-center m  -4">
+            <Link className="flex justify-center  items-center pad-a" to="#">
+              <img className="logout-btn" src={Logout} alt="logout" />
+              <span className="text-white ml-2">Logout</span>
+            </Link>
           </div>
         </aside>
       </>

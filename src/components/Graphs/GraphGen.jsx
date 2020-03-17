@@ -3,11 +3,10 @@ import Chart from "react-apexcharts";
 import "./GraphGen.css";
 import { ReactComponent as Info } from "../GeneralAnalyDashbord/images/information.svg";
 
-export default class GraphGen extends React.Component {
+export default class GraphGen extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
@@ -19,7 +18,10 @@ export default class GraphGen extends React.Component {
           </div>
           <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
             <div className="btn-group dropdown">
-              <span class="hint--bottom text-center  hint--medium" aria-label="this is a hint">
+              <span
+                class="hint--bottom text-center  hint--medium"
+                aria-label="this is a hint"
+              >
                 <button className="btn-icon btn-icon-only btn btn-link">
                   <Info fill="#b3b8bd" className="info-btn" />
                 </button>

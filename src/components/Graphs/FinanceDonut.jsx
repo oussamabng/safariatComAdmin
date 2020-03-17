@@ -43,7 +43,6 @@ export default class FinanceDonut extends Component {
                 value: {
                   show: true,
                   fontWeight: 500,
-                  color: "black",
                   fontSize: "18px",
                   color: "#172B4D",
                   fontFamily: "Montserrat sans-serif",

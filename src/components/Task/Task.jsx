@@ -13,7 +13,7 @@ export default class Task extends Component {
             <input type="checkbox" id="todo" name="todo" value="todo" />
             <label
               className="my-label"
-              for="todo"
+              htmlFor="todo"
               data-content="travel agency need 1"
             >
               {this.props.name}

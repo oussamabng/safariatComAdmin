@@ -19,12 +19,12 @@ export default class Finance extends Component {
         {
           name: "Week",
           key: 21,
-          scrollChor: "#about"
+          scrollchor: "#about"
         },
         {
           name: "Month",
           key: 31,
-          scrollChor: "#contact"
+          scrollchor: "#contact"
         }
       ],
       activeLink: "Week",
@@ -82,6 +82,7 @@ export default class Finance extends Component {
       ],
       dataTable: [
         {
+          key: 5151551151,
           name: "martin dekly",
           paying_day: "20/03/2020",
           status: "not yet",
@@ -89,6 +90,7 @@ export default class Finance extends Component {
           departement: "HR"
         },
         {
+          key: 54544454545111,
           name: "alisia ester",
           paying_day: "20/03/2020",
           status: "paid out",
@@ -96,6 +98,7 @@ export default class Finance extends Component {
           departement: "CRM"
         },
         {
+          key: 11,
           name: "martin dekly",
           paying_day: "20/03/2020",
           status: "not yet",
@@ -103,6 +106,7 @@ export default class Finance extends Component {
           departement: "HR"
         },
         {
+          key: 20336656,
           name: "martin dekly",
           paying_day: "20/03/2020",
           status: "not yet",
@@ -124,10 +128,12 @@ export default class Finance extends Component {
       },
       dataTasks: [
         {
+          key: 151520,
           name: "travel agency task 1",
           date: "14/14/2020"
         },
         {
+          key: 46845,
           name: "travel agency task 1",
           date: "14/14/2020"
         }
@@ -172,10 +178,7 @@ export default class Finance extends Component {
                     <div className="card-header-title  font-size-lg text-capitalize font-weight-normal">
                       Tour sales value
                     </div>
-                    <div
-                      className="ml-auto btn-group-lg btn-group lg:flex md:hidden sm:hidden xs:hidden"
-                      role="groupe"
-                    >
+                    <div className="ml-auto btn-group-lg btn-group lg:flex md:hidden sm:hidden xs:hidden">
                       {this.state.items.map(elem => {
                         let isActive = this.state.activeLink === elem.name;
                         let navClass = isActive
@@ -185,7 +188,7 @@ export default class Finance extends Component {
                           <p
                             name={elem["name"]}
                             className={navClass}
-                            scrollChor={elem["scrollChor"]}
+                            scrollchor={elem["scrollchor"]}
                             key={elem["key"]}
                             onClick={props =>
                               this.setActive(
@@ -199,7 +202,7 @@ export default class Finance extends Component {
                       })}
                     </div>
                     <span
-                      class="hint--bottom text-center  hint--medium"
+                      className="hint--bottom text-center  hint--medium"
                       aria-label="this is a hint"
                     >
                       <button className="btn-icon btn-icon-only btn btn-link">
@@ -219,7 +222,7 @@ export default class Finance extends Component {
                       Tour sales value
                     </div>
                     <span
-                      class="hint--bottom text-center ml-auto  hint--medium"
+                      className="hint--bottom text-center ml-auto  hint--medium"
                       aria-label="this is a hint"
                     >
                       <button className="btn-icon btn-icon-only btn btn-link">
@@ -289,7 +292,10 @@ export default class Finance extends Component {
                       <div className="w-1/2">
                         <div className="scroling-div">
                           {this.state.actions_data.map(action => (
-                            <div className="py-2 flex flex-col justify-between items-center ">
+                            <div
+                              key={action.key}
+                              className="py-2 flex flex-col justify-between items-center"
+                            >
                               <div className="flex justify-center items-center my-2">
                                 <div className="float-left flex justify-between items-center">
                                   <div
@@ -326,14 +332,22 @@ export default class Finance extends Component {
                           {this.state.dataTasks
                             .slice(secondColumnStart)
                             .map(item => (
-                              <Task name={item.name} date={Element.date} />
+                              <Task
+                                key={item.key}
+                                name={item.name}
+                                date={Element.date}
+                              />
                             ))}
                         </div>
                         <div className="w-1/2">
                           {this.state.dataTasks
                             .slice(0, secondColumnStart)
                             .map(item => (
-                              <Task name={item.name} date={Element.date} />
+                              <Task
+                                key={item.key}
+                                name={item.name}
+                                date={Element.date}
+                              />
                             ))}
                         </div>
                       </div>

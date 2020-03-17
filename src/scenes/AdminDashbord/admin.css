@@ -1,0 +1,8 @@
+.padleft {
+  padding-left: 170px;
+  transition: padding 1s;
+}
+.padleft-sm {
+  padding-left: 80px;
+  transition: padding 1s;
+}

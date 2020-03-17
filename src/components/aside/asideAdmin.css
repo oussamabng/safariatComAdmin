@@ -1,4 +1,15 @@
 .mainAsideAdmin {
+  width: 170px;
+  height: 100%;
+  background-color: #084c61;
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
+  transition: width 1s;
+}
+.mainAsideAdminResized {
   width: 80px;
   height: 100%;
   background-color: #084c61;
@@ -7,6 +18,7 @@
   top: 0;
   z-index: 10;
   box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
+  transition: width 1s;
 }
 .mainAsideSection {
   display: flex;
@@ -21,10 +33,77 @@
   width: 100%;
 }
 .logout-btn {
-  width: 2rem;
-  height: 2rem;
+  width: 30px;
+  height: 30px;
 }
 .active-sidebar {
   background-color: #3c6775;
   border-left: 5px solid #ffbe20;
+  color: white;
+}
+.sidebar-menu {
+  white-space: nowrap;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fa.fa-angle-left.pull-right {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin-right: 10px;
+  -webkit-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.fa.fa-angle-left.pull-right::before {
+  content: "\f104";
+}
+.pad-a {
+  padding: 12px 5px 12px 8px;
+}
+.pad-a span {
+  font-size: 16px;
+  line-height: 20px;
+}
+.pad-logout:hover {
+  background-color: #3c6775;
+}
+.pad-logout {
+  cursor: pointer;
+}
+.treeview-menu {
+  margin: 0 1px;
+  background: #2c3b41;
+  overflow: visible;
+  height: auto;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  list-style: none;
+}
+.treeview-menu > li {
+  margin: 0;
+}
+.treeview-menu > li > a {
+  color: #8aa4af;
+  padding: 5px 5px 5px 15px;
+  display: block;
+  font-size: 14px;
+  position: relative;
+  text-decoration: none;
+}
+.treeview-menu > li > a > .fa {
+  width: 20px;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 14px;
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+.fa-circle-o::before {
+  content: "\f10c";
 }

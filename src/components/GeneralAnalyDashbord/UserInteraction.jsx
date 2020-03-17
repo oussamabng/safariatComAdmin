@@ -318,10 +318,7 @@ class UserInteraction extends Component {
                             </ul>
                           </div>
                         </div>
-                        <div
-                          className="btn-group-lg btn-group lg:flex md:hidden sm:hidden xs:hidden"
-                          role="groupe"
-                        >
+                        <div className="btn-group-lg btn-group lg:flex md:hidden sm:hidden xs:hidden">
                           {this.state.items.map(elem => {
                             let isActive = this.state.activeLink === elem.name;
                             let navClass = isActive
@@ -357,10 +354,7 @@ class UserInteraction extends Component {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className="shaker flex justify-start btn-group-lg btn-group bg-white border-none mx-8"
-                      role="groupe"
-                    >
+                    <div className="shaker flex justify-start btn-group-lg btn-group bg-white border-none mx-8">
                       {this.state.itemsTours.map(elem => {
                         let isActive = this.state.activeLinkTours === elem.name;
                         let navClass = isActive

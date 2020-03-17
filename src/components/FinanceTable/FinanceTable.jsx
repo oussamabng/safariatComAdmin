@@ -24,50 +24,50 @@ export default class FinanceTable extends Component {
                 <tr role="row">
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
-                    tabindex="0"
+                    tabIndex="0"
                     aria-controls="example"
-                    rowspan="1"
-                    colspan="1"
+                    rowSpan="1"
+                    colSpan="1"
                     style={{ width: "388.2px" }}
                   >
                     <span className="text-sm text-gray-800">Employee</span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
-                    tabindex="0"
+                    tabIndex="0"
                     aria-controls="example"
-                    rowspan="1"
-                    colspan="1"
+                    rowSpan="1"
+                    colSpan="1"
                     style={{ width: "100px" }}
                   >
                     <span className="text-sm text-gray-800">Paying day</span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
-                    tabindex="0"
+                    tabIndex="0"
                     aria-controls="example"
-                    rowspan="1"
-                    colspan="1"
+                    rowSpan="1"
+                    colSpan="1"
                     style={{ width: "100px" }}
                   >
                     <span className="text-sm text-gray-800">Status</span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
-                    tabindex="0"
+                    tabIndex="0"
                     aria-controls="example"
-                    rowspan="1"
-                    colspan="1"
+                    rowSpan="1"
+                    colSpan="1"
                     style={{ width: "50px" }}
                   >
                     <span className="text-sm text-gray-800">Salary</span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
-                    tabindex="0"
+                    tabIndex="0"
                     aria-controls="example"
-                    rowspan="1"
-                    colspan="1"
+                    rowSpan="1"
+                    colSpan="1"
                     style={{ width: "50px" }}
                   >
                     <span className="text-sm text-gray-800">Departement</span>
@@ -76,8 +76,8 @@ export default class FinanceTable extends Component {
               </thead>
               <tbody>
                 {this.props.data.map(element => (
-                  <tr role="row" className="odd">
-                    <td tabindex="0" className="sorting_1">
+                  <tr key={element["key"]} role="row" className="odd">
+                    <td tabIndex="0" className="sorting_1">
                       <div className="justify-center items-center flex">
                         <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
                           <img src={Img} alt="img" width="40" />

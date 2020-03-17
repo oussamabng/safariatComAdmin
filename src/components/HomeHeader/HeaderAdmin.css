@@ -19,11 +19,21 @@
   background-color: #02303e;
   height: 100%;
   padding: 15px 15px;
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 1s;
+}
+.logo-navbar-res {
+  background-color: #02303e;
+  height: 100%;
+  padding: 15px 15px;
   width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 2s;
+  transition: width 1s;
 }
 .navbar_header_admin {
   display: flex;
