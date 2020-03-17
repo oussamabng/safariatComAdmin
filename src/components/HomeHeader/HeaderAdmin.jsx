@@ -29,7 +29,7 @@ class HeaderAdmin extends Component {
   render() {
     return (
       <>
-        <div className="main_header_admin">
+        <div className="main_header_admin ">
           <nav className="navbar_header_admin">
             <div className="flex items-center nav-h">
               <div

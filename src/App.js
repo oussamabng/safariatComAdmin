@@ -32,12 +32,17 @@ function App() {
         <Route component={Blog} path="/blog"></Route>
         <Route component={Contact} path="/contact"></Route>
         <Route component={About} path="/about"></Route>
-        <Route component={HrManagement} path="/hr"></Route>
         <Route component={ToursAndProducts} path="/products"></Route>
         <Route
           path="/admin/tours"
           render={props => (
             <Admin active="Report" content={<GenerlaAnalystics />} />
+          )}
+        />
+        <Route
+          path="/admin/hr"
+          render={props => (
+            <Admin active="Business" content={<HrManagement />} />
           )}
         />
         <Route

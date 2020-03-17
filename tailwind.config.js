@@ -23,7 +23,8 @@ module.exports = {
       xsD: "1000px",
       sD: "1200px",
       mD: "1366px",
-      lD: "1440px"
+      lD: "1440px",
+      bD: "1920px"
     },
     fontSize: {
       "8": "0.5rem",

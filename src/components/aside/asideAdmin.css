@@ -1,5 +1,5 @@
 .mainAsideAdmin {
-  width: 170px;
+  width: 230px;
   height: 100%;
   background-color: #084c61;
   position: fixed !important;
@@ -8,6 +8,8 @@
   z-index: 10;
   box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   transition: width 1s;
+  min-height: 100%;
+  padding-top: 60px;
 }
 .mainAsideAdminResized {
   width: 80px;
@@ -17,13 +19,11 @@
   left: 0;
   top: 0;
   z-index: 10;
+  padding-top: 60px;
   box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
   transition: width 1s;
 }
 .mainAsideSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   z-index: 15;
   position: relative;
   overflow: hidden !important;
@@ -76,6 +76,7 @@
   cursor: pointer;
 }
 .treeview-menu {
+  flex-direction: column;
   margin: 0 1px;
   background: #2c3b41;
   overflow: visible;
@@ -83,6 +84,15 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   list-style: none;
+  display: flex !important;
+  transition: display 1s;
+}
+.treeview-menu.hid {
+  background: #2c3b41;
+  overflow: visible;
+  display: none !important;
+  list-style: none;
+  transition: display 1s;
 }
 .treeview-menu > li {
   margin: 0;

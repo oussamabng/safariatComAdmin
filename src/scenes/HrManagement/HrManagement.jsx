@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { employees, tasks } from "./data";
-import AsideAdmin from "../../components/aside/asideAdmin";
-import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
+
 import HrTable from "./components/HrTable";
 import TableActions from "./components/TableActions";
 
@@ -264,40 +263,34 @@ export default class HrManagement extends Component {
     return (
       <Container>
         {/* <nav></nav> */}
-        <HeaderAdmin />
-        <div className="main">
-          <div className="sidebar">
-            <AsideAdmin />
-          </div>
 
-          <main className="hrManagement">
-            <div className="hrManagement__top">
-              <h3 className="hrManagement__top__title text-tiny p-ttt ">
-                HR HrManagement
-              </h3>
-              <hr className="hrManagement__top__hr"></hr>
-              <div className="hrManagement__top__buttons font-montserrat xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
-                <button
-                  className="hrManagement__top__button employeesViewBTN "
-                  onClick={e => this.toggleViewHandler(e, "employeesView")}
-                >
-                  Employees Management
-                </button>
-                <button
-                  className="hrManagement__top__button tasksViewBTN"
-                  onClick={e => this.toggleViewHandler(e, "tasksView")}
-                >
-                  Tasks Management
-                </button>
-              </div>
+        <main className="hrManagement">
+          <div className="hrManagement__top">
+            <h3 className="hrManagement__top__title text-tiny p-ttt ">
+              HR HrManagement
+            </h3>
+            <hr className="hrManagement__top__hr"></hr>
+            <div className="hrManagement__top__buttons font-montserrat xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
+              <button
+                className="hrManagement__top__button employeesViewBTN "
+                onClick={e => this.toggleViewHandler(e, "employeesView")}
+              >
+                Employees Management
+              </button>
+              <button
+                className="hrManagement__top__button tasksViewBTN"
+                onClick={e => this.toggleViewHandler(e, "tasksView")}
+              >
+                Tasks Management
+              </button>
             </div>
-            <div className="hrManagement__content">
-              {this.renderTableActions()}
-              {this.renderTable()}
-              {this.renderModal()}
-            </div>
-          </main>
-        </div>
+          </div>
+          <div className="hrManagement__content">
+            {this.renderTableActions()}
+            {this.renderTable()}
+            {this.renderModal()}
+          </div>
+        </main>
       </Container>
     );
   }
