@@ -128,7 +128,7 @@ class AsideAdmin extends Component {
           }
         >
           <div className="flex justify-between w-full  items-center flex-col">
-            <div className="flex justify-center w-full flex-col items-center py-6 px-2">
+            <div className="flex justify-center w-full flex-col items-center pad-pro px-2">
               <p href="#" className="nameAdmin w-full flex justify-center">
                 <img
                   className={this.props.toggle ? "mr-2" : ""}
@@ -237,7 +237,13 @@ class AsideAdmin extends Component {
             </div>
           </div>
 
-          <div className="flex  pl-2 justify-start pad-logout w-full items-center ">
+          <div
+            className={
+              this.props.toggle
+                ? "flex   justify-start pad-logout w-full items-center "
+                : "flex   justify-center pad-logout w-full items-center "
+            }
+          >
             <Link className="flex justify-center  items-center pad-a" to="#">
               <img className="logout-btn" src={Logout} alt="logout" />
               <span
