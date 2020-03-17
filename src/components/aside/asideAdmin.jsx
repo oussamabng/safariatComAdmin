@@ -180,9 +180,9 @@ class AsideAdmin extends Component {
                           this.props.toggle
                             ? isActive
                               ? "flex justify-center items-center active-sidebar"
-                              : "flex justify-center items-center  "
+                              : "flex justify-center items-center"
                             : isActive
-                            ? "flex justify-center items-center   active-sidebar"
+                            ? "flex justify-center items-center  active-sidebar"
                             : "flex justify-center items-center"
                         }
                       >

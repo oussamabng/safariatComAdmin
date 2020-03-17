@@ -98,7 +98,10 @@
   color: #707070;
 }
 .search_admin-v {
-  background-color: #f1f1f1;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 20px -9px #999;
+  -moz-box-shadow: 0px 0px 20px -9px #999;
+  box-shadow: 0px 0px 20px -9px #999;
   padding: 10px 17px;
   border-radius: 26px;
 }
@@ -217,8 +220,42 @@
   border: 0;
 }
 
-@media (max-width: 1551px) {
-  .search_admin-v {
-    display: none;
+@media (max-width: 1550px) {
+  .buttons_nav a {
+    margin: 0 25px;
+  }
+}
+@media (max-width: 1360px) {
+  .buttons_nav {
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 1252px) {
+  .buttons_nav a {
+    margin: 0 15px !important;
+  }
+}
+@media (max-width: 1173px) {
+  .middlePart {
+    margin: 0 15px !important;
+  }
+}
+@media (max-width: 1073px) {
+  .buttons_nav a {
+    font-size: 14px !important;
+    margin: 0 10px !important;
+  }
+  .nav-h a {
+    width: 60% !important;
+  }
+  .notification_admin img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .partLeft {
+    margin-left: 0 !important;
+  }
+  .form-control.inputSearch {
+    padding: 0 5px;
   }
 }

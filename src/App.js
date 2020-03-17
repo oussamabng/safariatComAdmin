@@ -36,23 +36,28 @@ function App() {
         <Route
           path="/admin/tours"
           render={props => (
-            <Admin active="Report" content={<GenerlaAnalystics />} />
+            <Admin
+              active="Analytics and Statistics"
+              content={<GenerlaAnalystics />}
+            />
           )}
         />
         <Route
           path="/admin/hr"
           render={props => (
-            <Admin active="Business" content={<HrManagement />} />
+            <Admin active="HR management" content={<HrManagement />} />
           )}
         />
         <Route
           path="/admin/finance"
-          render={props => <Admin active="Compass" content={<Finance />} />}
+          render={props => (
+            <Admin active="Finance management" content={<Finance />} />
+          )}
         />
         <Route
           path="/admin/users"
           render={props => (
-            <Admin active="Report" content={<UserInteraction />} />
+            <Admin active="Users interactions" content={<UserInteraction />} />
           )}
         />
         <Redirect from="/admin" to="/admin/tours" />
