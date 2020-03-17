@@ -24,7 +24,7 @@ export default class FinanceLineGraph extends Component {
             breakpoint: 1800,
             options: {
               chart: {
-                width: 550
+                width: 500
               }
             }
           },
@@ -32,31 +32,39 @@ export default class FinanceLineGraph extends Component {
             breakpoint: 1660,
             options: {
               chart: {
-                width: 500
-              }
-            }
-          },
-          {
-            breakpoint: 1460,
-            options: {
-              chart: {
                 width: 450
               }
             }
           },
           {
-            breakpoint: 1353,
+            breakpoint: 1535,
             options: {
               chart: {
-                width: 350
+                width: 400
               }
             }
           },
           {
-            breakpoint: 1250,
+            breakpoint: 1389,
             options: {
               chart: {
                 width: 500
+              }
+            }
+          },
+          {
+            breakpoint: 1251,
+            options: {
+              chart: {
+                width: 500
+              }
+            }
+          },
+          {
+            breakpoint: 1100,
+            options: {
+              chart: {
+                width: 400
               }
             }
           }
