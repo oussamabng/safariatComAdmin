@@ -62,13 +62,16 @@ export default function TableActions(props) {
     return props.view === "employees" ? (
       <button
         onClick={props.addEmployee}
-        className="addEmployee addBtn"
+        className="addEmployee addBtn "
         // onClick={e => props.addHandler()}
       >
         {props.add}
       </button>
     ) : (
-      <button className="addTasks addBtn" onClick={props.addTask}>
+      <button
+        className="addTasks addBtn font-montserrat "
+        onClick={props.addTask}
+      >
         {props.add}
       </button>
     );
