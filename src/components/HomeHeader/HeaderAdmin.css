@@ -18,7 +18,7 @@
 .logo-navbar {
   background-color: #02303e;
   height: 100%;
-  padding: 1rem;
+  padding: 15px 15px;
   width: 80px;
   display: flex;
   align-items: center;
@@ -189,4 +189,29 @@
 }
 .notification-box.hidden {
   max-height: 0 !important;
+}
+.nav-h {
+  height: 60px;
+}
+.sidebar-toggle {
+  color: #000;
+  float: left;
+  background-color: transparent;
+  background-image: none;
+  padding: 15px 15px;
+  font-family: fontAwesome;
+  font-size: 20px;
+}
+.sidebar-toggle::before {
+  content: "\f0c9";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

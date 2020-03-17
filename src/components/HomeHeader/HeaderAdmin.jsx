@@ -20,9 +20,19 @@ class HeaderAdmin extends Component {
     return (
       <>
         <div className="main_header_admin">
-          <nav className="navbar_header_admin ">
-            <div className="logo-navbar">
-              <img src={Logo} alt="logo" />
+          <nav className="navbar_header_admin">
+            <div className="flex items-center nav-h">
+              <div className="logo-navbar">
+                <img src={Logo} alt="logo" />
+              </div>
+              <a
+                href="#"
+                className="sidebar-toggle"
+                data-toggle="push-menu"
+                role="button"
+              >
+                <span className="sr-only">Toggle navigation</span>
+              </a>
             </div>
             <div className="partLeft">
               <div className="search_admin-v input-group">
