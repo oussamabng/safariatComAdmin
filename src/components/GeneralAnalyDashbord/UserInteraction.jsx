@@ -230,36 +230,7 @@ class UserInteraction extends Component {
     const secondColumnStart = Math.floor(result.length / 2);
     return (
       <div className="app-main__outer">
-        <section className="mainGeneralDashbord">
-          <div className="app-page-title ">
-            <div className="flex flex-row items-center justify-between sm:flex-col sm:items-center md:flex-row">
-              <div className="GeneralDash sm:my-4">
-                <h1>Analytics and Statistics</h1>
-              </div>
-              <div className="GeneralDash">
-                <Link
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#747474"
-                  }}
-                  to="/admin/tours"
-                >
-                  Tours bookings & Products
-                </Link>
-                <Link
-                  style={{
-                    backgroundColor: "#ffb808",
-                    color: "#ffffff"
-                  }}
-                  to="/admin/users"
-                >
-                  Users interactions
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div className="flex flex-wrap mb-4">
+        <div className="flex flex-wrap mb-4 pt-4">
           <div className="w-full md:w-3/5  p-5 pt-0 text-center">
             <div className="flex mb-4">
               <div className="w-full">

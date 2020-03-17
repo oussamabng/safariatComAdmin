@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./HeaderAdmin.css";
 import Notification from "./images/notifications.svg";
-import Ouss from "./images/ouss.jpg";
-import Logo from "./images/logo.png";
+import Logo from "./images/logoForWeb.png";
 import NotificationBox from "../NotificationsBox/NotificationsBox.jsx";
 class HeaderAdmin extends Component {
   constructor(props) {
@@ -30,23 +29,22 @@ class HeaderAdmin extends Component {
     return (
       <>
         <div className="main_header_admin ">
-          <nav className="navbar_header_admin">
+          <nav
+            className={
+              !this.state.navL
+                ? "navbar_header_admin"
+                : "navbar_header_admin res"
+            }
+          >
             <div className="flex items-center nav-h">
-              <div
-                className={!this.state.navL ? "logo-navbar" : "logo-navbar-res"}
-              >
-                <img src={Logo} alt="logo" />
-              </div>
               <a
+                className="w-3/4"
                 href="#"
-                className="sidebar-toggle"
-                data-toggle="push-menu"
-                role="button"
                 onClick={() => {
                   this.handleLogo();
                 }}
               >
-                <span className="sr-only">Toggle navigation</span>
+                <img src={Logo} alt="logo" />
               </a>
             </div>
             <div className="partLeft">
@@ -68,18 +66,12 @@ class HeaderAdmin extends Component {
                     Home
                   </a>
                   <a href="#">Create+</a>
-                  <a href="#">Settings</a>
+                  <a href="#">Services</a>
+                  <a href="#">Support</a>
                 </div>
               </div>
             </div>
             <div className="ml-auto flex flex-row justify-center items-center">
-              <a href="#" className="nameAdmin">
-                <img src={Ouss} alt="usernamePhoto" />
-                <div className="flexCol flex flex-col justify-center items-start">
-                  <span>@username</span>
-                  <h3>-CEO of travel agency</h3>
-                </div>
-              </a>
               <div className="flex flex-col relative items-end">
                 <p
                   href="#"

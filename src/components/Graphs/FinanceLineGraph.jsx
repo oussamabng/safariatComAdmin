@@ -105,7 +105,7 @@ export default class FinanceLineGraph extends Component {
           options={this.state.options}
           series={this.state.series}
           type="line"
-          width="600"
+          width="550"
         />
       </div>
     );

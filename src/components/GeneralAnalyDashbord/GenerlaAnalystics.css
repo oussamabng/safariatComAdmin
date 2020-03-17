@@ -10,44 +10,7 @@
   display: flex;
   background-color: #f6f6f6;
 }
-.mainGeneralDashbord {
-  padding: 40px 40px 0;
-  flex: 1;
-}
 
-.app-page-title {
-  padding: 30px;
-  margin: -30px -30px 30px;
-  margin-bottom: 0 !important;
-  position: relative;
-  padding-top: 15px !important;
-}
-
-.GeneralDash {
-  font-size: 26px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.18;
-  display: flex;
-  align-content: center;
-  align-items: center;
-}
-
-.GeneralDash a {
-  margin: 0 10px;
-  padding: 10px 12px;
-  font-size: 14px;
-  font-weight: normal;
-  border-radius: 18px;
-  box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
-}
-.GeneralButtons a:first-child:hover {
-  background-color: #ffb908c2 !important;
-}
-.GeneralButtons a:last-child:hover {
-  background-color: #ffcc4e !important;
-}
 .my-col {
   padding: 0 15px;
 }

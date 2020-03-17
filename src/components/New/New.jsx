@@ -12,10 +12,10 @@ class New extends Component {
     };
   }
   restartData() {
-    //request of data 
+    //request of data
     this.setState({
       data: this.props.data
-    })
+    });
   }
   render() {
     var { data } = this.state;
@@ -28,14 +28,21 @@ class New extends Component {
           <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
             <div className="btn-group dropdown flex justify-center items-center mx-3">
               <a href="#" className="btn-icon btn-icon-only btn btn-link">
-                <Restart fill="#b3b8bd" className="info-btn" onClick={() => {
-                  this.restartData()
-                }} />
+                <Restart
+                  fill="#b3b8bd"
+                  className="info-btn"
+                  onClick={() => {
+                    this.restartData();
+                  }}
+                />
               </a>
               {/* here the dropdown div... */}
             </div>
             <div className="btn-group dropdown flex justify-center items-center mx-3">
-              <span class="hint--left text-center  hint--medium" aria-label="this is a hint">
+              <span
+                class="hint--left text-center flex hint--medium"
+                aria-label="this is a hint"
+              >
                 <button className="btn-icon btn-icon-only btn btn-link">
                   <Info fill="#b3b8bd" className="info-btn" />
                 </button>
@@ -44,7 +51,7 @@ class New extends Component {
             </div>
           </div>
         </div>
-        {data.map((data_news) => (
+        {data.map(data_news => (
           <div className="rowNews bg-white xl:py-0 lg:py-2 md:py-2 sm:py-2 xs:py-2">
             <div className="bard-body px-4">
               <div className="pt-0 pb-0 bg-white p-3">
@@ -91,7 +98,9 @@ class New extends Component {
                         />
                       </div>
                       <h1>{data_news["name"]}</h1>
-                      <p className="full-p my-2">has added a new {data_news["type"]}</p>
+                      <p className="full-p my-2">
+                        has added a new {data_news["type"]}
+                      </p>
                       <div className="date-new">
                         <p>{data_news["name"]}</p>
                       </div>{" "}
@@ -104,7 +113,6 @@ class New extends Component {
               </div>
             </div>
           </div>
-
         ))}
       </div>
     );
