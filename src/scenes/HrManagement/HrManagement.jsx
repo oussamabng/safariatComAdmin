@@ -272,11 +272,13 @@ export default class HrManagement extends Component {
 
           <main className="hrManagement">
             <div className="hrManagement__top">
-              <h3 className="hrManagement__top__title">HR HrManagement</h3>
+              <h3 className="hrManagement__top__title text-tiny p-ttt ">
+                HR HrManagement
+              </h3>
               <hr className="hrManagement__top__hr"></hr>
-              <div className="hrManagement__top__buttons">
+              <div className="hrManagement__top__buttons font-montserrat xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
                 <button
-                  className="hrManagement__top__button employeesViewBTN"
+                  className="hrManagement__top__button employeesViewBTN "
                   onClick={e => this.toggleViewHandler(e, "employeesView")}
                 >
                   Employees Management
@@ -326,18 +328,19 @@ const Container = styled.div`
 
   .hrManagement__top__title {
     vertical-align: middle;
-    // font-size: 1.2rem;
     color: #171717;
   }
 
   .hrManagement__top__hr {
-    background: #000;
+    background: #707070;
     border: 0;
-    color: #000;
+    color: #707070;
     height: 1px;
-    flex-shrink: 1.5;
-    flex-grow: 2;
+    flex-shrink: 1;
+    flex-grow: 1;
+    margin: 0 10px;
     flex-basis: auto;
+    opacity: 0.5;
   }
 
   .hrManagement__top__button {
