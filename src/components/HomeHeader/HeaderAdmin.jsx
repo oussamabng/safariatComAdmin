@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import "./HeaderAdmin.css";
 import Notification from "./images/notifications.svg";
 import Logo from "./images/logoForWeb.png";
+import SearchBar from "../SearchBar/SearchBar.jsx";
 import NotificationBox from "../NotificationsBox/NotificationsBox.jsx";
 class HeaderAdmin extends Component {
   constructor(props) {
     super(props);
     this.state = {
       show: false,
-      navL: false
+      navL: this.props.show
     };
   }
   showNotifications() {
@@ -25,20 +26,22 @@ class HeaderAdmin extends Component {
     });
     this.props.clickToggle();
   }
+
   render() {
+    console.log(this.props.show);
     return (
       <>
         <div className="main_header_admin ">
           <nav
             className={
-              !this.state.navL
+              this.state.navL
                 ? "navbar_header_admin"
                 : "navbar_header_admin res"
             }
           >
             <div className="flex items-center nav-h">
               <a
-                className="w-3/4"
+                className=" mD:w-3/4 lD:w-3/4 sD:3/4 xsD:w-3/4"
                 href="#"
                 onClick={() => {
                   this.handleLogo();
@@ -48,34 +51,40 @@ class HeaderAdmin extends Component {
               </a>
             </div>
             <div className="partLeft">
-              <div className="search_admin-v input-group">
-                <span className="input-group-btn">
-                  <button className="btn btn-flat" type="submit" name="search">
-                    <i className="fontSearch fa fa-search "></i>
-                  </button>
-                </span>
-                <input
-                  type="text"
-                  className="form-control inputSearch"
-                  placeholder="Search for Something ..."
-                />
-              </div>
+              <SearchBar />
               <div className="middlePart">
                 <div className="buttons_nav">
-                  <a className="active" href="#">
+                  <a
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
+                    href="#"
+                  >
                     Home
                   </a>
-                  <a href="#">Create+</a>
-                  <a href="#">Services</a>
-                  <a href="#">Support</a>
+                  <a
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
+                    href="#"
+                  >
+                    Create+
+                  </a>
+                  <a
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
+                    href="#"
+                  >
+                    Services
+                  </a>
+                  <a
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
+                    href="#"
+                  >
+                    Support
+                  </a>
                 </div>
               </div>
             </div>
             <div className="ml-auto flex flex-row justify-center items-center">
               <div className="flex flex-col relative items-end">
                 <p
-                  href="#"
-                  className="notification_admin mx-4"
+                  className="mx-4 cursor-pointer xsD:w-12 xsD:h-12 sD:w-12 sD:h-12 mD:w-12 mD:h-12 lD:h-12 lD:w-12"
                   onClick={() => {
                     this.showNotifications();
                   }}

@@ -61,9 +61,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left:auto;
 }
 .arrowProduct h1 {
-  font-size: 1rem !important;
   line-height: 1.5;
   font-weight: normal;
   color: #212529;
@@ -125,7 +125,7 @@
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   background-color: rgb(255, 255, 255);
-  max-height: 350px;
+  max-height: 330px;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -236,4 +236,41 @@
   background-color: #ffcc4e !important;
   color: white;
   border: none !important;
+}
+.mainGeneralDashbord {
+  padding: 40px 40px 0;
+  flex: 1;
+}
+
+.app-page-title {
+  padding: 2em;
+  margin: -30px -30px 30px;
+  margin-bottom: 0 !important;
+  position: relative;
+}
+
+.GeneralDash {
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.18;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.GeneralDash a {
+  margin: 0 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  border-radius: 18px;
+  box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+}
+.GeneralButtons a:first-child:hover {
+  background-color: #ffb908c2 !important;
+}
+.GeneralButtons a:last-child:hover {
+  background-color: #ffcc4e !important;
 }

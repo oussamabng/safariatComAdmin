@@ -7,7 +7,6 @@
 }
 .set-background-color {
   background-color: #f3f3f3;
-
 }
 .set-background-color-v2 {
   background-color: #ffffff;
@@ -31,7 +30,7 @@
 }
 .set-top-tour h1 {
   margin: 5px 0;
-  font-size: 14px!important;
+  font-size: 14px !important;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -41,7 +40,7 @@
   color: #2d2d2d;
 }
 .set-top-tour p {
-  font-size: 11px!important;
+  font-size: 11px !important;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -65,25 +64,51 @@
   transition: 4s width;
 }
 
-
-@media (max-width:1470px){
-  .widget-content > .imgStyle{
-    width: 2rem!important;
-    height: 2rem!important;
-    padding: 0!important;
+@media (max-width: 1470px) {
+  .widget-content > .imgStyle {
+    width: 2rem !important;
+    height: 2rem !important;
+    padding: 0 !important;
   }
-  .responsive-icons{
-    width: 1rem!important;
-      height: 1rem!important;
-      padding: 0!important;
-      margin: 0 5px!important;
+  .responsive-icons {
+    width: 1rem !important;
+    height: 1rem !important;
+    padding: 0 !important;
+    margin: 0 5px !important;
   }
 }
-.font-size-res{
-  font-size: 1rem!important;
+.font-size-res {
+  font-size: 1rem !important;
 }
-@media (max-width:1316px){
-  .font-size-res{
-    font-size: .8rem!important;
+@media (max-width: 1316px) {
+  .font-size-res {
+    font-size: 0.8rem !important;
+  }
+}
+@media (max-width: 1500px) {
+  .font-size-res {
+    font-size: 18px !important;
+  }
+  .imgStyle.sec {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .row_top {
+    flex-direction: column !important;
+  }
+  .row_top .scroll-div {
+    width: 100% !important;
+  }
+}
+.cls {
+  overflow: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  max-height: 300px;
+}
+@media (max-width: 1440px) {
+  .cli {
+    padding: 0 8em !important;
   }
 }
