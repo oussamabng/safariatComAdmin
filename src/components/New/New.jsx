@@ -22,7 +22,7 @@ class New extends Component {
     return (
       <div className=" card new-card">
         <div className="card-header-tab card-header">
-          <div className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
+          <div className="xsD:text-13 sD:text-15 mD:text-18 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
             News
           </div>
           <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
@@ -67,13 +67,13 @@ class New extends Component {
                         alt="img"
                       />
                       <div className="all-details-new">
-                        <div className="fullname-new xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
+                        <div className="fullname-new sD:text-15 mD:text-18 lD:text-21">
                           <h1>{data_news["name"]}</h1>
                         </div>
-                        <div className="date-new xsD:text-8 sD:text-10 mD:text-12 lD:text-16">
+                        <div className="date-new sD:text-12 mD:text-14 lD:text-16">
                           <p>{data_news["time"]}</p>
                         </div>
-                        <div className="my-4 mx-0 full-p text-lg xsD:text-9 sD:text-11 mD:text-13 lD:text-18">
+                        <div className="my-4 mx-0 full-p  sD:text-14 mD:text-16 lD:text-18">
                           <p>has added a new {data_news["type"]}</p>
                         </div>
                       </div>
@@ -105,7 +105,7 @@ class New extends Component {
                         has added a new {data_news["type"]}
                       </p>
                       <div className="date-new">
-                        <p>{data_news["name"]}</p>
+                        <p>{data_news["time"]}</p>
                       </div>{" "}
                     </div>
                   </div>

@@ -9,7 +9,7 @@ class HeaderAdmin extends Component {
     super(props);
     this.state = {
       show: false,
-      navL: false
+      navL: this.props.show
     };
   }
   showNotifications() {
@@ -26,7 +26,9 @@ class HeaderAdmin extends Component {
     });
     this.props.clickToggle();
   }
+
   render() {
+    console.log(this.props.show);
     return (
       <>
         <div className="main_header_admin ">
@@ -39,7 +41,7 @@ class HeaderAdmin extends Component {
           >
             <div className="flex items-center nav-h">
               <a
-                className=" mD:w-1/2 lD:w-3/4"
+                className=" mD:w-3/4 lD:w-3/4 sD:3/4 xsD:w-3/4"
                 href="#"
                 onClick={() => {
                   this.handleLogo();
@@ -53,25 +55,25 @@ class HeaderAdmin extends Component {
               <div className="middlePart">
                 <div className="buttons_nav">
                   <a
-                    className="xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
                     href="#"
                   >
                     Home
                   </a>
                   <a
-                    className="xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
                     href="#"
                   >
                     Create+
                   </a>
                   <a
-                    className="xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
                     href="#"
                   >
                     Services
                   </a>
                   <a
-                    className="xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
                     href="#"
                   >
                     Support
@@ -82,8 +84,7 @@ class HeaderAdmin extends Component {
             <div className="ml-auto flex flex-row justify-center items-center">
               <div className="flex flex-col relative items-end">
                 <p
-                  href="#"
-                  className="mx-4 cursor-pointer lD:h-12 lD:w-12"
+                  className="mx-4 cursor-pointer xsD:w-12 xsD:h-12 sD:w-12 sD:h-12 mD:w-12 mD:h-12 lD:h-12 lD:w-12"
                   onClick={() => {
                     this.showNotifications();
                   }}

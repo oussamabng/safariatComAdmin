@@ -61,6 +61,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left:auto;
 }
 .arrowProduct h1 {
   line-height: 1.5;
@@ -242,11 +243,10 @@
 }
 
 .app-page-title {
-  padding: 30px;
+  padding: 2em;
   margin: -30px -30px 30px;
   margin-bottom: 0 !important;
   position: relative;
-  padding-top: 15px !important;
 }
 
 .GeneralDash {

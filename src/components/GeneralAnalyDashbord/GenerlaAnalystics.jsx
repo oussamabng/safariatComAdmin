@@ -154,13 +154,13 @@ class GenerlaAnalystics extends Component {
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
           <div className="app-page-title ">
-            <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-center mD:items-center   mD:flex-col ">
-              <div className="GeneralDash xsD:text-14 sD:text-17 mD:text-19 lD:text-28">
+            <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-between mD:items-center sD:justify-between sD:items-center  xsD:justify-between xsD:items-center">
+              <div className="GeneralDash xsD:text-14 sD:text-19 mD:text-21 lD:text-28">
                 <h1>Analytics and Statistics</h1>
               </div>
               <div className="flex lD:justify-center lD:items-center lD:ml-auto  GeneralDash">
                 <Link
-                  className="hover-title xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
+                  className="hover-title xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
                   style={{
                     backgroundColor: "#ffb808",
                     color: "#ffffff"
@@ -170,7 +170,7 @@ class GenerlaAnalystics extends Component {
                   Tours bookings & Products
                 </Link>
                 <Link
-                  className="hover-title dif xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
+                  className="hover-title dif xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
                   style={{
                     backgroundColor: "#ffffff",
                     color: "#ffb808"
@@ -189,7 +189,7 @@ class GenerlaAnalystics extends Component {
               <div className="my-col w-full">
                 <div className="mb-3 card">
                   <div className="card-header-tab card-header">
-                    <div className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
+                    <div className="xsD:text-13 sD:text-15 mD:text-18 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
                       Top products
                     </div>
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
@@ -214,19 +214,19 @@ class GenerlaAnalystics extends Component {
                           <tr>
                             <th
                               style={{ backgroundColor: "#f5f5f5" }}
-                              className="p-3 w:2/5  text-black-600 hidden lg:table-cell min 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                              className="p-3 w:2/5  text-black-600 hidden lg:table-cell  xsD:text-9 sD:text-13 mD:text-15 lD:text-18"
                             >
                               Product name
                             </th>
                             <th
                               style={{ backgroundColor: "#f5f5f5" }}
-                              className="p-3 w:1/5    text-black-600 hidden lg:table-cell min 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                              className="p-3 w:2/5  text-black-600 hidden lg:table-cell  xsD:text-9 sD:text-13 mD:text-15 lD:text-18"
                             >
                               Price
                             </th>
                             <th
                               style={{ backgroundColor: "#f5f5f5" }}
-                              className="p-3 w:2/5    text-black-600 hidden lg:table-cell min 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                              className="p-3 w:2/5  text-black-600 hidden lg:table-cell  xsD:text-9 sD:text-13 mD:text-15 lD:text-18"
                             >
                               Rate
                             </th>
@@ -242,32 +242,32 @@ class GenerlaAnalystics extends Component {
                                 <span className="lg:hidden absolute sm:  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                   Product name
                                 </span>
-                                <div className="flex 1000 xsD:text-8 sD:text-10 mD:text-12 lD:text-16 p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
+                                <div className="flex 1000 xsD:text-8 sD:text-12 mD:text-16 lD:text-16  p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
                                   <img
                                     src={product["img"]}
                                     alt="img"
                                     width="40"
                                   />
-                                  <p className="text-center px-2 1000 xsD:text-8 sD:text-10 mD:text-12 lD:text-16">
+                                  <p className="text-center px-2 sD:text-12 mD:text-16 lD:text-16">
                                     {product["productName"]}
                                   </p>
                                 </div>
                               </td>
-                              <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
-                                <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+                              <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center flex justify-between items-center lg:table-cell relative lg:static">
+                                <span className="lg:hidden absolute  left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase ">
                                   Price
                                 </span>
-                                <p className="responsive-rate 1000 xsD:text-8 sD:text-10 mD:text-12 lD:text-16 lg:text-center whitespace-no-wrap xl:text-center xl:float-none sm:text-right sm:float-right">
+                                <p className="responsive-rate 1000 sD:text-12 mD:text-16 lD:text-16 lg:text-center whitespace-no-wrap xl:text-center xl:float-none sm:text-right sm:float-right">
                                   {product["price"]}
                                 </p>
                               </td>
-                              <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+                              <td className="w-full  lg:w-auto p-3 text-gray-800 text-center border border-b text-center flex justify-between items-center lg:table-cell relative lg:static">
                                 <span className="lg:hidden absolute left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
                                   Rate
                                 </span>
                                 <div className="productInfo responsive-rate">
                                   <div className="arrowProduct 1000  productInfo">
-                                    <h1 className="xsD:text-8 sD:text-10 mD:text-12 lD:text-16">
+                                    <h1 className="sD:text-12 mD:text-16 lD:text-16">
                                       {product["up"]}
                                     </h1>
                                     <ArrowUp
@@ -276,7 +276,7 @@ class GenerlaAnalystics extends Component {
                                     />
                                   </div>
                                   <div className="arrowProduct 1000  productInfo">
-                                    <h1 className="xsD:text-8 sD:text-10 mD:text-12 lD:text-16">
+                                    <h1 className="sD:text-12 mD:text-16 lD:text-16">
                                       {product["down"]}
                                     </h1>
                                     <ArrowDown
@@ -289,7 +289,7 @@ class GenerlaAnalystics extends Component {
                                       name="rate1"
                                       starCount={5}
                                       value={product["rate"]}
-                                      className="1000 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                                      className="sD:text-12 mD:text-16 lD:text-16"
                                     />
                                   </div>
                                 </div>
@@ -319,7 +319,7 @@ class GenerlaAnalystics extends Component {
               <div className="w-full my-col my-col2 flex flex-col justify-start">
                 <div className="mb-3 card">
                   <div className="card-header-tab card-header sm:px-5">
-                    <div className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
+                    <div className="xsD:text-13 sD:text-15 mD:text-18 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
                       Top tours
                     </div>
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
@@ -416,48 +416,47 @@ class GenerlaAnalystics extends Component {
                     </div>
                   </div>
                   <div className="p-0 card-body">
-                    <div className="p-5 pt-0 pb-0 bg-white">
-                      <div>
-                        <Slider ref={c => (this.slider = c)} {...settings}>
-                          <div className="flex justify-center items-center">
-                            <MyCard
-                              Title="Dubai"
-                              Img={Dubai}
-                              Rate={504}
-                              views={5}
-                            />
-                          </div>
-                          <div className="">
-                            <MyCard
-                              Title="Sahara"
-                              Img={Sahara}
-                              Rate={94}
-                              views={3}
-                            />
-                          </div>
-                          <div className="">
-                            <MyCard
-                              Title="Tunisia"
-                              Img={Dubai}
-                              Rate={278}
-                              views={3}
-                            />
-                          </div>
-                          <div className="">
-                            <MyCard
-                              Title="Dubai"
-                              Img={Dubai}
-                              Rate={504}
-                              views={3}
-                            />
-                          </div>
-                        </Slider>
-                      </div>
+                    <div className="p-5 pr-0 pt-0 pb-0 bg-white">
+                      <Slider ref={c => (this.slider = c)} {...settings}>
+                        <div className="flex justify-center items-center">
+                          <MyCard
+                            Title="Dubai"
+                            Img={Sahara}
+                            Rate={504}
+                            views={5}
+                          />
+                        </div>
+                        <div className="">
+                          <MyCard
+                            Title="Sahara"
+                            Img={Sahara}
+                            Rate={94}
+                            views={3}
+                          />
+                        </div>
+                        <div className="">
+                          <MyCard
+                            Title="Tunisia"
+                            Img={Sahara}
+                            Rate={278}
+                            views={3}
+                          />
+                        </div>
+                        <div className="">
+                          <MyCard
+                            Title="Dubai"
+                            Img={Dubai}
+                            Rate={504}
+                            views={3}
+                          />
+                        </div>
+                      </Slider>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="flex">
               <div className="w-full">
                 <div className="my-col">

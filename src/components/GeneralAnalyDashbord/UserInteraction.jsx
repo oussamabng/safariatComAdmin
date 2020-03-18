@@ -343,7 +343,7 @@ class UserInteraction extends Component {
                         </div>
                         <div className="btn-group dropdown flex justify-center items-center">
                           <span
-                            class="hint--bottom text-center  hint--medium"
+                            className="hint--bottom text-center  hint--medium"
                             aria-label="this is a hint"
                           >
                             <button className="btn-icon btn-icon-only btn btn-link">
@@ -403,7 +403,7 @@ class UserInteraction extends Component {
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                       <div className="btn-group dropdown flex justify-center items-center">
                         <span
-                          class="hint--left text-center  hint--medium"
+                          className="hint--left text-center  hint--medium"
                           aria-label="this is a hint"
                         >
                           <button className="btn-icon btn-icon-only btn btn-link">
@@ -450,7 +450,7 @@ class UserInteraction extends Component {
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                       <div className="btn-group dropdown flex justify-center items-center">
                         <span
-                          class="hint--left text-center  hint--medium"
+                          className="hint--left text-center  hint--medium"
                           aria-label="this is a hint"
                         >
                           <button className="btn-icon btn-icon-only btn btn-link">
@@ -507,7 +507,7 @@ class UserInteraction extends Component {
                 <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                   <div className="btn-group dropdown flex justify-center items-center">
                     <span
-                      class="hint--left text-center  hint--medium"
+                      className="hint--left text-center  hint--medium"
                       aria-label="this is a hint"
                     >
                       <button className="btn-icon btn-icon-only btn btn-link">

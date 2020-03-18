@@ -39,7 +39,7 @@ const Container = styled.div`
   .agency-input {
     background: #fff;
     color: #a7a7a7;
-    width: 10vw;
+    width: 13vw;
   }
   .agency-search-bar {
     display: flex;

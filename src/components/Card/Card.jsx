@@ -20,11 +20,11 @@ class MyCard extends Component {
               alt="Sunset in the mountains"
             />
           </div>
-          <div className="px-1 py-4 flex flex-col">
-            <div className="font-bold text-lg md:px-2 mb-2 1366 xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
+          <div className="px-1 py-4  flex flex-col">
+            <div className="font-bold text-lg md:px-2 mb-2 1366 xsD:text-11  sD:text-13 mD:text-15 lD:text-21">
               {Title}
             </div>
-            <div className="flex lD:flex-row lD:items-center mD:flex-col mD:items-start md:px-2 flex-row justify-between items-center set-fonts">
+            <div className="flex lD:flex-row sD:flex-col sD:justify-start sD:items-start lD:items-center mD:flex-col mD:items-start md:px-2 flex-row justify-between items-center set-fonts">
               <h1 className="text-base 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18">
                 {Rate}
               </h1>
@@ -33,7 +33,7 @@ class MyCard extends Component {
               </p>
               <div className="my-staring">
                 <StarRatingComponent
-                  className="xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                  className="rate-card xsD:text-11 sD:text-12 mD:text-15 lD:text-16"
                   starCount={5}
                   value={views}
                   name="my-rateee"

@@ -100,7 +100,7 @@ export default class GraphGen extends Component {
     return (
       <div className="mb-3 card">
         <div className="card-header-tab card-header">
-          <div className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
+          <div className="xsD:text-13 sD:text-15 mD:text-18 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
             Top tours
           </div>
           <div className="btn-actions-pane-right text-capitalize actions-icon-btn">

@@ -17,3 +17,8 @@
 .set-back {
   background-color: #f9f9f9;
 }
+@media (max-width: 1600px) {
+  .set-fonts p {
+    font-size: 12px !important;
+  }
+}

@@ -177,10 +177,10 @@ class AsideAdmin extends Component {
                 {this.state.navItems.map(elm => {
                   let isActive = this.state.activeLink === elm.name;
                   let navClass = isActive
-                    ? "w-full pad-logout active-sidebar my-4 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                    ? "w-full pad-logout cursor-pointer  my-4 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
                     : this.props.toggle
-                    ? "w-full pad-logout my-4 pl-2 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
-                    : "w-full pad-logout  justify-center my-4";
+                    ? "w-full pad-logout cursor-pointer my-4 pl-2 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                    : "w-full pad-logout cursor-pointer justify-center my-4";
                   return (
                     <li
                       key={elm.key}
