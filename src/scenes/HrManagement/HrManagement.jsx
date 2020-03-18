@@ -297,14 +297,13 @@ export default class HrManagement extends Component {
 }
 
 const Container = styled.div`
-  .main {
-    display: flex;
-    background-color: #f6f6f6;
+  display: flex;
+  background-color: #f6f6f6;
 
-    padding-bottom: 5rem;
-  }
+  padding-bottom: 5rem;
+
   .hrManagement {
-    width: 100%;
+    width: 88%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
     // padding: 0 40px 0 120px;
@@ -346,6 +345,7 @@ const Container = styled.div`
   .employeesViewBTN {
     color: white;
     background-color: #ffcc4e;
+    margin-right: 1em;
   }
 
   .tasksViewBTN {

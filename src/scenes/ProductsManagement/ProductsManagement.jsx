@@ -1,77 +1,48 @@
 import React, { Component } from "react";
 
-import { tours, toursDetails, products } from "./data";
+import { products } from "./data";
 import styled from "styled-components";
 import Modal from "../../components/Modal/Modal";
 
 import TRTable from "./components/TRTable";
-import AsideAdmin from "../../components/aside/asideAdmin";
-import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
 
 import TableActions from "../HrManagement/components/TableActions";
 
 export default class ToursAndProducts extends Component {
   state = {
-    isToursView: true,
-    isProductsView: false,
+    isProductsView: true,
 
-    toursTypes: ["type 1", "type 2", "marketing"],
     productsTypes: ["typpe 1", "typpe 2", "marketing"],
-    isTourDetailsShown: false,
     isProductDetailsShown: false,
-
-    tours: null,
-    toursDetails: null,
-    tourDetails: null,
 
     products: null,
     productDetails: null
   };
 
   componentDidMount() {
-    this.setState({ tours, toursDetails, products });
-
-    //remove ShowTourModal() After Tests ;
-    // this.setState({ tours, toursDetails }, () => {
-    //   this.showTourModal();
-    // });
+    this.setState({ products });
   }
 
-  toggleViewHandler = (e, value) => {
-    switch (value) {
-      case "toursView":
-        this.setState({
-          isToursView: true,
-          isProductsView: false
-        });
-        break;
-      case "productsView":
-        this.setState({
-          isToursView: false,
-          isProductsView: true
-        });
+  // toggleViewHandler = (e, value) => {
+  //   switch (value) {
+  //     case "toursView":
+  //       this.setState({
+  //         isToursView: true,
+  //         isProductsView: false
+  //       });
+  //       break;
+  //     case "productsView":
+  //       this.setState({
+  //         isToursView: false,
+  //         isProductsView: true
+  //       });
 
-        break;
-      default:
-        console.log("view Toggle Error");
-        break;
-    }
-  };
-
-  showTourModal = tourId => {
-    const tours = this.state.tours;
-    const toursDetails = this.state.toursDetails;
-
-    let tour = tours.find(el => Number(el.id) === Number(tourId));
-    let details = toursDetails.find(el => Number(el.id) === Number(tourId));
-
-    tour = JSON.parse(JSON.stringify(tour));
-    details = JSON.parse(JSON.stringify(details));
-
-    const tourDetails = { ...tour, ...details };
-    console.log("tourDetials : ", tourDetails);
-    this.setState({ tourDetails, isTourDetailsShown: true });
-  };
+  //       break;
+  //     default:
+  //       console.log("view Toggle Error");
+  //       break;
+  //   }
+  // };
 
   showProductModal = productId => {
     const products = this.state.products;
@@ -81,33 +52,14 @@ export default class ToursAndProducts extends Component {
     this.setState({ isProductDetailsShown: true, productDetails });
   };
 
-  hideTourModal = () => {
-    this.setState({ tourDetails: null, isTourDetailsShown: false });
-  };
-
   hideProductModal = () => {
     this.setState({ productDetails: null, isProductDetailsShown: false });
   };
 
   renderTable() {
-    const view = this.state.isToursView ? "tours" : "products";
+    const products = this.state.products ? this.state.products : null;
 
-    const tours =
-      this.state.tours && view === "tours" ? this.state.tours : null;
-
-    const products =
-      this.state.products && view === "products" ? this.state.products : null;
-
-    if (tours) {
-      return (
-        <TRTable
-          showTourDetails={details => this.showTourModal(details)}
-          tours={tours}
-        >
-          products DAta
-        </TRTable>
-      );
-    } else if (products) {
+    if (products) {
       return (
         <TRTable
           showProductDetails={details => this.showProductModal(details)}
@@ -122,22 +74,11 @@ export default class ToursAndProducts extends Component {
   }
 
   renderModal = () => {
-    const tourDetails = this.state.tourDetails && this.state.tourDetails;
-    const productDetails =
-      this.state.productDetails && this.state.productDetails;
+    const productDetails = this.state.productDetails;
 
-    const isTourDetailsShown = this.state.isTourDetailsShown;
     const isProductDetailsShown = this.state.isProductDetailsShown;
 
-    if (isTourDetailsShown) {
-      return (
-        <Modal
-          closeModal={this.hideTourModal}
-          tourDetails={tourDetails}
-          modal="tour"
-        ></Modal>
-      );
-    } else if (isProductDetailsShown) {
+    if (isProductDetailsShown) {
       return (
         <Modal
           closeModal={this.hideProductModal}
@@ -151,18 +92,9 @@ export default class ToursAndProducts extends Component {
   };
 
   renderTableActions() {
-    const isToursView = this.state.isToursView;
     const isProductsView = this.state.isProductsView;
 
-    if (isToursView) {
-      return (
-        <TableActions
-          search="search tours"
-          view="tours"
-          selectOptions={this.state.toursTypes}
-        />
-      );
-    } else if (isProductsView) {
+    if (isProductsView) {
       return (
         <TableActions
           search="search products"
@@ -170,18 +102,15 @@ export default class ToursAndProducts extends Component {
           selectOptions={this.state.productsTypes}
         />
       );
+    } else {
+      return null;
     }
   }
 
   render() {
     return (
       <Container>
-        {/* <HeaderAdmin /> */}
-
         <div className="main">
-          {/* <div className="sidebar"><AsideAdmin /></div> */}
-          {/* <AsideAdmin className="sidebar" /> */}
-
           <main className="toursAndProducts">
             <div className="toursAndProducts__top">
               <h3 className="toursAndProducts__top__title font-montserrat text-14 sD:text-17 mD:text-19 lD:text-28">

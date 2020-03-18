@@ -23,6 +23,9 @@ import UserInteraction from "./components/GeneralAnalyDashbord/UserInteraction";
 import Finance from "./components/Finance/Finance.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
 
+import ToursManagement from "./scenes/ToursManagement/ToursManagement";
+import ProductsManagement from "./scenes/ProductsManagement/ProductsManagement";
+
 function App() {
   return (
     <Router>
@@ -33,7 +36,7 @@ function App() {
         <Route component={Blog} path="/blog"></Route>
         <Route component={Contact} path="/contact"></Route>
         <Route component={About} path="/about"></Route>
-        <Route component={ToursAndProducts} path="/products"></Route>
+        {/* <Route component={ToursAndProducts} path="/products"></Route> */}
         <Route
           path="/admin/tours"
           render={props => (
@@ -43,12 +46,36 @@ function App() {
             />
           )}
         />
+        {/* Mustapha Routes */}
         <Route
           path="/admin/hr"
           render={props => (
             <Admin active="HR management" content={<HrManagement />} />
           )}
         />
+
+        <Route
+          path="/admin/products"
+          render={props => (
+            <Admin active="HR management" content={<ToursAndProducts />} />
+          )}
+        />
+
+        <Route
+          path="/admin/tmanagement"
+          render={props => (
+            <Admin active="HR management" content={<ToursManagement />} />
+          )}
+        />
+
+        <Route
+          path="/admin/pmanagement"
+          render={props => (
+            <Admin active="HR management" content={<ProductsManagement />} />
+          )}
+        />
+
+        {/* --------------------------------------------- */}
         <Route
           path="/admin/finance"
           render={props => (
