@@ -8,11 +8,15 @@ import TRTable from "./components/TRTable";
 import AsideAdmin from "../../components/aside/asideAdmin";
 import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
 
+import TableActions from "../HrManagement/components/TableActions";
+
 export default class ToursAndProducts extends Component {
   state = {
     isToursView: true,
     isProductsView: false,
 
+    toursTypes: ["type 1", "type 2", "marketing"],
+    productsTypes: ["typpe 1", "typpe 2", "marketing"],
     isTourDetailsShown: false,
     isProductDetailsShown: false,
 
@@ -146,6 +150,29 @@ export default class ToursAndProducts extends Component {
     }
   };
 
+  renderTableActions() {
+    const isToursView = this.state.isToursView;
+    const isProductsView = this.state.isProductsView;
+
+    if (isToursView) {
+      return (
+        <TableActions
+          search="search tours"
+          view="tours"
+          selectOptions={this.state.toursTypes}
+        />
+      );
+    } else if (isProductsView) {
+      return (
+        <TableActions
+          search="search products"
+          view="products"
+          selectOptions={this.state.productsTypes}
+        />
+      );
+    }
+  }
+
   render() {
     return (
       <Container>
@@ -157,11 +184,11 @@ export default class ToursAndProducts extends Component {
 
           <main className="toursAndProducts">
             <div className="toursAndProducts__top">
-              <h3 className="toursAndProducts__top__title">
+              <h3 className="toursAndProducts__top__title font-montserrat text-14 sD:text-17 mD:text-19 lD:text-28">
                 Tours And Products Management
               </h3>
               <hr className="toursAndProducts__top__hr"></hr>
-              <div className="toursAndProducts__top__buttons">
+              <div className="toursAndProducts__top__buttons font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21">
                 <button
                   className="toursAndProducts__top__button toursViewBTN"
                   onClick={e => this.toggleViewHandler(e, "toursView")}
@@ -177,6 +204,8 @@ export default class ToursAndProducts extends Component {
               </div>
             </div>
             <div className="toursAndProducts__content">
+              {this.renderTableActions()}
+
               {this.renderTable()}
               {this.renderModal()}
             </div>
@@ -211,25 +240,26 @@ const Container = styled.div`
 
   .toursAndProducts__top__title {
     vertical-align: middle;
-    font-size: 1rem;
     color: #171717;
   }
 
   .toursAndProducts__top__hr {
-    background: #000;
+    background: #707070;
     border: 0;
-    color: #000;
+    color: #707070;
     height: 1px;
-    flex-shrink: 1.5;
-    flex-grow: 2;
+    flex-shrink: 1;
+    flex-grow: 1;
+    margin: 0 10px;
     flex-basis: auto;
+    opacity: 0.5;
   }
 
   .toursAndProducts__top__button {
     display: inline-block;
     vertical-align: middle;
-    padding: 0.65rem;
     border-radius: 4px;
+    padding: 0.3em 0.7em;
   }
 
   .toursViewBTN {

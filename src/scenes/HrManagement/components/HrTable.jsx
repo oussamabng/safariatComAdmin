@@ -2,34 +2,47 @@ import React from "react";
 import Arrows from "./Arrows";
 import styled from "styled-components";
 import personImg from "../images/person.png";
+import message from "../../../assets/message.svg";
+import remove from "../../../assets/remove.svg";
 
 export default function HrTable(props) {
   const employeesTable = employees => {
     return (
       <table className="table font-montserrat">
         <thead className="thead">
-          <tr className="tr font-montserrat xsD:text-11 sD:text-13 mD:-15 lD:text-21">
-            <th className="th  first__th">
-              <span className="th__title">name </span>
+          <tr className="tr ">
+            <th className="th  first__th ">
+              <span className="th__title text-11 sD:text-13 mD:text-15 lD:text-21">
+                name{" "}
+              </span>
               <Arrows className="arrows clearfix" />
             </th>
             <th className="th">
-              <span className="th__title">Personal Info </span>
+              <span className="th__title text-11 sD:text-13 mD:text-15 lD:text-21">
+                Personal Info{" "}
+              </span>
 
               <Arrows className="arrows clearfix " />
             </th>
             <th className="th">
-              <span className="th__title"> Departement</span>
+              <span className="th__title text-11 sD:text-13 mD:text-15 lD:text-21">
+                {" "}
+                Departement
+              </span>
 
-              <Arrows className="arrows clearfix" />
+              <Arrows className="arrows clearfix " />
             </th>
             <th className="th">
-              <span className="th__title">Hire Date </span>
+              <span className="th__title text-11 sD:text-13 mD:text-15 lD:text-21">
+                Hire Date{" "}
+              </span>
 
               <Arrows className="arrows clearfix" />
             </th>
             <th className="th last__th">
-              <span className="th__title">Documents </span>
+              <span className="th__title text-11 sD:text-13 mD:text-15 lD:text-21">
+                Documents{" "}
+              </span>
 
               <Arrows className="arrows clearfix" />
             </th>
@@ -39,54 +52,68 @@ export default function HrTable(props) {
           {employees.map((el, index) => {
             return (
               <tr key={`row-${index}`} className="tr">
-                <td className="td ">
+                <td className="td font-montserrat">
                   <img className="td__img clearfix" src={personImg} />
                   <span className="td__text">
-                    <span className="td__text__title ">{el.name}</span>
-                    <span className="td__text__subtitle block">
+                    <span className="td__text__title  text-11 sD:text-13 mD:text-15 lD:text-21">
+                      {el.name}
+                    </span>
+                    <span className="td__text__subtitle block text-8 sD:text-10 mD:text-12 lD:text-16">
                       {" "}
                       {el.role}{" "}
                     </span>
                   </span>
                 </td>
                 <td className="td  ">
-                  <span className="td__text ">
-                    <span className="td__text__title">Birth Day: </span>
-                    <span className="td__text__subtitle">
+                  <span className="td__text  ">
+                    <span className="td__text__title  text-8 sD:text-10 mD:text-12 lD:text-16">
+                      Birth Day:{" "}
+                    </span>
+                    <span className="td__text__subtitle text-8 sD:text-10 mD:text-12 lD:text-16">
                       {el.personalInfo.birthDate}
                     </span>
                   </span>
                   <br />
                   <span className="td__text">
-                    <span className="td__text__title">Status: </span>
-                    <span className="td__text__subtitle">
+                    <span className="td__text__title text-8 sD:text-10 mD:text-12 lD:text-16">
+                      Status:{" "}
+                    </span>
+                    <span className="td__text__subtitle text-8 sD:text-10 mD:text-12 lD:text-16">
                       {el.personalInfo.status}
                     </span>
                   </span>
                   <br />
                   <span className="td__text">
-                    <span className="td__text__title">Phone: </span>
-                    <span className="td__text__subtitle">
+                    <span className="td__text__title text-8 sD:text-10 mD:text-12 lD:text-16">
+                      Phone:{" "}
+                    </span>
+                    <span className="td__text__subtitle text-8 sD:text-10 mD:text-12 lD:text-16">
                       {el.personalInfo.phone}
                     </span>
                   </span>
                 </td>
                 <td className="td ">
-                  <span className="td__text__title ">{el.department}</span>
+                  <span className="td__text__title text-9 sD:text-11 mD:text-13 lD:text-18">
+                    {el.department}
+                  </span>
                 </td>
-                <td className="td ">
-                  <span className="td__text__title ">{el.hireDate}</span>
+                <td className="td  ">
+                  <span className="td__text__title text-9 sD:text-11 mD:text-13 lD:text-18 ">
+                    {el.hireDate}
+                  </span>
                 </td>
-                <td className="td td__link  last__td">
+                <td className="td td__link  last__td ">
                   <a
                     className="td__link__text "
                     href={el.employeeDocument.link}
                   >
-                    <span className="td__link__text last__td">PDF_CV.pdf</span>
+                    <span className="td__link__text last__td text-9 sD:text-11 mD:text-13 lD:text-18">
+                      PDF_CV.pdf
+                    </span>
                   </a>
                   <span className="td__link__icons clearfix">
-                    <i className="fas fa-envelope-square "></i>
-                    <i className="far fa-minus-square "></i>
+                    <img src={message} className="message__icon" alt="" />
+                    <img src={remove} className="remove__icon" alt="" />
                   </span>
                 </td>
               </tr>
@@ -99,7 +126,7 @@ export default function HrTable(props) {
 
   const tasksTable = tasks => {
     return (
-      <table className="table">
+      <table className="table font-montserrat">
         <thead className="thead">
           <tr className="tr xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
             <th className="th first__th">
@@ -129,26 +156,38 @@ export default function HrTable(props) {
             return (
               <tr key={`row-${index}`} className="tr">
                 <td className="td td__center__text ">
-                  <span className="td__status ">{el.status}</span>
+                  <span className="status  text-11 sD:text-13 mD:text-15 lD:text-21 ">
+                    {el.status}
+                  </span>
                 </td>
-                <td className="td ">{el.task}</td>
+                <td className="td text-9 sD:text-11 mD:text-13 lD:text-18">
+                  {el.task}
+                </td>
                 <td className="td  ">
                   <img className="td__img clearfix" src={personImg} />
                   <span className="td__text ">
-                    <span className="td__text__title ">{el.Responsible}</span>
-                    <span className="td__text__subtitle block ">{el.role}</span>
+                    <span className="td__text__title text-11 sD:text-13 mD:text-15 lD:text-21 ">
+                      {el.Responsible}
+                    </span>
+                    <span className="td__text__subtitle block  text-8 sD:text-10 mD:text-12 lD:text-16">
+                      {el.role}
+                    </span>
                   </span>
                   <span className="td__link__icons center__icon clearfix">
-                    <i className="fas fa-envelope-square "></i>
+                    <img src={message} className="message__icon" alt="" />
                   </span>
                 </td>
-                <td className="td ">{el.creationDate}</td>
+                <td className="td text-9 sD:text-11 mD:text-13 lD:text-18">
+                  {el.creationDate}
+                </td>
                 <td className="td ">
                   <span className="td__text">
-                    <span className="td__text__title">{el.deliveryDate}</span>
+                    <span className="td__text__title text-9 sD:text-11 mD:text-13 lD:text-18">
+                      {el.deliveryDate}
+                    </span>
                   </span>
                   <span className="td__link__icons clearfix">
-                    <i className="fas fa-minus-square "></i>
+                    <img src={remove} className="remove__icon" alt="" />
                   </span>
                 </td>
               </tr>
@@ -180,6 +219,7 @@ const Container = styled.div`
     margin-top: 0.75rem;
     // table-layout: fixed;
     width: 100%;
+    text-align: left;
   }
 
   .thead {
@@ -190,10 +230,10 @@ const Container = styled.div`
 
   .th {
     color: #757575;
-    padding: 1rem 1.8rem;
+    padding: 1em 1.5em 1em 1em;
     background-color: #f5f5f5;
     font-weight: normal;
-    border-right: solid 0.5px #707070;
+    border-right: solid 0.25px #70707040;
     // width: 20%;
     vertical-align: middle;
   }
@@ -210,12 +250,12 @@ const Container = styled.div`
 
   @media only screen and (max-width: 1200px) {
     .th {
-      padding: 0.5rem 0.9rem;
+      padding: 0.5em 0.3em;
       vertical-align: middle;
     }
-    .arrows {
-      margin-top: 1.15px;
-    }
+    // .arrows {
+    //   margin-top: 1.15px;
+    // }
   }
 
   .clearfix::after {
@@ -236,32 +276,36 @@ const Container = styled.div`
   }
 
   .td {
-    border-right: solid 0.5px #707070;
+    border-right: solid 0.25px #70707040;
+
     vertical-align: middle;
-    padding: 0.5rem 0.8rem;
-    // width: 20%;
+    padding: 0.5em 0.8em;
   }
 
   .td__img {
-    max-width: 48px;
+    width: 3em;
     display: inline-block;
     float: left;
     vertical-align: middle;
-    margin-right: 0.5rem;
+    margin-right: 0.5em;
+    width: 21%;
   }
 
   .td__text {
     vertical-align: middle;
     display: inline-block;
+    font-size: inherit;
   }
 
   .td__text__title {
     color: #2a2a2a;
     display: inline-block;
+    font-size: inherit;
   }
 
   .td__text__subtitle {
     color: #727272;
+    font-size: inherit;
   }
 
   .td__link__text {
@@ -270,7 +314,7 @@ const Container = styled.div`
 
   .td__link__icons {
     float: right;
-    margin-right: 1rem;
+    // margin-right: 1rem;
     vertical-align: middle;
   }
 
@@ -279,10 +323,10 @@ const Container = styled.div`
     transform: translateY(50%);
   }
 
-  .td__status {
+  .status {
     color: green;
     border: solid 1px green;
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
     border-radius: 4px;
     vertical-align: middle;
   }
@@ -293,5 +337,34 @@ const Container = styled.div`
 
   .last__td {
     border-right: none;
+    padding: 0.5em 0.2em 0.5em 0;
+  }
+
+  // icons
+  .message__icon {
+    cursor: pointer;
+
+    display: inline-block;
+    width: 13px;
+    margin-right: 10px;
+    @media only screen and (min-width: 1200px) {
+      width: 14px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      width: 18px;
+    }
+  }
+
+  .remove__icon {
+    display: inline-block;
+    width: 13px;
+    cursor: pointer;
+    @media only screen and (min-width: 1200px) {
+      width: 14px;
+    }
+    @media only screen and (min-width: 1440px) {
+      width: 18px;
+    }
   }
 `;

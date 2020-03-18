@@ -1,40 +1,88 @@
 import React from "react";
 import styled from "styled-components";
+import search from "../../../assets/search.svg";
+import info from "../../../assets/info.svg";
+import downArrow from "../../../assets/downArrow.svg";
 
 export default function TableActions(props) {
+  const selectImg = {
+    backgroundImage: `url(${downArrow})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center right",
+    backgroundPositionX: "calc(100% - 10px)"
+  };
   const renderSearch = () => {
-    return props.view === "employees" ? (
-      <label className="searchLabel" htmlFor="search">
-        <i className="fas fa-search "></i>
-        <input
-          className="search"
-          onChange={e => props.searchedName(e.target.value)}
-          type="search"
-          name="search"
-          id="search"
-          placeholder={props.search}
-        />
-      </label>
-    ) : (
-      <label className="searchLabel" for="search">
-        <i className="fas fa-search "></i>
-        <input
-          className="search"
-          onChange={e => props.searchedTask(e.target.value)}
-          type="search"
-          name="search"
-          id="search"
-          placeholder={props.search}
-        />
-      </label>
-    );
+    if (props.view === "employees") {
+      return (
+        <label className="searchLabel" htmlFor="search">
+          {/* <i className="fas fa-search "></i> */}
+          <img src={search} className="search__icon " alt="" />
+          <input
+            className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
+            onChange={e => props.searchedName(e.target.value)}
+            type="search"
+            name="search"
+            id="search"
+            placeholder={props.search}
+          />
+        </label>
+      );
+    } else if (props.view === "tasks") {
+      return (
+        <label className="searchLabel" for="search">
+          <img src={search} className="search__icon " alt="" />
+
+          <input
+            className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
+            onChange={e => props.searchedTask(e.target.value)}
+            type="search"
+            name="search"
+            id="search"
+            placeholder={props.search}
+          />
+        </label>
+      );
+    } else if (props.view === "tours") {
+      return (
+        <label className="searchLabel" for="search">
+          <img src={search} className="search__icon " alt="" />
+          <input
+            className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
+            // onChange={e => props.searchedTask(e.target.value)}
+            type="search"
+            name="search"
+            id="search"
+            placeholder={props.search}
+          />
+        </label>
+      );
+    } else if (props.view === "products") {
+      return (
+        <label className="searchLabel" for="search">
+          <img src={search} className="search__icon " alt="" />
+
+          <input
+            className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
+            // onChange={e => props.searchedTask(e.target.value)}
+            type="search"
+            name="search"
+            id="search"
+            placeholder={props.search}
+          />
+        </label>
+      );
+    } else {
+      return null;
+    }
   };
 
   const renderSelect = () => {
-    return props.view === "employees" ? (
+    return (
       <select
-        onChange={e => props.searchedDepartment(e.target.value)}
-        className="select"
+        style={selectImg}
+        // onChange={e => props.searchedDepartment(e.target.value)}
+        // url={downArrow}
+        className="select text-9 sD:text-11 mD:text-13 lD:text-18"
         defaultValue="all"
         name="departments"
       >
@@ -44,37 +92,58 @@ export default function TableActions(props) {
           </option>
         ))}
       </select>
-    ) : (
-      <select
-        // onChange={e => props.searchedDepartment(e.target.value)}
-        className="select"
-        defaultValue="type1"
-        name="types"
-      >
-        {props.selectOptions.map(el => (
-          <option value={el}>{el}</option>
-        ))}
-      </select>
     );
+    // return props.view === "employees" ? (
+    //   <select
+    //     onChange={e => props.searchedDepartment(e.target.value)}
+    //     className="select text-9 sD:text-11 mD:text-13 lD:text-18"
+    //     defaultValue="all"
+    //     name="departments"
+    //   >
+    //     {props.selectOptions.map((el, index) => (
+    //       <option key={`option-${index}`} value={el}>
+    //         {el}
+    //       </option>
+    //     ))}
+    //   </select>
+    // ) : (
+    //   <select
+    //     // onChange={e => props.searchedDepartment(e.target.value)}
+    //     className="select text-9 sD:text-11 mD:text-13 lD:text-18"
+    //     defaultValue="type1"
+    //     name="types"
+    //   >
+    //     {props.selectOptions.map(el => (
+    //       <option value={el}>{el}</option>
+    //     ))}
+    //   </select>
+    // );
   };
 
   const renderAddButton = () => {
-    return props.view === "employees" ? (
-      <button
-        onClick={props.addEmployee}
-        className="addEmployee addBtn "
-        // onClick={e => props.addHandler()}
-      >
-        {props.add}
-      </button>
-    ) : (
-      <button
-        className="addTasks addBtn font-montserrat "
-        onClick={props.addTask}
-      >
-        {props.add}
-      </button>
-    );
+    if (props.view === "employees") {
+      return (
+        <button
+          onClick={props.addEmployee}
+          className="addEmployee addBtn font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21"
+          // onClick={e => props.addHandler()}
+        >
+          {props.add}
+        </button>
+      );
+    } else if (props.view === "tasks") {
+      return (
+        <button
+          className="addTasks addBtn font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21 "
+          onClick={props.addTask}
+        >
+          {props.add}
+        </button>
+      );
+    } else if (props.view === "tours") {
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -85,9 +154,9 @@ export default function TableActions(props) {
       </div>
       <div className="right">
         {renderAddButton()}
-        <a href="#" className="infoLink">
-          i
-        </a>
+        {props.view === "employees" || props.view === "tasks" ? (
+          <img src={info} className="info__icon" alt="" />
+        ) : null}
       </div>
     </Container>
   );
@@ -100,26 +169,36 @@ const Container = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
 
-  .search {
-    min-width: 14.4rem;
-    padding: 1rem 1.6rem;
-    color: grey;
-    background-color: transparent;
+  .left {
+    display: flex;
+    align-item: center;
+    justify-content: space-between;
+    flex-shrink: 1;
   }
 
   .searchLabel {
-    min-width: 14.4rem;
-    padding: 1rem 0 1rem 1.25rem;
+    padding-left: 1rem;
     background-color: #eee;
-    margin-right: 0.6rem;
+    margin-right: 1rem;
+  }
+
+  .search {
+    padding: 0.7em 2.8em 0.7em 2em;
+    color: #7d7d7d;
+    background-color: transparent;
   }
 
   .select {
-    min-width: 14.4rem;
-    padding: 1rem 1.6rem;
+    padding: 0.8em 10.7em 0.8em 2em;
     color: grey;
-    border: solid 1px black;
-    // appearance: none;
+    border: solid 0.5px #707070;
+    appearance: none;
+
+    background-size: 10px;
+
+    @media only screen and (min-width: 1200px) {
+      background-size: 15px;
+    }
   }
   .select,
   .search {
@@ -137,39 +216,29 @@ const Container = styled.div`
   .addBtn {
     background-color: #084c61;
     color: #fff;
-    padding: 1rem 4rem;
+    padding: 0.7em 2.8em;
     border-radius: 4px;
     margin-right: 1.5rem;
     vertical-align: middle;
   }
 
-  .infoLink {
-    // position: absolute;
-    font-size: 1rem;
-    color: #b3b8bd;
-    border: solid 1px #b3b8bd;
-    border-radius: 100%;
-    vertical-align: middle;
-    cursor: pointer;
-    padding: 0.2rem 0.5rem;
+  //
+
+  // icons
+  .search__icon {
+    display: inline-block;
+    width: 1em;
   }
 
-  @media only screen and (max-width: 1200px) {
-    .addBtn {
-      padding: 0.7rem 2rem;
+  @media only screen and (min-width: 1300px) {
+    .search__icon {
+      width: 1.5em;
     }
+  }
 
-    .select {
-      padding: 0.7rem 1.2rem;
-    }
-
-    .searchLabel,
-    .search {
-      padding: 0.7rem 0.4rem;
-    }
-
-    .infoLink {
-      padding: 0.2rem 0.3rem;
-    }
+  .info__icon {
+    display: inline-block;
+    width: 1em;
+    cursoir: pointer;
   }
 `;
