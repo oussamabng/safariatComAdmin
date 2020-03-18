@@ -8,8 +8,8 @@ export default function HrTable(props) {
     return (
       <table className="table font-montserrat">
         <thead className="thead">
-          <tr className="tr">
-            <th className="th first__th">
+          <tr className="tr font-montserrat xsD:text-11 sD:text-13 mD:-15 lD:text-21">
+            <th className="th  first__th">
               <span className="th__title">name </span>
               <Arrows className="arrows clearfix" />
             </th>
@@ -39,18 +39,18 @@ export default function HrTable(props) {
           {employees.map((el, index) => {
             return (
               <tr key={`row-${index}`} className="tr">
-                <td className="td">
+                <td className="td ">
                   <img className="td__img clearfix" src={personImg} />
                   <span className="td__text">
-                    <span className="td__text__title">{el.name}</span>
+                    <span className="td__text__title ">{el.name}</span>
                     <span className="td__text__subtitle block">
                       {" "}
                       {el.role}{" "}
                     </span>
                   </span>
                 </td>
-                <td className="td">
-                  <span className="td__text">
+                <td className="td  ">
+                  <span className="td__text ">
                     <span className="td__text__title">Birth Day: </span>
                     <span className="td__text__subtitle">
                       {el.personalInfo.birthDate}
@@ -71,19 +71,22 @@ export default function HrTable(props) {
                     </span>
                   </span>
                 </td>
-                <td className="td">
-                  <span className="td__text__title">{el.department}</span>
+                <td className="td ">
+                  <span className="td__text__title ">{el.department}</span>
                 </td>
-                <td className="td">
-                  <span className="td__text__title">{el.hireDate}</span>
+                <td className="td ">
+                  <span className="td__text__title ">{el.hireDate}</span>
                 </td>
-                <td className="td td__link last__td">
-                  <a className="td__link__text" href={el.employeeDocument.link}>
-                    <span className="td__link__text">PDF_CV.pdf</span>
+                <td className="td td__link  last__td">
+                  <a
+                    className="td__link__text "
+                    href={el.employeeDocument.link}
+                  >
+                    <span className="td__link__text last__td">PDF_CV.pdf</span>
                   </a>
                   <span className="td__link__icons clearfix">
-                    <i className="fas fa-envelope-square"></i>
-                    <i className="far fa-minus-square"></i>
+                    <i className="fas fa-envelope-square "></i>
+                    <i className="far fa-minus-square "></i>
                   </span>
                 </td>
               </tr>
@@ -98,10 +101,10 @@ export default function HrTable(props) {
     return (
       <table className="table">
         <thead className="thead">
-          <tr className="tr ">
+          <tr className="tr xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
             <th className="th first__th">
               <span className="th__title">Status </span>
-              <Arrows className="arrows clearfix" />
+              <Arrows className="arrows  clearfix" />
             </th>
             <th className="th">
               <span className="th__title">task </span>
@@ -125,27 +128,27 @@ export default function HrTable(props) {
           {tasks.map((el, index) => {
             return (
               <tr key={`row-${index}`} className="tr">
-                <td className="td td__center__text">
+                <td className="td td__center__text ">
                   <span className="td__status ">{el.status}</span>
                 </td>
-                <td className="td">{el.task}</td>
-                <td className="td">
+                <td className="td ">{el.task}</td>
+                <td className="td  ">
                   <img className="td__img clearfix" src={personImg} />
-                  <span className="td__text">
-                    <span className="td__text__title">{el.Responsible}</span>
-                    <span className="td__text__subtitle block">{el.role}</span>
+                  <span className="td__text ">
+                    <span className="td__text__title ">{el.Responsible}</span>
+                    <span className="td__text__subtitle block ">{el.role}</span>
                   </span>
                   <span className="td__link__icons center__icon clearfix">
-                    <i className="fas fa-envelope-square"></i>
+                    <i className="fas fa-envelope-square "></i>
                   </span>
                 </td>
-                <td className="td">{el.creationDate}</td>
-                <td className="td last__td">
+                <td className="td ">{el.creationDate}</td>
+                <td className="td ">
                   <span className="td__text">
                     <span className="td__text__title">{el.deliveryDate}</span>
                   </span>
                   <span className="td__link__icons clearfix">
-                    <i className="fas fa-minus-square"></i>
+                    <i className="fas fa-minus-square "></i>
                   </span>
                 </td>
               </tr>
@@ -189,7 +192,6 @@ const Container = styled.div`
     color: #757575;
     padding: 1rem 1.8rem;
     background-color: #f5f5f5;
-    font-size: 0.9rem;
     font-weight: normal;
     border-right: solid 0.5px #707070;
     // width: 20%;
@@ -207,27 +209,12 @@ const Container = styled.div`
   }
 
   @media only screen and (max-width: 1200px) {
-    .td {
-      font-size: 0.8rem;
-    }
-
     .th {
       padding: 0.5rem 0.9rem;
       vertical-align: middle;
     }
     .arrows {
-      font-size: 10px;
       margin-top: 1.15px;
-    }
-
-    .th__title {
-      font-size: 0.8rem;
-    }
-  }
-
-  @media only screen and (max-width: 1100px) {
-    .td {
-      font-size: 0.6rem;
     }
   }
 
@@ -269,18 +256,15 @@ const Container = styled.div`
   }
 
   .td__text__title {
-    font-size: 1rem;
     color: #2a2a2a;
     display: inline-block;
   }
 
   .td__text__subtitle {
     color: #727272;
-    font-size: 0.85rem;
   }
 
   .td__link__text {
-    font-size: 0.8rem;
     color: #035ba8;
   }
 
