@@ -240,6 +240,27 @@ class GenerlaAnalystics extends Component {
     ];
     return (
       <div className="app-main__outer">
+        <section className="mainGeneralDashbord">
+          <div className="app-page-title finance-page">
+            <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
+              <div className="GeneralDash">
+                <h1>Finance</h1>
+              </div>
+              <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
+                <Link
+                  className="hover-title"
+                  style={{
+                    backgroundColor: "#ffb808",
+                    color: "#ffffff"
+                  }}
+                  to="/admin/finance"
+                >
+                  Finance management
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="flex pt-4">
           <div className="w-1/2">
             <div className="flex">

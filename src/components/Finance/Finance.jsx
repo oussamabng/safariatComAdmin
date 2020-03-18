@@ -148,6 +148,27 @@ export default class Finance extends Component {
     const secondColumnStart = Math.floor(this.state.dataTasks.length / 2);
     return (
       <div className="app-main__outer">
+        <section className="mainGeneralDashbord">
+          <div className="app-page-title finance-page">
+            <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
+              <div className="GeneralDash">
+                <h1>Finance</h1>
+              </div>
+              <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
+                <Link
+                  className="hover-title"
+                  style={{
+                    backgroundColor: "#ffb808",
+                    color: "#ffffff"
+                  }}
+                  to="/admin/finance"
+                >
+                  Finance management
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="flex finance-row pt-4">
           <div className="w-3/5 finance-part1 px-2">
             <div className="flex">

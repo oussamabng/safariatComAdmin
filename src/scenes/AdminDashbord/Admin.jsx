@@ -29,7 +29,9 @@ class Admin extends Component {
         />
         <AsideAdmin toggle={this.state.toggle} active={this.props.active} />
         <div
-          className={this.state.toggle ? "padleft" : "padleft-sm"}
+          className={
+            this.state.toggle ? "padleft bg-white" : "padleft-sm bg-white"
+          }
           onClick={() => {
             document.getElementsByClassName(
               "notification-box mx-6"

@@ -115,17 +115,18 @@
 .form-control.inputSearch {
   color: #555555;
   border: none !important;
+  background-color: white;
   padding: 0 10px;
 }
 
 .form-control.inputSearch:focus {
   border: none !important;
-  background-color: #f1f1f1 !important;
+  background-color: white !important;
   box-shadow: none !important;
 }
 .form-control.inputSearch:active {
   border: none !important;
-  background-color: #f1f1f1 !important;
+  background-color: white !important;
 }
 
 @media (max-width: 1300px) {
