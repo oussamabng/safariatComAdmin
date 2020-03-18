@@ -1,62 +1,47 @@
 import React, { Component } from "react";
 
-import { tours, toursDetails, products } from "./data";
+import { tours, toursDetails } from "./data";
 import styled from "styled-components";
 import Modal from "../../components/Modal/Modal";
-
-import TRTable from "./components/TRTable";
-import AsideAdmin from "../../components/aside/asideAdmin";
-import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
-
-import TableActions from "../HrManagement/components/TableActions";
-
-export default class ToursAndProducts extends Component {
+import TPTable from "../../components/TPTable/TPTable";
+import TableActions from "../../components/HrTable/components/TableActions";
+import { Link } from "react-router-dom";
+export default class ToursManagement extends Component {
   state = {
     isToursView: true,
-    isProductsView: false,
 
     toursTypes: ["type 1", "type 2", "marketing"],
-    productsTypes: ["typpe 1", "typpe 2", "marketing"],
     isTourDetailsShown: false,
-    isProductDetailsShown: false,
 
     tours: null,
     toursDetails: null,
-    tourDetails: null,
-
-    products: null,
-    productDetails: null
+    tourDetails: null
   };
 
   componentDidMount() {
-    this.setState({ tours, toursDetails, products });
-
-    //remove ShowTourModal() After Tests ;
-    // this.setState({ tours, toursDetails }, () => {
-    //   this.showTourModal();
-    // });
+    this.setState({ tours, toursDetails });
   }
 
-  toggleViewHandler = (e, value) => {
-    switch (value) {
-      case "toursView":
-        this.setState({
-          isToursView: true,
-          isProductsView: false
-        });
-        break;
-      case "productsView":
-        this.setState({
-          isToursView: false,
-          isProductsView: true
-        });
+  // toggleViewHandler = (e, value) => {
+  //   switch (value) {
+  //     case "toursView":
+  //       this.setState({
+  //         isToursView: true,
+  //         isProductsView: false
+  //       });
+  //       break;
+  //     case "productsView":
+  //       this.setState({
+  //         isToursView: false,
+  //         isProductsView: true
+  //       });
 
-        break;
-      default:
-        console.log("view Toggle Error");
-        break;
-    }
-  };
+  //       break;
+  //     default:
+  //       console.log("view Toggle Error");
+  //       break;
+  //   }
+  // };
 
   showTourModal = tourId => {
     const tours = this.state.tours;
@@ -73,48 +58,21 @@ export default class ToursAndProducts extends Component {
     this.setState({ tourDetails, isTourDetailsShown: true });
   };
 
-  showProductModal = productId => {
-    const products = this.state.products;
-    const productDetails = products.find(
-      el => Number(el.id) === Number(productId)
-    );
-    this.setState({ isProductDetailsShown: true, productDetails });
-  };
-
   hideTourModal = () => {
     this.setState({ tourDetails: null, isTourDetailsShown: false });
   };
 
-  hideProductModal = () => {
-    this.setState({ productDetails: null, isProductDetailsShown: false });
-  };
-
   renderTable() {
-    const view = this.state.isToursView ? "tours" : "products";
-
-    const tours =
-      this.state.tours && view === "tours" ? this.state.tours : null;
-
-    const products =
-      this.state.products && view === "products" ? this.state.products : null;
+    const tours = this.state.tours ? this.state.tours : null;
 
     if (tours) {
       return (
-        <TRTable
+        <TPTable
           showTourDetails={details => this.showTourModal(details)}
           tours={tours}
         >
           products DAta
-        </TRTable>
-      );
-    } else if (products) {
-      return (
-        <TRTable
-          showProductDetails={details => this.showProductModal(details)}
-          products={products}
-        >
-          products DAta
-        </TRTable>
+        </TPTable>
       );
     } else {
       return null;
@@ -122,12 +80,8 @@ export default class ToursAndProducts extends Component {
   }
 
   renderModal = () => {
-    const tourDetails = this.state.tourDetails && this.state.tourDetails;
-    const productDetails =
-      this.state.productDetails && this.state.productDetails;
-
+    const tourDetails = this.state.tourDetails;
     const isTourDetailsShown = this.state.isTourDetailsShown;
-    const isProductDetailsShown = this.state.isProductDetailsShown;
 
     if (isTourDetailsShown) {
       return (
@@ -137,14 +91,6 @@ export default class ToursAndProducts extends Component {
           modal="tour"
         ></Modal>
       );
-    } else if (isProductDetailsShown) {
-      return (
-        <Modal
-          closeModal={this.hideProductModal}
-          productDetails={productDetails}
-          modal="product"
-        ></Modal>
-      );
     } else {
       return null;
     }
@@ -152,7 +98,6 @@ export default class ToursAndProducts extends Component {
 
   renderTableActions() {
     const isToursView = this.state.isToursView;
-    const isProductsView = this.state.isProductsView;
 
     if (isToursView) {
       return (
@@ -162,25 +107,19 @@ export default class ToursAndProducts extends Component {
           selectOptions={this.state.toursTypes}
         />
       );
-    } else if (isProductsView) {
-      return (
-        <TableActions
-          search="search products"
-          view="products"
-          selectOptions={this.state.productsTypes}
-        />
-      );
+    } else {
+      return null;
     }
   }
 
   render() {
     return (
       <Container>
-        <HeaderAdmin />
+        {/* <HeaderAdmin /> */}
 
         <div className="main">
           {/* <div className="sidebar"><AsideAdmin /></div> */}
-          <AsideAdmin className="sidebar" />
+          {/* <AsideAdmin className="sidebar" /> */}
 
           <main className="toursAndProducts">
             <div className="toursAndProducts__top">
@@ -191,15 +130,15 @@ export default class ToursAndProducts extends Component {
               <div className="toursAndProducts__top__buttons font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21">
                 <button
                   className="toursAndProducts__top__button toursViewBTN"
-                  onClick={e => this.toggleViewHandler(e, "toursView")}
+                  onClick={e => e.preventDefault}
                 >
                   Tours Management
                 </button>
                 <button
                   className="toursAndProducts__top__button productsViewBTN"
-                  onClick={e => this.toggleViewHandler(e, "productsView")}
+                  onClick={e => e.preventDefault}
                 >
-                  Products Management
+                  <Link to="/admin/pmanagement">Products Management</Link>
                 </button>
               </div>
             </div>
@@ -223,10 +162,10 @@ const Container = styled.div`
   }
 
   .toursAndProducts {
-    width: 100%;
+    width: 88%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
-    padding: 0 40px 0 120px;
+    // padding: 0 40px 0 120px;
   }
 
   .toursAndProducts__top {
@@ -265,7 +204,7 @@ const Container = styled.div`
   .toursViewBTN {
     color: white;
     background-color: #ffcc4e;
-    margin-right: 0.5rem;
+    margin-right: 1em;
   }
 
   .productsViewBTN {

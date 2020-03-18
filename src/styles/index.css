@@ -11309,6 +11309,10 @@ video {
   font-size: 1.32rem !important;
 }
 
+.text-27 {
+  font-size: 1.6rem !important;
+}
+
 .text-28 {
   font-size: 1.75rem !important;
 }
@@ -24839,6 +24843,10 @@ video {
 
   .xsD\:text-21 {
     font-size: 1.32rem !important;
+  }
+
+  .xsD\:text-27 {
+    font-size: 1.6rem !important;
   }
 
   .xsD\:text-28 {
@@ -38374,6 +38382,10 @@ video {
     font-size: 1.32rem !important;
   }
 
+  .sD\:text-27 {
+    font-size: 1.6rem !important;
+  }
+
   .sD\:text-28 {
     font-size: 1.75rem !important;
   }
@@ -51905,6 +51917,10 @@ video {
 
   .mD\:text-21 {
     font-size: 1.32rem !important;
+  }
+
+  .mD\:text-27 {
+    font-size: 1.6rem !important;
   }
 
   .mD\:text-28 {
@@ -65440,6 +65456,10 @@ video {
     font-size: 1.32rem !important;
   }
 
+  .lD\:text-27 {
+    font-size: 1.6rem !important;
+  }
+
   .lD\:text-28 {
     font-size: 1.75rem !important;
   }
@@ -78971,6 +78991,10 @@ video {
 
   .bD\:text-21 {
     font-size: 1.32rem !important;
+  }
+
+  .bD\:text-27 {
+    font-size: 1.6rem !important;
   }
 
   .bD\:text-28 {
@@ -92506,6 +92530,10 @@ video {
     font-size: 1.32rem !important;
   }
 
+  .sm\:text-27 {
+    font-size: 1.6rem !important;
+  }
+
   .sm\:text-28 {
     font-size: 1.75rem !important;
   }
@@ -106037,6 +106065,10 @@ video {
 
   .md\:text-21 {
     font-size: 1.32rem !important;
+  }
+
+  .md\:text-27 {
+    font-size: 1.6rem !important;
   }
 
   .md\:text-28 {
@@ -119572,6 +119604,10 @@ video {
     font-size: 1.32rem !important;
   }
 
+  .lg\:text-27 {
+    font-size: 1.6rem !important;
+  }
+
   .lg\:text-28 {
     font-size: 1.75rem !important;
   }
@@ -133103,6 +133139,10 @@ video {
 
   .xl\:text-21 {
     font-size: 1.32rem !important;
+  }
+
+  .xl\:text-27 {
+    font-size: 1.6rem !important;
   }
 
   .xl\:text-28 {

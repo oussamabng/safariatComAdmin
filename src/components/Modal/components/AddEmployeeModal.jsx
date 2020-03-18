@@ -11,12 +11,13 @@ const Container = styled.div`
     background-color: white;
     position: fixed;
     background: white;
-    width: 90vw;
+    width: 88vw;
     margin-left: 40px;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 85vh;
+    height: 77vh;
     margin-top: 2rem;
     overflow-y: auto;
   }
