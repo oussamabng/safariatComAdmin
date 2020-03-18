@@ -240,36 +240,7 @@ class GenerlaAnalystics extends Component {
     ];
     return (
       <div className="app-main__outer">
-        <section className="mainGeneralDashbord">
-          <div className="app-page-title ">
-            <div className="flex lg:items-center md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
-              <div className="GeneralDash">
-                <h1>Analytics and Statistics</h1>
-              </div>
-              <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
-                <Link
-                  style={{
-                    backgroundColor: "#ffb808",
-                    color: "#ffffff"
-                  }}
-                  to="/admin/tours"
-                >
-                  Tours bookings & Products
-                </Link>
-                <Link
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#747474"
-                  }}
-                  to="/admin/users"
-                >
-                  Users interactions
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div className="flex">
+        <div className="flex pt-4">
           <div className="w-1/2">
             <div className="flex">
               <div className="my-col w-full">
@@ -482,7 +453,7 @@ class GenerlaAnalystics extends Component {
                       </div>
                       <div className="btn-group dropdown flex justify-center items-center">
                         <span
-                          className="hint--left text-center  hint--medium"
+                          className="hint--left text-center flex hint--medium"
                           aria-label="this is a hint"
                         >
                           <button className="btn-icon btn-icon-only btn btn-link">

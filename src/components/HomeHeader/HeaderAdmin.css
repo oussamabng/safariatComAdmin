@@ -1,11 +1,11 @@
 .main_header_admin {
   position: fixed;
-  z-index: 1030;
+  z-index: 10;
   background-color: white;
   width: 100%;
-  -webkit-box-shadow: 0 8px 10px -8px #999;
-  -moz-box-shadow: 0 8px 10px -8px #999;
-  box-shadow: 0 8px 10px -8px #999;
+  -webkit-box-shadow: 0 8px 5px -8px #999;
+  -moz-box-shadow: 0 8px 5px -8px #999;
+  box-shadow: 0 8px 5px -8px #999;
   left: 0;
   right: 0;
   height: 60px;
@@ -13,37 +13,32 @@
   align-items: center;
   align-content: center;
   position: relative;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 .logo-navbar {
-  background-color: #02303e;
+  cursor: pointer;
+  background-color: white;
   height: 100%;
   padding: 15px 15px;
   width: 230px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 1s;
-}
-.logo-navbar-res {
-  background-color: #02303e;
-  height: 100%;
-  padding: 15px 15px;
-  width: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: width 1s;
+  transition: width 0.5s;
 }
 .navbar_header_admin {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  padding: 0;
+  padding-left: 230px;
   height: 60px;
+  transition: padding 0.3s;
 }
-
+.navbar_header_admin.res {
+  padding-left: 80px;
+  transition: padding 0.5s;
+}
 .partLeft {
   display: flex;
   align-items: center;
@@ -67,9 +62,7 @@
 .nameAdmin img {
   float: left;
   width: 42px;
-  height: 42px;
   border-radius: 50%;
-  margin-right: 8px;
   border: 0.5 #707070;
 }
 
@@ -105,7 +98,10 @@
   color: #707070;
 }
 .search_admin-v {
-  background-color: #f1f1f1;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 20px -9px #999;
+  -moz-box-shadow: 0px 0px 20px -9px #999;
+  box-shadow: 0px 0px 20px -9px #999;
   padding: 10px 17px;
   border-radius: 26px;
 }
@@ -200,9 +196,7 @@
 .notification-box.hidden {
   max-height: 0 !important;
 }
-.nav-h {
-  height: 60px;
-}
+
 .sidebar-toggle {
   color: #000;
   float: left;
@@ -224,4 +218,44 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+@media (max-width: 1550px) {
+  .buttons_nav a {
+    margin: 0 25px;
+  }
+}
+@media (max-width: 1360px) {
+  .buttons_nav {
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 1252px) {
+  .buttons_nav a {
+    margin: 0 15px !important;
+  }
+}
+@media (max-width: 1173px) {
+  .middlePart {
+    margin: 0 15px !important;
+  }
+}
+@media (max-width: 1073px) {
+  .buttons_nav a {
+    font-size: 14px !important;
+    margin: 0 10px !important;
+  }
+  .nav-h a {
+    width: 60% !important;
+  }
+  .notification_admin img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .partLeft {
+    margin-left: 0 !important;
+  }
+  .form-control.inputSearch {
+    padding: 0 5px;
+  }
 }

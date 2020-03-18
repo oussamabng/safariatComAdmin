@@ -7,9 +7,7 @@
   top: 0;
   z-index: 10;
   box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
-  transition: width 1s;
-  min-height: 100%;
-  padding-top: 60px;
+  transition: width 0.3s;
 }
 .mainAsideAdminResized {
   width: 80px;
@@ -19,9 +17,8 @@
   left: 0;
   top: 0;
   z-index: 10;
-  padding-top: 60px;
   box-shadow: 7px 0 60px rgba(0, 0, 0, 0.05);
-  transition: width 1s;
+  transition: width 0.5s;
 }
 .mainAsideSection {
   z-index: 15;
@@ -31,6 +28,7 @@
   touch-action: auto;
   height: 100%;
   width: 100%;
+  padding-top: 50px;
 }
 .logout-btn {
   width: 30px;
@@ -59,11 +57,12 @@
   transition: transform 0.5s ease;
   color: white;
 }
+
 .fa.fa-angle-left.pull-right::before {
   content: "\f104";
 }
 .pad-a {
-  padding: 12px 5px 12px 8px;
+  padding: 12px 5px 12px 5px;
 }
 .pad-a span {
   font-size: 16px;
@@ -76,23 +75,24 @@
   cursor: pointer;
 }
 .treeview-menu {
+  width: 100%;
   flex-direction: column;
   margin: 0 1px;
-  background: #2c3b41;
+  background: rgb(8, 53, 66);
   overflow: visible;
   height: auto;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   list-style: none;
   display: flex !important;
-  transition: display 1s;
+  transition: display 0.5s;
 }
 .treeview-menu.hid {
   background: #2c3b41;
   overflow: visible;
   display: none !important;
   list-style: none;
-  transition: display 1s;
+  transition: display 0.5s;
 }
 .treeview-menu > li {
   margin: 0;
@@ -116,4 +116,25 @@
 
 .fa-circle-o::before {
   content: "\f10c";
+}
+.text-xxs {
+  font-size: 10px;
+  font-weight: 400;
+}
+.hide-dis {
+  font-size: auto;
+  transition: font-size 0.5s;
+}
+.hide-dis.ok {
+  font-size: 0px;
+  transition: font-size 0.5s;
+}
+.treeview-menu.h-auto li a:hover {
+  color: white;
+}
+.treeview-menu.hid:hover {
+  display: block !important;
+}
+.pad-pro {
+  padding-top: 10px !important;
 }

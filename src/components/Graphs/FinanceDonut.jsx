@@ -76,7 +76,7 @@ export default class FinanceDonut extends Component {
         },
         responsive: [
           {
-            breakpoint: 1600,
+            breakpoint: 1729,
             options: {
               chart: {
                 width: 300
@@ -84,7 +84,7 @@ export default class FinanceDonut extends Component {
             }
           },
           {
-            breakpoint: 1400,
+            breakpoint: 1547,
             options: {
               chart: {
                 width: 250
@@ -92,10 +92,18 @@ export default class FinanceDonut extends Component {
             }
           },
           {
-            breakpoint: 1250,
+            breakpoint: 1400,
             options: {
               chart: {
-                width: 350
+                width: 240
+              }
+            }
+          },
+          {
+            breakpoint: 1388,
+            options: {
+              chart: {
+                width: 400
               }
             }
           }
