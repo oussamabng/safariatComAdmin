@@ -3,11 +3,9 @@ import React, { Component } from "react";
 import { tours, toursDetails } from "./data";
 import styled from "styled-components";
 import Modal from "../../components/Modal/Modal";
-
-import TRTable from "./components/TRTable";
-
-import TableActions from "../HrManagement/components/TableActions";
-
+import TPTable from "../../components/TPTable/TPTable";
+import TableActions from "../../components/HrTable/components/TableActions";
+import { Link } from "react-router-dom";
 export default class ToursManagement extends Component {
   state = {
     isToursView: true,
@@ -69,12 +67,12 @@ export default class ToursManagement extends Component {
 
     if (tours) {
       return (
-        <TRTable
+        <TPTable
           showTourDetails={details => this.showTourModal(details)}
           tours={tours}
         >
           products DAta
-        </TRTable>
+        </TPTable>
       );
     } else {
       return null;
@@ -132,15 +130,15 @@ export default class ToursManagement extends Component {
               <div className="toursAndProducts__top__buttons font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21">
                 <button
                   className="toursAndProducts__top__button toursViewBTN"
-                  onClick={e => this.toggleViewHandler(e, "toursView")}
+                  onClick={e => e.preventDefault}
                 >
                   Tours Management
                 </button>
                 <button
                   className="toursAndProducts__top__button productsViewBTN"
-                  onClick={e => this.toggleViewHandler(e, "productsView")}
+                  onClick={e => e.preventDefault}
                 >
-                  Products Management
+                  <Link to="/admin/pmanagement">Products Management</Link>
                 </button>
               </div>
             </div>

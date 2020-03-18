@@ -11,7 +11,7 @@ const Container = styled.div`
     background-color: white;
     position: fixed;
     background: white;
-    width: 90%;
+    width: 88vw;
     margin-left: 40px;
     top: 50%;
     left: 50%;

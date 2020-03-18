@@ -41,17 +41,17 @@ class AsideAdmin extends Component {
               key: 516312312010112015320,
 
               name: "Employees managements ",
-              scrollchor: "/admin/hr"
+              scrollchor: "/admin/employees"
             },
             {
               key: 516312315101121211320,
 
               name: "Tasks managements",
-              scrollchor: "/admin/hr"
+              scrollchor: "/admin/tasks"
             }
           ],
           visible: false,
-          scrollchor: "/admin/hr",
+          scrollchor: "/admin/employees",
           key: 1,
           icon: Business
         },
@@ -64,17 +64,17 @@ class AsideAdmin extends Component {
               key: 111211121211212,
 
               name: "Tours managements ",
-              scrollchor: "/admin/tours"
+              scrollchor: "/admin/tmanagement"
             },
             {
               key: 2501,
 
               name: "products managements",
-              scrollchor: "/admin/users"
+              scrollchor: "/admin/pmanagement"
             }
           ],
           visible: false,
-          scrollchor: "#about"
+          scrollchor: "/admin/tmanagement"
         },
         {
           name: "Travel and product CRM",

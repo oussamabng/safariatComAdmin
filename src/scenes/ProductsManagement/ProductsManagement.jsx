@@ -3,10 +3,11 @@ import React, { Component } from "react";
 import { products } from "./data";
 import styled from "styled-components";
 import Modal from "../../components/Modal/Modal";
+import TPTable from "../../components/TPTable/TPTable";
 
-import TRTable from "./components/TRTable";
+import TableActions from "../../components/HrTable/components/TableActions";
 
-import TableActions from "../HrManagement/components/TableActions";
+import { Link } from "react-router-dom";
 
 export default class ToursAndProducts extends Component {
   state = {
@@ -61,12 +62,12 @@ export default class ToursAndProducts extends Component {
 
     if (products) {
       return (
-        <TRTable
+        <TPTable
           showProductDetails={details => this.showProductModal(details)}
           products={products}
         >
           products DAta
-        </TRTable>
+        </TPTable>
       );
     } else {
       return null;
@@ -120,13 +121,13 @@ export default class ToursAndProducts extends Component {
               <div className="toursAndProducts__top__buttons font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21">
                 <button
                   className="toursAndProducts__top__button toursViewBTN"
-                  onClick={e => this.toggleViewHandler(e, "toursView")}
+                  onClick={e => e.preventDefault}
                 >
-                  Tours Management
+                  <Link to="/admin/tmanagement">Tours Management</Link>
                 </button>
                 <button
                   className="toursAndProducts__top__button productsViewBTN"
-                  onClick={e => this.toggleViewHandler(e, "productsView")}
+                  onClick={e => e.preventDefault}
                 >
                   Products Management
                 </button>
@@ -152,10 +153,10 @@ const Container = styled.div`
   }
 
   .toursAndProducts {
-    width: 100%;
+    width: 88%;
     // padding: 1rem 1.6rem;
     margin: 0 auto;
-    padding: 0 40px 0 120px;
+    // padding: 0 40px 0 120px;
   }
 
   .toursAndProducts__top {
