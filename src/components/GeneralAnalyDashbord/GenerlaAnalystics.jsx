@@ -241,10 +241,10 @@ class GenerlaAnalystics extends Component {
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
-          <div className="app-page-title finance-page">
-            <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
+          <div className="app-page-title ">
+            <div className="flex lg:items-center md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
               <div className="GeneralDash">
-                <h1>Finance</h1>
+                <h1>Analytics and Statistics</h1>
               </div>
               <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
                 <Link
@@ -253,15 +253,25 @@ class GenerlaAnalystics extends Component {
                     backgroundColor: "#ffb808",
                     color: "#ffffff"
                   }}
-                  to="/admin/finance"
+                  to="/admin/tours"
                 >
-                  Finance management
+                  Tours bookings & Products
+                </Link>
+                <Link
+                  className="hover-title dif"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#ffb808"
+                  }}
+                  to="/admin/users"
+                >
+                  Users interactions
                 </Link>
               </div>
             </div>
           </div>
         </section>
-        <div className="flex pt-4">
+        <div className="flex">
           <div className="w-1/2">
             <div className="flex">
               <div className="my-col w-full">

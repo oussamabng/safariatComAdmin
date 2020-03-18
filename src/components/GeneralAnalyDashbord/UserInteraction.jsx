@@ -231,27 +231,35 @@ class UserInteraction extends Component {
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
-          <div className="app-page-title finance-page">
-            <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
-              <div className="GeneralDash">
-                <h1>Finance</h1>
+          <div className="app-page-title ">
+            <div className="flex flex-row items-center justify-between sm:flex-col sm:items-center md:flex-row">
+              <div className="GeneralDash sm:my-4">
+                <h1>Analytics and Statistics</h1>
               </div>
-              <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
+              <div className="GeneralDash">
                 <Link
-                  className="hover-title"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#747474"
+                  }}
+                  to="/admin/tours"
+                >
+                  Tours bookings & Products
+                </Link>
+                <Link
                   style={{
                     backgroundColor: "#ffb808",
                     color: "#ffffff"
                   }}
-                  to="/admin/finance"
+                  to="/admin/users"
                 >
-                  Finance management
+                  Users interactions
                 </Link>
               </div>
             </div>
           </div>
         </section>
-        <div className="flex flex-wrap mb-4 pt-4">
+        <div className="flex flex-wrap mb-4">
           <div className="w-full md:w-3/5  p-5 pt-0 text-center">
             <div className="flex mb-4">
               <div className="w-full">

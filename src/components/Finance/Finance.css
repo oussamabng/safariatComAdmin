@@ -50,6 +50,10 @@
   background-color: white !important;
   color: #ffb808 !important;
 }
+.hover-title.dif:hover {
+  background-color: #ffb808 !important;
+  color: white !important;
+}
 @media (max-width: 1388px) {
   .finance-row {
     flex-direction: column !important;
