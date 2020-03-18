@@ -39,11 +39,11 @@ export default function TRTable(props) {
                 <td className="td ">{el.price}</td>
                 <td className="td">
                   {el.description}
-                  <div className="td__preview text-8 sD:text-10 mD:text-12 lD:text-16">
+                  <div className="td__preview ">
                     <a
                       data-id={el.id}
                       onClick={previewTour}
-                      className="td__preview__link"
+                      className="td__preview__link text-8 sD:text-10 mD:text-12 lD:text-16"
                       href="#"
                     >
                       Preview
@@ -146,12 +146,10 @@ const Container = styled.div`
 
   .td__preview {
     width: 100%;
-    text-align: right;
+    text-align: center;
   }
 
   .td__preview__link {
-    float: right;
-
     color: #5782c2;
   }
 
@@ -164,5 +162,31 @@ const Container = styled.div`
   .price,
   .date {
     width: 12%;
+  }
+
+  // icons
+  .message__icon {
+    display: inline-block;
+    width: 13px;
+    margin-right: 5px;
+    @media only screen and (min-width: 1200px) {
+      width: 14px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      width: 18px;
+    }
+  }
+
+  .remove__icon {
+    display: inline-block;
+    width: 13px;
+
+    @media only screen and (min-width: 1200px) {
+      width: 14px;
+    }
+    @media only screen and (min-width: 1440px) {
+      width: 18px;
+    }
   }
 `;

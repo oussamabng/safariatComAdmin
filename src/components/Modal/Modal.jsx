@@ -27,7 +27,9 @@ export default function Modal(props) {
           <a onClick={props.closeModal} href="">
             <i className=" header__back fas fa-long-arrow-alt-left"></i>
           </a>
-          <h4 className="header__title">Tour Preview</h4>
+          <h4 className="header__title text-11 sD:text-13 mD:text-15 lD:text-21">
+            Tour Preview
+          </h4>
         </header>
         <div className="top">
           {/*  */}
@@ -142,7 +144,9 @@ export default function Modal(props) {
           <a onClick={props.closeModal} href="">
             <i className=" header__back fas fa-long-arrow-alt-left"></i>
           </a>
-          <h4 className="header__title">Product Preview</h4>
+          <h4 className="header__title text-11 sD:text-13 mD:text-15 lD:text-21">
+            Product Preview
+          </h4>
         </header>
         <div className="top">
           {/*  */}
@@ -195,9 +199,11 @@ export default function Modal(props) {
           <a onClick={props.closeModal} href="">
             <i className=" header__back fas fa-long-arrow-alt-left"></i>
           </a>
-          <h4 className="header__title">Add Employee</h4>
+          <h4 className="header__title text-11 sD:text-13 mD:text-15 lD:text-21 ">
+            Add Employee
+          </h4>
         </header>
-        <form className="form">
+        <form className="form font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18">
           <input
             className="form__label__input"
             id="fullName"
@@ -305,7 +311,7 @@ export default function Modal(props) {
           <input
             type="submit"
             value="add employee"
-            className="add add__employee"
+            className="add add__employee text-11 sD:text-13 mD:text-15 lD:text-21"
           />
         </form>
       </div>
@@ -319,9 +325,11 @@ export default function Modal(props) {
           <a onClick={props.closeModal} href="">
             <i className=" header__back fas fa-long-arrow-alt-left"></i>
           </a>
-          <h4 className="header__title">Add Task</h4>
+          <h4 className="header__title text-11 sD:text-13 mD:text-15 lD:text-21">
+            Add Task
+          </h4>
         </header>
-        <form className="form">
+        <form className="form font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18">
           <input
             className="form__label__input"
             id="fullName"
@@ -361,7 +369,11 @@ export default function Modal(props) {
             className="form__label__input text"
           ></textarea>
 
-          <input type="submit" value="add task" className="add add__task" />
+          <input
+            type="submit"
+            value="add task"
+            className="add add__task text-11 sD:text-13 mD:text-15 lD:text-21"
+          />
         </form>
       </div>
     );

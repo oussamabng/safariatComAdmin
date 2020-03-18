@@ -15,8 +15,8 @@ export default class ToursAndProducts extends Component {
     isToursView: true,
     isProductsView: false,
 
-    toursTypes: ["type1", "type2"],
-    productsTypes: ["typpe1", "typpe2"],
+    toursTypes: ["type 1", "type 2", "marketing"],
+    productsTypes: ["typpe 1", "typpe 2", "marketing"],
     isTourDetailsShown: false,
     isProductDetailsShown: false,
 
@@ -244,13 +244,15 @@ const Container = styled.div`
   }
 
   .toursAndProducts__top__hr {
-    background: #000;
+    background: #707070;
     border: 0;
-    color: #000;
+    color: #707070;
     height: 1px;
-    flex-shrink: 1.5;
-    flex-grow: 2;
+    flex-shrink: 1;
+    flex-grow: 1;
+    margin: 0 10px;
     flex-basis: auto;
+    opacity: 0.5;
   }
 
   .toursAndProducts__top__button {

@@ -1,12 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import search from "../../../assets/search.svg";
+import info from "../../../assets/info.svg";
+import downArrow from "../../../assets/downArrow.svg";
 
 export default function TableActions(props) {
+  const selectImg = {
+    backgroundImage: `url(${downArrow})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center right",
+    backgroundPositionX: "calc(100% - 10px)"
+  };
   const renderSearch = () => {
     if (props.view === "employees") {
       return (
         <label className="searchLabel" htmlFor="search">
-          <i className="fas fa-search "></i>
+          {/* <i className="fas fa-search "></i> */}
+          <img src={search} className="search__icon " alt="" />
           <input
             className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
             onChange={e => props.searchedName(e.target.value)}
@@ -20,7 +30,8 @@ export default function TableActions(props) {
     } else if (props.view === "tasks") {
       return (
         <label className="searchLabel" for="search">
-          <i className="fas fa-search "></i>
+          <img src={search} className="search__icon " alt="" />
+
           <input
             className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
             onChange={e => props.searchedTask(e.target.value)}
@@ -34,7 +45,7 @@ export default function TableActions(props) {
     } else if (props.view === "tours") {
       return (
         <label className="searchLabel" for="search">
-          <i className="fas fa-search "></i>
+          <img src={search} className="search__icon " alt="" />
           <input
             className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
             // onChange={e => props.searchedTask(e.target.value)}
@@ -48,7 +59,8 @@ export default function TableActions(props) {
     } else if (props.view === "products") {
       return (
         <label className="searchLabel" for="search">
-          <i className="fas fa-search "></i>
+          <img src={search} className="search__icon " alt="" />
+
           <input
             className="search font-montserrat text-9 sD:text-11 mD:text-13 lD:text-18"
             // onChange={e => props.searchedTask(e.target.value)}
@@ -67,7 +79,9 @@ export default function TableActions(props) {
   const renderSelect = () => {
     return (
       <select
+        style={selectImg}
         // onChange={e => props.searchedDepartment(e.target.value)}
+        // url={downArrow}
         className="select text-9 sD:text-11 mD:text-13 lD:text-18"
         defaultValue="all"
         name="departments"
@@ -141,9 +155,7 @@ export default function TableActions(props) {
       <div className="right">
         {renderAddButton()}
         {props.view === "employees" || props.view === "tasks" ? (
-          <a href="#" className="infoLink">
-            i
-          </a>
+          <img src={info} className="info__icon" alt="" />
         ) : null}
       </div>
     </Container>
@@ -171,17 +183,22 @@ const Container = styled.div`
   }
 
   .search {
-    padding: 0.5em 0.5rem;
-    color: grey;
+    padding: 0.7em 2.8em 0.7em 2em;
+    color: #7d7d7d;
     background-color: transparent;
   }
 
   .select {
-    padding: 0.5em 7em 0.5em 1em;
-
+    padding: 0.8em 10.7em 0.8em 2em;
     color: grey;
-    border: solid 1px black;
-    // appearance: none;
+    border: solid 0.5px #707070;
+    appearance: none;
+
+    background-size: 10px;
+
+    @media only screen and (min-width: 1200px) {
+      background-size: 15px;
+    }
   }
   .select,
   .search {
@@ -199,39 +216,29 @@ const Container = styled.div`
   .addBtn {
     background-color: #084c61;
     color: #fff;
-    padding: 0.5em 2.8em;
+    padding: 0.7em 2.8em;
     border-radius: 4px;
     margin-right: 1.5rem;
     vertical-align: middle;
   }
 
-  .infoLink {
-    // position: absolute;
-    font-size: 1rem;
-    color: #b3b8bd;
-    border: solid 1px #b3b8bd;
-    border-radius: 100%;
-    vertical-align: middle;
-    cursor: pointer;
-    padding: 0.2rem 0.5rem;
+  //
+
+  // icons
+  .search__icon {
+    display: inline-block;
+    width: 1em;
   }
 
-  // @media only screen and (max-width: 1200px) {
-  //   .addBtn {
-  //     padding: 0.7rem 2rem;
-  //   }
+  @media only screen and (min-width: 1300px) {
+    .search__icon {
+      width: 1.5em;
+    }
+  }
 
-  //   .select {
-  //     padding: 0.7rem 1.2rem;
-  //   }
-
-  //   .searchLabel,
-  //   .search {
-  //     padding: 0.7rem 0.4rem;
-  //   }
-
-  //   .infoLink {
-  //     padding: 0.2rem 0.3rem;
-  //   }
-  // }
+  .info__icon {
+    display: inline-block;
+    width: 1em;
+    cursoir: pointer;
+  }
 `;

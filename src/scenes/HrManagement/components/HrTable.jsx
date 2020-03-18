@@ -2,6 +2,8 @@ import React from "react";
 import Arrows from "./Arrows";
 import styled from "styled-components";
 import personImg from "../images/person.png";
+import message from "../../../assets/message.svg";
+import remove from "../../../assets/remove.svg";
 
 export default function HrTable(props) {
   const employeesTable = employees => {
@@ -110,8 +112,8 @@ export default function HrTable(props) {
                     </span>
                   </a>
                   <span className="td__link__icons clearfix">
-                    <i className="fas fa-envelope-square "></i>
-                    <i className="far fa-minus-square "></i>
+                    <img src={message} className="message__icon" alt="" />
+                    <img src={remove} className="remove__icon" alt="" />
                   </span>
                 </td>
               </tr>
@@ -172,7 +174,7 @@ export default function HrTable(props) {
                     </span>
                   </span>
                   <span className="td__link__icons center__icon clearfix">
-                    <i className="fas fa-envelope-square "></i>
+                    <img src={message} className="message__icon" alt="" />
                   </span>
                 </td>
                 <td className="td text-9 sD:text-11 mD:text-13 lD:text-18">
@@ -185,7 +187,7 @@ export default function HrTable(props) {
                     </span>
                   </span>
                   <span className="td__link__icons clearfix">
-                    <i className="fas fa-minus-square "></i>
+                    <img src={remove} className="remove__icon" alt="" />
                   </span>
                 </td>
               </tr>
@@ -248,7 +250,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 1200px) {
     .th {
-      padding: 0.5em 0.9em;
+      padding: 0.5em 0.3em;
       vertical-align: middle;
     }
     // .arrows {
@@ -312,7 +314,7 @@ const Container = styled.div`
 
   .td__link__icons {
     float: right;
-    margin-right: 1rem;
+    // margin-right: 1rem;
     vertical-align: middle;
   }
 
@@ -335,5 +337,34 @@ const Container = styled.div`
 
   .last__td {
     border-right: none;
+    padding: 0.5em 0.2em 0.5em 0;
+  }
+
+  // icons
+  .message__icon {
+    cursor: pointer;
+
+    display: inline-block;
+    width: 13px;
+    margin-right: 10px;
+    @media only screen and (min-width: 1200px) {
+      width: 14px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      width: 18px;
+    }
+  }
+
+  .remove__icon {
+    display: inline-block;
+    width: 13px;
+    cursor: pointer;
+    @media only screen and (min-width: 1200px) {
+      width: 14px;
+    }
+    @media only screen and (min-width: 1440px) {
+      width: 18px;
+    }
   }
 `;
