@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import "./Card.css";
+import styled from "styled-components";
 
 class MyCard extends Component {
   constructor(props) {
@@ -10,26 +11,45 @@ class MyCard extends Component {
   render() {
     const { Img, Title, Rate, views } = this.props;
     return (
-      <div style={{ width: "90%", height: "80%" }}>
-        <div class="max-w-sm rounded overflow-hidden set-back">
-          <img
-            class="w-full rounded-lg"
-            src={Img}
-            alt="Sunset in the mountains"
-          />
-          <div class="px-1 py-4 flex flex-col">
-            <div class="font-bold text-lg md:px-2 mb-2">{Title}</div>
-            <div className="flex md:flex-col md:items-start md:px-2 flex-row justify-between items-center set-fonts">
-              <h1 class="text-base">{Rate}</h1>
-              <p>( based on {Rate} reviews)</p>
+      <Container style={{ width: "90%", height: "100%" }}>
+        <div className="rounded overflow-hidden set-back">
+          <div className="flex justify-center items-center">
+            <img
+              className="slider-img rounded-lg"
+              src={Img}
+              alt="Sunset in the mountains"
+            />
+          </div>
+          <div className="px-1 py-4 flex flex-col">
+            <div className="font-bold text-lg md:px-2 mb-2 1366 xsD:text-11 sD:text-13 mD:text-15 lD:text-21">
+              {Title}
+            </div>
+            <div className="flex lD:flex-row lD:items-center mD:flex-col mD:items-start md:px-2 flex-row justify-between items-center set-fonts">
+              <h1 className="text-base 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18">
+                {Rate}
+              </h1>
+              <p className="xsD:text-8 sD:text-8 mD:text-110 lD:text-12">
+                ( based on {Rate} reviews)
+              </p>
               <div className="my-staring">
-                <StarRatingComponent name="rate1" starCount={5} value={views} />
+                <StarRatingComponent
+                  className="xsD:text-8 sD:text-8 mD:text-110 lD:text-12"
+                  starCount={5}
+                  value={views}
+                  name="my-rateee"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     );
   }
 }
 export default MyCard;
+const Container = styled.div`
+  .slider-img {
+    max-height: 190px;
+    width: 100%;
+  }
+`;
