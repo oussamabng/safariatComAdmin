@@ -30,7 +30,9 @@ export default class FinanceTable extends Component {
                     colSpan="1"
                     style={{ width: "388.2px" }}
                   >
-                    <span className="text-sm text-gray-800">Employee</span>
+                    <span className=" xsD:text-9 sD:text-13 mD:text-15 lD:text-18 text-gray-800">
+                      Employee
+                    </span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
@@ -40,7 +42,9 @@ export default class FinanceTable extends Component {
                     colSpan="1"
                     style={{ width: "100px" }}
                   >
-                    <span className="text-sm text-gray-800">Paying day</span>
+                    <span className="xsD:text-9 sD:text-13 mD:text-15 lD:text-18 text-gray-800">
+                      Paying day
+                    </span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
@@ -50,7 +54,9 @@ export default class FinanceTable extends Component {
                     colSpan="1"
                     style={{ width: "100px" }}
                   >
-                    <span className="text-sm text-gray-800">Status</span>
+                    <span className="xsD:text-9 sD:text-13 mD:text-15 lD:text-18 text-gray-800">
+                      Status
+                    </span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
@@ -60,7 +66,9 @@ export default class FinanceTable extends Component {
                     colSpan="1"
                     style={{ width: "50px" }}
                   >
-                    <span className="text-sm text-gray-800">Salary</span>
+                    <span className="xsD:text-9 sD:text-13 mD:text-15 lD:text-18 text-gray-800">
+                      Salary
+                    </span>
                   </th>
                   <th
                     className="sorting justify-center items-center whitespace-no-wrap"
@@ -70,7 +78,9 @@ export default class FinanceTable extends Component {
                     colSpan="1"
                     style={{ width: "50px" }}
                   >
-                    <span className="text-sm text-gray-800">Departement</span>
+                    <span className="xsD:text-9 sD:text-13 mD:text-15 lD:text-18 text-gray-800">
+                      Departement
+                    </span>
                   </th>
                 </tr>
               </thead>
@@ -81,18 +91,22 @@ export default class FinanceTable extends Component {
                       <div className="justify-center items-center flex">
                         <div className="flex p-0 responsive-rate flex-row lg:justify-center items-center sm:flex sm:justify-end sm:flex sm:justify-end">
                           <img src={Img} alt="img" width="40" />
-                          <p className="text-center px-2">{element["name"]}</p>
+                          <p className="text-center px-2 sD:text-12 mD:text-16 lD:text-16 px-2">
+                            {element["name"]}
+                          </p>
                         </div>
                       </div>
                     </td>
                     <td className="text-center">
-                      <span>{element["paying_day"]}</span>
+                      <span className="text-center px-2 sD:text-12 mD:text-16 lD:text-16">
+                        {element["paying_day"]}
+                      </span>
                     </td>
                     <td className="text-center">
                       <div className="flex justify-center items-center">
                         <div className="flex justfiy-center flex-row text-center items-center">
                           <div
-                            className=" w-2 h-2 flex  rounded-full"
+                            className=" w-2 h-2 flex text-center px-2 sD:text-12 mD:text-16 lD:text-16 rounded-full"
                             style={{
                               backgroundColor:
                                 element["status"][0] === "n"
@@ -100,20 +114,26 @@ export default class FinanceTable extends Component {
                                   : "#2DCE98"
                             }}
                           ></div>
-                          <span className="ml-2">{element["status"]}</span>
+                          <span className="ml-2 text-center px-2 sD:text-12 mD:text-16 lD:text-16">
+                            {element["status"]}
+                          </span>
                         </div>
                       </div>
                     </td>
                     <td className="text-center">
-                      <span>${element["salary"]}</span>
+                      <span className="text-center px-2 sD:text-12 mD:text-16 lD:text-16">
+                        ${element["salary"]}
+                      </span>
                     </td>
                     <td className="text-center">
-                      <span>{element["departement"]}</span>
+                      <span className="text-center px-2 sD:text-12 mD:text-16 lD:text-16">
+                        {element["departement"]}
+                      </span>
                     </td>
                     <td className="text-center ">
                       <div className="flex justify-center items-center">
                         <Dots
-                          className="px-2 w-10 h-10 responsive-icons rot"
+                          className="px-2 text-center px-2 sD:text-12 mD:text-16 lD:text-16 w-10 h-10 responsive-icons rot"
                           fill="#707070"
                         />
                       </div>

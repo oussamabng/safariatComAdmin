@@ -149,14 +149,14 @@ export default class Finance extends Component {
     return (
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
-          <div className="app-page-title finance-page">
+          <div className="app-page-title finance-page pt-0">
             <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
-              <div className="GeneralDash">
+              <div className="GeneralDash xsD:text-14 sD:text-19 mD:text-21 lD:text-28">
                 <h1>Finance</h1>
               </div>
               <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
                 <Link
-                  className="hover-title"
+                  className="hover-title xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
                   style={{
                     backgroundColor: "#ffb808",
                     color: "#ffffff"
@@ -175,15 +175,15 @@ export default class Finance extends Component {
               <div className="w-3/5 my-col ">
                 <div className="mb-3 card bg-white h-full flex flex-col justify-start  ">
                   <div className="card-header-tab card-header sm:px-5">
-                    <div className="card-header-title  font-size-lg text-capitalize font-weight-normal">
+                    <div className="card-header-title xsD:text-13 sD:text-15 mD:text-18 lD:text-21  font-size-lg text-capitalize font-weight-normal">
                       Tour sales value
                     </div>
                     <div className="ml-auto btn-group-lg btn-group lg:flex md:hidden sm:hidden xs:hidden">
                       {this.state.items.map(elem => {
                         let isActive = this.state.activeLink === elem.name;
                         let navClass = isActive
-                          ? "activeButt btn btn-alternate border-none cursor-pointer"
-                          : "btn btn-alternate border-none cursor-pointer";
+                          ? "activeButt btn btn-alternate border-none cursor-pointer xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                          : "btn btn-alternate border-none cursor-pointer xsD:text-9 sD:text-11 mD:text-13 lD:text-18";
                         return (
                           <p
                             name={elem["name"]}
@@ -218,7 +218,7 @@ export default class Finance extends Component {
               <div className="w-2/5">
                 <div className="w-full flex flex-col justify-center h-full bg-white ">
                   <div className="card-header-tab card-header flex-row  sm:px-5">
-                    <div className="card-header-title  font-size-lg text-capitalize font-weight-normal">
+                    <div className="card-header-title  font-size-lg text-capitalize font-weight-normal xsD:text-13 sD:text-15 mD:text-18 lD:text-21">
                       Tour sales value
                     </div>
                     <span
@@ -239,7 +239,7 @@ export default class Finance extends Component {
               <div className="w-full">
                 <div className="w-full h-full px-2 my-4 bg-white">
                   <div className="card-header-tab flex flex-row justify-between items-center p-4 sm:px-5">
-                    <div className="card-header-title  font-size-lg text-capitalize font-weight-normal">
+                    <div className="card-header-title xsD:text-13 sD:text-15 mD:text-18 lD:text-21 font-size-lg text-capitalize font-weight-normal">
                       Employee payment status
                     </div>
                     <div className="flex ml-auto justify-between items-center">
@@ -247,7 +247,7 @@ export default class Finance extends Component {
                         <ArrowLeft className="arrows px-1" />
                         <ArrowRight className="arrows px-1" />
                       </div>
-                      <p className="btn ml-auto px-6  py-3 shadow-md btn-alternate border-none cursor-pointer">
+                      <p className="btn ml-auto px-6 xsD:text-9 sD:text-11 mD:text-13 lD:text-18 py-3 shadow-md btn-alternate border-none cursor-pointer">
                         Update
                       </p>
                     </div>
@@ -275,11 +275,11 @@ export default class Finance extends Component {
               <div className="w-full ">
                 <div className="w-full h-full my-6 bg-white">
                   <div className="card-header-tab flex flex-row justify-between items-center p-4 sm:px-5">
-                    <div className="card-header-title  font-size-lg text-capitalize font-weight-normal">
+                    <div className="card-header-title xsD:text-13 sD:text-15 mD:text-18 lD:text-21 font-size-lg text-capitalize font-weight-normal">
                       Budget manager
                     </div>
                     <div className="flex ml-auto justify-between items-center">
-                      <p className="btn ml-auto py-3 shadow-md btn-alternate border-none cursor-pointer">
+                      <p className="btn ml-auto py-3 xsD:text-9 sD:text-11 mD:text-13 lD:text-18 shadow-md btn-alternate border-none cursor-pointer">
                         Change plan
                       </p>
                     </div>
