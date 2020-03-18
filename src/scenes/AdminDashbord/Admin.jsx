@@ -7,7 +7,8 @@ class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: true
+      toggle: false,
+      show: false
     };
   }
   handleToggleClick() {
@@ -18,6 +19,15 @@ class Admin extends Component {
       };
     });
   }
+  handleAsideToggled() {
+    this.setState(prevState => {
+      return {
+        show: !prevState.show,
+        toggle: !prevState.toggle
+      };
+    });
+  }
+
   render() {
     return (
       <>
@@ -27,9 +37,17 @@ class Admin extends Component {
           }}
           show={this.state.show}
         />
-        <AsideAdmin toggle={this.state.toggle} active={this.props.active} />
+        <AsideAdmin
+          toggle={this.state.toggle}
+          clickToggle={() => {
+            this.handleToggleClick();
+          }}
+          active={this.props.active}
+        />
         <div
-          className={this.state.toggle ? "padleft" : "padleft-sm"}
+          className={
+            this.state.toggle ? "padleft bg-white" : "padleft-sm bg-white"
+          }
           onClick={() => {
             document.getElementsByClassName(
               "notification-box mx-6"

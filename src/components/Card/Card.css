@@ -3,12 +3,11 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-size: 16px!important;
+  font-size: 16px !important;
   white-space: nowrap;
 }
 .set-fonts p {
   color: #707070;
-  font-size: 11px!important;
   white-space: nowrap;
 }
 
@@ -17,4 +16,9 @@
 }
 .set-back {
   background-color: #f9f9f9;
+}
+@media (max-width: 1600px) {
+  .set-fonts p {
+    font-size: 12px !important;
+  }
 }

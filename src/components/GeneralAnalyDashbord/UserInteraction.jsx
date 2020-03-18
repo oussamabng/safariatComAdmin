@@ -230,8 +230,39 @@ class UserInteraction extends Component {
     const secondColumnStart = Math.floor(result.length / 2);
     return (
       <div className="app-main__outer">
-        <div className="flex flex-wrap mb-4 pt-4">
-          <div className="w-full md:w-3/5  p-5 pt-0 text-center">
+        <section className="mainGeneralDashbord">
+          <div className="app-page-title ">
+            <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-between mD:items-center sD:justify-between sD:items-center  xsD:justify-between xsD:items-center">
+              <div className="GeneralDash xsD:text-14 sD:text-19 mD:text-21 lD:text-28">
+                <h1>Analytics and Statistics</h1>
+              </div>
+              <div className="flex lD:justify-center lD:items-center lD:ml-auto  GeneralDash">
+                <Link
+                  className="hover-title xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    color: "#747474"
+                  }}
+                  to="/admin/tours"
+                >
+                  Tours bookings & Products
+                </Link>
+                <Link
+                  className="hover-title xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
+                  style={{
+                    backgroundColor: "#ffb808",
+                    color: "#ffffff"
+                  }}
+                  to="/admin/users"
+                >
+                  Users interactions
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="flex w-full lD:flex-row mb-4 mD:flex-col sD:flex-col xsD:flex-col ">
+          <div className=" lD:w-3/5 mD:w-full sD:p-8 lD:p-2 pt-0 text-center">
             <div className="flex mb-4">
               <div className="w-full">
                 <div className="body-tabs">
@@ -289,7 +320,7 @@ class UserInteraction extends Component {
                             </ul>
                           </div>
                         </div>
-                        <div className="btn-group-lg btn-group lg:flex md:hidden sm:hidden xs:hidden">
+                        <div className="btn-group-lg btn-group lD:flex mD:hidden sD:hidden xsD:hidden">
                           {this.state.items.map(elem => {
                             let isActive = this.state.activeLink === elem.name;
                             let navClass = isActive
@@ -312,9 +343,10 @@ class UserInteraction extends Component {
                             );
                           })}
                         </div>
+
                         <div className="btn-group dropdown flex justify-center items-center">
                           <span
-                            class="hint--bottom text-center  hint--medium"
+                            className="hint--bottom text-center  hint--medium"
                             aria-label="this is a hint"
                           >
                             <button className="btn-icon btn-icon-only btn btn-link">
@@ -329,8 +361,8 @@ class UserInteraction extends Component {
                       {this.state.itemsTours.map(elem => {
                         let isActive = this.state.activeLinkTours === elem.name;
                         let navClass = isActive
-                          ? "btn btn-alternate bg-white  border-none activeButt cursor-pointer"
-                          : "btn btn-alternate bg-white  border-none cursor-pointer";
+                          ? "btn btn-alternate   border-none activeButt cursor-pointer"
+                          : "btn btn-alternate   border-none cursor-pointer";
                         return (
                           <p
                             name={elem["name"]}
@@ -363,9 +395,9 @@ class UserInteraction extends Component {
                 </div>
               </div>
             </div>
-            <div className="xl:flex xl:flex-row xl:justify-between xl:items-start lg:flex-col lg:justify-center lg:items-center mb-4">
+            <div className="flex row_top justify-start lD:items-start lD:flex-row  mD:justify-start mD:items-center mb-4">
               {/* Top Liked tour begin */}
-              <div className="xl:w-3/5 lg:w-full scroll-div">
+              <div className="lD:w-3/5 rs:w-full scroll-div">
                 <div className="card">
                   <div className="card-header-tab card-header">
                     <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
@@ -374,7 +406,7 @@ class UserInteraction extends Component {
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                       <div className="btn-group dropdown flex justify-center items-center">
                         <span
-                          class="hint--left text-center  hint--medium"
+                          className="hint--left text-center  hint--medium"
                           aria-label="this is a hint"
                         >
                           <button className="btn-icon btn-icon-only btn btn-link">
@@ -388,9 +420,9 @@ class UserInteraction extends Component {
                   {/* secondColumnStart */}
                   <div className=" bg-white">
                     <div className="p-2 flex flex-row justify-between items-start">
-                      <div className="w-1/2 ">
+                      <div className="lD:w-1/2 lD:block mD:hidden sD:hidden xsD:hidden">
                         {result.slice(secondColumnStart).map(item => (
-                          <div className=" rounded set-top-tour mx-1 my-1">
+                          <div className=" rounded set-top-tour mx-1 my-1 sD:m-4">
                             <div className="flex flex-col p-2 justify-start set-background-color-v2">
                               <h1 className="font-size-res">{item["title"]}</h1>
                               <p>{item["body"]}</p>
@@ -398,9 +430,19 @@ class UserInteraction extends Component {
                           </div>
                         ))}
                       </div>
-                      <div className="w-1/2">
+                      <div className="lD:w-1/2 lD:block  mD:hidden sD:hidden xsD:hidden">
                         {result.slice(0, secondColumnStart).map(item => (
-                          <div className=" rounded set-top-tour mx-1 my-1">
+                          <div className=" rounded set-top-tour mx-1 my-1 sD:m-4">
+                            <div className="flex flex-col p-2 justify-start set-background-color-v2">
+                              <h1 className="font-size-res">{item["title"]}</h1>
+                              <p>{item["body"]}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="lD:hidden mD:flex sD:flex xsD:flex mD:w-full sD:w-full xsD:flex mD:cls sD:cls xsD:cls">
+                        {result.map(item => (
+                          <div className=" rounded set-top-tour mx-1 my-1 sD:m-4">
                             <div className="flex flex-col p-2 justify-start set-background-color-v2">
                               <h1 className="font-size-res">{item["title"]}</h1>
                               <p>{item["body"]}</p>
@@ -412,7 +454,7 @@ class UserInteraction extends Component {
                   </div>
                 </div>
               </div>
-              <div className="xl:w-2/5 lg:w-full lg:pt-5 lg:pl-0 xl:pl-5 xl:pt-0 scroll-div">
+              <div className="lD:w-2/5 rs :w-full mD:pt-5 mD:pl-0 lD:pl-5 lD:pt-0 scroll-div">
                 <div className="mb-3 card">
                   <div className="card-header-tab card-header">
                     <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
@@ -421,7 +463,7 @@ class UserInteraction extends Component {
                     <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                       <div className="btn-group dropdown flex justify-center items-center">
                         <span
-                          class="hint--left text-center  hint--medium"
+                          className="hint--left text-center  hint--medium"
                           aria-label="this is a hint"
                         >
                           <button className="btn-icon btn-icon-only btn btn-link">
@@ -469,7 +511,7 @@ class UserInteraction extends Component {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-2/5  text-center">
+          <div className=" lD:w-2/5 cli mD:w-full mD:w-3/5 sD:w-full lD:p-2 p-5 pt-0  text-center">
             <div className="card">
               <div className="card-header-tab card-header">
                 <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
@@ -478,7 +520,7 @@ class UserInteraction extends Component {
                 <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
                   <div className="btn-group dropdown flex justify-center items-center">
                     <span
-                      class="hint--left text-center  hint--medium"
+                      className="hint--left text-center  hint--medium"
                       aria-label="this is a hint"
                     >
                       <button className="btn-icon btn-icon-only btn btn-link">
@@ -489,9 +531,9 @@ class UserInteraction extends Component {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-white">
+              <div className="cli bg-white">
                 <div
-                  className="flex justify-center p-0  items-center"
+                  className="flex justify-center  items-center"
                   style={{
                     backgroundColor: "#f5f5f5"
                   }}
@@ -499,16 +541,16 @@ class UserInteraction extends Component {
                   <MapChart />
                 </div>
               </div>
-              <div className="bg-white p-4 scroll-div">
+              <div className="bg-white flex cli  flex-col scroll-div">
                 {this.data_regions.map(region => {
                   return (
-                    <div className="xl:flex xl:justify-between xl:items-center lg:justify-start xl:flex-row md:py-4 lg:py-4 lg:flex-col">
-                      <div className="xl:w-2/3 lg:w-full">
-                        <p className="text-lg font-bold-500">
+                    <div className="flex flex-row py-4 justify-center">
+                      <div className="w-2/5">
+                        <p className="text-lg font-bold-500 whitespace-no-wrap">
                           {region["place"]}
                         </p>
                       </div>
-                      <div className="xl:w-2/3 lg:w-full">
+                      <div className="w-2/5">
                         <div className="p-2 border h-4 relative bg-gray-400 rounded-full">
                           <span
                             className="spanProgress"
@@ -516,9 +558,7 @@ class UserInteraction extends Component {
                           ></span>
                         </div>
                       </div>
-                      <div className="xl:w-1/5 lg:w-full">
-                        {region["progress"]}%
-                      </div>
+                      <div className="w-1/5 ">{region["progress"]}%</div>
                     </div>
                   );
                 })}

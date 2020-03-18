@@ -24,7 +24,11 @@ module.exports = {
       sD: "1200px",
       mD: "1366px",
       lD: "1440px",
-      bD: "1920px"
+      bD: "1920px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px"
     },
     fontSize: {
       "8": "0.5rem",

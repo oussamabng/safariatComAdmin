@@ -22,7 +22,7 @@ class New extends Component {
     return (
       <div className=" card new-card">
         <div className="card-header-tab card-header">
-          <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
+          <div className="xsD:text-13 sD:text-15 mD:text-18 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
             News
           </div>
           <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
@@ -40,7 +40,7 @@ class New extends Component {
             </div>
             <div className="btn-group dropdown flex justify-center items-center mx-3">
               <span
-                class="hint--left text-center flex hint--medium"
+                className="hint--left text-center flex hint--medium"
                 aria-label="this is a hint"
               >
                 <button className="btn-icon btn-icon-only btn btn-link">
@@ -52,25 +52,28 @@ class New extends Component {
           </div>
         </div>
         {data.map(data_news => (
-          <div className="rowNews bg-white xl:py-0 lg:py-2 md:py-2 sm:py-2 xs:py-2">
+          <div
+            key={data_news["id"]}
+            className="rowNews bg-white xl:py-0 lg:py-2 md:py-2 sm:py-2 xs:py-2"
+          >
             <div className="bard-body px-4">
               <div className="pt-0 pb-0 bg-white p-3">
                 <div className="xl:flex lg:hidden sm:hidden xs:hidden xl:flex-row xl:justify-between xl:items-center xl:p-0 ">
                   <div className="notification-part-left w-1/4">
                     <div className="widget-content">
                       <img
-                        className="lg:w-14 lg:h-14  md:w-12 md:h-12 sm:w-10 sm:h-10"
+                        className="xsD:text-11 sD:text-13 mD:text-15 lD:h-20 lD:w-20 mD:h-12 mD:w-12 sD:w-10 sD:h-10"
                         src={Img}
                         alt="img"
                       />
                       <div className="all-details-new">
-                        <div className="fullname-new">
+                        <div className="fullname-new sD:text-15 mD:text-18 lD:text-21">
                           <h1>{data_news["name"]}</h1>
                         </div>
-                        <div className="date-new">
+                        <div className="date-new sD:text-12 mD:text-14 lD:text-16">
                           <p>{data_news["time"]}</p>
                         </div>
-                        <div className="my-4 mx-0 full-p text-lg">
+                        <div className="my-4 mx-0 full-p  sD:text-14 mD:text-16 lD:text-18">
                           <p>has added a new {data_news["type"]}</p>
                         </div>
                       </div>
@@ -102,7 +105,7 @@ class New extends Component {
                         has added a new {data_news["type"]}
                       </p>
                       <div className="date-new">
-                        <p>{data_news["name"]}</p>
+                        <p>{data_news["time"]}</p>
                       </div>{" "}
                     </div>
                   </div>

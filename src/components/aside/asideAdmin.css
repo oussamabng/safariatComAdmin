@@ -71,9 +71,7 @@
 .pad-logout:hover {
   background-color: #3c6775;
 }
-.pad-logout {
-  cursor: pointer;
-}
+
 .treeview-menu {
   width: 100%;
   flex-direction: column;
@@ -122,11 +120,11 @@
   font-weight: 400;
 }
 .hide-dis {
-  font-size: auto;
+  font-size: auto!important;
   transition: font-size 0.5s;
 }
 .hide-dis.ok {
-  font-size: 0px;
+  font-size: 0px!important;
   transition: font-size 0.5s;
 }
 .treeview-menu.h-auto li a:hover {
@@ -136,5 +134,5 @@
   display: block !important;
 }
 .pad-pro {
-  padding-top: 10px !important;
+  padding-top: 12px;
 }

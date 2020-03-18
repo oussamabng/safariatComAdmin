@@ -21,13 +21,14 @@ import ToursAndProducts from "./scenes/ToursAndProducts/ToursAndProducts";
 import GenerlaAnalystics from "./components/GeneralAnalyDashbord/GenerlaAnalystics";
 import UserInteraction from "./components/GeneralAnalyDashbord/UserInteraction";
 import Finance from "./components/Finance/Finance.jsx";
-/*import SignUp from "./scenes/SignUp/SignUp.jsx";
-import LearnMore from "./scenes/LearnMore/LearnMore.jsx";*/
+import SearchBar from "./components/SearchBar/SearchBar.jsx";
+
 function App() {
   return (
     <Router>
       <Switch>
         <Route component={Home} exact path="/"></Route>
+        <Route component={SearchBar} path="/search"></Route>
         <Route component={Services} path="/services"></Route>
         <Route component={Blog} path="/blog"></Route>
         <Route component={Contact} path="/contact"></Route>

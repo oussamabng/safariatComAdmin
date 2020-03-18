@@ -18,10 +18,13 @@ class AsideAdmin extends Component {
           name: "Analytics and Statistics",
           options: [
             {
+              key: 516312315320,
               name: "Tours booking & products",
               scrollchor: "/admin/tours"
             },
             {
+              key: 45444754201,
+
               name: "Users interactions",
               scrollchor: "/admin/users"
             }
@@ -35,10 +38,14 @@ class AsideAdmin extends Component {
           name: "HR management",
           options: [
             {
+              key: 516312312010112015320,
+
               name: "Employees managements ",
               scrollchor: "/admin/hr"
             },
             {
+              key: 516312315101121211320,
+
               name: "Tasks managements",
               scrollchor: "/admin/hr"
             }
@@ -54,10 +61,14 @@ class AsideAdmin extends Component {
           icon: Crm,
           options: [
             {
+              key: 111211121211212,
+
               name: "Tours managements ",
               scrollchor: "/admin/tours"
             },
             {
+              key: 2501,
+
               name: "products managements",
               scrollchor: "/admin/users"
             }
@@ -69,10 +80,14 @@ class AsideAdmin extends Component {
           name: "Travel and product CRM",
           options: [
             {
+              key: 101124110,
+
               name: "Tours booking & products",
               scrollchor: "/admin/tours"
             },
             {
+              key: 11111122,
+
               name: "Users interactions",
               scrollchor: "/admin/users"
             }
@@ -88,6 +103,7 @@ class AsideAdmin extends Component {
           name: "Finance management",
           options: [
             {
+              key: 12354,
               name: "Finance management",
               scrollchor: "/admin/finance"
             }
@@ -105,11 +121,9 @@ class AsideAdmin extends Component {
   }
   setActive = link => {
     const name = link[0].nodeValue;
-    const key = this.state.navItems.filter(elm => elm.name === name)[0].key;
-    var sama = this.state.navItems.filter(elm => elm.name === name)[0].visible;
-    this.state.navItems.filter(elm => elm.name === name)[0].visible = !sama;
-    console.log();
-
+    var li_data = this.state.navItems.filter(elm => elm.name === name)[0]
+      .visible;
+    this.state.navItems.filter(elm => elm.name === name)[0].visible = !li_data;
     this.state.navItems
       .filter(elm => elm.name !== name)
       .map(item => {
@@ -128,8 +142,8 @@ class AsideAdmin extends Component {
           }
         >
           <div className="flex justify-between w-full  items-center flex-col">
-            <div className="flex justify-center w-full flex-col items-center pad-pro px-2">
-              <p href="#" className="nameAdmin w-full flex justify-center">
+            <div className="flex justify-center w-full flex-col items-center  pad-pro px-2">
+              <div href="#" className="nameAdmin w-full flex justify-center">
                 <img
                   className={this.props.toggle ? "mr-2" : ""}
                   src={Ouss}
@@ -139,8 +153,8 @@ class AsideAdmin extends Component {
                   <span
                     className={
                       this.props.toggle
-                        ? "text-white text-sm whitespace-no-wrap font-medium hide-dis"
-                        : "text-white text-sm whitespace-no-wrap font-medium hide-dis ok"
+                        ? "text-white  whitespace-no-wrap font-medium hide-dis xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                        : "text-white  whitespace-no-wrap font-medium hide-dis ok "
                     }
                   >
                     Oussama Bengoudifa
@@ -152,20 +166,21 @@ class AsideAdmin extends Component {
                         : "text-white font-light text-xxs  whitespace-no-wrap hide-dis ok"
                     }
                   >
-                    CEO of travel agency
+                    {" "}
+                    CEO of travel agency{" "}
                   </p>
                 </div>
-              </p>
+              </div>
             </div>
             <div className="mainAsideSection h-full flex w-full">
               <ul className="flex  justify-end sidebar-menu items-center flex-col w-full">
                 {this.state.navItems.map(elm => {
                   let isActive = this.state.activeLink === elm.name;
                   let navClass = isActive
-                    ? "w-full pad-logout my-4"
+                    ? "w-full pad-logout cursor-pointer  my-4 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
                     : this.props.toggle
-                    ? "w-full pad-logout my-4 pl-2"
-                    : "w-full pad-logout justify-center my-4";
+                    ? "w-full pad-logout cursor-pointer my-4 pl-2 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                    : "w-full pad-logout cursor-pointer justify-center my-4";
                   return (
                     <li
                       key={elm.key}
@@ -187,6 +202,7 @@ class AsideAdmin extends Component {
                         }
                       >
                         <Link
+                          to={this.props.toggle ? "#" : `${elm["scrollchor"]}`}
                           className={
                             this.props.toggle
                               ? "flex justify-center items-center mr-auto pad-a"
@@ -221,7 +237,7 @@ class AsideAdmin extends Component {
                       >
                         {elm.options.map(opt => {
                           return (
-                            <li>
+                            <li key={opt.key}>
                               <Link to={opt.scrollchor}>
                                 <i className="fa fa-circle-o"></i>
                                 {opt.name}
@@ -240,7 +256,7 @@ class AsideAdmin extends Component {
           <div
             className={
               this.props.toggle
-                ? "flex   justify-start pad-logout w-full items-center "
+                ? "flex pl-2  justify-start pad-logout w-full items-center "
                 : "flex   justify-center pad-logout w-full items-center "
             }
           >
