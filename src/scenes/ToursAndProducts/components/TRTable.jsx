@@ -16,7 +16,7 @@ export default function TRTable(props) {
     return (
       <table className="table font-montserrat">
         <thead className="thead">
-          <tr className="tr">
+          <tr className="tr text-11 sD:text-13 mD:text-15 lD:text-21">
             <th className="th tour">tour</th>
             <th className="th type">type</th>
             <th className="th destination">destination</th>
@@ -28,7 +28,10 @@ export default function TRTable(props) {
         <tbody className="tbody">
           {tours.map((el, index) => {
             return (
-              <tr key={`row-${index}`} className="tr">
+              <tr
+                key={`row-${index}`}
+                className="tr text-9 sD:text-11 mD:text-13 lD:text-18"
+              >
                 <td className="td ">{el.tour}</td>
                 <td className="td ">{el.type}</td>
                 <td className="td ">{el.destination}</td>
@@ -36,7 +39,7 @@ export default function TRTable(props) {
                 <td className="td ">{el.price}</td>
                 <td className="td">
                   {el.description}
-                  <div className="td__preview">
+                  <div className="td__preview text-8 sD:text-10 mD:text-12 lD:text-16">
                     <a
                       data-id={el.id}
                       onClick={previewTour}
@@ -59,7 +62,7 @@ export default function TRTable(props) {
     return (
       <table className="table font-montserrat">
         <thead className="thead">
-          <tr className="tr">
+          <tr className="tr text-11 sD:text-13 mD:text-15 lD:text-21">
             <th className="th tour">product</th>
             <th className="th type">type</th>
             <th className="th destination">type of service</th>
@@ -70,18 +73,21 @@ export default function TRTable(props) {
         <tbody className="tbody">
           {products.map((el, index) => {
             return (
-              <tr key={`row-${index}`} className="tr">
+              <tr
+                key={`row-${index}`}
+                className="tr text-9 sD:text-11 mD:text-13 lD:text-18"
+              >
                 <td className="td ">{el.product}</td>
                 <td className="td ">{el.type}</td>
                 <td className="td ">{el.typeOfService}</td>
                 <td className="td ">{el.price}</td>
-                <td className="td">
+                <td className="td ">
                   {el.description}
                   <div className="td__preview">
                     <a
                       data-id={el.id}
                       onClick={previewProduct}
-                      className="td__preview__link"
+                      className="td__preview__link text-8 sD:text-10 mD:text-12 lD:text-16"
                       href="#"
                     >
                       Preview
@@ -105,26 +111,37 @@ export default function TRTable(props) {
 const Container = styled.div`
   width: 100%;
   .table {
+    margin-top: 0.75rem;
+
     width: 100%;
     text-align: left;
-    font-size: 0.88rem;
   }
 
   .thead {
+    text-align: left;
     color: #757575;
-    font-size: 0.9rem;
+    vertical-align: middle;
   }
 
   .tr {
-    border-bottom: solid 0.5px #707070;
+    border-bottom: solid 0.25px #707070;
+  }
+
+  .tr:last-child {
+    border-bottom: none;
   }
 
   .th {
-    padding: 1.3rem 1rem;
+    color: #757575;
+    padding: 1em 0.5em;
+    background-color: #f5f5f5;
+    font-weight: normal;
+    // width: 20%;
+    vertical-align: middle;
   }
 
   .td {
-    padding: 1.3rem 1rem;
+    padding: 1.3em 1em;
   }
 
   .td__preview {

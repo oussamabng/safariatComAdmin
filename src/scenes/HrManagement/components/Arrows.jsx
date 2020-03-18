@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function Arrows() {
   return (
-    <Container className="arrows">
+    <Container className="arrows text-11 sD:text-13 mD:text-15 lD:text-21s">
       <i className="fas fa-chevron-up"></i>
       <i className="fas fa-chevron-down"></i>
     </Container>
@@ -15,7 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-item: center;
-  margin-top: -0.4rem;
+
   .fa-chevron-up {
     vertical-align: middle;
     margin-bottom: 0.2rem;
