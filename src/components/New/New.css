@@ -72,7 +72,7 @@
 }
 .notification-part-right img {
   width: 100%;
-  height: 150px;
+  height: auto;
 }
 .card-header-tab .card-header {
   margin: 15px 0;

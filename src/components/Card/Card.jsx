@@ -15,7 +15,7 @@ class MyCard extends Component {
         <div className="rounded overflow-hidden set-back">
           <div className="flex justify-center items-center">
             <img
-              className="slider-img rounded-lg"
+              className="slider-img rounded-lg "
               src={Img}
               alt="Sunset in the mountains"
             />
@@ -28,12 +28,12 @@ class MyCard extends Component {
               <h1 className="text-base 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18">
                 {Rate}
               </h1>
-              <p className="xsD:text-8 sD:text-8 mD:text-110 lD:text-12">
+              <p className="xsD:text-8 sD:text-10 mD:text-12 lD:text-16">
                 ( based on {Rate} reviews)
               </p>
               <div className="my-staring">
                 <StarRatingComponent
-                  className="xsD:text-8 sD:text-8 mD:text-110 lD:text-12"
+                  className="xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
                   starCount={5}
                   value={views}
                   name="my-rateee"

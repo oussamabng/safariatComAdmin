@@ -72,6 +72,7 @@
   background-color: #3c6775;
 }
 .pad-logout {
+  border-left: 5px solid #ffb808;
   cursor: pointer;
 }
 .treeview-menu {

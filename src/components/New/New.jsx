@@ -62,7 +62,7 @@ class New extends Component {
                   <div className="notification-part-left w-1/4">
                     <div className="widget-content">
                       <img
-                        className="xmd:w-12 md:h-12 xsD:text-11 sD:text-13 mD:text-15 lD:h-14 lD:w-14 mD:h-12 mD:w-12 sD:w-10 sD:h-10"
+                        className="xsD:text-11 sD:text-13 mD:text-15 lD:h-20 lD:w-20 mD:h-12 mD:w-12 sD:w-10 sD:h-10"
                         src={Img}
                         alt="img"
                       />

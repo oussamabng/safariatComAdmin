@@ -153,8 +153,8 @@ class AsideAdmin extends Component {
                   <span
                     className={
                       this.props.toggle
-                        ? "text-white text-sm whitespace-no-wrap font-medium hide-dis"
-                        : "text-white text-sm whitespace-no-wrap font-medium hide-dis ok"
+                        ? "text-white  whitespace-no-wrap font-medium hide-dis xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                        : "text-white  whitespace-no-wrap font-medium hide-dis ok "
                     }
                   >
                     Oussama Bengoudifa
@@ -177,10 +177,10 @@ class AsideAdmin extends Component {
                 {this.state.navItems.map(elm => {
                   let isActive = this.state.activeLink === elm.name;
                   let navClass = isActive
-                    ? "w-full pad-logout my-4"
+                    ? "w-full pad-logout active-sidebar my-4 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
                     : this.props.toggle
-                    ? "w-full pad-logout my-4 pl-2"
-                    : "w-full pad-logout justify-center my-4";
+                    ? "w-full pad-logout my-4 pl-2 xsD:text-8 sD:text-10 mD:text-12 lD:text-16"
+                    : "w-full pad-logout  justify-center my-4";
                   return (
                     <li
                       key={elm.key}
@@ -202,7 +202,7 @@ class AsideAdmin extends Component {
                         }
                       >
                         <Link
-                          to="#"
+                          to={this.props.toggle ? "#" : `${elm["scrollchor"]}`}
                           className={
                             this.props.toggle
                               ? "flex justify-center items-center mr-auto pad-a"

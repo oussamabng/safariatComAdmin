@@ -154,11 +154,11 @@ class GenerlaAnalystics extends Component {
       <div className="app-main__outer">
         <section className="mainGeneralDashbord">
           <div className="app-page-title ">
-            <div className="flex lg:items-center md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
+            <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-center mD:items-center   mD:flex-col ">
               <div className="GeneralDash xsD:text-14 sD:text-17 mD:text-19 lD:text-28">
                 <h1>Analytics and Statistics</h1>
               </div>
-              <div className="flex  lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
+              <div className="flex lD:justify-center lD:items-center lD:ml-auto  GeneralDash">
                 <Link
                   className="hover-title xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
                   style={{
@@ -383,8 +383,8 @@ class GenerlaAnalystics extends Component {
                         {this.state.items.map(elem => {
                           let isActive = this.state.activeLink === elem.name;
                           let navClass = isActive
-                            ? "activeButt btn btn-alternate border-none cursor-pointer"
-                            : "btn btn-alternate border-none cursor-pointer";
+                            ? "activeButt btn btn-alternate border-none cursor-pointer xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
+                            : "btn btn-alternate border-none cursor-pointer xsD:text-9 sD:text-11 mD:text-13 lD:text-18";
                           return (
                             <p
                               name={elem["name"]}

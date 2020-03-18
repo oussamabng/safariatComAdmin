@@ -1,8 +1,10 @@
 .padleft {
-  padding-left: 230px;
+  z-index: 5;
+  padding-left: 0px;
   transition: padding 0.3s;
 }
 .padleft-sm {
+  z-index: 5;
   padding-left: 80px;
   transition: padding 0.5s;
 }

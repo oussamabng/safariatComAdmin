@@ -124,7 +124,7 @@
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   background-color: rgb(255, 255, 255);
-  max-height: 350px;
+  max-height: 330px;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
