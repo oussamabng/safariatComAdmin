@@ -170,7 +170,7 @@ export default class Finance extends Component {
           </div>
         </section>
         <div className="flex finance-row pt-4">
-          <div className="w-3/5 finance-part1 px-2">
+          <div className="finance-part1 px-2">
             <div className="flex">
               <div className="w-3/5 my-col ">
                 <div className="mb-3 card bg-white h-full flex flex-col justify-start  ">
@@ -258,15 +258,15 @@ export default class Finance extends Component {
               </div>
             </div>
           </div>
-          <div className="w-2/5  finance-part1 px-2">
+          <div className="fin-part1  px-2">
             <div className="flex ">
               <div className="w-1/2">
-                <div className="w-full h-full card-hover cursor-pointer">
+                <div className=" h-full card-hover cursor-pointer">
                   <FinanceCard data={this.state.dataProductCard} />
                 </div>
               </div>
               <div className="w-1/2">
-                <div className="w-full h-full card-hover cursor-pointer">
+                <div className=" h-full card-hover cursor-pointer">
                   <FinanceCard data={this.state.dataTourCard} />
                 </div>
               </div>

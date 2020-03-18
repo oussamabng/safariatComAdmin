@@ -9,7 +9,7 @@ export default class FinanceCard extends Component {
   render() {
     const { type, time, taux, number } = this.props.data;
     return (
-      <div className="p-4 shadow-lg bg-white md-col2 mx-4 my-0 rounded-lg flex justify-between flex-row items-center">
+      <div className="p-4 shadow-lg bg-white md-col2 mx-2 rounded-lg flex justify-between flex-row items-center">
         <div className="w-4/5 flex flex-col justify-between items-start">
           <div className="flex flex-col justify-between items-start">
             <span className="text-gray-600 text-sm md-text leading-relaxed">

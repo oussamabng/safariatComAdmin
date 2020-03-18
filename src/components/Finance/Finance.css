@@ -54,11 +54,23 @@
   background-color: #ffb808 !important;
   color: white !important;
 }
+.finance-part1 {
+  width: 60%;
+}
+.fin-part1 {
+  width: 40%;
+}
+
 @media (max-width: 1388px) {
   .finance-row {
+    width: 100% !important;
     flex-direction: column !important;
     align-items: center;
     justify-content: flex-start;
+  }
+  .fin-part1 {
+    width: 100% !important;
+    margin: 2rem 0;
   }
   .finance-part1 {
     width: 100% !important;
