@@ -84,7 +84,7 @@ class HeaderAdmin extends Component {
             <div className="ml-auto flex flex-row justify-center items-center">
               <div className="flex flex-col relative items-end">
                 <p
-                  className="mx-4 cursor-pointer xsD:w-12 xsD:h-12 sD:w-12 sD:h-12 mD:w-12 mD:h-12 lD:h-12 lD:w-12"
+                  className="mx-4 lD:h-14 lD:w-14  cursor-pointer xsD:w-12 xsD:h-12 sD:w-12 sD:h-12 mD:w-16 mD:h-16 "
                   onClick={() => {
                     this.showNotifications();
                   }}
