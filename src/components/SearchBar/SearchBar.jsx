@@ -105,4 +105,10 @@ const Container = styled.div`
     left: calc(50% - 0.1433333333rem);
     background: #a7a7a7;
   }
+  @media (max-width: 1440px) {
+    .agency-search-bar {
+      height: 35px !important;
+      padding: 1.1rem 1.1rem !important;
+    }
+  }
 `;
