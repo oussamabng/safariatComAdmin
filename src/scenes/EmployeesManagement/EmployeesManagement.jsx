@@ -154,7 +154,7 @@ export default class HrManagement extends Component {
             <hr className="hrManagement__top__hr"></hr>
             <div className="hrManagement__top__buttons font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21">
               <button
-                className="hrManagement__top__button employeesViewBTN "
+                className="hrManagement__top__button employeesViewBTN text-11 sD:text-13 mD:text-15 lD:text-21"
                 onClick={e => e.preventDefault}
               >
                 Employees Management
@@ -163,7 +163,12 @@ export default class HrManagement extends Component {
                 className="hrManagement__top__button tasksViewBTN"
                 onClick={e => e.preventDefault}
               >
-                <Link to="/admin/tasks">Tasks Management</Link>
+                <Link
+                  to="/admin/tasks"
+                  className="text-11 sD:text-13 mD:text-15 lD:text-21"
+                >
+                  Tasks Management
+                </Link>
               </button>
             </div>
           </div>

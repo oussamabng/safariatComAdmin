@@ -120,13 +120,18 @@ export default class ToursAndProducts extends Component {
               <hr className="toursAndProducts__top__hr"></hr>
               <div className="toursAndProducts__top__buttons font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21">
                 <button
-                  className="toursAndProducts__top__button toursViewBTN"
+                  className="toursAndProducts__top__button toursViewBTN text-11 sD:text-13 mD:text-15 lD:text-21"
                   onClick={e => e.preventDefault}
                 >
-                  <Link to="/admin/tmanagement">Tours Management</Link>
+                  <Link
+                    to="/admin/tmanagement"
+                    className="text-11 sD:text-13 mD:text-15 lD:text-21"
+                  >
+                    Tours Management
+                  </Link>
                 </button>
                 <button
-                  className="toursAndProducts__top__button productsViewBTN"
+                  className="toursAndProducts__top__button productsViewBTN text-11 sD:text-13 mD:text-15 lD:text-21"
                   onClick={e => e.preventDefault}
                 >
                   Products Management

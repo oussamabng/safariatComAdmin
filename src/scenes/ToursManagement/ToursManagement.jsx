@@ -129,7 +129,7 @@ export default class ToursManagement extends Component {
               <hr className="toursAndProducts__top__hr"></hr>
               <div className="toursAndProducts__top__buttons font-montserrat text-11 sD:text-13 mD:text-15 lD:text-21">
                 <button
-                  className="toursAndProducts__top__button toursViewBTN"
+                  className="toursAndProducts__top__button toursViewBTN text-11 sD:text-13 mD:text-15 lD:text-21"
                   onClick={e => e.preventDefault}
                 >
                   Tours Management
@@ -138,7 +138,12 @@ export default class ToursManagement extends Component {
                   className="toursAndProducts__top__button productsViewBTN"
                   onClick={e => e.preventDefault}
                 >
-                  <Link to="/admin/pmanagement">Products Management</Link>
+                  <Link
+                    to="/admin/pmanagement"
+                    className="text-11 sD:text-13 mD:text-15 lD:text-21"
+                  >
+                    Products Management
+                  </Link>
                 </button>
               </div>
             </div>

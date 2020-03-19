@@ -155,10 +155,15 @@ export default class HrManagement extends Component {
                 className="hrManagement__top__button employeesViewBTN "
                 onClick={e => e.preventDefault}
               >
-                <Link to="/admin/employees">Employees Management </Link>
+                <Link
+                  to="/admin/employees"
+                  className="text-11 sD:text-13 mD:text-15 lD:text-21"
+                >
+                  Employees Management{" "}
+                </Link>
               </button>
               <button
-                className="hrManagement__top__button tasksViewBTN"
+                className="hrManagement__top__button tasksViewBTN text-11 sD:text-13 mD:text-15 lD:text-21"
                 onClick={e => e.preventDefault}
               >
                 Tasks Management
