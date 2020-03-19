@@ -238,17 +238,17 @@ class UserInteraction extends Component {
               </div>
               <div className="flex lD:justify-center lD:items-center lD:ml-auto  GeneralDash">
                 <Link
-                  className="hover-title xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
+                  className="hover-titl xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
                   style={{
                     backgroundColor: "#ffffff",
-                    color: "#747474"
+                    color: "#ffb808"
                   }}
                   to="/admin/tours"
                 >
                   Tours bookings & Products
                 </Link>
                 <Link
-                  className="hover-title xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
+                  className="xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
                   style={{
                     backgroundColor: "#ffb808",
                     color: "#ffffff"

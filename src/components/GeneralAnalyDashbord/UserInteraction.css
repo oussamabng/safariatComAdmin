@@ -112,3 +112,7 @@
     padding: 0 8em !important;
   }
 }
+.hover-titl:hover {
+  color: white !important;
+  background-color: #ffb808 !important;
+}

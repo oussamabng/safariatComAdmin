@@ -106,6 +106,11 @@ class AsideAdmin extends Component {
               key: 12354,
               name: "Finance management",
               scrollchor: "/admin/finance"
+            },
+            {
+              key: 125354,
+              name: "Change plan",
+              scrollchor: "/admin/finance"
             }
           ],
           visible: false,
