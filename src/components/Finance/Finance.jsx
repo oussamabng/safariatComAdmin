@@ -147,7 +147,7 @@ export default class Finance extends Component {
   render() {
     const secondColumnStart = Math.floor(this.state.dataTasks.length / 2);
     return (
-      <div className="app-main__outer">
+      <div className="app-main__outer bg-white">
         <section className="mainGeneralDashbord">
           <div className="app-page-title finance-page pt-0">
             <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
@@ -215,7 +215,7 @@ export default class Finance extends Component {
                   </div>
                 </div>
               </div>
-              <div className="w-2/5">
+              <div className="w-2/5 card">
                 <div className="w-full flex flex-col justify-center h-full bg-white ">
                   <div className="card-header-tab card-header flex-row  sm:px-5">
                     <div className="card-header-title  font-size-lg text-capitalize font-weight-normal xsD:text-13 sD:text-15 mD:text-18 lD:text-21">
@@ -235,7 +235,7 @@ export default class Finance extends Component {
                 {/* Product sales value */}
               </div>
             </div>
-            <div className="flex">
+            <div className="flex card">
               <div className="w-full">
                 <div className="w-full h-full px-2 my-4 bg-white">
                   <div className="card-header-tab flex flex-row justify-between items-center p-4 sm:px-5">
@@ -271,7 +271,7 @@ export default class Finance extends Component {
                 </div>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex card mt-4 mx-2">
               <div className="w-full ">
                 <div className="w-full h-full my-6 bg-white">
                   <div className="card-header-tab flex flex-row justify-between items-center p-4 sm:px-5">

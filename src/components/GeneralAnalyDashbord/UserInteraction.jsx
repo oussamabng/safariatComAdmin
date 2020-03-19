@@ -229,7 +229,7 @@ class UserInteraction extends Component {
     ];
     const secondColumnStart = Math.floor(result.length / 2);
     return (
-      <div className="app-main__outer">
+      <div className="app-main__outer bg-white">
         <section className="mainGeneralDashbord">
           <div className="app-page-title ">
             <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-between mD:items-center sD:justify-between sD:items-center  xsD:justify-between xsD:items-center">
@@ -397,7 +397,7 @@ class UserInteraction extends Component {
             </div>
             <div className="flex row_top justify-start lD:items-start lD:flex-row  mD:justify-start mD:items-center mb-4">
               {/* Top Liked tour begin */}
-              <div className="lD:w-3/5 rs:w-full scroll-div">
+              <div className="lD:w-3/5 rs:w-full card scroll-div">
                 <div className="card">
                   <div className="card-header-tab card-header">
                     <div className="card-header-title font-size-lg text-capitalize font-weight-normal">
