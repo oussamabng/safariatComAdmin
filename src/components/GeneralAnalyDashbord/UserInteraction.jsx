@@ -229,7 +229,7 @@ class UserInteraction extends Component {
     ];
     const secondColumnStart = Math.floor(result.length / 2);
     return (
-      <div className="app-main__outer bg-white">
+      <div className="app-main__outer ">
         <section className="mainGeneralDashbord">
           <div className="app-page-title ">
             <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-between mD:items-center sD:justify-between sD:items-center  xsD:justify-between xsD:items-center">

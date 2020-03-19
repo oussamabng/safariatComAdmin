@@ -151,7 +151,7 @@ class GenerlaAnalystics extends Component {
       /*min 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18 *
        /*min 1000 xsD:text-8 sD:text-10 mD:text-12 lD:text-16 */
 
-      <div className="app-main__outer bg-white">
+      <div className="app-main__outer">
         <section className="mainGeneralDashbord">
           <div className="app-page-title ">
             <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-between mD:items-center sD:justify-between sD:items-center  xsD:justify-between xsD:items-center">

@@ -147,7 +147,7 @@ export default class Finance extends Component {
   render() {
     const secondColumnStart = Math.floor(this.state.dataTasks.length / 2);
     return (
-      <div className="app-main__outer bg-white">
+      <div className="app-main__outer">
         <section className="mainGeneralDashbord">
           <div className="app-page-title finance-page pt-0">
             <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
