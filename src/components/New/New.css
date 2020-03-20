@@ -23,24 +23,6 @@
   justify-content: space-between;
   align-items: center;
 }
-.all-details-new {
-  display: flex;
-  flex-direction: column;
-}
-.full-p,
-.fullname-new p {
-  margin-left: 15px;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.17;
-  letter-spacing: normal;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #757575;
-}
 
 .date-new p {
   font-size: 12px !important;

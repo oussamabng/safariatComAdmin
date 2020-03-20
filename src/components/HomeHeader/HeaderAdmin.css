@@ -77,7 +77,7 @@
 .buttons_nav {
   margin-right: 50px;
 }
-.buttons_nav .active {
+.buttons_nav a.active {
   color: #fdb607;
 }
 .middlePart {
@@ -92,9 +92,8 @@
 }
 .buttons_nav a {
   margin: 0 50px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 17px;
-  font-family: "Segoe UI";
   color: #707070;
 }
 .search_admin-v {

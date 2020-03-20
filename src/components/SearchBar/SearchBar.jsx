@@ -19,10 +19,7 @@ export default class SearchBar extends Component {
               <span className="glass-icon__stick"></span>
             </div>
           </div>
-          <input
-            className="agency-input xsD:text-9 sD:text-11 mD:text-13 lD:text-18"
-            type="text"
-          />
+          <input className="text-21" type="text" />
         </div>
       </Container>
     );
@@ -46,12 +43,12 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
     background: #fff;
-    padding: 1.3rem 1.3rem;
+    padding: 1.1rem 1.1rem !important;
     border-radius: 1.6rem;
     color: #a7a7a7;
     margin: 0 auto;
     cursor: text;
-    height: 40px;
+    height: 35px;
     -webkit-box-shadow: 0px 0px 20px -9px #999;
     -moz-box-shadow: 0px 0px 20px -9px #999;
     box-shadow: 0px 0px 20px -9px #999;
@@ -104,11 +101,5 @@ const Container = styled.div`
     bottom: 0;
     left: calc(50% - 0.1433333333rem);
     background: #a7a7a7;
-  }
-  @media (max-width: 1440px) {
-    .agency-search-bar {
-      height: 35px !important;
-      padding: 1.1rem 1.1rem !important;
-    }
   }
 `;

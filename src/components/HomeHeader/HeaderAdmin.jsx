@@ -54,28 +54,16 @@ class HeaderAdmin extends Component {
               <SearchBar />
               <div className="middlePart">
                 <div className="buttons_nav">
-                  <a
-                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
-                    href="#"
-                  >
+                  <a className="text-21 active" href="#">
                     Home
                   </a>
-                  <a
-                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
-                    href="#"
-                  >
+                  <a className="text-21" href="#">
                     Create+
                   </a>
-                  <a
-                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
-                    href="#"
-                  >
+                  <a className="text-21" href="#">
                     Services
                   </a>
-                  <a
-                    className="xsD:text-11 sD:text-13 mD:text-15 lD:text-21"
-                    href="#"
-                  >
+                  <a className="text-21" href="#">
                     Support
                   </a>
                 </div>
