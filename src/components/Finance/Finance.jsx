@@ -10,6 +10,7 @@ import Task from "../Task/Task.jsx";
 import FinanceTable from "../FinanceTable/FinanceTable";
 import { ReactComponent as ArrowLeft } from "../GeneralAnalyDashbord/images/left-arrow.svg";
 import { ReactComponent as ArrowRight } from "../GeneralAnalyDashbord/images/right-arrow.svg";
+import HeaderPage from "../HeaderPage/HeaderPage";
 
 export default class Finance extends Component {
   constructor(props) {
@@ -147,29 +148,18 @@ export default class Finance extends Component {
   render() {
     const secondColumnStart = Math.floor(this.state.dataTasks.length / 2);
     return (
-      <div className="app-main__outer">
-        <section className="mainGeneralDashbord">
-          <div className="app-page-title finance-page pt-0">
-            <div className="flex xl:items-end md:justify-center md:items-center  lg:justify-between md:flex-col lg:flex-row">
-              <div className="GeneralDash xsD:text-14 sD:text-19 mD:text-21 lD:text-28">
-                <h1>Finance</h1>
-              </div>
-              <div className="flex lg:justify-center lg:items-center lg:ml-auto md:mt-4 GeneralDash">
-                <Link
-                  className="hover-title xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
-                  style={{
-                    backgroundColor: "#ffb808",
-                    color: "#ffffff"
-                  }}
-                  to="/admin/finance"
-                >
-                  Finance management
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div className="flex finance-row pt-4">
+      <div className="z-10 flex flex-col ">
+        <HeaderPage
+          title="Finance"
+          buttons={[
+            {
+              title: "  Finance management",
+              active: true,
+              href: "/admin/finance"
+            }
+          ]}
+        />
+        <div className="flex finance-row">
           <div className="finance-part1 px-2">
             <div className="flex">
               <div className="w-3/5 my-col ">
@@ -206,7 +196,7 @@ export default class Finance extends Component {
                       aria-label="this is a hint"
                     >
                       <button className="btn-icon btn-icon-only btn btn-link">
-                        <Info fill="#b3b8bd" className="info-btn" />
+                        <Info fill="#b3b8bd" className="w-4 h-4" />
                       </button>
                     </span>
                   </div>
@@ -226,7 +216,7 @@ export default class Finance extends Component {
                       aria-label="this is a hint"
                     >
                       <button className="btn-icon btn-icon-only btn btn-link">
-                        <Info fill="#b3b8bd" className="info-btn" />
+                        <Info fill="#b3b8bd" className="w-4 h-4" />
                       </button>
                     </span>
                   </div>
@@ -244,8 +234,8 @@ export default class Finance extends Component {
                     </div>
                     <div className="flex ml-auto justify-between items-center">
                       <div className="flex mr-6">
-                        <ArrowLeft className="arrows px-1" />
-                        <ArrowRight className="arrows px-1" />
+                        <ArrowLeft className="cursor-pointer w-6 h-6 px-1" />
+                        <ArrowRight className="cursor-pointer w-6 h-6 px-1" />
                       </div>
                       <p className="btn ml-auto px-6 xsD:text-9 sD:text-11 mD:text-13 lD:text-18 py-3 shadow-md btn-alternate border-none cursor-pointer">
                         Update

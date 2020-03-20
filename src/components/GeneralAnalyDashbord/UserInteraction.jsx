@@ -7,6 +7,7 @@ import Chart from "react-apexcharts";
 import Dubai from "./images/dubai.jpg";
 import MapChart from "../Graphs/GeoChart.jsx";
 import { Link } from "react-router-dom";
+import HeaderPage from "../HeaderPage/HeaderPage";
 
 class UserInteraction extends Component {
   constructor(props) {
@@ -229,38 +230,22 @@ class UserInteraction extends Component {
     ];
     const secondColumnStart = Math.floor(result.length / 2);
     return (
-      <div className="app-main__outer ">
-        <section className="mainGeneralDashbord">
-          <div className="app-page-title ">
-            <div className="flex lD:items-center lD:flex-row lD:justify-between mD:justify-between mD:items-center sD:justify-between sD:items-center  xsD:justify-between xsD:items-center">
-              <div className="GeneralDash xsD:text-14 sD:text-19 mD:text-21 lD:text-28">
-                <h1>Analytics and Statistics</h1>
-              </div>
-              <div className="flex lD:justify-center lD:items-center lD:ml-auto  GeneralDash">
-                <Link
-                  className="hover-titl xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
-                  style={{
-                    backgroundColor: "#ffffff",
-                    color: "#ffb808"
-                  }}
-                  to="/admin/tours"
-                >
-                  Tours bookings & Products
-                </Link>
-                <Link
-                  className="xsD:text-13 sD:text-15 mD:text-19 lD:text-21"
-                  style={{
-                    backgroundColor: "#ffb808",
-                    color: "#ffffff"
-                  }}
-                  to="/admin/users"
-                >
-                  Users interactions
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="z-10 flex flex-col  ">
+        <HeaderPage
+          title="Analytics and Statistics"
+          buttons={[
+            {
+              title: "Tours booking & Products",
+              active: false,
+              href: "/admin/tours"
+            },
+            {
+              title: "Users interactions",
+              active: true,
+              href: "/admin/users"
+            }
+          ]}
+        />
         <div className="flex w-full lD:flex-row mb-4 mD:flex-col sD:flex-col xsD:flex-col ">
           <div className=" lD:w-3/5 mD:w-full sD:p-8 lD:p-2 pt-0 text-center">
             <div className="flex mb-4">
