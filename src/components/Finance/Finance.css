@@ -26,6 +26,8 @@
   padding: 0 10px !important;
   padding-bottom: 2px !important;
 }
+.card-header-tab {
+}
 @media (max-width: 1142px) {
   .card-header.card-header-tab .card-header-title {
     font-size: 14px !important;
@@ -56,9 +58,11 @@
 }
 .finance-part1 {
   width: 60%;
+  height: 100%;
 }
 .fin-part1 {
   width: 40%;
+  height: 100%;
 }
 
 @media (max-width: 1388px) {
@@ -74,7 +78,6 @@
   }
   .finance-part1 {
     width: 100% !important;
-    margin: 2rem 0;
   }
 
   .chart-donut {

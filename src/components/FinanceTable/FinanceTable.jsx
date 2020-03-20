@@ -10,7 +10,10 @@ export default class FinanceTable extends Component {
   }
   render() {
     return (
-      <div id="example_wrapper" className="dataTables_wrapper dt-bootstrap4">
+      <div
+        id="example_wrapper"
+        className="dataTables_wrapper dt-bootstrap4 bg-white"
+      >
         <div className="flex">
           <div className="w-full px-2 scroll-div">
             <table

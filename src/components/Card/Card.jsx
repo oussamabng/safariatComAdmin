@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
-import "./Card.css";
 import styled from "styled-components";
 
 class MyCard extends Component {
@@ -11,29 +10,33 @@ class MyCard extends Component {
   render() {
     const { Img, Title, Rate, views } = this.props;
     return (
-      <Container style={{ width: "90%", height: "100%" }}>
-        <div className="rounded overflow-hidden set-back">
+      <Container
+        className="agency_card"
+        style={{ width: "90%", height: "100%" }}
+      >
+        <div
+          style={{
+            backgroundColor: "#f9f9f9"
+          }}
+          className="rounded overflow-hidden"
+        >
           <div className="flex justify-center items-center">
             <img
-              className="slider-img rounded-lg "
+              className="slider-img rounded-lg"
               src={Img}
               alt="Sunset in the mountains"
             />
           </div>
-          <div className="px-1 py-4  flex flex-col">
-            <div className="font-bold text-lg md:px-2 mb-2 1366 xsD:text-11  sD:text-13 mD:text-15 lD:text-21">
-              {Title}
-            </div>
-            <div className="flex lD:flex-row sD:flex-col sD:justify-start sD:items-start lD:items-center mD:flex-col mD:items-start md:px-2 flex-row justify-between items-center set-fonts">
-              <h1 className="text-base 1200 xsD:text-9 sD:text-11 mD:text-13 lD:text-18">
-                {Rate}
-              </h1>
-              <p className="xsD:text-8 sD:text-10 mD:text-12 lD:text-16">
+          <div className="px-2 py-4 flex flex-col">
+            <div className="text-21 mb-2">{Title}</div>
+            <div className="flex justify-between items-center text-center">
+              <h1 className="whitespace-no-wrap text-16">Rate</h1>
+              <p className="whitespace-no-wrap text-gray-600 text-14">
                 ( based on {Rate} reviews)
               </p>
-              <div className="my-staring">
+              <div className="whitespace-no-wrap text-14">
                 <StarRatingComponent
-                  className="rate-card xsD:text-11 sD:text-12 mD:text-15 lD:text-16"
+                  className="rate-card "
                   starCount={5}
                   value={views}
                   name="my-rateee"
@@ -49,7 +52,13 @@ class MyCard extends Component {
 export default MyCard;
 const Container = styled.div`
   .slider-img {
-    max-height: 190px;
+    max-height: 250px;
     width: 100%;
+  }
+
+  @media (max-width: 1440px) {
+    .agency_card {
+      width: 75% !important;
+    }
   }
 `;

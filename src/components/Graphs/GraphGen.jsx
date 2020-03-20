@@ -2,23 +2,17 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import "./GraphGen.css";
 import { ReactComponent as Info } from "../GeneralAnalyDashbord/images/information.svg";
-
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 export default class GraphGen extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      activeLink: this.props.activeLink,
       series: [
         {
           name: "Day",
           data: [80, 65, 60, 44, 77, 58, 63, 60, 15]
-        },
-        {
-          name: "Week",
-          data: [60, 55, 38, 15, 61, 58, 63, 44, 55]
-        },
-        {
-          name: "Month",
-          data: [44, 40, 25, 80, 38, 58, 63, 78, 63]
         }
       ],
       options: {
@@ -32,10 +26,10 @@ export default class GraphGen extends Component {
             }
           },
           {
-            breakpoint: 1100,
+            breakpoint: 1200,
             options: {
               chart: {
-                width: 350
+                width: 600
               }
             }
           }
@@ -62,7 +56,7 @@ export default class GraphGen extends Component {
         },
         yaxis: {
           axisTicks: {
-            show: true
+            show: false
           },
           axisBorder: {
             show: false
@@ -73,8 +67,18 @@ export default class GraphGen extends Component {
             show: false
           }
         },
+        legend: {
+          show: false
+        },
         fill: {
-          opacity: 1
+          type: "gradient",
+          gradient: {
+            shade: "light",
+            type: "vertical",
+            shadeIntensity: 0.3,
+            gradientToColors: undefined, // optional, if not defined - uses the shades of same color in series
+            inverseColors: false
+          }
         },
         tooltip: {
           y: {
@@ -96,37 +100,83 @@ export default class GraphGen extends Component {
     };
   }
 
+  setActive(elm) {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        activeLink: elm
+      };
+    });
+  }
+
   render() {
     return (
-      <div className="mb-3 card">
-        <div className="card-header-tab card-header">
-          <div className="xsD:text-13 sD:text-15 mD:text-18 lD:text-21 card-header-title font-size-lg text-capitalize font-weight-normal">
-            Top tours
-          </div>
-          <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
-            <div className="btn-group dropdown">
+      <Container>
+        <div className="mb-3 card">
+          <div className="flex items-center h-16 border-none py-2  px-6 bg-white">
+            <div className="flex items-center whitespace-no-wrap text-21">
+              Bookings & Ordering
+            </div>
+            <div className="flex justify-between items-center ml-auto">
+              {this.props.items.map(elem => {
+                let isActive = this.state.activeLink === elem.name;
+                let navClass = isActive
+                  ? "agency_choice_time_btn active border-none cursor-pointer "
+                  : "agency_choice_time_btn border-none cursor-pointer ";
+                return (
+                  <Link
+                    to="#"
+                    name={elem["name"]}
+                    className={navClass}
+                    scrollchor={elem["scrollchor"]}
+                    key={elem["key"]}
+                    onClick={props =>
+                      this.setActive(
+                        props.currentTarget.attributes[0].nodeValue
+                      )
+                    }
+                  >
+                    {elem["name"]}
+                  </Link>
+                );
+              })}
               <span
-                className="hint--bottom text-center  hint--medium"
+                className="hint--bottom text-center ml-4 hint--medium"
                 aria-label="this is a hint"
               >
                 <button className="btn-icon btn-icon-only btn btn-link">
-                  <Info fill="#b3b8bd" className="info-btn" />
+                  <Info fill="#b3b8bd" className="w-4 h-4" />
                 </button>
               </span>
               {/* here the dropdown div... */}
             </div>
           </div>
+          <div className="rowGraph">
+            <Chart
+              className="GenChart"
+              options={this.state.options}
+              series={this.state.series}
+              type="bar"
+              width="550"
+            />
+          </div>
         </div>
-        <div className="rowGraph">
-          <Chart
-            className="GenChart"
-            options={this.state.options}
-            series={this.state.series}
-            type="bar"
-            width="550"
-          />
-        </div>
-      </div>
+      </Container>
     );
   }
 }
+const Container = styled.div`
+  .GenChart .apexcharts-legend-series {
+    display: none !important;
+  }
+  @media (max-width: 1255px) {
+    .agency_choice_time_btn {
+      display: none !important;
+    }
+  }
+  @media (max-width: 1200px) {
+    .agency_choice_time_btn {
+      display: flex !important;
+    }
+  }
+`;
