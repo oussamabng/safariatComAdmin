@@ -58,9 +58,11 @@
 }
 .finance-part1 {
   width: 60%;
+  height: 100%;
 }
 .fin-part1 {
   width: 40%;
+  height: 100%;
 }
 
 @media (max-width: 1388px) {
@@ -76,7 +78,6 @@
   }
   .finance-part1 {
     width: 100% !important;
-    margin: 2rem 0;
   }
 
   .chart-donut {

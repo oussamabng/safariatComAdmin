@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import "./UserInteraction.css";
 import { ReactComponent as Info } from "./images/information.svg";
 import { ReactComponent as Mail } from "./images/envelope.svg";
 import { ReactComponent as Dots } from "./images//ellipsis.svg";
-import Dubai from "./images/dubai.jpg";
 import Person from "../../assets/person_girl.jpg";
 import MapChart from "../Graphs/GeoChart.jsx";
 import { Link } from "react-router-dom";
@@ -493,6 +491,32 @@ const Container = styled.div`
     overflow: hidden;
     transition: 4s width;
   }
+  .set-background-color-v2 {
+    background-color: #ffffff;
+    opacity: 0.55;
+  }
+  .set-top-tour h1 {
+    margin: 5px 0;
+    font-size: 14px !important;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+  }
+  .set-top-tour p {
+    font-size: 11px !important;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+  }
+
   @media (max-width: 1600px) {
     .agency_contact_user {
       flex-direction: column !important;

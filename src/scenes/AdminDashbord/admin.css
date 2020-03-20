@@ -59,3 +59,12 @@
     width: 100% !important;
   }
 }
+.set-top-tour {
+  background-image: url("../../components/GeneralAnalyDashbord/images/dubai.jpg");
+  height: 160px;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: left;
+}
