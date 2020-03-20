@@ -31,8 +31,8 @@
   padding-top: 50px;
 }
 .logout-btn {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 .active-sidebar {
   background-color: #3c6775;
@@ -120,11 +120,11 @@
   font-weight: 400;
 }
 .hide-dis {
-  font-size: auto!important;
+  font-size: auto !important;
   transition: font-size 0.5s;
 }
 .hide-dis.ok {
-  font-size: 0px!important;
+  font-size: 0px !important;
   transition: font-size 0.5s;
 }
 .treeview-menu.h-auto li a:hover {

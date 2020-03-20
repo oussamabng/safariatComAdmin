@@ -271,7 +271,7 @@ class AsideAdmin extends Component {
                 className={
                   this.props.toggle
                     ? "text-white ml-2 pl-px hide-dis"
-                    : "hide-dis ok"
+                    : "hide-dis text-white ok"
                 }
               >
                 Logout

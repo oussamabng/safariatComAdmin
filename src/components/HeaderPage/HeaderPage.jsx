@@ -10,7 +10,6 @@ export default class HeaderPage extends Component {
   render() {
     const { title, buttons } = this.props;
     return (
-
       <Container>
         <section className="agency_header_section">
           <div className="flex items-center">
@@ -21,7 +20,9 @@ export default class HeaderPage extends Component {
               {buttons.map(btn => (
                 <Link
                   className={
-                    btn.active ? "agency_active_btn mx-4 px-2 py-4 " : "agency_secondary_btn mx-4 px-2 py-4"
+                    btn.active
+                      ? "agency_active_btn mx-4 px-2 py-4 "
+                      : "agency_secondary_btn mx-4 px-2 py-4"
                   }
                   to={btn.href}
                 >
@@ -36,30 +37,30 @@ export default class HeaderPage extends Component {
   }
 }
 const Container = styled.div`
-.agency_active_btn{
-    color:white;
-    background-color:#ffb808;
-    font-size:18px;
+  .agency_active_btn {
+    color: white;
+    background-color: #ffb808;
+    font-size: 18px;
     border-radius: 18px;
     box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
-}
-.agency_secondary_btn{
-    color:#ffb808;
-    background-color:white;
-    font-size:18px;
+  }
+  .agency_secondary_btn {
+    color: #ffb808;
+    background-color: white;
+    font-size: 18px;
     border-radius: 18px;
     box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
-}
-.agency_secondary_btn:hover{
-    color:white;
-    background-color:#ffb808;
-}
-.agency_header_section{
-  padding:2.9em;
-  margin: 0px -30px 30px;
-  margin-bottom: 0 !important;
-}
-.agency_header_text{
-  font-size:28px;
-}
+  }
+  .agency_secondary_btn:hover {
+    color: white;
+    background-color: #ffb808;
+  }
+  .agency_header_section {
+    padding: 2.9em;
+    margin: 0px -30px 30px;
+    margin-bottom: 0 !important;
+  }
+  .agency_header_text {
+    font-size: 28px;
+  }
 `;

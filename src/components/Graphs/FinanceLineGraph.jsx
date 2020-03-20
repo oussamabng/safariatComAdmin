@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-
+import styled from "styled-components";
 export default class FinanceLineGraph extends Component {
   constructor(props) {
     super(props);
@@ -83,6 +83,9 @@ export default class FinanceLineGraph extends Component {
             opacity: 0.5
           }
         },
+        legend: {
+          show: false
+        },
         tooltip: {
           y: {
             formatter: function(val) {
@@ -108,14 +111,19 @@ export default class FinanceLineGraph extends Component {
   }
   render() {
     return (
-      <div className="line-chart">
+      <Container className="agency_line_chart">
         <Chart
           options={this.state.options}
           series={this.state.series}
           type="line"
           width="550"
         />
-      </div>
+      </Container>
     );
   }
 }
+const Container = styled.div`
+  .agency_line_chart .apexcharts-legend {
+    display: none !important;
+  }
+`;

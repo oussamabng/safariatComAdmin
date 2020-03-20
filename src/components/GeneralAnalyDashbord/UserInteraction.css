@@ -5,20 +5,12 @@
   width: 40px !important;
   height: 40px !important;
 }
-.set-background-color {
-  background-color: #f3f3f3;
-}
+
 .set-background-color-v2 {
   background-color: #ffffff;
   opacity: 0.55;
 }
-.scroll-div {
-  overflow: scroll;
-  overflow-x: hidden;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none;
-  max-height: 450px;
-}
+
 .set-top-tour {
   background-image: url("./images/dubai.jpg");
   height: 160px;
@@ -50,18 +42,6 @@
   color: #2d2d2d;
 }
 .spanProgress {
-  display: block;
-  height: 100%;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: #179ef7;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  transition: 4s width;
 }
 
 @media (max-width: 1470px) {
@@ -77,9 +57,7 @@
     margin: 0 5px !important;
   }
 }
-.font-size-res {
-  font-size: 1rem !important;
-}
+
 @media (max-width: 1316px) {
   .font-size-res {
     font-size: 0.8rem !important;

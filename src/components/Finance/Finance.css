@@ -26,6 +26,8 @@
   padding: 0 10px !important;
   padding-bottom: 2px !important;
 }
+.card-header-tab {
+}
 @media (max-width: 1142px) {
   .card-header.card-header-tab .card-header-title {
     font-size: 14px !important;
