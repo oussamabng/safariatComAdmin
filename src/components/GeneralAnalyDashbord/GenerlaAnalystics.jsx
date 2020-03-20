@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import GeneralGraph from "../../components/Graphs/GraphGen.jsx";
-import "./GenerlaAnalystics.css";
 import Dubai from "./images/dubai.jpg";
 import Sahara from "./images/sahara.jpg";
 import { ReactComponent as ArrowLeft } from "./images/left-arrow.svg";
