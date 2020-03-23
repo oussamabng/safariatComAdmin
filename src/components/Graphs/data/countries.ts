@@ -372,6 +372,7 @@ export let countries = [
 		name: "Dominican Republic"
 	},
 	{
+		key: "ALG",
 		latitude: 28.033886,
 		longitude: 1.659626,
 		name: "Algeria"

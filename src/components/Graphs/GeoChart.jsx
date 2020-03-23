@@ -1,7 +1,7 @@
 import React from "react";
 import { VectorMap } from "react-jvectormap";
 import styled from "styled-components";
-const MapChart = props => {
+const MapChart = ({ countryData }) => {
 	return (
 		<Container>
 			<div style={{ width: 600, height: 400 }}>
@@ -17,13 +17,11 @@ const MapChart = props => {
 					}}
 					markerStyle={{
 						initial: {
-							fill: "#FFCC4E",
+							fill: "#FFCC4E"
 						}
 					}}
 					containerClassName="map"
-					markers={{
-						US: { latLng: [38.9, -98.45], name: "Name of City" }
-					}}
+					markers={Object.assign({}, countryData)}
 				>
 					<p>test</p>
 				</VectorMap>

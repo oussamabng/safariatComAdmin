@@ -154,13 +154,17 @@
 			"progress": 90
 		},
 		{
-			"place": "Mekkah, Saudi Arabia",
+			"place": "Tunis, Tunisia",
 			"progress": 65
 		},
 		{
-			"place": "Milan, Italie",
+			"place": "Reo de janiro, Brazil",
+			"progress": 65
+		},
+		{
+			"place": "Milan, Italy",
 			"progress": 40
 		}
 	],
-	"map_world": ["Algeria"]
+	"map_world": ["Algeria", "Tunisia", "Brazil", "Italy"]
 }

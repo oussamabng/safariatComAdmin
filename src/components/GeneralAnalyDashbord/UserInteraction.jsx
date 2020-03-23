@@ -49,9 +49,12 @@ const UserInteraction = (
 	useEffect(() => {
 		axios.get("http://localhost:3000/map_world").then(res => {
 			res.data.map(country => {
-				countryNames.push(
-					countries.filter(option => option.name === country)[0]
-				);
+				let arr = countries.filter(option => option.name === country)[0];
+				let ar = {
+					name: arr.name,
+					latLng: [arr.latitude, arr.longitude]
+				};
+				countryNames.push(ar);
 			});
 			setCountryData(countryNames);
 		});
