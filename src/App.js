@@ -1,10 +1,10 @@
 import React from "react";
 import "hint.css";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect
 } from "react-router-dom";
 // font awessome Fonts
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -27,73 +27,76 @@ import EmployeesManagement from "./scenes/EmployeesManagement/EmployeesManagemen
 import TasksManagement from "./scenes/TasksManagement/TasksManagement";
 import TempAside from "./components/TempAside/TempAside.jsx";
 function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route component={TempAside} path="/temp"></Route>
-        <Route component={Home} exact path="/"></Route>
-        <Route component={SearchBar} path="/search"></Route>
-        <Route component={Services} path="/services"></Route>
-        <Route component={Blog} path="/blog"></Route>
-        <Route component={Contact} path="/contact"></Route>
-        <Route component={About} path="/about"></Route>
-        <Route
-          path="/admin/tours"
-          render={props => (
-            <Admin
-              active="Analytics and Statistics"
-              content={<GenerlaAnalystics />}
-            />
-          )}
-        />
-        {/* Mustapha Routes */}
+	return (
+		<Router>
+			<Switch>
+				<Route component={TempAside} path="/temp"></Route>
+				<Route component={Home} exact path="/"></Route>
+				<Route component={SearchBar} path="/search"></Route>
+				<Route component={Services} path="/services"></Route>
+				<Route component={Blog} path="/blog"></Route>
+				<Route component={Contact} path="/contact"></Route>
+				<Route component={About} path="/about"></Route>
+				<Route
+					path="/admin/tours"
+					render={props => (
+						<Admin
+							active="Analytics and Statistics"
+							content={<GenerlaAnalystics />}
+						/>
+					)}
+				/>
+				{/* Mustapha Routes */}
 
-        <Route
-          path="/admin/employees"
-          render={props => (
-            <Admin active="HR management" content={<EmployeesManagement />} />
-          )}
-        />
+				<Route
+					path="/admin/employees"
+					render={props => (
+						<Admin active="HR management" content={<EmployeesManagement />} />
+					)}
+				/>
 
-        <Route
-          path="/admin/tasks"
-          render={props => (
-            <Admin active="HR management" content={<TasksManagement />} />
-          )}
-        />
+				<Route
+					path="/admin/tasks"
+					render={props => (
+						<Admin active="HR management" content={<TasksManagement />} />
+					)}
+				/>
 
-        {/* Refactored */}
-        <Route
-          path="/admin/tmanagement"
-          render={props => (
-            <Admin active="HR management" content={<ToursManagement />} />
-          )}
-        />
+				{/* Refactored */}
+				<Route
+					path="/admin/tmanagement"
+					render={props => (
+						<Admin active="HR management" content={<ToursManagement />} />
+					)}
+				/>
 
-        <Route
-          path="/admin/pmanagement"
-          render={props => (
-            <Admin active="HR management" content={<ProductsManagement />} />
-          )}
-        />
+				<Route
+					path="/admin/pmanagement"
+					render={props => (
+						<Admin active="HR management" content={<ProductsManagement />} />
+					)}
+				/>
 
-        {/* --------------------------------------------- */}
-        <Route
-          path="/admin/finance"
-          render={props => (
-            <Admin active="Finance management" content={<Finance />} />
-          )}
-        />
-        <Route
-          path="/admin/users"
-          render={props => (
-            <Admin active="Users interactions" content={<UserInteraction />} />
-          )}
-        />
-        <Redirect from="/admin" to="/admin/tours" />
-      </Switch>
-    </Router>
-  );
+				{/* --------------------------------------------- */}
+				<Route
+					path="/admin/finance"
+					render={props => (
+						<Admin active="Finance management" content={<Finance />} />
+					)}
+				/>
+				<Route
+					path="/admin/users"
+					render={props => (
+						<Admin
+							active="Analytics and Statistics"
+							content={<UserInteraction />}
+						/>
+					)}
+				/>
+				<Redirect from="/admin" to="/admin/tours" />
+			</Switch>
+		</Router>
+	);
 }
 
 export default App;

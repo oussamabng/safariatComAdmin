@@ -34,16 +34,16 @@ const HeaderAdmin = props => {
 						<SearchBar />
 						<div className="middlePart">
 							<div className="buttons_nav">
-								<a className="text-21 active" href="#">
+								<a className="text-18 active" href="#">
 									Home
 								</a>
-								<a className="text-21" href="#">
+								<a className="text-18" href="#">
 									Create+
 								</a>
-								<a className="text-21" href="#">
+								<a className="text-18" href="#">
 									Services
 								</a>
-								<a className="text-21" href="#">
+								<a className="text-18" href="#">
 									Support
 								</a>
 							</div>
@@ -52,7 +52,7 @@ const HeaderAdmin = props => {
 					<div className="ml-auto flex flex-row justify-center items-center">
 						<div className="flex flex-col relative items-end">
 							<p
-								className="mx-4 lD:h-14 lD:w-14  cursor-pointer xsD:w-12 xsD:h-12 sD:w-12 sD:h-12 mD:w-16 mD:h-16 "
+								className="mx-4 lD:h-12 lD:w-12 cursor-pointer xsD:w-12 xsD:h-12 sD:w-12 sD:h-12 mD:w-16 mD:h-16 "
 								onClick={showNotifications}
 							>
 								<img src={Notification} alt="notification" />
