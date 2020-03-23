@@ -3,12 +3,15 @@ import axios from "axios";
 const CardTours = () => {
 	const [result, setResult] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [slicer, setSlicer] = useState(0);
+
 	useEffect(() => {
 		//fetch data
 		axios
 			.get("http://localhost:3000/tours")
 			.then(res => {
 				setResult(res.data);
+				setSlicer(Math.round(res.data.length / 2));
 				setIsLoaded(true);
 			})
 			.catch(err => {
@@ -21,7 +24,7 @@ const CardTours = () => {
 			{isLoaded ? (
 				<>
 					<div className="w-1/2">
-						{result.slice(0, 2).map(item => (
+						{result.slice(0, slicer).map(item => (
 							<div className=" rounded set-top-tour mx-1 my-1 sD:m-4">
 								<div className="flex flex-col p-2 justify-start set-background-color-v2">
 									<h1 className="text-18">{item["title"]}</h1>
@@ -31,7 +34,7 @@ const CardTours = () => {
 						))}
 					</div>
 					<div className="w-1/2">
-						{result.slice(2).map(item => (
+						{result.slice(slicer).map(item => (
 							<div className=" rounded set-top-tour mx-1 my-1 sD:m-4">
 								<div className="flex flex-col p-2 justify-start set-background-color-v2">
 									<h1 className="font-size-res">{item["title"]}</h1>

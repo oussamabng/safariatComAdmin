@@ -1,27 +1,47 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./Task.css";
-export default class Task extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <div className="flex flex-row justify-start w-full my-4 items-center">
-        <div className="float-left  flex flex-col justify-center items-start">
-          <div className="flex justify-between items-center">
-            <input type="checkbox" id="todo" name="todo" value="todo" />
-            <label
-              className="my-label"
-              htmlFor="todo"
-              data-content="travel agency need 1"
-            >
-              {this.props.name}
-            </label>
-          </div>
-          <span className="ml-10 text-sm text-deco">{this.props.date}</span>
-        </div>
-      </div>
-    );
-  }
-}
+import Axios from "axios";
+
+const Task = () => {
+	const [dataTasks, setDataTasks] = useState([]);
+	const handleCheckBox = e => {
+		//put request
+	};
+	useEffect(() => {
+		Axios.get("http://localhost:3000/tasks").then(res => {
+			setDataTasks(res.data);
+		});
+	}, []);
+	return (
+		<div className="flex flex-row justify-start items-start w-full">
+			<div className="w-1/2">
+				{dataTasks.map(item => (
+					<div
+						key={item.key}
+						className="flex flex-row justify-start w-full my-4 items-center"
+					>
+						<div className="float-left  flex flex-col justify-center items-start">
+							<div className="flex justify-between items-center">
+								<input
+									type="checkbox"
+									data-key={item.key}
+									onChange={handleCheckBox}
+								/>
+								<label
+									className="my-label"
+									htmlFor="todo"
+									data-content="travel agency need 1"
+								>
+									{item.name}
+								</label>
+							</div>
+							<span className="ml-10 text-sm text-deco">{item.date}</span>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+};
+
+export default Task;

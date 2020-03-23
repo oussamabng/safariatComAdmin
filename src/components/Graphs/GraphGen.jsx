@@ -7,19 +7,16 @@ import styled from "styled-components";
 import axios from "axios";
 
 const GraphGen = props => {
-	const [series, setSeries] = useState([]);
-	const [activeLink, setActiveLink] = useState("Month");
-	const [isLoading, setIsLoading] = useState(false);
+	const [series, setSeries] = useState([{ data: [0, 0, 0, 0, 0, 0, 0, 0] }]);
+	const [activeLink, setActiveLink] = useState("Week");
 	useEffect(() => {
 		axios
 			.get("http://localhost:3000/booking")
 			.then(res => {
 				let data = res.data.filter(e => e.name === activeLink);
 				setSeries(data);
-				setIsLoading(true);
 			})
 			.catch(err => {
-				setIsLoading(true);
 				alert("error fetchin data");
 			});
 	}, [activeLink]);
@@ -149,26 +146,16 @@ const GraphGen = props => {
 						{/* here the dropdown div... */}
 					</div>
 				</div>
-				{isLoading ? (
-					<div className="rowGraph">
-						<Chart
-							className="GenChart"
-							options={options}
-							series={series}
-							type="bar"
-							width="550"
-						/>
-					</div>
-				) : (
-					<div className="flex justify-center items-center">
-						<div class="lds-ring">
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
-					</div>
-				)}
+
+				<div className="rowGraph">
+					<Chart
+						className="GenChart"
+						options={options}
+						series={series}
+						type="bar"
+						width="550"
+					/>
+				</div>
 			</div>
 		</Container>
 	);

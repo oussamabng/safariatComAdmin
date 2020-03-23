@@ -39,7 +39,7 @@ const GenerlaAnalystics = ({
 		}
 	]
 }) => {
-	const [activeLink, setActiveLink] = useState("Month");
+	const [activeLink, setActiveLink] = useState("Hour");
 	const [slider, setSlider] = useState(null);
 	const [dataTopTours, setDataTopTours] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
@@ -111,6 +111,14 @@ const GenerlaAnalystics = ({
 			<div className="flex agency_row">
 				<div className="w-1/2 agency_col">
 					<div className="flex">
+						<div className="w-full">
+							<div className="px-4">
+								<GeneralGraph items={items} />
+							</div>
+						</div>
+					</div>
+
+					<div className="flex">
 						<div className="px-4 w-full">
 							<div className="mb-3 card">
 								<div className="flex items-center h-16 border-none py-2  px-6 bg-white">
@@ -132,13 +140,6 @@ const GenerlaAnalystics = ({
 									</div>
 								</div>
 								<TableProduct />
-							</div>
-						</div>
-					</div>
-					<div className="flex">
-						<div className="w-full">
-							<div className="px-4">
-								<GeneralGraph items={items} />
 							</div>
 						</div>
 					</div>
