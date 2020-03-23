@@ -1,0 +1,11 @@
+{
+    "folders": [],
+    "settings": {},
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.formatOnSave": true
+    },
+    "eslint.lintTask.enable": true,
+    "eslint.run": "onSave",
+    "prettier.useTabs": true
+}

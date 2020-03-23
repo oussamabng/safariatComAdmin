@@ -1,63 +1,80 @@
-import React, { Component } from "react";
-import {
-  MapsComponent,
-  LayersDirective,
-  LayerDirective,
-  MarkersDirective,
-  MarkerDirective,
-  Marker,
-  Inject,
-  Zoom
-} from "@syncfusion/ej2-react-maps";
-import { world_map } from "./data/WorldMap_Countries.ts";
-export default class GeoChart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <MapsComponent className="w-full" id="maps">
-        <Inject services={[Marker, Zoom]} />
-        <LayersDirective>
-          <LayerDirective
-            shapeData={world_map}
-            shapeSettings={{
-              fill: "#084C61"
-            }}
-          >
-            <MarkersDirective>
-              <MarkerDirective
-                visible={true}
-                shape={"Circle"}
-                fill="#FFCC4E"
-                dataSource={[
-                  {
-                    latitude: 49.95121990866204,
-                    longitude: 18.468749999999998,
-                    name: "Europe"
-                  },
-                  {
-                    latitude: 59.88893689676585,
-                    longitude: -109.3359375,
-                    name: "North America"
-                  },
-                  {
-                    latitude: -6.64607562172573,
-                    longitude: -55.54687499999999,
-                    name: "South America"
-                  },
-                  {
-                    latitude: 11.99950564947161,
-                    longitude: 23.471668402596443,
-                    name: "Algeria"
-                  }
-                ]}
-              ></MarkerDirective>
-            </MarkersDirective>
-          </LayerDirective>
-        </LayersDirective>
-      </MapsComponent>
-    );
-  }
-}
+import React, { useState, useEffect } from "react";
+import { VectorMap } from "react-jvectormap";
+import styled from "styled-components";
+import { countries } from "../Graphs/data/countries";
+import axios from "axios";
+
+const MapChart = () => {
+	const [countryData, setCountryData] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
+	const countryNames = [];
+	useEffect(() => {
+		axios
+			.get("http://localhost:3000/map_world")
+			.then(res => {
+				res.data.map(country => {
+					let country_filtred = countries.filter(
+						option => option.name === country
+					)[0];
+					let country_data = {
+						name: country_filtred.name,
+						latLng: [country_filtred.latitude, country_filtred.longitude]
+					};
+					countryNames.push(country_data);
+				});
+				setCountryData(countryNames);
+				setIsLoading(true);
+			})
+			.catch(err => {
+				setIsLoading(false);
+				alert(
+					"error in fetching data ... pls turn on json-server or refresh the page"
+				);
+			});
+	}, []);
+	return (
+		<Container className="w-full">
+			<div style={{ width: "100%", height: 450 }}>
+				{isLoading ? (
+					<VectorMap
+						map={"world_mill"}
+						zoomOnScroll={false}
+						backgroundColor="#F5F5F5"
+						hoverOpacity={0.7}
+						id="map"
+						containerStyle={{
+							width: "100%",
+							height: "100%"
+						}}
+						markerStyle={{
+							initial: {
+								fill: "#FFCC4E"
+							}
+						}}
+						containerClassName="map"
+						markers={Object.assign({}, countryData)}
+					>
+						<p>test</p>
+					</VectorMap>
+				) : (
+					<div class="lds-ring">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				)}
+			</div>
+		</Container>
+	);
+};
+export default MapChart;
+const Container = styled.div`
+	.jvectormap-region.jvectormap-element {
+		fill: #084c61;
+	}
+	.jvectormap-zoomout,
+	.jvectormap-zoomin {
+		display: none !important;
+	}
+`;

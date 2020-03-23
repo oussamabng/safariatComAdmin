@@ -1,62 +1,52 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
+import ToggleContext from "./ToggleContexte.js";
 import HeaderAdmin from "../../components/HomeHeader/HeaderAdmin";
 import AsideAdmin from "../../components/aside/asideAdmin.jsx";
 import "./admin.css";
-class Admin extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      toggle: false,
-      show: false
-    };
-  }
-  handleToggleClick() {
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        toggle: !prevState.toggle
-      };
-    });
-  }
-  handleAsideToggled() {
-    this.setState(prevState => {
-      return {
-        show: !prevState.show,
-        toggle: !prevState.toggle
-      };
-    });
-  }
 
-  render() {
-    return (
-      <>
-        <HeaderAdmin
-          clickToggle={() => {
-            this.handleToggleClick();
-          }}
-          show={this.state.show}
-        />
-        <AsideAdmin
-          toggle={this.state.toggle}
-          clickToggle={() => {
-            this.handleToggleClick();
-          }}
-          active={this.props.active}
-        />
-        <div
-          className={this.state.toggle ? "padleft" : "padleft-sm"}
-          onClick={() => {
-            document.getElementsByClassName(
-              "notification-box mx-6"
-            )[0].style.display = "none";
-          }}
-        >
-          {this.props.content}
-        </div>
-      </>
-    );
-  }
-}
+const Admin = props => {
+	const [toggle, setToggle] = useState(false);
+	const [show, setShow] = useState(false);
+
+	const handleToggleClick = () => {
+		setToggle(!toggle);
+	};
+	const handleAsideToggled = () => {
+		setToggle(!toggle);
+		setShow(!show);
+	};
+
+	const contexteValue = {
+		toggled: toggle
+	};
+	return (
+		<ToggleContext.Provider value={contexteValue}>
+			<HeaderAdmin
+				clickToggle={() => {
+					handleToggleClick();
+				}}
+				show={show}
+			/>
+			<AsideAdmin
+				toggle={toggle}
+				clickToggle={() => {
+					handleToggleClick();
+				}}
+				active={props.active}
+			/>
+			<div
+				className={toggle ? "padleft" : "padleft-sm"}
+				onClick={() => {
+					document.getElementsByClassName(
+						"notification-box mx-6"
+					)[0].style.display = "none";
+				}}
+			>
+				{props.content}
+			</div>
+		</ToggleContext.Provider>
+	);
+};
 
 export default Admin;
