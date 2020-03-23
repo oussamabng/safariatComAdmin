@@ -8,8 +8,7 @@ import styled from "styled-components";
 import ChartTours from "../Graphs/GraphTours.jsx";
 import CardTours from "../CardTours/CardTours.jsx";
 import CardActifUsers from "../CardActifUser/CardActifUser.jsx";
-import axios from "axios";
-import { countries } from "../Graphs/data/countries";
+
 const UserInteraction = (
 	{
 		items = [
@@ -44,21 +43,7 @@ const UserInteraction = (
 ) => {
 	const [activeLinkTours, setActiveLinkTours] = useState("Tours");
 	const [activeLink, setActiveLink] = useState("Month");
-	const [countryData, setCountryData] = useState([]);
-	const countryNames = [];
-	useEffect(() => {
-		axios.get("http://localhost:3000/map_world").then(res => {
-			res.data.map(country => {
-				let arr = countries.filter(option => option.name === country)[0];
-				let ar = {
-					name: arr.name,
-					latLng: [arr.latitude, arr.longitude]
-				};
-				countryNames.push(ar);
-			});
-			setCountryData(countryNames);
-		});
-	}, []);
+
 	const setActive = link => {
 		//request funtion to filter
 		setActiveLink(link);
@@ -87,7 +72,7 @@ const UserInteraction = (
 					]}
 				/>
 				<div className="flex agency_row_users">
-					<div className="w-3/5 agency_col_users">
+					<div className="w-4/6 agency_col_users">
 						<div className="flex mb-4">
 							<div className="px-4 w-full">
 								<div className="mb-3 card bg-white">
@@ -167,7 +152,7 @@ const UserInteraction = (
 						</div>
 						<div className="flex justify-start items-start mb-4">
 							{/* Top Liked tour begin */}
-							<div className="px-4 w-3/4 agency_col_tours scroll-div">
+							<div className="px-4 w-3/5 agency_col_tours scroll-div">
 								<div className="mb-3 card">
 									<div className="flex items-start h-16 border-none py-2  px-6 bg-white">
 										<div className="flex items-center whitespace-no-wrap text-21">
@@ -191,9 +176,9 @@ const UserInteraction = (
 									<CardTours />
 								</div>
 							</div>
-							<div className="w-2/5 agency_col_tours  scroll-div">
+							<div className="w-2/5 px-4 agency_col_tours  scroll-div">
 								<div className="mb-3 card">
-									<div className="flex items-center  border-none py-2  px-6 bg-white">
+									<div className="flex items-center  border-none py-2 pt-8  px-6 bg-white">
 										<div className="flex items-center whitespace-no-wrap text-21">
 											Top Active users{" "}
 										</div>
@@ -216,7 +201,7 @@ const UserInteraction = (
 							</div>
 						</div>
 					</div>
-					<div className="w-2/5 px-4 agency_col_users">
+					<div className="w-2/6 px-4 agency_col_users">
 						<div className="mb-3 card">
 							<div className="flex items-center h-16 border-none py-2  px-6 bg-white">
 								<div className="flex items-center whitespace-no-wrap text-21">
@@ -238,7 +223,7 @@ const UserInteraction = (
 							</div>
 							<div className="bg-white">
 								<div className="flex justify-center p-4 text-center w-full items-center">
-									<MapChart countryData={countryData} />
+									<MapChart />
 								</div>
 							</div>
 							<CountryProgress />
