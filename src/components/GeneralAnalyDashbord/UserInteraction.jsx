@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ReactComponent as Info } from "./images/information.svg";
-import { ReactComponent as Mail } from "./images/envelope.svg";
-import { ReactComponent as Dots } from "./images//ellipsis.svg";
-import Person from "../../assets/person_girl.jpg";
+import CountryProgress from "../CountryProgress/CountryProgess.jsx";
 import MapChart from "../Graphs/GeoChart.jsx";
 import { Link } from "react-router-dom";
 import HeaderPage from "../HeaderPage/HeaderPage";
 import styled from "styled-components";
 import ChartTours from "../Graphs/GraphTours.jsx";
 import CardTours from "../CardTours/CardTours.jsx";
-
+import CardActifUsers from "../CardActifUser/CardActifUser.jsx";
+import axios from "axios";
+import { countries } from "../Graphs/data/countries";
 const UserInteraction = (
 	{
 		items = [
@@ -42,72 +42,19 @@ const UserInteraction = (
 	},
 	props
 ) => {
-	const [data_regions, setDataRegions] = useState([]);
-	const [data_active_users, setActiveUsers] = useState([]);
 	const [activeLinkTours, setActiveLinkTours] = useState("Tours");
 	const [activeLink, setActiveLink] = useState("Month");
-
+	const [countryData, setCountryData] = useState([]);
+	const countryNames = [];
 	useEffect(() => {
-		setDataRegions([
-			{
-				place: "Algiers, Algeria",
-				progress: 90
-			},
-			{
-				place: "Mekkah, Saudi Arabia",
-				progress: 65
-			},
-			{
-				place: "Milan, Italie",
-				progress: 40
-			}
-		]);
-		setActiveUsers([
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			},
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			},
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			},
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			},
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			},
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			},
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			},
-			{
-				name: "kevin meklien",
-				type: "influencer",
-				picture: Person
-			}
-		]);
-		var progress = document.getElementsByClassName("agency_span");
-		for (let i = 0; i < Object.values(progress).length; i++) {
-			Object.values(progress)[i].style.width = `${data_regions[i].progress}%`;
-		}
+		axios.get("http://localhost:3000/map_world").then(res => {
+			res.data.map(country => {
+				countryNames.push(
+					countries.filter(option => option.name === country)[0]
+				);
+			});
+			setCountryData(countryNames);
+		});
 	}, []);
 	const setActive = link => {
 		//request funtion to filter
@@ -195,9 +142,9 @@ const UserInteraction = (
 													className={navClass}
 													scrollChor={elem["scrollChor"]}
 													key={elem["key"]}
-													onClick={props =>
+													onClick={prop =>
 														handleSetActiveTours(
-															props.currentTarget.attributes[0].nodeValue
+															prop.currentTarget.attributes[0].nodeValue
 														)
 													}
 												>
@@ -207,7 +154,10 @@ const UserInteraction = (
 										})}
 									</div>
 									<div className="flex justify-center items-center">
-										<ChartTours />
+										<ChartTours
+											activeLink={activeLink}
+											activeLinkTours={activeLinkTours}
+										/>
 									</div>
 								</div>
 							</div>
@@ -258,50 +208,7 @@ const UserInteraction = (
 											</div>
 										</div>
 									</div>
-									<div className="p-5 pt-2 pb-2 bg-white">
-										{data_active_users.map(user => (
-											<div className="py-2">
-												<div
-													style={{
-														backgroundColor: "#f3f3f3"
-													}}
-													className=" flex flex-row flex-row justify-between items-center p-3"
-												>
-													<div className="flex lD:flex-row mD:flex-col sD:flex-row lD:py-2 mD:py-0 justify-start lD:items-center mD:items-center sD:items-center xsD:items-center">
-														<div className="pr-2">
-															<img
-																className="lD:h-16 lD:w-16 mD:w-12 mD:h-12 sD:w-16 sD:h-16 xsD:w-16 xsD:h-16 rounded-full "
-																src={user["picture"]}
-																alt="img"
-															/>
-														</div>
-														<div className="flex flex-col justify-start ">
-															<h1 className="lD:text-18 mD:text-16 sD:text-18 xsD:text-18">
-																{user["name"]}
-															</h1>
-															<p className="text-gray-600 lD:text-16 mD:text-14 sD:text-16 xsD:text-16">
-																{user["type"]} user
-															</p>
-														</div>
-													</div>
-													<div className="agency_contact_user flex flex-row justify-start items-center">
-														<a href="#">
-															<Mail
-																className="px-2 w-10 h-10 responsive-icons"
-																fill="#707070"
-															/>
-														</a>
-														<a href="#">
-															<Dots
-																className="px-2 w-10 h-10 responsive-icons"
-																fill="#707070"
-															/>
-														</a>{" "}
-													</div>
-												</div>
-											</div>
-										))}
-									</div>
+									<CardActifUsers />
 								</div>
 							</div>
 						</div>
@@ -328,31 +235,10 @@ const UserInteraction = (
 							</div>
 							<div className="bg-white">
 								<div className="flex justify-center p-4 text-center w-full items-center">
-									<MapChart />
+									<MapChart countryData={countryData} />
 								</div>
 							</div>
-							<div className="bg-white flex  flex-col text-center scroll-div">
-								{data_regions.map(region => {
-									return (
-										<div className="flex flex-row py-4  justify-between">
-											<div className="w-2/5">
-												<p className="text-lg font-bold-500 whitespace-no-wrap">
-													{region["place"]}
-												</p>
-											</div>
-											<div className="w-2/5">
-												<div className="p-2 border h-4 relative bg-gray-400 rounded-full">
-													<span
-														className="agency_span"
-														style={{ width: `${0}%` }}
-													></span>
-												</div>
-											</div>
-											<div className="w-1/5 ">{region["progress"]}%</div>
-										</div>
-									);
-								})}
-							</div>
+							<CountryProgress />
 						</div>
 					</div>
 				</div>

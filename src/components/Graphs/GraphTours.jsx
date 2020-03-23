@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Chart from "react-apexcharts";
-
-const GraphTours = () => {
+import axios from "axios";
+const GraphTours = ({ activeLink, activeLinkTours }) => {
 	const [options, setOptions] = useState({});
 	const [series, setSeries] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 	useEffect(() => {
 		setOptions({
 			responsive: [
@@ -68,28 +69,51 @@ const GraphTours = () => {
 				}
 			}
 		});
-		setSeries([
-			{
-				name: "Shares",
-				data: [31, 40, 28, 51, 42, 109, 100]
-			},
-			{
-				name: "Likes",
-				data: [11, 32, 45, 32, 34, 52, 41]
-			}
-		]);
-	}, []);
+		if (activeLinkTours === "Tours")
+			axios
+				.get("http://localhost:3000/users_top_tours")
+				.then(res => {
+					setSeries(res.data);
+					setIsLoading(true);
+				})
+				.catch(err => {
+					setIsLoading(false);
+					alert("error on fetching data");
+				});
+		else if (activeLinkTours === "Products")
+			axios
+				.get("http://localhost:3000/users_top_products")
+				.then(res => {
+					setSeries(res.data);
+					setIsLoading(true);
+				})
+				.catch(err => {
+					setIsLoading(false);
+					alert("error on fetching data");
+				});
+	}, [activeLinkTours]);
 
 	return (
 		<Container>
-			<Chart
-				className="agency_tours_chart"
-				options={options}
-				series={series}
-				type="area"
-				width="800"
-				height="400"
-			/>
+			{isLoading ? (
+				<Chart
+					className="agency_tours_chart"
+					options={options}
+					series={series}
+					type="area"
+					width="800"
+					height="400"
+				/>
+			) : (
+				<div className="flex justify-center items-center">
+					<div class="lds-ring">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			)}
 		</Container>
 	);
 };
