@@ -79,6 +79,11 @@
 	],
 	"news": [
 		{
+			"name": "test",
+			"time": "Today at 22:45",
+			"type": "story"
+		},
+		{
 			"name": "Kevin Makelien",
 			"time": "Today at 22:45",
 			"type": "story"
@@ -166,5 +171,90 @@
 			"progress": 40
 		}
 	],
-	"map_world": ["Algeria", "Tunisia", "Brazil", "Italy"]
+	"map_world": ["Algeria", "Tunisia", "Brazil", "Italy", "France"],
+	"employees": [
+		{
+			"key": 5151551151,
+			"name": "martin dekly",
+			"paying_day": "20/03/2020",
+			"status": "not yet",
+			"salary": "2500",
+			"departement": "HR"
+		},
+		{
+			"key": 54544454545111,
+			"name": "alisia ester",
+			"paying_day": "20/03/2020",
+			"status": "paid out",
+			"salary": "2500",
+			"departement": "CRM"
+		},
+		{
+			"key": 11,
+			"name": "martin dekly",
+			"paying_day": "20/03/2020",
+			"status": "not yet",
+			"salary": "2500",
+			"departement": "HR"
+		},
+		{
+			"key": 20336656,
+			"name": "martin dekly",
+			"paying_day": "20/03/2020",
+			"status": "not yet",
+			"salary": "2500",
+			"departement": "HR"
+		}
+	],
+	"product_sale": {
+		"number": 54,
+		"taux": -1.48,
+		"time": "month"
+	},
+	"tour_sale": {
+		"number": 54,
+		"taux": 3.48,
+		"time": "month"
+	},
+	"tasks": [
+		{
+			"key": 151520,
+			"name": "travel agency task 1",
+			"date": "24/03/2020",
+			"checked": false
+		},
+		{
+			"key": 46845,
+			"name": "travel agency task 2",
+			"date": "14/10/2020",
+			"checked": false
+		},
+		{
+			"key": 55545,
+			"name": "travel agency task 3",
+			"date": "10/06/2020",
+			"checked": false
+		}
+	],
+	"tour_sales_values": [
+		{
+			"name": "Sales",
+			"type": "Week",
+			"data": [10, 41, 35, 51, 49, 62, 69, 91, 148]
+		},
+		{
+			"name": "Sales",
+			"type": "Month",
+			"data": [80, 96, 55, 51, 19, 62, 45, 91, 18]
+		}
+	],
+	"product_sale_values": [
+		{
+			"name": "Product sale value",
+			"data": [70, 65, 60, 44, 77, 58, 63, 60, 15]
+		}
+	],
+	"donut": {
+		"series": [122.9, 96.785, 35.785, 22.123]
+	}
 }

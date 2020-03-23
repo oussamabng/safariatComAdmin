@@ -55,48 +55,50 @@ const New = () => {
 						</div>
 					</div>
 				</div>
-				{isLoading ? (
-					data.map(data_news => (
-						<div key={data_news["id"]} className="px-6 bg-white">
-							<div className="pt-0 pb-0 px-2 bg-white">
-								<div className="flex justify-between items-center">
-									<div className="w-1/2 flex justify-start">
-										<img
-											className="w-16 rounded-full h-16"
-											src={Img}
-											alt="img"
-										/>
-										<div className="flex flex-col ml-4">
-											<div className="whitespace-no-wrap text-21">
-												<h1>{data_news["name"]}</h1>
-											</div>
-											<div className="whitespace-no-wrap text-13 text-gray-600">
-												<p>{data_news["time"]}</p>
-											</div>
-											<div className="my-4 mx-0 whitespace-no-wrap text-18 text-gray-600">
-												<p>has added a new {data_news["type"]}</p>
+				<div className="bg-white scroll-div">
+					{isLoading ? (
+						data.map(data_news => (
+							<div key={data_news["id"]} className="px-6 ">
+								<div className="pt-0 pb-0 px-2 x">
+									<div className="flex justify-between items-center">
+										<div className="w-1/2 flex justify-start">
+											<img
+												className="w-16 rounded-full h-16"
+												src={Img}
+												alt="img"
+											/>
+											<div className="flex flex-col ml-4">
+												<div className="whitespace-no-wrap text-21">
+													<h1>{data_news["name"]}</h1>
+												</div>
+												<div className="whitespace-no-wrap text-13 text-gray-600">
+													<p>{data_news["time"]}</p>
+												</div>
+												<div className="my-4 mx-0 whitespace-no-wrap text-18 text-gray-600">
+													<p>has added a new {data_news["type"]}</p>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div className="w-1/2 notification-part-right">
-										<div className="flex p-6 justify-end items-center w-3/5">
-											<img className="lg:w-64" src={Img} alt="img" />
+										<div className="w-1/2 notification-part-right">
+											<div className="flex p-6 justify-end items-center w-3/5">
+												<img className="lg:w-64" src={Img} alt="img" />
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						))
+					) : (
+						<div className="flex justify-center items-center">
+							<div class="lds-ring">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
 						</div>
-					))
-				) : (
-					<div className="flex justify-center items-center">
-						<div class="lds-ring">
-							<div></div>
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
-					</div>
-				)}
+					)}
+				</div>
 			</div>
 		</Container>
 	);

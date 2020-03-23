@@ -21,7 +21,7 @@ const CardActifUser = () => {
 	return (
 		<>
 			{isLoading ? (
-				<div className="p-5 pt-2 pb-2 bg-white">
+				<div className="p-5 pt-8 pt-2 pb-2 bg-white">
 					{data_active_users.map(user => (
 						<div className="py-2">
 							<div

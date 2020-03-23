@@ -172,13 +172,14 @@ const UserInteraction = (
 											</div>
 										</div>
 									</div>
-									{/* secondColumnStart */}
-									<CardTours />
+									<div className="scroll-div ">
+										<CardTours />
+									</div>
 								</div>
 							</div>
 							<div className="w-2/5 px-4 agency_col_tours  scroll-div">
 								<div className="mb-3 card">
-									<div className="flex items-center  border-none py-2 pt-8  px-6 bg-white">
+									<div className="flex items-center  border-none py-2   px-6 bg-white">
 										<div className="flex items-center whitespace-no-wrap text-21">
 											Top Active users{" "}
 										</div>
@@ -196,7 +197,9 @@ const UserInteraction = (
 											</div>
 										</div>
 									</div>
-									<CardActifUsers />
+									<div className="scroll-div">
+										<CardActifUsers />
+									</div>
 								</div>
 							</div>
 						</div>
