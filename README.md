@@ -1,8 +1,3 @@
-# safariatComTravelAgenciesFront
+## Travel agency web project
 
-1- install all dependencies "npm install"
-
-2- run the temporary backend server "json-server --watch db.json"
-
-3-lunch the project "npm start"
-
+<img src="https://user-images.githubusercontent.com/47861021/166609670-ab834ec1-e71f-4d16-b28d-46661281a2f2.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609677-4c079989-3001-4429-8d43-5b4118a53225.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609679-2914ad3e-c3c0-4e9b-852a-1e3160b0c5a1.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609681-941bd01e-7c05-4860-a362-506fdbce4c52.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609682-85afaa09-fef5-4f0a-b3a8-0916fe068bbe.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609683-db2533d0-9077-4f81-a242-723fac0ea9d8.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609686-fae315cf-aeaa-4365-a0b5-0e8abbef4693.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609688-b1067ea3-f440-42ce-be6f-6e6c381d6609.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609691-566cf8e4-987b-42e1-94a1-50fd18d967aa.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609694-19e0188c-d0f1-4684-afe3-1d255fa850be.png" width="45%"></img> <img src="https://user-images.githubusercontent.com/47861021/166609697-4f7a7ae8-996c-4210-8bda-dfd69b10553d.png" width="45%"></img> 
